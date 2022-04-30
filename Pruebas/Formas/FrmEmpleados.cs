@@ -1,0 +1,221 @@
+﻿using Entidades.Usuario;
+using LogicaNegocio.Usuario;
+using System;
+using System.Windows.Forms;
+
+namespace Proyeccion.Principal
+{
+    public partial class FrmEmpleados : Form
+    {
+
+        private ClsEmpleado ObjEmpleado = null;
+        private ClsArea ObjArea = null;
+        private ClsDepartamento ObjDepartamento= null;
+        private ClsPuesto ObjPuesto = null;
+        private readonly ClsEmpleadoLn ObjEmpleadoLn = new ClsEmpleadoLn();
+        private readonly ClsAreaLn ObjAreaLn = new ClsAreaLn();
+        private readonly ClsDepartamentoLn ObjDepartamentoLn = new ClsDepartamentoLn();
+        private readonly ClsPuestoLn ObjPuestoLn = new ClsPuestoLn();
+
+        public bool bArea, bPuesto, bDepartamento;
+        private FrmEmpleados intance;
+        public FrmEmpleados()
+        {
+            InitializeComponent();
+            CargarListaEmpleados();
+            CargarListaArea();
+            CargarListaDepto();
+            CargarListaPuesto();
+            CbArea.SelectedIndex = -1;
+            CbDepto.SelectedIndex = -1;
+            CbPuesto.SelectedIndex = -1;
+            this.CbArea.SelectedIndexChanged += new System.EventHandler(this.CbArea_SelectedIndexChanged);
+            this.CbPuesto.SelectedIndexChanged += new System.EventHandler(this.CbPuesto_SelectedIndexChanged);
+            this.CbDepto.SelectedIndexChanged += new System.EventHandler(this.CbDepto_SelectedIndexChanged);
+            intance = this;
+        }
+
+        private void CargarListaEmpleados()
+        {
+            ObjEmpleado = new ClsEmpleado();
+            ObjEmpleadoLn.Index(ref ObjEmpleado);
+            if (ObjEmpleado.MsjError == null)
+            {
+                DgvEmpleados.DataSource = ObjEmpleado.DtResultados;
+            }
+            else
+            {
+                MessageBox.Show(ObjEmpleado.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarListaArea()
+        {
+            bArea = false;
+            ObjArea = new ClsArea();
+            ObjAreaLn.CargarCbArea(ref ObjArea);
+            if (ObjArea.MsjError == null)
+            {
+                CbArea.DisplayMember = "Area";
+                CbArea.ValueMember = "AreaId";
+                CbArea.DataSource = ObjArea.DtResultados;
+            }
+            else
+            {
+                MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarListaDepto()
+        {
+            ObjDepartamento = new ClsDepartamento();
+            ObjDepartamentoLn.CargarCbDepto(ref ObjDepartamento);
+            if (ObjDepartamento.MsjError == null)
+            {
+                CbDepto.DisplayMember = "Name";
+                CbDepto.ValueMember = "DeptoId";
+                CbDepto.DataSource = ObjDepartamento.DtResultados;
+            }
+            else
+            {
+                MessageBox.Show(ObjDepartamento.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarListaPuesto()
+        {
+            ObjPuesto = new ClsPuesto();
+            ObjPuestoLn.CargarCbPuesto(ref ObjPuesto);
+            if (ObjPuesto.MsjError == null)
+            {
+                CbPuesto.DisplayMember = "Puesto";
+                CbPuesto.ValueMember = "PuestoId";
+                CbPuesto.DataSource = ObjPuesto.DtResultados;
+            }
+            else
+            {
+                MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void CambiarSelectedIndexArea()
+        {
+            CbArea.SelectedIndex = -1;
+        }
+
+        public void CambiarSelectedIndexDpto()
+        {
+            CbDepto.SelectedIndex = -1;
+        }
+
+        public void CambiarSelectedIndexPuesto()
+        {
+            CbPuesto.SelectedIndex = -1;
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void CbArea_DataSourceChanged(object sender, EventArgs e)
+        {
+            CbArea.SelectedIndex = -1;
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            ObjEmpleado = new ClsEmpleado()
+            {
+                FirstName = TxtNombre.Text,
+                MiddleName = TxtNombre2.Text,
+                LastName = TxtApellido.Text,
+                JobTitle = CbArea.Text,
+                Dept = Convert.ToInt16(CbDepto.SelectedValue),
+                Position = Convert.ToInt16(CbPuesto.SelectedValue),
+                HomeTel = TxtTelCasa.Text,
+                Mobile = TxtTelMovil.Text,
+                Email = TxtEmail.Text
+            };
+            if (ChkActivo.Checked)
+            {
+                ObjEmpleado.Active = 'Y';
+            }
+            else
+            {
+                ObjEmpleado.Active = 'N';
+            }
+        }
+
+        private void CbArea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (bArea == true)
+            {
+                bArea = false;
+            }
+            else
+            {
+                if (CbArea.Text.Equals("Nueva Area"))
+                {
+                    FrmArea fmArea = new FrmArea(this);
+                    fmArea.Show();
+                }
+                else
+                {
+                    bArea = true;
+                }
+            }
+        }
+
+        private void CbDepto_DataSourceChanged(object sender, EventArgs e)
+        {
+            CbDepto.SelectedIndex = -1;
+        }
+
+        private void CbPuesto_DataSourceChanged(object sender, EventArgs e)
+        {
+            CbPuesto.SelectedIndex = -1;
+        }
+
+        private void CbDepto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (bDepartamento == true)
+            {
+                bDepartamento = false;
+            }
+            else
+            {
+                if (CbDepto.Text.Equals("Nuevo Departamento"))
+                {
+                    FrmArea fmArea = new FrmArea(this);
+                    fmArea.Show();
+                }
+                else
+                {
+                    bDepartamento = true;
+                }
+            }
+        }
+
+        private void CbPuesto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (bPuesto == true)
+            {
+                bPuesto = false;
+            }
+            else
+            {
+                if (CbPuesto.Text.Equals("Nuevo Puesto"))
+                {
+                    FrmArea fmArea = new FrmArea(this);
+                    fmArea.Show();
+                }
+                else
+                {
+                    bPuesto = true;
+                }
+            }
+        }
+
+    }
+}

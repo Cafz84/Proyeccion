@@ -1,0 +1,144 @@
+﻿using AccesoDatos.DataBase;
+using Entidades.Usuario;
+using System;
+using System.Data;
+
+namespace LogicaNegocio.Usuario
+{
+    public class ClsUserLn
+    {
+        #region Variables privadas
+        private ClsDataBase ObjDataBase = null;
+        #endregion
+
+        #region Metodo Index
+        public void Index(ref ClsUser ObjUser)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "Users",
+                NombreSP = "[SCH_GENERAL].[SP_Users_Index]",
+                Scalar = false
+            };
+            
+            Ejecutar(ref ObjUser);
+        }
+        #endregion
+
+        #region CRUD User
+        public void Create(ref ClsUser ObjUser)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "Users",
+                NombreSP = "[SCH_GENERAL].[SP_Users_Create]",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@LoginName", "18", ObjUser.LoginName);
+            ObjDataBase.DtParametros.Rows.Add(@"@Password", "18", ObjUser.Password);
+            ObjDataBase.DtParametros.Rows.Add(@"@FirstName", "18", ObjUser.FirstName);
+            ObjDataBase.DtParametros.Rows.Add(@"@LastName", "18", ObjUser.LastName);
+            ObjDataBase.DtParametros.Rows.Add(@"@Position", "18", ObjUser.Position);
+            ObjDataBase.DtParametros.Rows.Add(@"@Email", "18", ObjUser.Email);
+
+            Ejecutar(ref ObjUser);
+        }
+
+        public void Read(ref ClsUser ObjUser)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "Users",
+                NombreSP = "[SCH_GENERAL].[SP_Users_Read]",
+                Scalar = false
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@UserId", "4", ObjUser.UserId);
+            Ejecutar(ref ObjUser);
+        }
+
+        public void ReadLogin(ref ClsUser ObjUser)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "Users",
+                NombreSP = "[SCH_GENERAL].[SP_Users_Read_Login]",
+                Scalar = false
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@LoginName", "18", ObjUser.LoginName);
+            ObjDataBase.DtParametros.Rows.Add(@"@Password", "18", ObjUser.Password);
+            Ejecutar(ref ObjUser);
+        }
+        
+        public void Update(ref ClsUser ObjUser)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "Users",
+                NombreSP = "[SCH_GENERAL].[SP_Users_Update]",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@UserId", "4", ObjUser.UserId);
+            ObjDataBase.DtParametros.Rows.Add(@"@FirstName", "18", ObjUser.FirstName);
+            ObjDataBase.DtParametros.Rows.Add(@"@LastName", "18", ObjUser.LastName);
+            ObjDataBase.DtParametros.Rows.Add(@"@Position", "18", ObjUser.Position);
+            ObjDataBase.DtParametros.Rows.Add(@"@LoginName", "18", ObjUser.LoginName);
+            ObjDataBase.DtParametros.Rows.Add(@"@Password", "18", ObjUser.Password);
+            ObjDataBase.DtParametros.Rows.Add(@"@Email", "18", ObjUser.Email);
+            Ejecutar(ref ObjUser);
+        }
+
+        public void Delete(ref ClsUser ObjUser)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "Users",
+                NombreSP = "[SCH_GENERAL].[SP_Users_Delete]",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@UserId", "4", ObjUser.UserId);
+            Ejecutar(ref ObjUser);
+        }
+        #endregion
+
+        #region Metodos privados
+        private void Ejecutar(ref ClsUser ObjUser)
+        {
+            ObjDataBase.CRUD(ref ObjDataBase);
+
+            if (ObjDataBase.MensajeErrorDB == null)
+            {
+                if (ObjDataBase.Scalar)
+                {
+                    ObjUser.ValorEscalar = ObjDataBase.ValorScalar;
+                }
+                else
+                {
+                    ObjUser.DtResultados = ObjDataBase.DsResultados.Tables[0];
+                    if (ObjUser.DtResultados.Rows.Count == 1)
+                    {
+                        foreach (DataRow dr in ObjUser.DtResultados.Rows)
+                        {
+                            ObjUser.UserId = Convert.ToByte(dr["UserId"].ToString());
+                            ObjUser.LoginName = dr["LoginName"].ToString();
+                            ObjUser.Password = dr["Password"].ToString();
+                            ObjUser.FirstName = dr["FirstName"].ToString();
+                            ObjUser.LastName = dr["LastName"].ToString();
+                            ObjUser.Position = dr["Position"].ToString();
+                            ObjUser.Email = dr["Email"].ToString();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                ObjUser.MsjError = ObjDataBase.MensajeErrorDB;
+            }
+        }
+        #endregion
+    }
+}

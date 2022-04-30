@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AccesoDatos.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="cadenaConeccion_DB_BasePruebas" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=MONNAACI-18\SQLEXPRESS;Initial Catalog=DB_BasePruebas;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=MONNAACI-18\SQLEXPRESS;Initial Catalog=DB_BasePruebas;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="cadenaConeccion_Lavoraciones_Monnaaci_p" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=ec2-52-52-139-21.us-west-1.compute.amazonaws.com,1433;Initial Catalog=Lavoraziones_Monnaaci_P;Persist Security Info=True;User ID=reports;Password=Cloud@123&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ec2-52-52-139-21.us-west-1.compute.amazonaws.com,1433;Initial Catalog=Lavoraziones_Monnaaci_P;Persist Security Info=True;User ID=reports;Password=Cloud@123</Value>
+    </Setting>
+    <Setting Name="cadenaConeccion_Pruebas_Lavoraziones" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=ec2-52-52-139-21.us-west-1.compute.amazonaws.com,1433;Initial Catalog=Pruebas_Lavoraziones;Persist Security Info=True;User ID=reports;Password=Cloud@123&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ec2-52-52-139-21.us-west-1.compute.amazonaws.com,1433;Initial Catalog=Pruebas_Lavoraziones;Persist Security Info=True;User ID=reports;Password=Cloud@123</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

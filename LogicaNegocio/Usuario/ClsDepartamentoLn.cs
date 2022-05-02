@@ -9,6 +9,7 @@ namespace LogicaNegocio.Usuario
     {
         #region Variables Privadas
         private ClsDataBase ObjDataBase = null;
+        private string Log;
         #endregion
 
         #region Metodo Index
@@ -39,7 +40,81 @@ namespace LogicaNegocio.Usuario
         #endregion
 
         #region CRUD Departamento
+        public void Create(ref ClsDepartamento ObjDepartamento)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "Departamento",
+                NombreSP = "dbo.SP_Departamento_Create",
+                Scalar = false
+            };
 
+            ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjDepartamento.Name);
+            ObjDataBase.DtParametros.Rows.Add(@"@Remarks", "18", ObjDepartamento.Remarks);
+            ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjDepartamento.Activo);
+
+            Ejecutar(ref ObjDepartamento);
+        }
+
+        public void Read(ref ClsDepartamento ObjDepartamento)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "Departamento",
+                NombreSP = "dbo.SP_Departamento_Read",
+                Scalar = false
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@DeptoId", "4", ObjDepartamento.DeptoId);
+
+            Ejecutar(ref ObjDepartamento);
+        }
+
+        public void Update(ref ClsDepartamento ObjDepartamento)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "Departamento",
+                NombreSP = "dbo.SP_Departamento_Update",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@DeptoId", "4", ObjDepartamento.DeptoId);
+            ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjDepartamento.Name);
+            ObjDataBase.DtParametros.Rows.Add(@"@Remarks", "18", ObjDepartamento.Remarks);
+            ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjDepartamento.Activo);
+
+            Ejecutar(ref ObjDepartamento);
+        }
+
+        public void UpdateActivo(ref ClsDepartamento ObjDepartamento)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "Departamento",
+                NombreSP = "dbo.SP_Departamento_UpdateActivo",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@DeptoId", "4", ObjDepartamento.DeptoId);
+            ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjDepartamento.Activo);
+
+            Ejecutar(ref ObjDepartamento);
+        }
+
+        public void Delete(ref ClsDepartamento ObjDepartamento)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "Area",
+                NombreSP = "dbo.SP_Departamento_Delete",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@DeptoId", "4", ObjDepartamento.DeptoId);
+
+            Ejecutar(ref ObjDepartamento);
+        }
         #endregion
 
         #region Metodos Privados
@@ -60,9 +135,16 @@ namespace LogicaNegocio.Usuario
                     {
                         foreach (DataRow dr in ObjDepartamento.DtResultados.Rows)
                         {
-                            ObjDepartamento.DeptoId = Convert.ToByte(dr["DeptoId"].ToString());
-                            ObjDepartamento.Name = dr["Name"].ToString();
-                            ObjDepartamento.Remarks = dr["Remarks"].ToString();
+                            try
+                            {
+                                ObjDepartamento.DeptoId = Convert.ToByte(dr["DeptoId"].ToString());
+                                ObjDepartamento.Name = dr["Name"].ToString();
+                                ObjDepartamento.Remarks = dr["Remarks"].ToString();
+                            }
+                            catch(Exception ex)
+                            {
+                                Log = ex.ToString();
+                            }
                         }
                     }
                 }
@@ -94,7 +176,7 @@ namespace LogicaNegocio.Usuario
                             ObjDepartamento.Name = dr["Name"].ToString();
                         }
                     }
-                    ObjDepartamento.DtResultados.Rows.Add(ObjDepartamento.DtResultados.Rows.Count + 1, "Nuevo Depto.");
+                    ObjDepartamento.DtResultados.Rows.Add(ObjDepartamento.DtResultados.Rows.Count + 1, "Nuevo Departamento");
                 }
             }
             else

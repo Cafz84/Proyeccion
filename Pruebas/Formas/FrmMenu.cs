@@ -86,5 +86,15 @@ namespace Proyeccion.Principal
         {
             AbrirFrmHijo(new FrmUsers());
         }
+
+        private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirFrmHijo(new FrmEmpleados());
+        }
     }
 }

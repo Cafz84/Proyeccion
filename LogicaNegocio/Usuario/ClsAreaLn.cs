@@ -9,6 +9,7 @@ namespace LogicaNegocio.Usuario
     {
         #region Variables Privadas
         private ClsDataBase ObjDataBase = null;
+        private string Log;
         #endregion
 
         #region Metodos Index
@@ -48,7 +49,8 @@ namespace LogicaNegocio.Usuario
             };
 
             ObjDataBase.DtParametros.Rows.Add(@"@Area", "18", ObjArea.Area);
-            ObjDataBase.DtParametros.Rows.Add(@"Descripcion", "18", ObjArea.Descripcion);
+            ObjDataBase.DtParametros.Rows.Add(@"@Descripcion", "18", ObjArea.Descripcion);
+            ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjArea.Activo);
 
             Ejecutar(ref ObjArea);
         }
@@ -79,6 +81,22 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@AreaId", "4", ObjArea.AreaId);
             ObjDataBase.DtParametros.Rows.Add(@"@Area", "18", ObjArea.Area);
             ObjDataBase.DtParametros.Rows.Add(@"@Descripcion", "18", ObjArea.Descripcion);
+            ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjArea.Activo);
+
+            Ejecutar(ref ObjArea);
+        }
+
+        public void UpdateActivo(ref ClsArea ObjArea)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "Area",
+                NombreSP = "dbo.SP_Area_UpdateActivo",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@AreaId", "4", ObjArea.AreaId);
+            ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjArea.Activo);
 
             Ejecutar(ref ObjArea);
         }
@@ -116,9 +134,17 @@ namespace LogicaNegocio.Usuario
                     {
                         foreach (DataRow dr in ObjArea.DtResultados.Rows)
                         {
-                            ObjArea.AreaId = Convert.ToByte(dr["AreaId"].ToString());
-                            ObjArea.Area = dr["Area"].ToString();
-                            ObjArea.Descripcion = dr["Descripcion"].ToString();
+                            try
+                            {
+                                ObjArea.AreaId = Convert.ToByte(dr["AreaId"].ToString());
+                                ObjArea.Area = dr["Area"].ToString();
+                                ObjArea.Descripcion = dr["Descripcion"].ToString();
+                                ObjArea.Activo = Convert.ToBoolean(dr["Activo"].ToString());
+                            }
+                            catch (Exception ex)
+                            {
+                                Log = ex.ToString();
+                            }
                         }
                     }
                 }

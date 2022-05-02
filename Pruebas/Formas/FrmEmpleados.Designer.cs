@@ -79,10 +79,10 @@
             this.TpEmpleados.Controls.Add(this.TpFinanciar);
             this.TpEmpleados.Controls.Add(this.TpComentarios);
             this.TpEmpleados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TpEmpleados.Location = new System.Drawing.Point(12, 241);
+            this.TpEmpleados.Location = new System.Drawing.Point(12, 247);
             this.TpEmpleados.Name = "TpEmpleados";
             this.TpEmpleados.SelectedIndex = 0;
-            this.TpEmpleados.Size = new System.Drawing.Size(1040, 373);
+            this.TpEmpleados.Size = new System.Drawing.Size(1056, 406);
             this.TpEmpleados.TabIndex = 0;
             // 
             // TpIndex
@@ -92,7 +92,7 @@
             this.TpIndex.Location = new System.Drawing.Point(4, 26);
             this.TpIndex.Name = "TpIndex";
             this.TpIndex.Padding = new System.Windows.Forms.Padding(3);
-            this.TpIndex.Size = new System.Drawing.Size(1032, 343);
+            this.TpIndex.Size = new System.Drawing.Size(1048, 376);
             this.TpIndex.TabIndex = 0;
             this.TpIndex.Text = "Index";
             this.TpIndex.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             this.Editar});
             this.DgvEmpleados.Location = new System.Drawing.Point(0, 0);
             this.DgvEmpleados.Name = "DgvEmpleados";
-            this.DgvEmpleados.Size = new System.Drawing.Size(1032, 343);
+            this.DgvEmpleados.Size = new System.Drawing.Size(1048, 376);
             this.DgvEmpleados.TabIndex = 0;
             // 
             // Editar
@@ -171,7 +171,7 @@
             this.LblTituloUsuario.AutoSize = true;
             this.LblTituloUsuario.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTituloUsuario.ForeColor = System.Drawing.Color.White;
-            this.LblTituloUsuario.Location = new System.Drawing.Point(415, 3);
+            this.LblTituloUsuario.Location = new System.Drawing.Point(421, 9);
             this.LblTituloUsuario.Name = "LblTituloUsuario";
             this.LblTituloUsuario.Size = new System.Drawing.Size(190, 39);
             this.LblTituloUsuario.TabIndex = 1;
@@ -181,9 +181,9 @@
             // 
             this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCerrar.Image")));
-            this.BtnCerrar.Location = new System.Drawing.Point(1036, -2);
+            this.BtnCerrar.Location = new System.Drawing.Point(1056, 3);
             this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(29, 30);
+            this.BtnCerrar.Size = new System.Drawing.Size(21, 24);
             this.BtnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnCerrar.TabIndex = 20;
             this.BtnCerrar.TabStop = false;
@@ -200,7 +200,7 @@
             this.BtnEliminar.IconColor = System.Drawing.Color.White;
             this.BtnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEliminar.IconSize = 40;
-            this.BtnEliminar.Location = new System.Drawing.Point(838, 179);
+            this.BtnEliminar.Location = new System.Drawing.Point(844, 185);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(214, 51);
             this.BtnEliminar.TabIndex = 13;
@@ -219,7 +219,7 @@
             this.BtnActualizar.IconColor = System.Drawing.Color.White;
             this.BtnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnActualizar.IconSize = 40;
-            this.BtnActualizar.Location = new System.Drawing.Point(838, 114);
+            this.BtnActualizar.Location = new System.Drawing.Point(844, 120);
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Size = new System.Drawing.Size(214, 51);
             this.BtnActualizar.TabIndex = 12;
@@ -238,7 +238,7 @@
             this.BtnAgregar.IconColor = System.Drawing.Color.White;
             this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnAgregar.IconSize = 40;
-            this.BtnAgregar.Location = new System.Drawing.Point(838, 50);
+            this.BtnAgregar.Location = new System.Drawing.Point(844, 56);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(214, 51);
             this.BtnAgregar.TabIndex = 11;
@@ -251,7 +251,7 @@
             // 
             this.TxtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtNombre.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombre.Location = new System.Drawing.Point(113, 50);
+            this.TxtNombre.Location = new System.Drawing.Point(119, 56);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(307, 31);
             this.TxtNombre.TabIndex = 1;
@@ -261,7 +261,7 @@
             this.LblIdEmpleado.AutoSize = true;
             this.LblIdEmpleado.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblIdEmpleado.ForeColor = System.Drawing.Color.White;
-            this.LblIdEmpleado.Location = new System.Drawing.Point(12, 24);
+            this.LblIdEmpleado.Location = new System.Drawing.Point(18, 30);
             this.LblIdEmpleado.Name = "LblIdEmpleado";
             this.LblIdEmpleado.Size = new System.Drawing.Size(33, 22);
             this.LblIdEmpleado.TabIndex = 25;
@@ -272,7 +272,7 @@
             this.LblNombre.AutoSize = true;
             this.LblNombre.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNombre.ForeColor = System.Drawing.Color.White;
-            this.LblNombre.Location = new System.Drawing.Point(12, 54);
+            this.LblNombre.Location = new System.Drawing.Point(18, 60);
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(105, 22);
             this.LblNombre.TabIndex = 26;
@@ -283,7 +283,7 @@
             this.LblApellido.AutoSize = true;
             this.LblApellido.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblApellido.ForeColor = System.Drawing.Color.White;
-            this.LblApellido.Location = new System.Drawing.Point(8, 92);
+            this.LblApellido.Location = new System.Drawing.Point(14, 98);
             this.LblApellido.Name = "LblApellido";
             this.LblApellido.Size = new System.Drawing.Size(110, 22);
             this.LblApellido.TabIndex = 27;
@@ -294,7 +294,7 @@
             this.LblArea.AutoSize = true;
             this.LblArea.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblArea.ForeColor = System.Drawing.Color.White;
-            this.LblArea.Location = new System.Drawing.Point(56, 128);
+            this.LblArea.Location = new System.Drawing.Point(62, 134);
             this.LblArea.Name = "LblArea";
             this.LblArea.Size = new System.Drawing.Size(61, 22);
             this.LblArea.TabIndex = 28;
@@ -305,7 +305,7 @@
             this.LblTelCasa.AutoSize = true;
             this.LblTelCasa.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTelCasa.ForeColor = System.Drawing.Color.White;
-            this.LblTelCasa.Location = new System.Drawing.Point(22, 165);
+            this.LblTelCasa.Location = new System.Drawing.Point(28, 171);
             this.LblTelCasa.Name = "LblTelCasa";
             this.LblTelCasa.Size = new System.Drawing.Size(96, 22);
             this.LblTelCasa.TabIndex = 29;
@@ -316,7 +316,7 @@
             this.LblTelMovil.AutoSize = true;
             this.LblTelMovil.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTelMovil.ForeColor = System.Drawing.Color.White;
-            this.LblTelMovil.Location = new System.Drawing.Point(444, 168);
+            this.LblTelMovil.Location = new System.Drawing.Point(450, 174);
             this.LblTelMovil.Name = "LblTelMovil";
             this.LblTelMovil.Size = new System.Drawing.Size(96, 22);
             this.LblTelMovil.TabIndex = 30;
@@ -327,7 +327,7 @@
             this.LblEmail.AutoSize = true;
             this.LblEmail.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEmail.ForeColor = System.Drawing.Color.White;
-            this.LblEmail.Location = new System.Drawing.Point(57, 203);
+            this.LblEmail.Location = new System.Drawing.Point(63, 209);
             this.LblEmail.Name = "LblEmail";
             this.LblEmail.Size = new System.Drawing.Size(61, 22);
             this.LblEmail.TabIndex = 31;
@@ -338,7 +338,7 @@
             this.LblEmpId.AutoSize = true;
             this.LblEmpId.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEmpId.ForeColor = System.Drawing.Color.Black;
-            this.LblEmpId.Location = new System.Drawing.Point(42, 24);
+            this.LblEmpId.Location = new System.Drawing.Point(48, 30);
             this.LblEmpId.Name = "LblEmpId";
             this.LblEmpId.Size = new System.Drawing.Size(0, 22);
             this.LblEmpId.TabIndex = 38;
@@ -347,7 +347,7 @@
             // 
             this.TxtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtApellido.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtApellido.Location = new System.Drawing.Point(113, 88);
+            this.TxtApellido.Location = new System.Drawing.Point(119, 94);
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(622, 31);
             this.TxtApellido.TabIndex = 3;
@@ -356,7 +356,7 @@
             // 
             this.TxtTelCasa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtTelCasa.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTelCasa.Location = new System.Drawing.Point(113, 162);
+            this.TxtTelCasa.Location = new System.Drawing.Point(119, 168);
             this.TxtTelCasa.Name = "TxtTelCasa";
             this.TxtTelCasa.Size = new System.Drawing.Size(307, 31);
             this.TxtTelCasa.TabIndex = 8;
@@ -365,7 +365,7 @@
             // 
             this.TxtTelMovil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtTelMovil.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTelMovil.Location = new System.Drawing.Point(534, 162);
+            this.TxtTelMovil.Location = new System.Drawing.Point(540, 168);
             this.TxtTelMovil.Name = "TxtTelMovil";
             this.TxtTelMovil.Size = new System.Drawing.Size(298, 31);
             this.TxtTelMovil.TabIndex = 9;
@@ -374,7 +374,7 @@
             // 
             this.TxtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtEmail.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtEmail.Location = new System.Drawing.Point(113, 199);
+            this.TxtEmail.Location = new System.Drawing.Point(119, 205);
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(719, 31);
             this.TxtEmail.TabIndex = 10;
@@ -383,7 +383,7 @@
             // 
             this.TxtNombre2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtNombre2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombre2.Location = new System.Drawing.Point(534, 51);
+            this.TxtNombre2.Location = new System.Drawing.Point(540, 57);
             this.TxtNombre2.Name = "TxtNombre2";
             this.TxtNombre2.Size = new System.Drawing.Size(298, 31);
             this.TxtNombre2.TabIndex = 2;
@@ -393,7 +393,7 @@
             this.LblNombre2.AutoSize = true;
             this.LblNombre2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNombre2.ForeColor = System.Drawing.Color.White;
-            this.LblNombre2.Location = new System.Drawing.Point(426, 54);
+            this.LblNombre2.Location = new System.Drawing.Point(432, 60);
             this.LblNombre2.Name = "LblNombre2";
             this.LblNombre2.Size = new System.Drawing.Size(112, 22);
             this.LblNombre2.TabIndex = 39;
@@ -404,7 +404,7 @@
             this.ChkActivo.AutoSize = true;
             this.ChkActivo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkActivo.ForeColor = System.Drawing.Color.White;
-            this.ChkActivo.Location = new System.Drawing.Point(741, 92);
+            this.ChkActivo.Location = new System.Drawing.Point(747, 98);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.Size = new System.Drawing.Size(91, 26);
             this.ChkActivo.TabIndex = 4;
@@ -416,7 +416,7 @@
             this.LblDpto.AutoSize = true;
             this.LblDpto.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDpto.ForeColor = System.Drawing.Color.White;
-            this.LblDpto.Location = new System.Drawing.Point(319, 128);
+            this.LblDpto.Location = new System.Drawing.Point(325, 134);
             this.LblDpto.Name = "LblDpto";
             this.LblDpto.Size = new System.Drawing.Size(61, 22);
             this.LblDpto.TabIndex = 42;
@@ -427,7 +427,7 @@
             this.LblPuesto.AutoSize = true;
             this.LblPuesto.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPuesto.ForeColor = System.Drawing.Color.White;
-            this.LblPuesto.Location = new System.Drawing.Point(583, 128);
+            this.LblPuesto.Location = new System.Drawing.Point(589, 134);
             this.LblPuesto.Name = "LblPuesto";
             this.LblPuesto.Size = new System.Drawing.Size(76, 22);
             this.LblPuesto.TabIndex = 44;
@@ -438,7 +438,7 @@
             this.CbArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.CbArea.Font = new System.Drawing.Font("Century Gothic", 13F);
             this.CbArea.FormattingEnabled = true;
-            this.CbArea.Location = new System.Drawing.Point(113, 125);
+            this.CbArea.Location = new System.Drawing.Point(119, 131);
             this.CbArea.Name = "CbArea";
             this.CbArea.Size = new System.Drawing.Size(208, 29);
             this.CbArea.TabIndex = 5;
@@ -449,7 +449,7 @@
             this.CbDepto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.CbDepto.Font = new System.Drawing.Font("Century Gothic", 13F);
             this.CbDepto.FormattingEnabled = true;
-            this.CbDepto.Location = new System.Drawing.Point(376, 125);
+            this.CbDepto.Location = new System.Drawing.Point(382, 131);
             this.CbDepto.Name = "CbDepto";
             this.CbDepto.Size = new System.Drawing.Size(208, 29);
             this.CbDepto.TabIndex = 6;
@@ -460,7 +460,7 @@
             this.CbPuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.CbPuesto.Font = new System.Drawing.Font("Century Gothic", 13F);
             this.CbPuesto.FormattingEnabled = true;
-            this.CbPuesto.Location = new System.Drawing.Point(652, 125);
+            this.CbPuesto.Location = new System.Drawing.Point(658, 131);
             this.CbPuesto.Name = "CbPuesto";
             this.CbPuesto.Size = new System.Drawing.Size(180, 29);
             this.CbPuesto.TabIndex = 7;
@@ -471,7 +471,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(1064, 626);
+            this.ClientSize = new System.Drawing.Size(1080, 665);
             this.Controls.Add(this.CbPuesto);
             this.Controls.Add(this.CbDepto);
             this.Controls.Add(this.CbArea);

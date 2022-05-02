@@ -67,7 +67,7 @@ namespace Proyeccion.Principal
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void DgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)

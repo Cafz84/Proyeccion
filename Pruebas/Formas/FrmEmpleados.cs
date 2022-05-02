@@ -7,7 +7,7 @@ namespace Proyeccion.Principal
 {
     public partial class FrmEmpleados : Form
     {
-
+        #region Variables Privadas
         private ClsEmpleado ObjEmpleado = null;
         private ClsArea ObjArea = null;
         private ClsDepartamento ObjDepartamento= null;
@@ -17,8 +17,14 @@ namespace Proyeccion.Principal
         private readonly ClsDepartamentoLn ObjDepartamentoLn = new ClsDepartamentoLn();
         private readonly ClsPuestoLn ObjPuestoLn = new ClsPuestoLn();
 
-        public bool bArea, bPuesto, bDepartamento;
         private FrmEmpleados intance;
+        #endregion
+
+        #region Variables Publicas
+        public bool bArea, bPuesto, bDepartamento;
+        #endregion
+
+        #region Metodo Constructor
         public FrmEmpleados()
         {
             InitializeComponent();
@@ -34,7 +40,9 @@ namespace Proyeccion.Principal
             this.CbDepto.SelectedIndexChanged += new System.EventHandler(this.CbDepto_SelectedIndexChanged);
             intance = this;
         }
+        #endregion
 
+        #region Metodos Privados
         private void CargarListaEmpleados()
         {
             ObjEmpleado = new ClsEmpleado();
@@ -97,7 +105,9 @@ namespace Proyeccion.Principal
                 MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
 
+        #region Metodos Publicos
         public void CambiarSelectedIndexArea()
         {
             CbArea.SelectedIndex = -1;
@@ -112,15 +122,12 @@ namespace Proyeccion.Principal
         {
             CbPuesto.SelectedIndex = -1;
         }
+        #endregion
 
+        #region Acciones con los Botones
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void CbArea_DataSourceChanged(object sender, EventArgs e)
-        {
-            CbArea.SelectedIndex = -1;
+            this.Close();
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -146,6 +153,13 @@ namespace Proyeccion.Principal
                 ObjEmpleado.Active = 'N';
             }
         }
+        #endregion
+
+        #region Acciones con los ComboBox
+        private void CbArea_DataSourceChanged(object sender, EventArgs e)
+        {
+            CbArea.SelectedIndex = -1;
+        }
 
         private void CbArea_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -158,7 +172,7 @@ namespace Proyeccion.Principal
                 if (CbArea.Text.Equals("Nueva Area"))
                 {
                     FrmArea fmArea = new FrmArea(this);
-                    fmArea.Show();
+                    fmArea.ShowDialog();
                 }
                 else
                 {
@@ -187,8 +201,8 @@ namespace Proyeccion.Principal
             {
                 if (CbDepto.Text.Equals("Nuevo Departamento"))
                 {
-                    FrmArea fmArea = new FrmArea(this);
-                    fmArea.Show();
+                    FrmDepto fmDepto = new FrmDepto(this);
+                    fmDepto.ShowDialog();
                 }
                 else
                 {
@@ -208,7 +222,7 @@ namespace Proyeccion.Principal
                 if (CbPuesto.Text.Equals("Nuevo Puesto"))
                 {
                     FrmArea fmArea = new FrmArea(this);
-                    fmArea.Show();
+                    fmArea.ShowDialog();
                 }
                 else
                 {
@@ -216,6 +230,6 @@ namespace Proyeccion.Principal
                 }
             }
         }
-
+        #endregion
     }
 }

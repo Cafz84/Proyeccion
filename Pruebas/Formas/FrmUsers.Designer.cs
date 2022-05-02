@@ -81,7 +81,7 @@
             this.LblNombre.AutoSize = true;
             this.LblNombre.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNombre.ForeColor = System.Drawing.Color.White;
-            this.LblNombre.Location = new System.Drawing.Point(152, 65);
+            this.LblNombre.Location = new System.Drawing.Point(125, 65);
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(110, 22);
             this.LblNombre.TabIndex = 2;
@@ -92,7 +92,7 @@
             this.LblApellido.AutoSize = true;
             this.LblApellido.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblApellido.ForeColor = System.Drawing.Color.White;
-            this.LblApellido.Location = new System.Drawing.Point(152, 103);
+            this.LblApellido.Location = new System.Drawing.Point(125, 103);
             this.LblApellido.Name = "LblApellido";
             this.LblApellido.Size = new System.Drawing.Size(110, 22);
             this.LblApellido.TabIndex = 3;
@@ -103,7 +103,7 @@
             this.LblPuesto.AutoSize = true;
             this.LblPuesto.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPuesto.ForeColor = System.Drawing.Color.White;
-            this.LblPuesto.Location = new System.Drawing.Point(186, 140);
+            this.LblPuesto.Location = new System.Drawing.Point(159, 140);
             this.LblPuesto.Name = "LblPuesto";
             this.LblPuesto.Size = new System.Drawing.Size(76, 22);
             this.LblPuesto.TabIndex = 4;
@@ -114,7 +114,7 @@
             this.LblUsuario.AutoSize = true;
             this.LblUsuario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUsuario.ForeColor = System.Drawing.Color.White;
-            this.LblUsuario.Location = new System.Drawing.Point(182, 177);
+            this.LblUsuario.Location = new System.Drawing.Point(155, 177);
             this.LblUsuario.Name = "LblUsuario";
             this.LblUsuario.Size = new System.Drawing.Size(80, 22);
             this.LblUsuario.TabIndex = 5;
@@ -125,7 +125,7 @@
             this.Contraseña.AutoSize = true;
             this.Contraseña.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contraseña.ForeColor = System.Drawing.Color.White;
-            this.Contraseña.Location = new System.Drawing.Point(478, 177);
+            this.Contraseña.Location = new System.Drawing.Point(451, 177);
             this.Contraseña.Name = "Contraseña";
             this.Contraseña.Size = new System.Drawing.Size(124, 22);
             this.Contraseña.TabIndex = 6;
@@ -136,7 +136,7 @@
             this.LblEmail.AutoSize = true;
             this.LblEmail.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEmail.ForeColor = System.Drawing.Color.White;
-            this.LblEmail.Location = new System.Drawing.Point(201, 214);
+            this.LblEmail.Location = new System.Drawing.Point(174, 214);
             this.LblEmail.Name = "LblEmail";
             this.LblEmail.Size = new System.Drawing.Size(61, 22);
             this.LblEmail.TabIndex = 7;
@@ -146,7 +146,7 @@
             // 
             this.TxtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtNombre.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombre.Location = new System.Drawing.Point(259, 62);
+            this.TxtNombre.Location = new System.Drawing.Point(232, 62);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(578, 31);
             this.TxtNombre.TabIndex = 8;
@@ -155,7 +155,7 @@
             // 
             this.TxtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtApellido.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtApellido.Location = new System.Drawing.Point(259, 100);
+            this.TxtApellido.Location = new System.Drawing.Point(232, 100);
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(578, 31);
             this.TxtApellido.TabIndex = 9;
@@ -164,7 +164,7 @@
             // 
             this.TxtPuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtPuesto.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPuesto.Location = new System.Drawing.Point(259, 137);
+            this.TxtPuesto.Location = new System.Drawing.Point(232, 137);
             this.TxtPuesto.Name = "TxtPuesto";
             this.TxtPuesto.Size = new System.Drawing.Size(578, 31);
             this.TxtPuesto.TabIndex = 10;
@@ -173,7 +173,7 @@
             // 
             this.TxtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtUsuario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUsuario.Location = new System.Drawing.Point(259, 174);
+            this.TxtUsuario.Location = new System.Drawing.Point(232, 174);
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(213, 31);
             this.TxtUsuario.TabIndex = 11;
@@ -182,7 +182,7 @@
             // 
             this.TxtContrasena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtContrasena.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtContrasena.Location = new System.Drawing.Point(599, 174);
+            this.TxtContrasena.Location = new System.Drawing.Point(572, 174);
             this.TxtContrasena.Name = "TxtContrasena";
             this.TxtContrasena.Size = new System.Drawing.Size(238, 31);
             this.TxtContrasena.TabIndex = 12;
@@ -191,7 +191,7 @@
             // 
             this.TxtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtEmail.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtEmail.Location = new System.Drawing.Point(259, 211);
+            this.TxtEmail.Location = new System.Drawing.Point(232, 211);
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(578, 31);
             this.TxtEmail.TabIndex = 13;
@@ -290,9 +290,9 @@
             // 
             this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCerrar.Image")));
-            this.BtnCerrar.Location = new System.Drawing.Point(1051, 0);
+            this.BtnCerrar.Location = new System.Drawing.Point(1052, 4);
             this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(29, 30);
+            this.BtnCerrar.Size = new System.Drawing.Size(23, 23);
             this.BtnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnCerrar.TabIndex = 19;
             this.BtnCerrar.TabStop = false;

@@ -42,6 +42,8 @@
             this.BtnAgregar = new FontAwesome.Sharp.IconButton();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.LblTituloDepto = new System.Windows.Forms.Label();
+            this.ChkActivo = new System.Windows.Forms.CheckBox();
+            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDepto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +76,7 @@
             this.TxtDescripcion.Location = new System.Drawing.Point(128, 122);
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(404, 31);
-            this.TxtDescripcion.TabIndex = 49;
+            this.TxtDescripcion.TabIndex = 2;
             // 
             // LblDescripcion
             // 
@@ -94,7 +96,7 @@
             this.TxtNombre.Location = new System.Drawing.Point(128, 83);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(404, 31);
-            this.TxtNombre.TabIndex = 47;
+            this.TxtNombre.TabIndex = 1;
             // 
             // LblNombre
             // 
@@ -114,8 +116,10 @@
             this.Editar});
             this.DgvDepto.Location = new System.Drawing.Point(11, 165);
             this.DgvDepto.Name = "DgvDepto";
+            this.DgvDepto.ReadOnly = true;
             this.DgvDepto.Size = new System.Drawing.Size(658, 273);
             this.DgvDepto.TabIndex = 46;
+            this.DgvDepto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDepto_CellContentClick);
             // 
             // Editar
             // 
@@ -123,6 +127,7 @@
             this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
             this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             this.Editar.Width = 55;
             // 
             // BtnEliminar
@@ -143,6 +148,7 @@
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnActualizar
             // 
@@ -162,6 +168,7 @@
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnActualizar.UseVisualStyleBackColor = false;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnAgregar
             // 
@@ -181,6 +188,7 @@
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // BtnCerrar
             // 
@@ -192,17 +200,50 @@
             this.BtnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnCerrar.TabIndex = 42;
             this.BtnCerrar.TabStop = false;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // LblTituloDepto
             // 
             this.LblTituloDepto.AutoSize = true;
             this.LblTituloDepto.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTituloDepto.ForeColor = System.Drawing.Color.White;
-            this.LblTituloDepto.Location = new System.Drawing.Point(218, 0);
+            this.LblTituloDepto.Location = new System.Drawing.Point(218, -4);
             this.LblTituloDepto.Name = "LblTituloDepto";
             this.LblTituloDepto.Size = new System.Drawing.Size(250, 39);
             this.LblTituloDepto.TabIndex = 41;
             this.LblTituloDepto.Text = "Departamento";
+            // 
+            // ChkActivo
+            // 
+            this.ChkActivo.AutoSize = true;
+            this.ChkActivo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkActivo.ForeColor = System.Drawing.Color.White;
+            this.ChkActivo.Location = new System.Drawing.Point(128, 47);
+            this.ChkActivo.Name = "ChkActivo";
+            this.ChkActivo.Size = new System.Drawing.Size(91, 26);
+            this.ChkActivo.TabIndex = 54;
+            this.ChkActivo.Text = "Activo";
+            this.ChkActivo.UseVisualStyleBackColor = true;
+            // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.BackColor = System.Drawing.Color.BurlyWood;
+            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.BtnLimpiar.IconColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnLimpiar.IconSize = 30;
+            this.BtnLimpiar.Location = new System.Drawing.Point(401, 36);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(131, 37);
+            this.BtnLimpiar.TabIndex = 53;
+            this.BtnLimpiar.Text = "Limpiar";
+            this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // FrmDepto
             // 
@@ -210,6 +251,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(682, 450);
+            this.Controls.Add(this.ChkActivo);
+            this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.LblDeptoId);
             this.Controls.Add(this.LblIdDepto);
             this.Controls.Add(this.TxtDescripcion);
@@ -247,5 +290,7 @@
         private FontAwesome.Sharp.IconButton BtnAgregar;
         private System.Windows.Forms.PictureBox BtnCerrar;
         private System.Windows.Forms.Label LblTituloDepto;
+        private System.Windows.Forms.CheckBox ChkActivo;
+        private FontAwesome.Sharp.IconButton BtnLimpiar;
     }
 }

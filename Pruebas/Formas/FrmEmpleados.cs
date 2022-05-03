@@ -1,5 +1,6 @@
 ﻿using Entidades.Usuario;
 using LogicaNegocio.Usuario;
+using Pruebas.Formas;
 using System;
 using System.Windows.Forms;
 
@@ -130,6 +131,21 @@ namespace Proyeccion.Principal
             this.Close();
         }
 
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            LblEmpId.Text = "";
+            TxtNombre.Text = "";
+            TxtNombre2.Text = "";
+            TxtApellido.Text = "";
+            CbArea.SelectedIndex = -1;
+            CbDepto.SelectedIndex = -1;
+            CbPuesto.SelectedIndex = -1;
+            TxtTelCasa.Text = "";
+            TxtTelMovil.Text = "";
+            TxtEmail.Text = "";
+            ChkActivo.Checked = false;
+        }
+
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             ObjEmpleado = new ClsEmpleado()
@@ -221,8 +237,8 @@ namespace Proyeccion.Principal
             {
                 if (CbPuesto.Text.Equals("Nuevo Puesto"))
                 {
-                    FrmArea fmArea = new FrmArea(this);
-                    fmArea.ShowDialog();
+                    FrmPuesto fmPuesto = new FrmPuesto(this);
+                    fmPuesto.ShowDialog();
                 }
                 else
                 {

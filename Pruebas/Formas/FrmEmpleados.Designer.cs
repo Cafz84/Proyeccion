@@ -64,6 +64,7 @@
             this.CbArea = new System.Windows.Forms.ComboBox();
             this.CbDepto = new System.Windows.Forms.ComboBox();
             this.CbPuesto = new System.Windows.Forms.ComboBox();
+            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.TpEmpleados.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).BeginInit();
@@ -121,7 +122,7 @@
             this.TpDireccion.Location = new System.Drawing.Point(4, 26);
             this.TpDireccion.Name = "TpDireccion";
             this.TpDireccion.Padding = new System.Windows.Forms.Padding(3);
-            this.TpDireccion.Size = new System.Drawing.Size(1032, 343);
+            this.TpDireccion.Size = new System.Drawing.Size(1048, 376);
             this.TpDireccion.TabIndex = 1;
             this.TpDireccion.Text = "Dirección";
             this.TpDireccion.UseVisualStyleBackColor = true;
@@ -131,7 +132,7 @@
             this.TpGestion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpGestion.Location = new System.Drawing.Point(4, 26);
             this.TpGestion.Name = "TpGestion";
-            this.TpGestion.Size = new System.Drawing.Size(1032, 343);
+            this.TpGestion.Size = new System.Drawing.Size(1048, 376);
             this.TpGestion.TabIndex = 2;
             this.TpGestion.Text = "Gestión";
             this.TpGestion.UseVisualStyleBackColor = true;
@@ -141,7 +142,7 @@
             this.TpPersonal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpPersonal.Location = new System.Drawing.Point(4, 26);
             this.TpPersonal.Name = "TpPersonal";
-            this.TpPersonal.Size = new System.Drawing.Size(1032, 343);
+            this.TpPersonal.Size = new System.Drawing.Size(1048, 376);
             this.TpPersonal.TabIndex = 3;
             this.TpPersonal.Text = "Personal";
             this.TpPersonal.UseVisualStyleBackColor = true;
@@ -151,7 +152,7 @@
             this.TpFinanciar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpFinanciar.Location = new System.Drawing.Point(4, 26);
             this.TpFinanciar.Name = "TpFinanciar";
-            this.TpFinanciar.Size = new System.Drawing.Size(1032, 343);
+            this.TpFinanciar.Size = new System.Drawing.Size(1048, 376);
             this.TpFinanciar.TabIndex = 4;
             this.TpFinanciar.Text = "Financiar";
             this.TpFinanciar.UseVisualStyleBackColor = true;
@@ -161,7 +162,7 @@
             this.TpComentarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpComentarios.Location = new System.Drawing.Point(4, 26);
             this.TpComentarios.Name = "TpComentarios";
-            this.TpComentarios.Size = new System.Drawing.Size(1032, 343);
+            this.TpComentarios.Size = new System.Drawing.Size(1048, 376);
             this.TpComentarios.TabIndex = 5;
             this.TpComentarios.Text = "Comentarios";
             this.TpComentarios.UseVisualStyleBackColor = true;
@@ -200,7 +201,7 @@
             this.BtnEliminar.IconColor = System.Drawing.Color.White;
             this.BtnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEliminar.IconSize = 40;
-            this.BtnEliminar.Location = new System.Drawing.Point(844, 185);
+            this.BtnEliminar.Location = new System.Drawing.Point(844, 195);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(214, 51);
             this.BtnEliminar.TabIndex = 13;
@@ -219,7 +220,7 @@
             this.BtnActualizar.IconColor = System.Drawing.Color.White;
             this.BtnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnActualizar.IconSize = 40;
-            this.BtnActualizar.Location = new System.Drawing.Point(844, 120);
+            this.BtnActualizar.Location = new System.Drawing.Point(844, 141);
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Size = new System.Drawing.Size(214, 51);
             this.BtnActualizar.TabIndex = 12;
@@ -238,7 +239,7 @@
             this.BtnAgregar.IconColor = System.Drawing.Color.White;
             this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnAgregar.IconSize = 40;
-            this.BtnAgregar.Location = new System.Drawing.Point(844, 56);
+            this.BtnAgregar.Location = new System.Drawing.Point(844, 87);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(214, 51);
             this.BtnAgregar.TabIndex = 11;
@@ -427,7 +428,7 @@
             this.LblPuesto.AutoSize = true;
             this.LblPuesto.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPuesto.ForeColor = System.Drawing.Color.White;
-            this.LblPuesto.Location = new System.Drawing.Point(589, 134);
+            this.LblPuesto.Location = new System.Drawing.Point(588, 134);
             this.LblPuesto.Name = "LblPuesto";
             this.LblPuesto.Size = new System.Drawing.Size(76, 22);
             this.LblPuesto.TabIndex = 44;
@@ -466,12 +467,33 @@
             this.CbPuesto.TabIndex = 7;
             this.CbPuesto.DataSourceChanged += new System.EventHandler(this.CbPuesto_DataSourceChanged);
             // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.BackColor = System.Drawing.Color.BurlyWood;
+            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.BtnLimpiar.IconColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnLimpiar.IconSize = 40;
+            this.BtnLimpiar.Location = new System.Drawing.Point(844, 33);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(214, 51);
+            this.BtnLimpiar.TabIndex = 45;
+            this.BtnLimpiar.Text = "Limpiar";
+            this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            // 
             // FrmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1080, 665);
+            this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.CbPuesto);
             this.Controls.Add(this.CbDepto);
             this.Controls.Add(this.CbArea);
@@ -548,5 +570,6 @@
         private System.Windows.Forms.ComboBox CbArea;
         private System.Windows.Forms.ComboBox CbDepto;
         private System.Windows.Forms.ComboBox CbPuesto;
+        private FontAwesome.Sharp.IconButton BtnLimpiar;
     }
 }

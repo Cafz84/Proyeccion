@@ -34,7 +34,7 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
-            Ejecutar(ref ObjEmpleado);
+            ObtMaxId(ref ObjEmpleado);
             return ObjEmpleado.EmpID+1;
         }
         #endregion
@@ -157,7 +157,7 @@ namespace LogicaNegocio.Usuario
                     {
                         foreach (DataRow dr in ObjEmpleado.DtResultados.Rows)
                         {
-                            ObjEmpleado.UserId = Convert.ToByte(dr["empID"].ToString());
+                            ObjEmpleado.UserId = Convert.ToInt16(dr["empID"].ToString());
                             ObjEmpleado.FirstName = dr["firstName"].ToString();
                             ObjEmpleado.MiddleName = dr["middleName"].ToString();
                             ObjEmpleado.LastName = dr["lastName"].ToString();
@@ -208,9 +208,10 @@ namespace LogicaNegocio.Usuario
                     ObjEmpleado.DtResultados = ObjDataBase.DsResultados.Tables[0];
                     if (ObjEmpleado.DtResultados.Rows.Count == 1)
                     {
+                        //ObjEmpleado.EmpID = Convert.ToInt16(ObjEmpleado.DtResultados.Rows[0]["ID"].ToString());
                         foreach (DataRow dr in ObjEmpleado.DtResultados.Rows)
                         {
-                            ObjEmpleado.UserId = Convert.ToByte(dr["empID"].ToString());
+                            ObjEmpleado.EmpID = Convert.ToByte(dr["ID"].ToString());
                         }
                     }
                 }

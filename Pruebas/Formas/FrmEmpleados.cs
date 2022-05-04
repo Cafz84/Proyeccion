@@ -148,26 +148,45 @@ namespace Proyeccion.Principal
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            ObjEmpleado = new ClsEmpleado()
+            if (LblEmpId.Text == "")
             {
-                FirstName = TxtNombre.Text,
-                MiddleName = TxtNombre2.Text,
-                LastName = TxtApellido.Text,
-                JobTitle = CbArea.Text,
-                Dept = Convert.ToInt16(CbDepto.SelectedValue),
-                Position = Convert.ToInt16(CbPuesto.SelectedValue),
-                HomeTel = TxtTelCasa.Text,
-                Mobile = TxtTelMovil.Text,
-                Email = TxtEmail.Text
-            };
-            if (ChkActivo.Checked)
-            {
-                ObjEmpleado.Active = 'Y';
+                if (TxtNombre.Text == "")
+                {
+                    MessageBox.Show("Se requiere ingresar un nombre de empleado");
+                }
+                else
+                {
+                    ObjEmpleado = new ClsEmpleado()
+                    {
+                        FirstName = TxtNombre.Text,
+                        MiddleName = TxtNombre2.Text,
+                        LastName = TxtApellido.Text,
+                        JobTitle = CbArea.Text,
+                        Dept = Convert.ToInt16(CbDepto.SelectedValue),
+                        Position = Convert.ToInt16(CbPuesto.SelectedValue),
+                        HomeTel = TxtTelCasa.Text,
+                        Mobile = TxtTelMovil.Text,
+                        Email = TxtEmail.Text,
+                        Active = 'Y'
+                    };
+
+                    ObjEmpleadoLn.Create(ref ObjEmpleado);
+                    if (ObjEmpleado.MsjError == null)
+                    {
+                        MessageBox.Show("Alta exitosa");
+                        CargarListaEmpleados();
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjEmpleado.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             else
             {
-                ObjEmpleado.Active = 'N';
+                MessageBox.Show("No se puede generar alta si se selecciono para editar favor de limpiar primero");
             }
+            
         }
         #endregion
 

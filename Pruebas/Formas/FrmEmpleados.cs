@@ -57,8 +57,10 @@ namespace Proyeccion.Principal
                 MessageBox.Show(ObjEmpleado.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
 
-        private void CargarListaArea()
+        #region Metodos Publicos
+        public void CargarListaArea()
         {
             bArea = false;
             ObjArea = new ClsArea();
@@ -75,7 +77,7 @@ namespace Proyeccion.Principal
             }
         }
 
-        private void CargarListaDepto()
+        public void CargarListaDepto()
         {
             ObjDepartamento = new ClsDepartamento();
             ObjDepartamentoLn.CargarCbDepto(ref ObjDepartamento);
@@ -91,7 +93,7 @@ namespace Proyeccion.Principal
             }
         }
 
-        private void CargarListaPuesto()
+        public void CargarListaPuesto()
         {
             ObjPuesto = new ClsPuesto();
             ObjPuestoLn.CargarCbPuesto(ref ObjPuesto);
@@ -106,9 +108,7 @@ namespace Proyeccion.Principal
                 MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        #endregion
 
-        #region Metodos Publicos
         public void CambiarSelectedIndexArea()
         {
             CbArea.SelectedIndex = -1;
@@ -168,6 +168,7 @@ namespace Proyeccion.Principal
                         Mobile = TxtTelMovil.Text,
                         Email = TxtEmail.Text,
                         Active = 'Y'
+                        
                     };
 
                     ObjEmpleadoLn.Create(ref ObjEmpleado);
@@ -187,6 +188,97 @@ namespace Proyeccion.Principal
                 MessageBox.Show("No se puede generar alta si se selecciono para editar favor de limpiar primero");
             }
             
+        }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            if (LblEmpId.Text == "")
+            {
+                MessageBox.Show("Selecciona un dato para actualizar");
+            }
+            else
+            {
+                ObjEmpleado = new ClsEmpleado()
+                {
+                    EmpID = Convert.ToInt16(LblEmpId.Text),
+                    FirstName = TxtNombre.Text,
+                    MiddleName = TxtNombre2.Text,
+                    LastName = TxtApellido.Text,
+                    JobTitle = CbArea.Text,
+                    Dept = Convert.ToInt16(CbDepto.SelectedValue),
+                    Position = Convert.ToInt16(CbPuesto.SelectedValue),
+                    HomeTel = TxtTelCasa.Text,
+                    Mobile = TxtTelMovil.Text,
+                    Email = TxtEmail.Text
+                };
+                if (ChkActivo.Checked)
+                {
+                    ObjEmpleado.Active = 'Y';
+                }
+                else
+                {
+                    ObjEmpleado.Active = 'N';
+                }
+
+                ObjEmpleadoLn.Update(ref ObjEmpleado);
+                if (ObjEmpleado.MsjError == null)
+                {
+                    MessageBox.Show("El empleado fue actualizado correctamente");
+                    CargarListaEmpleados();
+                }
+                else
+                {
+                    MessageBox.Show(ObjEmpleado.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (LblEmpId.Text == "")
+            {
+                MessageBox.Show("Debes seleccionar un empleado para eliminar");
+            }
+            else
+            {
+                if (ChkActivo.Checked == false)
+                {
+                    ObjEmpleado = new ClsEmpleado()
+                    {
+                        EmpID = Convert.ToByte(LblEmpId.Text)
+                    };
+
+                    ObjEmpleadoLn.Delete(ref ObjEmpleado);
+                    if (ObjArea.MsjError == null)
+                    {
+                        MessageBox.Show("Baja exitosa");
+                        CargarListaEmpleados();
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    ObjEmpleado = new ClsEmpleado()
+                    {
+                        EmpID = Convert.ToByte(LblEmpId.Text),
+                        Active = 'N'
+                    };
+
+                    ObjEmpleadoLn.UpdateActivo(ref ObjEmpleado);
+                    if (ObjEmpleado.MsjError == null)
+                    {
+                        MessageBox.Show("El empleado fue desactivado");
+                        CargarListaEmpleados();
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjEmpleado.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
         #endregion
 
@@ -246,6 +338,21 @@ namespace Proyeccion.Principal
             }
         }
 
+        private void CbArea_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void CbDepto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void CbPuesto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled= true;
+        }
+
         private void CbPuesto_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (bPuesto == true)
@@ -263,6 +370,50 @@ namespace Proyeccion.Principal
                 {
                     bPuesto = true;
                 }
+            }
+        }
+        #endregion
+
+        #region Acciones con DataGridView
+        private void DgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                bArea = false;
+                bDepartamento = false;
+                bPuesto = false;
+                if (DgvEmpleados.Columns[e.ColumnIndex].Name == "Editar")
+                {
+                    ObjEmpleado = new ClsEmpleado()
+                    {
+                        EmpID = Convert.ToByte(DgvEmpleados.Rows[e.RowIndex].Cells["ID"].Value.ToString())
+                    };
+
+                    LblEmpId.Text = ObjEmpleado.EmpID.ToString();
+
+                    ObjEmpleadoLn.Read(ref ObjEmpleado);
+                    TxtNombre.Text = ObjEmpleado.FirstName;
+                    TxtNombre2.Text = ObjEmpleado.MiddleName;
+                    TxtApellido.Text = ObjEmpleado.LastName;
+                    CbArea.SelectedValue = ObjEmpleado.AreaId;
+                    CbDepto.SelectedValue = ObjEmpleado.Dept;
+                    CbPuesto.SelectedValue = ObjEmpleado.Position;
+                    TxtTelCasa.Text = ObjEmpleado.HomeTel;
+                    TxtTelMovil.Text = ObjEmpleado.Mobile;
+                    TxtEmail.Text = ObjEmpleado.Email;
+                    if (ObjEmpleado.Active == 'Y')
+                    {
+                        ChkActivo.Checked = true;
+                    }
+                    else
+                    {
+                        ChkActivo.Checked = false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
         #endregion

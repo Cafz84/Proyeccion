@@ -67,7 +67,7 @@ namespace Proyeccion.Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Selecciona un valor correcto");
+                MessageBox.Show(ex.ToString());
             }
         }
         #endregion
@@ -77,6 +77,7 @@ namespace Proyeccion.Principal
         {
             this.Close();
             FrmEmpleadosHandler.bArea = false;
+            FrmEmpleadosHandler.CargarListaArea();
             FrmEmpleadosHandler.CambiarSelectedIndexArea();
         }
 
@@ -96,6 +97,10 @@ namespace Proyeccion.Principal
                 {
                     MessageBox.Show("Alta exitosa");
                     CargarListaArea();
+                    LblAreaId.Text = "";
+                    TxtNombre.Text = "";
+                    TxtDescripcion.Text = "";
+                    ChkActivo.Checked = false;
                 }
                 else
                 {
@@ -108,7 +113,6 @@ namespace Proyeccion.Principal
             }
         }
 
-        
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
             if (LblAreaId.Text == "")
@@ -166,6 +170,10 @@ namespace Proyeccion.Principal
                     {
                         MessageBox.Show("Baja exitosa");
                         CargarListaArea();
+                        LblAreaId.Text = "";
+                        TxtNombre.Text = "";
+                        TxtDescripcion.Text = "";
+                        ChkActivo.Checked = false;
                     }
                     else
                     {
@@ -185,6 +193,10 @@ namespace Proyeccion.Principal
                     {
                         MessageBox.Show("La Area fue desactivada");
                         CargarListaArea();
+                        LblAreaId.Text = "";
+                        TxtNombre.Text = "";
+                        TxtDescripcion.Text = "";
+                        ChkActivo.Checked = false;
                     }
                     else
                     {

@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Data;
 
 namespace Entidades.Usuario
@@ -9,7 +9,7 @@ namespace Entidades.Usuario
         #region Atributos privados
        
         private int _empID, _type, _manager, _userId, _salesPrson, _status, _termReason, _position, _atcEntry, _vacPreYear, _vacCurYear,
-            _logInstanc, _sTDCode, _bPLId;
+            _logInstanc, _sTDCode, _bPLId, _areaId;
         private short _dept, _branch, _nChildren, _userSing, _userSing2;
         private string _lastName, _firstName, _middleName, _jobTitle, _workStreet, _workCity, _workCounty, _workBlock, _workZip, _workContr,
             _workState, _officeTel, _officeExt, _mobile, _pager, _homeTel, _fax, _email, _bankCode, _bankBranch, _bankBranNo, _bankAcount,
@@ -19,10 +19,10 @@ namespace Entidades.Usuario
             _taxONum, _heaInsName, _heaInsCode, _heaInsType, _sInsurNum, _statusOfP, _statusOfE, _bCodeDateV, _fNameSP, _surnameSP, _persGroup,
             _jTCode, _extEmpNo, _birthPlace, _pymMeth, _exemptCurr, _addiCurr, _fatherName, _cPF, _cRC, _uFCRC, _iDType, _manualNUM, _passIssuer,
             _qualCode, _bPLink, _u_ARGNS_OperCode, _u_ARGNS_Shift;
-        private char _sex, _salaryUnit, _empCostUnt, _martStatus, _dispMidNam, _namePos, _dispComma, debBAOwner, _contResp, _repLegal, _dirfDeclar,
+        private char? _sex, _salaryUnit, _empCostUnt, _martStatus, _dispMidNam, _namePos, _dispComma, debBAOwner, _contResp, _repLegal, _dirfDeclar,
             _active, _pRWebAccss, _prePRWeb;
-        private DateTime _startDate, _termDate, _birthDate, _passportEx, _updateDate, _passIssue;
-        private double _salary, _emplCost, _exemptAmnt, _addiAmnt, _sueldoBase, _sueldoLimite;
+        private DateTime? _startDate, _termDate, _birthDate, _passportEx, _updateDate, _passIssue;
+        private decimal _salary, _emplCost, _exemptAmnt, _addiAmnt, _sueldoBase, _sueldoLimite;
 
         //Atributos de manejo de la base de datos
         private string _msjError, _valorEscalar;
@@ -133,35 +133,36 @@ namespace Entidades.Usuario
         public string BPLink { get => _bPLink; set => _bPLink = value; }
         public string U_ARGNS_OperCode { get => _u_ARGNS_OperCode; set => _u_ARGNS_OperCode = value; }
         public string U_ARGNS_Shift { get => _u_ARGNS_Shift; set => _u_ARGNS_Shift = value; }
-        public char Sex { get => _sex; set => _sex = value; }
-        public char SalaryUnit { get => _salaryUnit; set => _salaryUnit = value; }
-        public char EmpCostUnt { get => _empCostUnt; set => _empCostUnt = value; }
-        public char MartStatus { get => _martStatus; set => _martStatus = value; }
-        public char DispMidNam { get => _dispMidNam; set => _dispMidNam = value; }
-        public char NamePos { get => _namePos; set => _namePos = value; }
-        public char DispComma { get => _dispComma; set => _dispComma = value; }
-        public char DebBAOwner { get => debBAOwner; set => debBAOwner = value; }
-        public char ContResp { get => _contResp; set => _contResp = value; }
-        public char RepLegal { get => _repLegal; set => _repLegal = value; }
-        public char DirfDeclar { get => _dirfDeclar; set => _dirfDeclar = value; }
-        public char Active { get => _active; set => _active = value; }
-        public char PRWebAccss { get => _pRWebAccss; set => _pRWebAccss = value; }
-        public char PrePRWeb { get => _prePRWeb; set => _prePRWeb = value; }
-        public DateTime StartDate { get => _startDate; set => _startDate = value; }
-        public DateTime TermDate { get => _termDate; set => _termDate = value; }
-        public DateTime BirthDate { get => _birthDate; set => _birthDate = value; }
-        public DateTime PassportEx { get => _passportEx; set => _passportEx = value; }
-        public DateTime UpdateDate { get => _updateDate; set => _updateDate = value; }
-        public DateTime PassIssue { get => _passIssue; set => _passIssue = value; }
-        public double Salary { get => _salary; set => _salary = value; }
-        public double EmplCost { get => _emplCost; set => _emplCost = value; }
-        public double ExemptAmnt { get => _exemptAmnt; set => _exemptAmnt = value; }
-        public double AddiAmnt { get => _addiAmnt; set => _addiAmnt = value; }
+        public char? Sex { get => _sex; set => _sex = value; }
+        public char? SalaryUnit { get => _salaryUnit; set => _salaryUnit = value; }
+        public char? EmpCostUnt { get => _empCostUnt; set => _empCostUnt = value; }
+        public char? MartStatus { get => _martStatus; set => _martStatus = value; }
+        public char? DispMidNam { get => _dispMidNam; set => _dispMidNam = value; }
+        public char? NamePos { get => _namePos; set => _namePos = value; }
+        public char? DispComma { get => _dispComma; set => _dispComma = value; }
+        public char? DebBAOwner { get => debBAOwner; set => debBAOwner = value; }
+        public char? ContResp { get => _contResp; set => _contResp = value; }
+        public char? RepLegal { get => _repLegal; set => _repLegal = value; }
+        public char? DirfDeclar { get => _dirfDeclar; set => _dirfDeclar = value; }
+        public char? Active { get => _active; set => _active = value; }
+        public char? PRWebAccss { get => _pRWebAccss; set => _pRWebAccss = value; }
+        public char? PrePRWeb { get => _prePRWeb; set => _prePRWeb = value; }
+        public DateTime? StartDate { get => _startDate; set => _startDate = value; }
+        public DateTime? TermDate { get => _termDate; set => _termDate = value; }
+        public DateTime? BirthDate { get => _birthDate; set => _birthDate = value; }
+        public DateTime? PassportEx { get => _passportEx; set => _passportEx = value; }
+        public DateTime? UpdateDate { get => _updateDate; set => _updateDate = value; }
+        public DateTime? PassIssue { get => _passIssue; set => _passIssue = value; }
+        public decimal Salary { get => _salary; set => _salary = value; }
+        public decimal EmplCost { get => _emplCost; set => _emplCost = value; }
+        public decimal ExemptAmnt { get => _exemptAmnt; set => _exemptAmnt = value; }
+        public decimal AddiAmnt { get => _addiAmnt; set => _addiAmnt = value; }
         public string MsjError { get => _msjError; set => _msjError = value; }
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
-        public double SueldoBase { get => _sueldoBase; set => _sueldoBase = value; }
-        public double SueldoLimite { get => _sueldoLimite; set => _sueldoLimite = value; }
+        public decimal SueldoBase { get => _sueldoBase; set => _sueldoBase = value; }
+        public decimal SueldoLimite { get => _sueldoLimite; set => _sueldoLimite = value; }
+        public int AreaId { get => _areaId; set => _areaId = value; }
 
         #endregion
     }

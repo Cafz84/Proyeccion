@@ -107,6 +107,7 @@
             this.DgvEmpleados.Name = "DgvEmpleados";
             this.DgvEmpleados.Size = new System.Drawing.Size(1048, 376);
             this.DgvEmpleados.TabIndex = 0;
+            this.DgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmpleados_CellContentClick);
             // 
             // Editar
             // 
@@ -208,6 +209,7 @@
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnActualizar
             // 
@@ -227,6 +229,7 @@
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnActualizar.UseVisualStyleBackColor = false;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnAgregar
             // 
@@ -444,6 +447,7 @@
             this.CbArea.Size = new System.Drawing.Size(208, 29);
             this.CbArea.TabIndex = 5;
             this.CbArea.DataSourceChanged += new System.EventHandler(this.CbArea_DataSourceChanged);
+            this.CbArea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbArea_KeyPress);
             // 
             // CbDepto
             // 
@@ -455,6 +459,7 @@
             this.CbDepto.Size = new System.Drawing.Size(208, 29);
             this.CbDepto.TabIndex = 6;
             this.CbDepto.DataSourceChanged += new System.EventHandler(this.CbDepto_DataSourceChanged);
+            this.CbDepto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbDepto_KeyPress);
             // 
             // CbPuesto
             // 
@@ -466,6 +471,7 @@
             this.CbPuesto.Size = new System.Drawing.Size(180, 29);
             this.CbPuesto.TabIndex = 7;
             this.CbPuesto.DataSourceChanged += new System.EventHandler(this.CbPuesto_DataSourceChanged);
+            this.CbPuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbPuesto_KeyPress);
             // 
             // BtnLimpiar
             // 

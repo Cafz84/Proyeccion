@@ -133,7 +133,7 @@ namespace AccesoDatos.DataBase
                             TipoDatoSQL = SqlDbType.SmallDateTime;
                             break;
                         case "14":
-                            TipoDatoSQL = SqlDbType.Date;
+                            TipoDatoSQL = SqlDbType.DateTime;
                             break;
                         case "15":
                             TipoDatoSQL = SqlDbType.Char;
@@ -153,7 +153,7 @@ namespace AccesoDatos.DataBase
 
                     if (ObjDataBase.Scalar)
                     {
-                        if (dt[2].ToString().Equals(string.Empty))
+                        if (string.IsNullOrEmpty(dt[2].ToString()))
                         {
                             ObjDataBase.ObjSqlCommand.Parameters.Add(dt[0].ToString(), TipoDatoSQL).Value= DBNull.Value;
                         }
@@ -164,7 +164,7 @@ namespace AccesoDatos.DataBase
                     }
                     else
                     {
-                        if (dt[2].ToString().Equals(string.Empty))
+                        if (string.IsNullOrEmpty(dt[2].ToString()))
                         {
                             ObjDataBase.ObjSqlDataAdapter.SelectCommand.Parameters.Add(dt[0].ToString(), TipoDatoSQL).Value = DBNull.Value;
                         }

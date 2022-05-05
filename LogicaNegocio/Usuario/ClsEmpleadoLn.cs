@@ -42,6 +42,7 @@ namespace LogicaNegocio.Usuario
         #region CRUD Empleado
         public void Create(ref ClsEmpleado ObjEmpleado)
         { 
+            int spEmpIdMax = EmpId(ref ObjEmpleado);
             ObjDataBase = new ClsDataBase()
             {
                 NombreTabla = "OHEM",
@@ -49,7 +50,7 @@ namespace LogicaNegocio.Usuario
                 Scalar = true
             };
 
-            ObjDataBase.DtParametros.Rows.Add(@"@empID", "4", EmpId(ref ObjEmpleado));
+            ObjDataBase.DtParametros.Rows.Add(@"@empID", "4", spEmpIdMax);
             ObjDataBase.DtParametros.Rows.Add(@"@middleName", "18", ObjEmpleado.MiddleName);
             ObjDataBase.DtParametros.Rows.Add(@"@firstName", "18", ObjEmpleado.FirstName);
             ObjDataBase.DtParametros.Rows.Add(@"@lastName", "18", ObjEmpleado.LastName);
@@ -57,7 +58,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@govID", "18", ObjEmpleado.GovID);
             ObjDataBase.DtParametros.Rows.Add(@"@birthDate", "14", ObjEmpleado.BirthDate);
             ObjDataBase.DtParametros.Rows.Add(@"@jobTitle", "18", ObjEmpleado.JobTitle);
-            ObjDataBase.DtParametros.Rows.Add(@"@type", "4", ObjEmpleado.Type);
+            ObjDataBase.DtParametros.Rows.Add(@"@position", "4", ObjEmpleado.Position);
             ObjDataBase.DtParametros.Rows.Add(@"@dept", "3", ObjEmpleado.Dept);
             ObjDataBase.DtParametros.Rows.Add(@"@mobile", "18", ObjEmpleado.Mobile);
             ObjDataBase.DtParametros.Rows.Add(@"@homeTel", "18", ObjEmpleado.HomeTel);
@@ -67,76 +68,98 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@homeZip", "18", ObjEmpleado.HomeZip);
             ObjDataBase.DtParametros.Rows.Add(@"@homeCity", "18", ObjEmpleado.HomeCity);
             ObjDataBase.DtParametros.Rows.Add(@"@homeCounty", "18", ObjEmpleado.HomeCounty);
-            ObjDataBase.DtParametros.Rows.Add(@"@homeConntr", "18", ObjEmpleado.HomeCountr);
+            ObjDataBase.DtParametros.Rows.Add(@"@homeCountr", "18", ObjEmpleado.HomeCountr);
             ObjDataBase.DtParametros.Rows.Add(@"@homeState", "18", ObjEmpleado.HomeState);
             ObjDataBase.DtParametros.Rows.Add(@"@UpdateDate", "14", ObjEmpleado.UpdateDate);
-            ObjDataBase.DtParametros.Rows.Add(@"@salary", "6", ObjEmpleado.Salary);
+            ObjDataBase.DtParametros.Rows.Add(@"@salary", "8", ObjEmpleado.Salary);
             ObjDataBase.DtParametros.Rows.Add(@"@salaryUnit", "15", ObjEmpleado.SalaryUnit);
             ObjDataBase.DtParametros.Rows.Add(@"@startDate", "14", ObjEmpleado.StartDate);
-            ObjDataBase.DtParametros.Rows.Add(@"@sueldoBase", "6", ObjEmpleado.SueldoBase);
-            ObjDataBase.DtParametros.Rows.Add(@"@sueldoLimite", "6", ObjEmpleado.SueldoLimite);
+            ObjDataBase.DtParametros.Rows.Add(@"@sueldoBase", "8", ObjEmpleado.SueldoBase);
+            ObjDataBase.DtParametros.Rows.Add(@"@sueldoLimite", "8", ObjEmpleado.SueldoLimite);
+            ObjDataBase.DtParametros.Rows.Add(@"@Active", "15", ObjEmpleado.Active);
 
             Ejecutar(ref ObjEmpleado);
         }
 
-        /*public void Read(ref ClsUser ObjUser)
+        public void Read(ref ClsEmpleado ObjEmpleado)
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreTabla = "Users",
-                NombreSP = "[SCH_GENERAL].[SP_Users_Read]",
+                NombreTabla = "OHEM",
+                NombreSP = "[dbo].[SP_OHEM_Read]",
                 Scalar = false
             };
 
-            ObjDataBase.DtParametros.Rows.Add(@"@UserId", "4", ObjUser.UserId);
-            Ejecutar(ref ObjUser);
+            ObjDataBase.DtParametros.Rows.Add(@"@empID", "4", ObjEmpleado.EmpID);
+            Ejecutar(ref ObjEmpleado);
         }
 
-        public void ReadLogin(ref ClsUser ObjUser)
+        public void Update(ref ClsEmpleado ObjEmpleado)
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreTabla = "Users",
-                NombreSP = "[SCH_GENERAL].[SP_Users_Read_Login]",
-                Scalar = false
-            };
-
-            ObjDataBase.DtParametros.Rows.Add(@"@LoginName", "18", ObjUser.LoginName);
-            ObjDataBase.DtParametros.Rows.Add(@"@Password", "18", ObjUser.Password);
-            Ejecutar(ref ObjUser);
-        }
-
-        public void Update(ref ClsUser ObjUser)
-        {
-            ObjDataBase = new ClsDataBase()
-            {
-                NombreTabla = "Users",
-                NombreSP = "[SCH_GENERAL].[SP_Users_Update]",
+                NombreTabla = "OHEM",
+                NombreSP = "[dbo].[SP_OHEM_Update]",
                 Scalar = true
             };
 
-            ObjDataBase.DtParametros.Rows.Add(@"@UserId", "4", ObjUser.UserId);
-            ObjDataBase.DtParametros.Rows.Add(@"@FirstName", "18", ObjUser.FirstName);
-            ObjDataBase.DtParametros.Rows.Add(@"@LastName", "18", ObjUser.LastName);
-            ObjDataBase.DtParametros.Rows.Add(@"@Position", "18", ObjUser.Position);
-            ObjDataBase.DtParametros.Rows.Add(@"@LoginName", "18", ObjUser.LoginName);
-            ObjDataBase.DtParametros.Rows.Add(@"@Password", "18", ObjUser.Password);
-            ObjDataBase.DtParametros.Rows.Add(@"@Email", "18", ObjUser.Email);
-            Ejecutar(ref ObjUser);
+            ObjDataBase.DtParametros.Rows.Add(@"@empID", "4", ObjEmpleado.EmpID);
+            ObjDataBase.DtParametros.Rows.Add(@"@middleName", "18", ObjEmpleado.MiddleName);
+            ObjDataBase.DtParametros.Rows.Add(@"@firstName", "18", ObjEmpleado.FirstName);
+            ObjDataBase.DtParametros.Rows.Add(@"@lastName", "18", ObjEmpleado.LastName);
+            ObjDataBase.DtParametros.Rows.Add(@"@sex", "15", ObjEmpleado.Sex);
+            ObjDataBase.DtParametros.Rows.Add(@"@govID", "18", ObjEmpleado.GovID);
+            ObjDataBase.DtParametros.Rows.Add(@"@birthDate", "14", ObjEmpleado.BirthDate);
+            ObjDataBase.DtParametros.Rows.Add(@"@jobTitle", "18", ObjEmpleado.JobTitle);
+            ObjDataBase.DtParametros.Rows.Add(@"@position", "4", ObjEmpleado.Position);
+            ObjDataBase.DtParametros.Rows.Add(@"@dept", "3", ObjEmpleado.Dept);
+            ObjDataBase.DtParametros.Rows.Add(@"@mobile", "18", ObjEmpleado.Mobile);
+            ObjDataBase.DtParametros.Rows.Add(@"@homeTel", "18", ObjEmpleado.HomeTel);
+            ObjDataBase.DtParametros.Rows.Add(@"@email", "18", ObjEmpleado.Email);
+            ObjDataBase.DtParametros.Rows.Add(@"@homeStreet", "18", ObjEmpleado.HomeStreet);
+            ObjDataBase.DtParametros.Rows.Add(@"@homeBlock", "18", ObjEmpleado.HomeBlock);
+            ObjDataBase.DtParametros.Rows.Add(@"@homeZip", "18", ObjEmpleado.HomeZip);
+            ObjDataBase.DtParametros.Rows.Add(@"@homeCity", "18", ObjEmpleado.HomeCity);
+            ObjDataBase.DtParametros.Rows.Add(@"@homeCounty", "18", ObjEmpleado.HomeCounty);
+            ObjDataBase.DtParametros.Rows.Add(@"@homeCountr", "18", ObjEmpleado.HomeCountr);
+            ObjDataBase.DtParametros.Rows.Add(@"@homeState", "18", ObjEmpleado.HomeState);
+            ObjDataBase.DtParametros.Rows.Add(@"@UpdateDate", "14", ObjEmpleado.UpdateDate);
+            ObjDataBase.DtParametros.Rows.Add(@"@salary", "8", ObjEmpleado.Salary);
+            ObjDataBase.DtParametros.Rows.Add(@"@salaryUnit", "15", ObjEmpleado.SalaryUnit);
+            ObjDataBase.DtParametros.Rows.Add(@"@startDate", "14", ObjEmpleado.StartDate);
+            ObjDataBase.DtParametros.Rows.Add(@"@sueldoBase", "8", ObjEmpleado.SueldoBase);
+            ObjDataBase.DtParametros.Rows.Add(@"@sueldoLimite", "8", ObjEmpleado.SueldoLimite);
+            ObjDataBase.DtParametros.Rows.Add(@"@Active", "15", ObjEmpleado.Active);
+            Ejecutar(ref ObjEmpleado);
         }
 
-        public void Delete(ref ClsUser ObjUser)
+        public void UpdateActivo(ref ClsEmpleado ObjEmpleado)
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreTabla = "Users",
-                NombreSP = "[SCH_GENERAL].[SP_Users_Delete]",
+                NombreTabla = "OHEM",
+                NombreSP = "dbo.SP_OHEM_UpdateActivo",
                 Scalar = true
             };
 
-            ObjDataBase.DtParametros.Rows.Add(@"@UserId", "4", ObjUser.UserId);
-            Ejecutar(ref ObjUser);
-        }*/
+            ObjDataBase.DtParametros.Rows.Add(@"@empId", "4", ObjEmpleado.EmpID);
+            ObjDataBase.DtParametros.Rows.Add(@"@Active", "15", ObjEmpleado.Active);
+
+            Ejecutar(ref ObjEmpleado);
+        }
+
+        public void Delete(ref ClsEmpleado ObjEmpleado)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "OHEM",
+                NombreSP = "[dbo].[SP_OHEM_Delete]",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@empId", "4", ObjEmpleado.EmpID);
+            Ejecutar(ref ObjEmpleado);
+        }
         #endregion
 
         #region Metodos privados
@@ -157,32 +180,138 @@ namespace LogicaNegocio.Usuario
                     {
                         foreach (DataRow dr in ObjEmpleado.DtResultados.Rows)
                         {
-                            ObjEmpleado.UserId = Convert.ToInt16(dr["empID"].ToString());
+                            ObjEmpleado.EmpID = Convert.ToInt16(dr["empID"].ToString());
                             ObjEmpleado.FirstName = dr["firstName"].ToString();
-                            ObjEmpleado.MiddleName = dr["middleName"].ToString();
-                            ObjEmpleado.LastName = dr["lastName"].ToString();
-                            ObjEmpleado.Sex = Convert.ToChar(dr["sex"].ToString());
-                            ObjEmpleado.GovID = dr["govID"].ToString();
-                            ObjEmpleado.BirthDate = Convert.ToDateTime(dr["birthDate"].ToString());
-                            ObjEmpleado.JobTitle = dr["jobTitle"].ToString();
-                            ObjEmpleado.Type = Convert.ToByte(dr["type"].ToString());
-                            ObjEmpleado.Dept = Convert.ToByte(dr["dept"].ToString());
-                            ObjEmpleado.Mobile = dr["mobile"].ToString();
-                            ObjEmpleado.HomeTel = dr["homeTel"].ToString();
-                            ObjEmpleado.Email = dr["email"].ToString();
-                            ObjEmpleado.HomeStreet = dr["homeStreet"].ToString();
-                            ObjEmpleado.HomeBlock = dr["homeBlock"].ToString();
-                            ObjEmpleado.HomeZip = dr["homeZip"].ToString();
-                            ObjEmpleado.HomeCity = dr["homeCity"].ToString();
-                            ObjEmpleado.HomeCounty = dr["homeCounty"].ToString();
-                            ObjEmpleado.HomeCountr = dr["homeCountr"].ToString();
-                            ObjEmpleado.HomeState = dr["homeState"].ToString();
-                            ObjEmpleado.UpdateDate = Convert.ToDateTime(dr["UpdateDate"].ToString());
-                            ObjEmpleado.Salary = Convert.ToDouble(dr["salary"].ToString());
-                            ObjEmpleado.SalaryUnit = Convert.ToChar(dr["salaryUnit"].ToString());
-                            ObjEmpleado.StartDate = Convert.ToDateTime(dr["startDate"].ToString());
-                            ObjEmpleado.SueldoBase = Convert.ToDouble(dr["sueldoBase"].ToString());
-                            ObjEmpleado.SueldoLimite = Convert.ToDouble(dr["sueldoLimite"].ToString());
+
+                            if (dr["middleName"] == DBNull.Value)
+                                ObjEmpleado.MiddleName = "";
+                            else
+                                ObjEmpleado.MiddleName = dr["middleName"].ToString();
+
+                            if (dr["lastName"] == DBNull.Value)
+                                ObjEmpleado.LastName = "";
+                            else
+                                ObjEmpleado.LastName = dr["lastName"].ToString();
+
+                            if (dr["sex"] == DBNull.Value)
+                                ObjEmpleado.Sex = null;
+                            else
+                                ObjEmpleado.Sex = Convert.ToChar(dr["sex"].ToString());
+
+                            if (dr["govID"] == DBNull.Value)
+                                ObjEmpleado.GovID = "";
+                            else
+                                ObjEmpleado.GovID = dr["govID"].ToString();
+
+                            if (dr["jobTitle"] == DBNull.Value)
+                                ObjEmpleado.JobTitle = "";
+                            else
+                                ObjEmpleado.JobTitle = dr["jobTitle"].ToString();
+
+                            if (dr["dept"] == DBNull.Value)
+                                ObjEmpleado.Dept = -1;
+                            else
+                                ObjEmpleado.Dept = Convert.ToInt16(dr["dept"].ToString());
+
+                            if (dr["mobile"] == DBNull.Value)
+                                ObjEmpleado.Mobile = "";
+                            else
+                                ObjEmpleado.Mobile = dr["mobile"].ToString();
+
+                            if (dr["homeTel"] == DBNull.Value)
+                                ObjEmpleado.HomeTel = "";
+                            else
+                                ObjEmpleado.HomeTel = dr["homeTel"].ToString();
+
+                            if (dr["email"] == DBNull.Value)
+                                ObjEmpleado.Email = "";
+                            else
+                                ObjEmpleado.Email = dr["email"].ToString();
+
+                            if (dr["homeStreet"] == DBNull.Value)
+                                ObjEmpleado.HomeStreet = "";
+                            else
+                                ObjEmpleado.HomeStreet = dr["homeStreet"].ToString();
+
+                            if (dr["homeBlock"] == DBNull.Value)
+                                ObjEmpleado.HomeBlock = "";
+                            else
+                                ObjEmpleado.HomeBlock = dr["homeBlock"].ToString();
+
+                            if (dr["homeZip"] == DBNull.Value)
+                                ObjEmpleado.HomeZip = "";
+                            else
+                                ObjEmpleado.HomeZip = dr["homeZip"].ToString();
+
+                            if (dr["homeCity"] == DBNull.Value)
+                                ObjEmpleado.HomeCity = "";
+                            else
+                                ObjEmpleado.HomeCity = dr["homeCity"].ToString();
+
+                            if (dr["homeCounty"] == DBNull.Value)
+                                ObjEmpleado.HomeCounty = "";
+                            else
+                                ObjEmpleado.HomeCounty = dr["homeCounty"].ToString();
+
+                            if (dr["homeCountr"] == DBNull.Value)
+                                ObjEmpleado.HomeCountr = "";
+                            else
+                                ObjEmpleado.HomeCountr = dr["homeCountr"].ToString();
+
+                            if (dr["homeState"] == DBNull.Value)
+                                ObjEmpleado.HomeState = "";
+                            else
+                                ObjEmpleado.HomeState = dr["homeState"].ToString();
+
+                            if (dr["UpdateDate"] == DBNull.Value)
+                                ObjEmpleado.UpdateDate = null;
+                            else
+                                ObjEmpleado.UpdateDate = Convert.ToDateTime(dr["UpdateDate"].ToString());
+
+                            if (dr["salary"] == DBNull.Value)
+                                ObjEmpleado.Salary = 0;
+                            else
+                                ObjEmpleado.Salary = Convert.ToDecimal(dr["salary"].ToString());
+
+                            if (dr["salaryUnit"] == DBNull.Value)
+                                ObjEmpleado.SalaryUnit = null;
+                            else
+                                ObjEmpleado.SalaryUnit = Convert.ToChar(dr["salaryUnit"].ToString());
+
+                            if (dr["sueldoBase"] == DBNull.Value)
+                                ObjEmpleado.SueldoBase = 0;
+                            else
+                                ObjEmpleado.SueldoBase = Convert.ToDecimal(dr["sueldoBase"].ToString());
+
+                            if (dr["sueldoLimite"] == DBNull.Value)
+                                ObjEmpleado.SueldoLimite = 0;
+                            else
+                                ObjEmpleado.SueldoLimite = Convert.ToDecimal(dr["sueldoLimite"].ToString());
+
+                            if (dr["birthDate"] == DBNull.Value)
+                                ObjEmpleado.BirthDate = null;
+                            else 
+                                ObjEmpleado.BirthDate = Convert.ToDateTime(dr["birthDate"].ToString());
+                            
+                            if (dr["position"] == DBNull.Value)
+                                ObjEmpleado.Position = -1;
+                            else
+                                ObjEmpleado.Position = Convert.ToInt16(dr["position"].ToString());
+
+                            if (dr["AreaId"] == DBNull.Value)
+                                ObjEmpleado.AreaId = -1;
+                            else
+                                ObjEmpleado.AreaId = Convert.ToByte(dr["AreaId"].ToString());
+
+                            if (dr["startDate"] == DBNull.Value)
+                                ObjEmpleado.StartDate = null;
+                            else
+                                ObjEmpleado.StartDate = Convert.ToDateTime(dr["startDate"].ToString());
+
+                            if (dr["Active"] == DBNull.Value)
+                                ObjEmpleado.Active = 'N';
+                            else
+                                ObjEmpleado.Active = Convert.ToChar(dr["Active"].ToString());
                         }
                     }
                 }

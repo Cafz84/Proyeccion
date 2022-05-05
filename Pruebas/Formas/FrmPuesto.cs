@@ -71,6 +71,10 @@ namespace Pruebas.Formas
                 {
                     MessageBox.Show("Alta exitosa");
                     CargarListaPuesto();
+                    LblPuestoId.Text = "";
+                    TxtNombre.Text = "";
+                    TxtDescripcion.Text = "";
+                    ChkActivo.Checked = false;
                 }
                 else
                 {
@@ -132,6 +136,10 @@ namespace Pruebas.Formas
                     {
                         MessageBox.Show("Baja exitosa");
                         CargarListaPuesto();
+                        LblPuestoId.Text = "";
+                        TxtNombre.Text = "";
+                        TxtDescripcion.Text = "";
+                        ChkActivo.Checked = false;
                     }
                     else
                     {
@@ -151,6 +159,10 @@ namespace Pruebas.Formas
                     {
                         MessageBox.Show("La Area fue desactivada");
                         CargarListaPuesto();
+                        LblPuestoId.Text = "";
+                        TxtNombre.Text = "";
+                        TxtDescripcion.Text = "";
+                        ChkActivo.Checked = false;
                     }
                     else
                     {
@@ -164,6 +176,7 @@ namespace Pruebas.Formas
         {
             this.Close();
             FrmEmpleadosHandler.bPuesto = false;
+            FrmEmpleadosHandler.CargarListaPuesto();
             FrmEmpleadosHandler.CambiarSelectedIndexPuesto();
         }
         #endregion
@@ -190,7 +203,7 @@ namespace Pruebas.Formas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Selecciona un valor correcto");
+                MessageBox.Show(ex.ToString());
             }
         }
         #endregion

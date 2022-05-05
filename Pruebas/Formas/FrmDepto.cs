@@ -67,7 +67,7 @@ namespace Proyeccion.Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Selecciona un valor correcto");
+                MessageBox.Show(ex.ToString());
             }
         }
         #endregion
@@ -77,6 +77,7 @@ namespace Proyeccion.Principal
         {
             this.Close();
             FrmEmpleadosHandler.bDepartamento = false;
+            FrmEmpleadosHandler.CargarListaDepto();
             FrmEmpleadosHandler.CambiarSelectedIndexDpto();
         }
 
@@ -104,6 +105,10 @@ namespace Proyeccion.Principal
                 {
                     MessageBox.Show("Alta exitosa");
                     CargarListaDepto();
+                    LblDeptoId.Text = "";
+                    TxtDescripcion.Text = "";
+                    TxtNombre.Text = "";
+                    ChkActivo.Checked = false;
                 }
                 else
                 {
@@ -165,6 +170,10 @@ namespace Proyeccion.Principal
                     {
                         MessageBox.Show("Baja exitosa");
                         CargarListaDepto();
+                        LblDeptoId.Text = "";
+                        TxtDescripcion.Text = "";
+                        TxtNombre.Text = "";
+                        ChkActivo.Checked = false;
                     }
                     else
                     {
@@ -184,6 +193,10 @@ namespace Proyeccion.Principal
                     {
                         MessageBox.Show("El Departamento fue desactivado");
                         CargarListaDepto();
+                        LblDeptoId.Text = "";
+                        TxtDescripcion.Text = "";
+                        TxtNombre.Text = "";
+                        ChkActivo.Checked = false;
                     }
                     else
                     {

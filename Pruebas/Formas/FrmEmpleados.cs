@@ -13,16 +13,20 @@ namespace Proyeccion.Principal
         private ClsArea ObjArea = null;
         private ClsDepartamento ObjDepartamento= null;
         private ClsPuesto ObjPuesto = null;
+        private ClsPais ObjPais = null;
+        private ClsEstado ObjEstado = null;
         private readonly ClsEmpleadoLn ObjEmpleadoLn = new ClsEmpleadoLn();
         private readonly ClsAreaLn ObjAreaLn = new ClsAreaLn();
         private readonly ClsDepartamentoLn ObjDepartamentoLn = new ClsDepartamentoLn();
         private readonly ClsPuestoLn ObjPuestoLn = new ClsPuestoLn();
+        private readonly ClsPaisLn ObjPaisLn = new ClsPaisLn();
+        private readonly ClsEstadoLn ObjEstadoLn = new ClsEstadoLn();
 
         private FrmEmpleados intance;
         #endregion
 
         #region Variables Publicas
-        public bool bArea, bPuesto, bDepartamento;
+        public bool bArea, bPuesto, bDepartamento, bPais, bEstado;
         #endregion
 
         #region Metodo Constructor
@@ -33,12 +37,15 @@ namespace Proyeccion.Principal
             CargarListaArea();
             CargarListaDepto();
             CargarListaPuesto();
+            CargarListaPais();
             CbArea.SelectedIndex = -1;
             CbDepto.SelectedIndex = -1;
             CbPuesto.SelectedIndex = -1;
+            CbPais.SelectedIndex = -1;
             this.CbArea.SelectedIndexChanged += new System.EventHandler(this.CbArea_SelectedIndexChanged);
             this.CbPuesto.SelectedIndexChanged += new System.EventHandler(this.CbPuesto_SelectedIndexChanged);
             this.CbDepto.SelectedIndexChanged += new System.EventHandler(this.CbDepto_SelectedIndexChanged);
+            this.CbPais.SelectedIndexChanged += new System.EventHandler(this.CbPais_SelectedIndexChanged);
             intance = this;
         }
         #endregion
@@ -109,6 +116,38 @@ namespace Proyeccion.Principal
             }
         }
 
+        public void CargarListaPais()
+        {
+            ObjPais = new ClsPais();
+            ObjPaisLn.CargarCbPais(ref ObjPais);
+            if (ObjPais.MsjError == null)
+            {
+                CbPais.DisplayMember = "Name";
+                CbPais.ValueMember = "Code";
+                CbPais.DataSource = ObjPais.DtResultados;
+            }
+            else
+            {
+                MessageBox.Show(ObjPais.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void CargarListaEstado()
+        {
+            ObjEstado = new ClsEstado();
+            ObjEstadoLn.CargarCbEstado(ref ObjEstado);
+            if (ObjEstado.MsjError == null)
+            {
+                CbEstado.DisplayMember = "Name";
+                CbEstado.ValueMember = "Code";
+                CbEstado.DataSource = ObjEstado.DtResultados;
+            }
+            else
+            {
+                MessageBox.Show(ObjEstado.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         public void CambiarSelectedIndexArea()
         {
             CbArea.SelectedIndex = -1;
@@ -120,6 +159,16 @@ namespace Proyeccion.Principal
         }
 
         public void CambiarSelectedIndexPuesto()
+        {
+            CbPuesto.SelectedIndex = -1;
+        }
+
+        public void CambiarSelectedIndexPais()
+        {
+            CbPuesto.SelectedIndex = -1;
+        }
+
+        public void CambiarSelectedIndexEstado()
         {
             CbPuesto.SelectedIndex = -1;
         }
@@ -348,6 +397,26 @@ namespace Proyeccion.Principal
             e.Handled = true;
         }
 
+        private void CbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (bEstado == true)
+            {
+                bEstado = false;
+            }
+            else
+            {
+                if (CbEstado.Text.Equals("Nuevo Estado"))
+                {
+                    FrmPais fmPais = new FrmPais(this);
+                    fmPais.ShowDialog();
+                }
+                else
+                {
+                    bEstado = true;
+                }
+            }
+        }
+
         private void CbPuesto_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled= true;
@@ -369,6 +438,26 @@ namespace Proyeccion.Principal
                 else
                 {
                     bPuesto = true;
+                }
+            }
+        }
+
+        private void CbPais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (bPais == true)
+            {
+                bPais = false;
+            }
+            else
+            {
+                if (CbPuesto.Text.Equals("Nuevo Pais"))
+                {
+                    FrmPais fmPais = new FrmPais(this);
+                    fmPais.ShowDialog();
+                }
+                else
+                {
+                    bPais = true;
                 }
             }
         }

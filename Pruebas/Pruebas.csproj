@@ -105,6 +105,12 @@
     <Compile Include="Formas\FrmEmpleados.Designer.cs">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formas\FrmEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\FrmEstado.Designer.cs">
+      <DependentUpon>FrmEstado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formas\FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,12 @@
     </Compile>
     <Compile Include="Formas\FrmMenu.designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\FrmPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\FrmPais.Designer.cs">
+      <DependentUpon>FrmPais.cs</DependentUpon>
     </Compile>
     <Compile Include="Formas\FrmPuesto.cs">
       <SubType>Form</SubType>
@@ -152,6 +164,9 @@
     <EmbeddedResource Include="Formas\FrmEmpleados.resx">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formas\FrmEstado.resx">
+      <DependentUpon>FrmEstado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formas\FrmPais.resx">
+      <DependentUpon>FrmPais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmPuesto.resx">
       <DependentUpon>FrmPuesto.cs</DependentUpon>

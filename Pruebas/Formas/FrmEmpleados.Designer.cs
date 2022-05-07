@@ -34,10 +34,28 @@
             this.DgvEmpleados = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpDireccion = new System.Windows.Forms.TabPage();
+            this.CbEstado = new System.Windows.Forms.ComboBox();
+            this.CbPais = new System.Windows.Forms.ComboBox();
+            this.TxtNoInt = new System.Windows.Forms.TextBox();
+            this.LblNoInt = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TxtCP = new System.Windows.Forms.TextBox();
+            this.LblCP = new System.Windows.Forms.Label();
+            this.TxtNoExt = new System.Windows.Forms.TextBox();
+            this.LblNoExt = new System.Windows.Forms.Label();
+            this.TxtDireccion = new System.Windows.Forms.TextBox();
+            this.LblDireccion = new System.Windows.Forms.Label();
+            this.TxtColonia = new System.Windows.Forms.TextBox();
+            this.LblColonia = new System.Windows.Forms.Label();
+            this.LblEstado = new System.Windows.Forms.Label();
+            this.LblPais = new System.Windows.Forms.Label();
             this.TpGestion = new System.Windows.Forms.TabPage();
             this.TpPersonal = new System.Windows.Forms.TabPage();
-            this.TpFinanciar = new System.Windows.Forms.TabPage();
             this.TpComentarios = new System.Windows.Forms.TabPage();
+            this.TpFinanciera = new System.Windows.Forms.TabPage();
             this.LblTituloUsuario = new System.Windows.Forms.Label();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.BtnEliminar = new FontAwesome.Sharp.IconButton();
@@ -68,6 +86,7 @@
             this.TpEmpleados.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).BeginInit();
+            this.TpDireccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,8 +96,8 @@
             this.TpEmpleados.Controls.Add(this.TpDireccion);
             this.TpEmpleados.Controls.Add(this.TpGestion);
             this.TpEmpleados.Controls.Add(this.TpPersonal);
-            this.TpEmpleados.Controls.Add(this.TpFinanciar);
             this.TpEmpleados.Controls.Add(this.TpComentarios);
+            this.TpEmpleados.Controls.Add(this.TpFinanciera);
             this.TpEmpleados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpEmpleados.Location = new System.Drawing.Point(12, 247);
             this.TpEmpleados.Name = "TpEmpleados";
@@ -119,6 +138,25 @@
             // 
             // TpDireccion
             // 
+            this.TpDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpDireccion.Controls.Add(this.CbEstado);
+            this.TpDireccion.Controls.Add(this.CbPais);
+            this.TpDireccion.Controls.Add(this.TxtNoInt);
+            this.TpDireccion.Controls.Add(this.LblNoInt);
+            this.TpDireccion.Controls.Add(this.textBox8);
+            this.TpDireccion.Controls.Add(this.label8);
+            this.TpDireccion.Controls.Add(this.textBox7);
+            this.TpDireccion.Controls.Add(this.label7);
+            this.TpDireccion.Controls.Add(this.TxtCP);
+            this.TpDireccion.Controls.Add(this.LblCP);
+            this.TpDireccion.Controls.Add(this.TxtNoExt);
+            this.TpDireccion.Controls.Add(this.LblNoExt);
+            this.TpDireccion.Controls.Add(this.TxtDireccion);
+            this.TpDireccion.Controls.Add(this.LblDireccion);
+            this.TpDireccion.Controls.Add(this.TxtColonia);
+            this.TpDireccion.Controls.Add(this.LblColonia);
+            this.TpDireccion.Controls.Add(this.LblEstado);
+            this.TpDireccion.Controls.Add(this.LblPais);
             this.TpDireccion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpDireccion.Location = new System.Drawing.Point(4, 26);
             this.TpDireccion.Name = "TpDireccion";
@@ -126,47 +164,229 @@
             this.TpDireccion.Size = new System.Drawing.Size(1048, 376);
             this.TpDireccion.TabIndex = 1;
             this.TpDireccion.Text = "Dirección";
-            this.TpDireccion.UseVisualStyleBackColor = true;
+            // 
+            // CbEstado
+            // 
+            this.CbEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.CbEstado.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.CbEstado.FormattingEnabled = true;
+            this.CbEstado.Location = new System.Drawing.Point(103, 44);
+            this.CbEstado.Name = "CbEstado";
+            this.CbEstado.Size = new System.Drawing.Size(307, 29);
+            this.CbEstado.TabIndex = 46;
+            this.CbEstado.SelectedIndexChanged += new System.EventHandler(this.CbEstado_SelectedIndexChanged);
+            // 
+            // CbPais
+            // 
+            this.CbPais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.CbPais.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.CbPais.FormattingEnabled = true;
+            this.CbPais.Location = new System.Drawing.Point(103, 9);
+            this.CbPais.Name = "CbPais";
+            this.CbPais.Size = new System.Drawing.Size(307, 29);
+            this.CbPais.TabIndex = 45;
+            // 
+            // TxtNoInt
+            // 
+            this.TxtNoInt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtNoInt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNoInt.Location = new System.Drawing.Point(299, 154);
+            this.TxtNoInt.Name = "TxtNoInt";
+            this.TxtNoInt.Size = new System.Drawing.Size(111, 31);
+            this.TxtNoInt.TabIndex = 43;
+            // 
+            // LblNoInt
+            // 
+            this.LblNoInt.AutoSize = true;
+            this.LblNoInt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNoInt.ForeColor = System.Drawing.Color.White;
+            this.LblNoInt.Location = new System.Drawing.Point(220, 157);
+            this.LblNoInt.Name = "LblNoInt";
+            this.LblNoInt.Size = new System.Drawing.Size(80, 22);
+            this.LblNoInt.TabIndex = 44;
+            this.LblNoInt.Text = "No. Int.:";
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.textBox8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(103, 265);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(307, 31);
+            this.textBox8.TabIndex = 41;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(2, 269);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 22);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "1er Nomb:";
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.textBox7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(103, 228);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(307, 31);
+            this.textBox7.TabIndex = 39;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(2, 232);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 22);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "1er Nomb:";
+            // 
+            // TxtCP
+            // 
+            this.TxtCP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtCP.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCP.Location = new System.Drawing.Point(103, 191);
+            this.TxtCP.Name = "TxtCP";
+            this.TxtCP.Size = new System.Drawing.Size(307, 31);
+            this.TxtCP.TabIndex = 37;
+            // 
+            // LblCP
+            // 
+            this.LblCP.AutoSize = true;
+            this.LblCP.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCP.ForeColor = System.Drawing.Color.White;
+            this.LblCP.Location = new System.Drawing.Point(52, 194);
+            this.LblCP.Name = "LblCP";
+            this.LblCP.Size = new System.Drawing.Size(51, 22);
+            this.LblCP.TabIndex = 38;
+            this.LblCP.Text = "C.P.:";
+            // 
+            // TxtNoExt
+            // 
+            this.TxtNoExt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtNoExt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNoExt.Location = new System.Drawing.Point(103, 154);
+            this.TxtNoExt.Name = "TxtNoExt";
+            this.TxtNoExt.Size = new System.Drawing.Size(111, 31);
+            this.TxtNoExt.TabIndex = 35;
+            // 
+            // LblNoExt
+            // 
+            this.LblNoExt.AutoSize = true;
+            this.LblNoExt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNoExt.ForeColor = System.Drawing.Color.White;
+            this.LblNoExt.Location = new System.Drawing.Point(21, 157);
+            this.LblNoExt.Name = "LblNoExt";
+            this.LblNoExt.Size = new System.Drawing.Size(82, 22);
+            this.LblNoExt.TabIndex = 36;
+            this.LblNoExt.Text = "No. Ext.:";
+            // 
+            // TxtDireccion
+            // 
+            this.TxtDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtDireccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDireccion.Location = new System.Drawing.Point(103, 117);
+            this.TxtDireccion.Name = "TxtDireccion";
+            this.TxtDireccion.Size = new System.Drawing.Size(307, 31);
+            this.TxtDireccion.TabIndex = 33;
+            // 
+            // LblDireccion
+            // 
+            this.LblDireccion.AutoSize = true;
+            this.LblDireccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDireccion.ForeColor = System.Drawing.Color.White;
+            this.LblDireccion.Location = new System.Drawing.Point(2, 121);
+            this.LblDireccion.Name = "LblDireccion";
+            this.LblDireccion.Size = new System.Drawing.Size(101, 22);
+            this.LblDireccion.TabIndex = 34;
+            this.LblDireccion.Text = "Dirección:";
+            // 
+            // TxtColonia
+            // 
+            this.TxtColonia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtColonia.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtColonia.Location = new System.Drawing.Point(103, 80);
+            this.TxtColonia.Name = "TxtColonia";
+            this.TxtColonia.Size = new System.Drawing.Size(307, 31);
+            this.TxtColonia.TabIndex = 31;
+            // 
+            // LblColonia
+            // 
+            this.LblColonia.AutoSize = true;
+            this.LblColonia.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblColonia.ForeColor = System.Drawing.Color.White;
+            this.LblColonia.Location = new System.Drawing.Point(18, 83);
+            this.LblColonia.Name = "LblColonia";
+            this.LblColonia.Size = new System.Drawing.Size(85, 22);
+            this.LblColonia.TabIndex = 32;
+            this.LblColonia.Text = "Colonia:";
+            // 
+            // LblEstado
+            // 
+            this.LblEstado.AutoSize = true;
+            this.LblEstado.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblEstado.ForeColor = System.Drawing.Color.White;
+            this.LblEstado.Location = new System.Drawing.Point(26, 46);
+            this.LblEstado.Name = "LblEstado";
+            this.LblEstado.Size = new System.Drawing.Size(77, 22);
+            this.LblEstado.TabIndex = 30;
+            this.LblEstado.Text = "Estado:";
+            // 
+            // LblPais
+            // 
+            this.LblPais.AutoSize = true;
+            this.LblPais.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPais.ForeColor = System.Drawing.Color.White;
+            this.LblPais.Location = new System.Drawing.Point(54, 9);
+            this.LblPais.Name = "LblPais";
+            this.LblPais.Size = new System.Drawing.Size(49, 22);
+            this.LblPais.TabIndex = 28;
+            this.LblPais.Text = "Pais:";
             // 
             // TpGestion
             // 
+            this.TpGestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TpGestion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpGestion.Location = new System.Drawing.Point(4, 26);
             this.TpGestion.Name = "TpGestion";
             this.TpGestion.Size = new System.Drawing.Size(1048, 376);
             this.TpGestion.TabIndex = 2;
             this.TpGestion.Text = "Gestión";
-            this.TpGestion.UseVisualStyleBackColor = true;
             // 
             // TpPersonal
             // 
+            this.TpPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TpPersonal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpPersonal.Location = new System.Drawing.Point(4, 26);
             this.TpPersonal.Name = "TpPersonal";
             this.TpPersonal.Size = new System.Drawing.Size(1048, 376);
             this.TpPersonal.TabIndex = 3;
             this.TpPersonal.Text = "Personal";
-            this.TpPersonal.UseVisualStyleBackColor = true;
-            // 
-            // TpFinanciar
-            // 
-            this.TpFinanciar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TpFinanciar.Location = new System.Drawing.Point(4, 26);
-            this.TpFinanciar.Name = "TpFinanciar";
-            this.TpFinanciar.Size = new System.Drawing.Size(1048, 376);
-            this.TpFinanciar.TabIndex = 4;
-            this.TpFinanciar.Text = "Financiar";
-            this.TpFinanciar.UseVisualStyleBackColor = true;
             // 
             // TpComentarios
             // 
+            this.TpComentarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TpComentarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpComentarios.Location = new System.Drawing.Point(4, 26);
             this.TpComentarios.Name = "TpComentarios";
             this.TpComentarios.Size = new System.Drawing.Size(1048, 376);
             this.TpComentarios.TabIndex = 5;
             this.TpComentarios.Text = "Comentarios";
-            this.TpComentarios.UseVisualStyleBackColor = true;
+            // 
+            // TpFinanciera
+            // 
+            this.TpFinanciera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpFinanciera.Location = new System.Drawing.Point(4, 26);
+            this.TpFinanciera.Name = "TpFinanciera";
+            this.TpFinanciera.Padding = new System.Windows.Forms.Padding(3);
+            this.TpFinanciera.Size = new System.Drawing.Size(1048, 376);
+            this.TpFinanciera.TabIndex = 6;
+            this.TpFinanciera.Text = "Financiera";
             // 
             // LblTituloUsuario
             // 
@@ -533,6 +753,8 @@
             this.TpEmpleados.ResumeLayout(false);
             this.TpIndex.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).EndInit();
+            this.TpDireccion.ResumeLayout(false);
+            this.TpDireccion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -569,7 +791,6 @@
         private System.Windows.Forms.Label LblPuesto;
         private System.Windows.Forms.TabPage TpGestion;
         private System.Windows.Forms.TabPage TpPersonal;
-        private System.Windows.Forms.TabPage TpFinanciar;
         private System.Windows.Forms.TabPage TpComentarios;
         private System.Windows.Forms.DataGridView DgvEmpleados;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
@@ -577,5 +798,24 @@
         private System.Windows.Forms.ComboBox CbDepto;
         private System.Windows.Forms.ComboBox CbPuesto;
         private FontAwesome.Sharp.IconButton BtnLimpiar;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox TxtCP;
+        private System.Windows.Forms.Label LblCP;
+        private System.Windows.Forms.TextBox TxtNoExt;
+        private System.Windows.Forms.Label LblNoExt;
+        private System.Windows.Forms.TextBox TxtDireccion;
+        private System.Windows.Forms.Label LblDireccion;
+        private System.Windows.Forms.TextBox TxtColonia;
+        private System.Windows.Forms.Label LblColonia;
+        private System.Windows.Forms.Label LblEstado;
+        private System.Windows.Forms.Label LblPais;
+        private System.Windows.Forms.TabPage TpFinanciera;
+        private System.Windows.Forms.TextBox TxtNoInt;
+        private System.Windows.Forms.Label LblNoInt;
+        private System.Windows.Forms.ComboBox CbEstado;
+        private System.Windows.Forms.ComboBox CbPais;
     }
 }

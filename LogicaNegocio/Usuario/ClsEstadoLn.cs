@@ -33,6 +33,8 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjEstado.Country);
+
             CargarListaEstado(ref ObjEstado);
         }
         #endregion
@@ -161,11 +163,11 @@ namespace LogicaNegocio.Usuario
                     {
                         foreach (DataRow dr in ObjEstado.DtResultados.Rows)
                         {
-                            ObjEstado.Code = dr["PuestoId"].ToString();
-                            ObjEstado.Name = dr["Puesto"].ToString();
+                            ObjEstado.Code = dr["Code"].ToString();
+                            ObjEstado.Name = dr["Name"].ToString();
                         }
                     }
-                    ObjEstado.DtResultados.Rows.Add(ObjEstado.DtResultados.Rows.Count + 1, "Nuevo Pais");
+                    ObjEstado.DtResultados.Rows.Add(ObjEstado.DtResultados.Rows.Count + 1, "Nuevo Estado");
                 }
             }
             else

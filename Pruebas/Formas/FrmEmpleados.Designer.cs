@@ -175,6 +175,8 @@
             this.CbEstado.Size = new System.Drawing.Size(307, 29);
             this.CbEstado.TabIndex = 46;
             this.CbEstado.SelectedIndexChanged += new System.EventHandler(this.CbEstado_SelectedIndexChanged);
+            this.CbEstado.DataSourceChanged += new System.EventHandler(this.CbEstado_DataSourceChanged);
+            this.CbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbEstado_KeyPress);
             // 
             // CbPais
             // 
@@ -185,6 +187,8 @@
             this.CbPais.Name = "CbPais";
             this.CbPais.Size = new System.Drawing.Size(307, 29);
             this.CbPais.TabIndex = 45;
+            this.CbPais.DataSourceChanged += new System.EventHandler(this.CbPais_DataSourceChanged);
+            this.CbPais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbPais_KeyPress);
             // 
             // TxtNoInt
             // 
@@ -415,6 +419,7 @@
             // 
             this.BtnEliminar.BackColor = System.Drawing.Color.DarkRed;
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEliminar.Enabled = false;
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminar.ForeColor = System.Drawing.Color.White;
@@ -435,6 +440,7 @@
             // 
             this.BtnActualizar.BackColor = System.Drawing.Color.Goldenrod;
             this.BtnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnActualizar.Enabled = false;
             this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnActualizar.ForeColor = System.Drawing.Color.White;
@@ -697,6 +703,7 @@
             // 
             this.BtnLimpiar.BackColor = System.Drawing.Color.BurlyWood;
             this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpiar.Enabled = false;
             this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
@@ -793,7 +800,6 @@
         private System.Windows.Forms.TabPage TpPersonal;
         private System.Windows.Forms.TabPage TpComentarios;
         private System.Windows.Forms.DataGridView DgvEmpleados;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.ComboBox CbArea;
         private System.Windows.Forms.ComboBox CbDepto;
         private System.Windows.Forms.ComboBox CbPuesto;
@@ -817,5 +823,6 @@
         private System.Windows.Forms.Label LblNoInt;
         private System.Windows.Forms.ComboBox CbEstado;
         private System.Windows.Forms.ComboBox CbPais;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
     }
 }

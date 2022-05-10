@@ -42,7 +42,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreTabla = "Pais",
+                NombreTabla = "OCRY",
                 NombreSP = "dbo.SP_OCRY_Create",
                 Scalar = false
             };

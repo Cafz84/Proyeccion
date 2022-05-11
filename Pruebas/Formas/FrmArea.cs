@@ -1,5 +1,6 @@
 ﻿using Entidades.Usuario;
 using LogicaNegocio.Usuario;
+using Pruebas.Utilidades;
 using System;
 using System.Windows.Forms;
 
@@ -9,6 +10,7 @@ namespace Proyeccion.Principal
     {
         #region Variables Privadas
         private ClsArea ObjArea = null;
+        private ClsUtilidades ObjUtilidades = new ClsUtilidades();
         private readonly ClsAreaLn ObjAreaLn = new ClsAreaLn();
 
         private FrmEmpleados FrmEmpleadosHandler;
@@ -37,6 +39,7 @@ namespace Proyeccion.Principal
             if (ObjArea.MsjError == null)
             {
                 DgvArea.DataSource = ObjArea.DtResultados;
+                ObjUtilidades.FormatoDataGridView(ref DgvArea);
             }
             else
             {
@@ -63,6 +66,11 @@ namespace Proyeccion.Principal
                     TxtNombre.Text = ObjArea.Area;
                     TxtDescripcion.Text = ObjArea.Descripcion;
                     ChkActivo.Checked = ObjArea.Activo;
+
+                    BtnActualizar.Enabled = true;
+                    BtnLimpiar.Enabled = true;
+                    BtnAgregar.Enabled = false;
+                    BtnEliminar.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -85,26 +93,30 @@ namespace Proyeccion.Principal
         {
             if (LblAreaId.Text == "")
             {
-                ObjArea = new ClsArea()
+                DialogResult respuesta = MessageBox.Show("¿Realmente quiere agregar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (respuesta == DialogResult.OK)
                 {
-                    Area = TxtNombre.Text,
-                    Descripcion = TxtDescripcion.Text,
-                    Activo = true
-                };
+                    ObjArea = new ClsArea()
+                    {
+                        Area = TxtNombre.Text,
+                        Descripcion = TxtDescripcion.Text,
+                        Activo = true
+                    };
 
-                ObjAreaLn.Create(ref ObjArea);
-                if (ObjArea.MsjError == null)
-                {
-                    MessageBox.Show("Alta exitosa");
-                    CargarListaArea();
-                    LblAreaId.Text = "";
-                    TxtNombre.Text = "";
-                    TxtDescripcion.Text = "";
-                    ChkActivo.Checked = false;
-                }
-                else
-                {
-                    MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ObjAreaLn.Create(ref ObjArea);
+                    if (ObjArea.MsjError == null)
+                    {
+                        MessageBox.Show("Alta exitosa");
+                        CargarListaArea();
+                        LblAreaId.Text = "";
+                        TxtNombre.Text = "";
+                        TxtDescripcion.Text = "";
+                        ChkActivo.Checked = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
@@ -121,23 +133,27 @@ namespace Proyeccion.Principal
             }
             else
             {
-                ObjArea = new ClsArea()
+                DialogResult result = MessageBox.Show("¿Realmente quieres actualizar el registo?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
                 {
-                    AreaId = Convert.ToByte(LblAreaId.Text),
-                    Area = TxtNombre.Text,
-                    Descripcion = TxtDescripcion.Text,
-                    Activo = ChkActivo.Checked
-                };
+                    ObjArea = new ClsArea()
+                    {
+                        AreaId = Convert.ToByte(LblAreaId.Text),
+                        Area = TxtNombre.Text,
+                        Descripcion = TxtDescripcion.Text,
+                        Activo = ChkActivo.Checked
+                    };
 
-                ObjAreaLn.Update(ref ObjArea);
-                if (ObjArea.MsjError == null)
-                {
-                    MessageBox.Show("La Area fue actualizada correctamente");
-                    CargarListaArea();
-                }
-                else
-                {
-                    MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ObjAreaLn.Update(ref ObjArea);
+                    if (ObjArea.MsjError == null)
+                    {
+                        MessageBox.Show("La Area fue actualizada correctamente");
+                        CargarListaArea();
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -160,47 +176,55 @@ namespace Proyeccion.Principal
             {
                 if (ChkActivo.Checked == false)
                 {
-                    ObjArea = new ClsArea()
+                    DialogResult result = MessageBox.Show("¿Realmente quiere eliminar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        AreaId = Convert.ToByte(LblAreaId.Text)
-                    };
+                        ObjArea = new ClsArea()
+                        {
+                            AreaId = Convert.ToByte(LblAreaId.Text)
+                        };
 
-                    ObjAreaLn.Delete(ref ObjArea);
-                    if (ObjArea.MsjError == null)
-                    {
-                        MessageBox.Show("Baja exitosa");
-                        CargarListaArea();
-                        LblAreaId.Text = "";
-                        TxtNombre.Text = "";
-                        TxtDescripcion.Text = "";
-                        ChkActivo.Checked = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ObjAreaLn.Delete(ref ObjArea);
+                        if (ObjArea.MsjError == null)
+                        {
+                            MessageBox.Show("Baja exitosa");
+                            CargarListaArea();
+                            LblAreaId.Text = "";
+                            TxtNombre.Text = "";
+                            TxtDescripcion.Text = "";
+                            ChkActivo.Checked = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 else
                 {
-                    ObjArea = new ClsArea()
+                    DialogResult result = MessageBox.Show("El registro se desactivara pirmero \n ¿Quieres continuar?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        AreaId = Convert.ToByte(LblAreaId.Text),
-                        Activo = false
-                    };
+                        ObjArea = new ClsArea()
+                        {
+                            AreaId = Convert.ToByte(LblAreaId.Text),
+                            Activo = false
+                        };
 
-                    ObjAreaLn.UpdateActivo(ref ObjArea);
-                    if (ObjArea.MsjError == null)
-                    {
-                        MessageBox.Show("La Area fue desactivada");
-                        CargarListaArea();
-                        LblAreaId.Text = "";
-                        TxtNombre.Text = "";
-                        TxtDescripcion.Text = "";
-                        ChkActivo.Checked = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ObjAreaLn.UpdateActivo(ref ObjArea);
+                        if (ObjArea.MsjError == null)
+                        {
+                            MessageBox.Show("La Area fue desactivada");
+                            CargarListaArea();
+                            LblAreaId.Text = "";
+                            TxtNombre.Text = "";
+                            TxtDescripcion.Text = "";
+                            ChkActivo.Checked = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }

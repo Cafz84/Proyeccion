@@ -12,6 +12,7 @@ namespace Pruebas.Utilidades
             estilo.Font = new Font(Dgv.Font, FontStyle.Bold);
             Dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            Dgv.Columns[0].DisplayIndex = Dgv.ColumnCount - 1;
             
             Dgv.AllowUserToAddRows = false;
             Dgv.AllowUserToDeleteRows = false;

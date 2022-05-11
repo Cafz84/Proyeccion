@@ -115,8 +115,8 @@ namespace LogicaNegocio.Usuario
                     {
                         foreach (DataRow dr in ObjPais.DtResultados.Rows)
                         {
-                            ObjPais.Code = dr["PuestoId"].ToString();
-                            ObjPais.Name = dr["Puesto"].ToString();
+                            ObjPais.Code = dr["Code"].ToString();
+                            ObjPais.Name = dr["Name"].ToString();
                         }
                     }
                 }

@@ -122,6 +122,7 @@ namespace Proyeccion.Principal
 
         public void CargarListaPais()
         {
+            bPais = false;
             ObjPais = new ClsPais();
             ObjPaisLn.CargarCbPais(ref ObjPais);
             if (ObjPais.MsjError == null)
@@ -423,7 +424,7 @@ namespace Proyeccion.Principal
         #region Acciones con los ComboBox
         private void CbArea_DataSourceChanged(object sender, EventArgs e)
         {
-            CbArea.SelectedIndex = -1;
+            CbArea.Text = string.Empty;
         }
 
         private void CbArea_SelectedIndexChanged(object sender, EventArgs e)
@@ -448,12 +449,12 @@ namespace Proyeccion.Principal
 
         private void CbDepto_DataSourceChanged(object sender, EventArgs e)
         {
-            CbDepto.SelectedIndex = -1;
+            CbDepto.Text = string.Empty;
         }
 
         private void CbPuesto_DataSourceChanged(object sender, EventArgs e)
         {
-            CbPuesto.SelectedIndex = -1;
+            CbPuesto.Text = string.Empty;
         }
 
         private void CbDepto_SelectedIndexChanged(object sender, EventArgs e)
@@ -518,13 +519,13 @@ namespace Proyeccion.Principal
 
         private void CbPais_DataSourceChanged(object sender, EventArgs e)
         {
-            CbPais.SelectedIndex = -1;
+            CbPais.Text = string.Empty;
         }
 
         private void CbEstado_DataSourceChanged(object sender, EventArgs e)
         {
             bEstado = true;
-            CbEstado.SelectedIndex = -1;
+            CbEstado.Text = string.Empty;
         }
 
         private void CbPuesto_KeyPress(object sender, KeyPressEventArgs e)
@@ -554,21 +555,14 @@ namespace Proyeccion.Principal
 
         private void CbPais_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (bPais == true)
+            if (CbPais.Text.Equals("Nuevo Pais"))
             {
-                bPais = false;
+                FrmPais fmPais = new FrmPais(this);
+                fmPais.ShowDialog();
             }
             else
             {
-                if (CbPuesto.Text.Equals("Nuevo Pais"))
-                {
-                    FrmPais fmPais = new FrmPais(this);
-                    fmPais.ShowDialog();
-                }
-                else
-                {
-                    bPais = true;
-                }
+                    
             }
             bEstado = true;
             CargarListaEstado();

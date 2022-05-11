@@ -1,6 +1,7 @@
 ﻿using Entidades.Usuario;
 using LogicaNegocio.Usuario;
 using Proyeccion.Principal;
+using Pruebas.Utilidades;
 using System;
 using System.Windows.Forms;
 
@@ -11,6 +12,7 @@ namespace Pruebas.Formas
         #region Variables Privadas
         private ClsPais ObjPais = null;
         private ClsEstado ObjEstado = null;
+        private ClsUtilidades ObjUtilidades = new ClsUtilidades();
         private readonly ClsPaisLn ObjPaisLn = new ClsPaisLn();
         private readonly ClsEstadoLn ObjEstadoLn = new ClsEstadoLn();
 
@@ -40,6 +42,7 @@ namespace Pruebas.Formas
             if (ObjPais.MsjError == null)
             {
                 DgvPais.DataSource = ObjPais.DtResultados;
+                ObjUtilidades.FormatoDataGridView(ref DgvPais);
             }
             else
             {
@@ -57,14 +60,19 @@ namespace Pruebas.Formas
                 {
                     ObjPais = new ClsPais()
                     {
-                        Code = DgvPais.Rows[e.RowIndex].Cells["Code"].Value.ToString(),
-                        Name = DgvPais.Rows[e.RowIndex].Cells["Name"].Value.ToString(),
+                        Code = DgvPais.Rows[e.RowIndex].Cells["Codigo"].Value.ToString(),
+                        Name = DgvPais.Rows[e.RowIndex].Cells["Nombre"].Value.ToString(),
                     };
 
                     TxtCode.Text = ObjPais.Code.ToString();
 
                     ObjPaisLn.Read(ref ObjPais);
                     TxtNombre.Text = ObjPais.Name;
+
+                    BtnLimpiar.Enabled = true;
+                    BtnAgregar.Enabled = false;
+                    BtnActualizar.Enabled = true;
+                    BtnEliminar.Enabled = true;
                 }
             }
             catch (Exception ex)

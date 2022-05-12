@@ -1,6 +1,7 @@
 ﻿using Entidades.Usuario;
 using LogicaNegocio.Usuario;
 using Proyeccion.Principal;
+using Pruebas.Utilidades;
 using System;
 using System.Windows.Forms;
 
@@ -11,6 +12,7 @@ namespace Pruebas.Formas
         #region Variables Privadas
         private ClsPuesto ObjPuesto = null;
         private readonly ClsPuestoLn ObjPuestoLn = new ClsPuestoLn();
+        private readonly ClsUtilidades ObjUtilidades = new ClsUtilidades();
 
         private FrmEmpleados FrmEmpleadosHandler;
         #endregion
@@ -38,6 +40,7 @@ namespace Pruebas.Formas
             if (ObjPuesto.MsjError == null)
             {
                 DgvPuesto.DataSource = ObjPuesto.DtResultados;
+                ObjUtilidades.FormatoDataGridView(ref DgvPuesto);
             }
             else
             {
@@ -49,36 +52,50 @@ namespace Pruebas.Formas
         #region Accion con los Botones
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
-            LblPuestoId.Text = "";
-            TxtNombre.Text = "";
-            TxtDescripcion.Text = "";
+            LblPuestoId.Text = string.Empty;
+            TxtNombre.Text = string.Empty;
+            TxtDescripcion.Text = string.Empty;
             ChkActivo.Checked = false;
+
+            BtnLimpiar.Enabled = false;
+            BtnAgregar.Enabled = true;
+            BtnActualizar.Enabled = false;
+            BtnEliminar.Enabled = false;
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            if (LblPuestoId.Text == "")
+            if (LblPuestoId.Text == string.Empty)
             {
-                ObjPuesto = new ClsPuesto()
+                DialogResult result = MessageBox.Show("¿Realmente quieres dar de alta el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
                 {
-                    Puesto = TxtNombre.Text,
-                    Descripcion = TxtDescripcion.Text,
-                    Activo = true
-                };
+                    ObjPuesto = new ClsPuesto()
+                    {
+                        Puesto = TxtNombre.Text,
+                        Descripcion = TxtDescripcion.Text,
+                        Activo = true
+                    };
 
-                ObjPuestoLn.Create(ref ObjPuesto);
-                if (ObjPuesto.MsjError == null)
-                {
-                    MessageBox.Show("Alta exitosa");
-                    CargarListaPuesto();
-                    LblPuestoId.Text = "";
-                    TxtNombre.Text = "";
-                    TxtDescripcion.Text = "";
-                    ChkActivo.Checked = false;
-                }
-                else
-                {
-                    MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ObjPuestoLn.Create(ref ObjPuesto);
+                    if (ObjPuesto.MsjError == null)
+                    {
+                        MessageBox.Show("Alta exitosa");
+                        CargarListaPuesto();
+                        LblPuestoId.Text = string.Empty;
+                        TxtNombre.Text = string.Empty;
+                        TxtDescripcion.Text = string.Empty;
+                        ChkActivo.Checked = false;
+
+                        BtnLimpiar.Enabled = false;
+                        BtnAgregar.Enabled = true;
+                        BtnActualizar.Enabled = false;
+                        BtnEliminar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
@@ -89,36 +106,45 @@ namespace Pruebas.Formas
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
-            if (LblPuestoId.Text == "")
+            if (LblPuestoId.Text == string.Empty)
             {
                 MessageBox.Show("Selecciona un dato para actualizar");
             }
             else
             {
-                ObjPuesto = new ClsPuesto()
+                DialogResult result = MessageBox.Show("", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
                 {
-                    PuestoId = Convert.ToByte(LblPuestoId.Text),
-                    Puesto = TxtNombre.Text,
-                    Descripcion = TxtDescripcion.Text,
-                    Activo = ChkActivo.Checked
-                };
+                    ObjPuesto = new ClsPuesto()
+                    {
+                        PuestoId = Convert.ToByte(LblPuestoId.Text),
+                        Puesto = TxtNombre.Text,
+                        Descripcion = TxtDescripcion.Text,
+                        Activo = ChkActivo.Checked
+                    };
 
-                ObjPuestoLn.Update(ref ObjPuesto);
-                if (ObjPuesto.MsjError == null)
-                {
-                    MessageBox.Show("La Area fue actualizada correctamente");
-                    CargarListaPuesto();
-                }
-                else
-                {
-                    MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ObjPuestoLn.Update(ref ObjPuesto);
+                    if (ObjPuesto.MsjError == null)
+                    {
+                        MessageBox.Show("La Area fue actualizada correctamente");
+                        CargarListaPuesto();
+
+                        BtnLimpiar.Enabled = true;
+                        BtnAgregar.Enabled = false;
+                        BtnActualizar.Enabled = true;
+                        BtnEliminar.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            if (LblPuestoId.Text == "")
+            if (LblPuestoId.Text == string.Empty)
             {
                 MessageBox.Show("Debes seleccionar un dato para eliminar");
             }
@@ -126,28 +152,38 @@ namespace Pruebas.Formas
             {
                 if (ChkActivo.Checked == false)
                 {
-                    ObjPuesto = new ClsPuesto()
+                    DialogResult result = MessageBox.Show("¿Realmente quieres eliminar el registro?", "Mensaje de Sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        PuestoId = Convert.ToByte(LblPuestoId.Text)
-                    };
+                        ObjPuesto = new ClsPuesto()
+                        {
+                            PuestoId = Convert.ToByte(LblPuestoId.Text)
+                        };
 
-                    ObjPuestoLn.Delete(ref ObjPuesto);
-                    if (ObjPuesto.MsjError == null)
-                    {
-                        MessageBox.Show("Baja exitosa");
-                        CargarListaPuesto();
-                        LblPuestoId.Text = "";
-                        TxtNombre.Text = "";
-                        TxtDescripcion.Text = "";
-                        ChkActivo.Checked = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ObjPuestoLn.Delete(ref ObjPuesto);
+                        if (ObjPuesto.MsjError == null)
+                        {
+                            MessageBox.Show("Baja exitosa");
+                            CargarListaPuesto();
+                            LblPuestoId.Text = string.Empty;
+                            TxtNombre.Text = string.Empty;
+                            TxtDescripcion.Text = string.Empty;
+                            ChkActivo.Checked = false;
+
+                            BtnLimpiar.Enabled = false;
+                            BtnAgregar.Enabled = true;
+                            BtnActualizar.Enabled = false;
+                            BtnEliminar.Enabled = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 else
                 {
+                    DialogResult result = MessageBox.Show("El registro se desactivara primero \n ¿Quieres continuar?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     ObjPuesto = new ClsPuesto()
                     {
                         PuestoId = Convert.ToByte(LblPuestoId.Text),
@@ -159,10 +195,15 @@ namespace Pruebas.Formas
                     {
                         MessageBox.Show("La Area fue desactivada");
                         CargarListaPuesto();
-                        LblPuestoId.Text = "";
-                        TxtNombre.Text = "";
-                        TxtDescripcion.Text = "";
+                        LblPuestoId.Text = string.Empty;
+                        TxtNombre.Text = string.Empty;
+                        TxtDescripcion.Text = string.Empty;
                         ChkActivo.Checked = false;
+
+                        BtnLimpiar.Enabled = false;
+                        BtnAgregar.Enabled = true;
+                        BtnActualizar.Enabled = false;
+                        BtnEliminar.Enabled = false;
                     }
                     else
                     {
@@ -175,7 +216,6 @@ namespace Pruebas.Formas
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-            FrmEmpleadosHandler.bPuesto = false;
             FrmEmpleadosHandler.CargarListaPuesto();
             FrmEmpleadosHandler.CambiarSelectedIndexPuesto();
         }
@@ -199,6 +239,11 @@ namespace Pruebas.Formas
                     TxtNombre.Text = ObjPuesto.Puesto;
                     TxtDescripcion.Text = ObjPuesto.Descripcion;
                     ChkActivo.Checked = ObjPuesto.Activo;
+
+                    BtnLimpiar.Enabled = true;
+                    BtnAgregar.Enabled = false;
+                    BtnActualizar.Enabled = true;
+                    BtnEliminar.Enabled = true;
                 }
             }
             catch (Exception ex)

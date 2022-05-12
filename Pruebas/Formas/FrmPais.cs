@@ -86,7 +86,6 @@ namespace Pruebas.Formas
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-            FrmEmpleadosHandler.bArea = false;
             FrmEmpleadosHandler.CargarListaPais();
             FrmEmpleadosHandler.CambiarSelectedIndexPais();
         }

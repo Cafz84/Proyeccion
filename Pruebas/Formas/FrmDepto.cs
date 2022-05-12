@@ -1,5 +1,6 @@
 ﻿using Entidades.Usuario;
 using LogicaNegocio.Usuario;
+using Pruebas.Utilidades;
 using System;
 using System.Windows.Forms;
 
@@ -9,9 +10,10 @@ namespace Proyeccion.Principal
     {
         #region Variables Privadas
         private ClsDepartamento ObjDepartamento = null;
+        private ClsUtilidades ObjUtilidades = new ClsUtilidades();
         private readonly ClsDepartamentoLn ObjDepartamentoLn = new ClsDepartamentoLn();
 
-        private FrmEmpleados FrmEmpleadosHandler;
+        private readonly FrmEmpleados FrmEmpleadosHandler;
         #endregion
 
         #region Contructores
@@ -37,6 +39,7 @@ namespace Proyeccion.Principal
             if (ObjDepartamento.MsjError == null)
             {
                 DgvDepto.DataSource = ObjDepartamento.DtResultados;
+                ObjUtilidades.FormatoDataGridView(ref DgvDepto);
             }
             else
             {
@@ -63,6 +66,11 @@ namespace Proyeccion.Principal
                     TxtNombre.Text = ObjDepartamento.Name;
                     TxtDescripcion.Text = ObjDepartamento.Remarks;
                     ChkActivo.Checked = ObjDepartamento.Activo;
+
+                    BtnLimpiar.Enabled = true;
+                    BtnAgregar.Enabled = false;
+                    BtnActualizar.Enabled = true;
+                    BtnEliminar.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -76,43 +84,56 @@ namespace Proyeccion.Principal
         private void BtnCerrar_Click(object sender, System.EventArgs e)
         {
             this.Close();
-            FrmEmpleadosHandler.bDepartamento = false;
             FrmEmpleadosHandler.CargarListaDepto();
             FrmEmpleadosHandler.CambiarSelectedIndexDpto();
         }
 
         private void BtnLimpiar_Click(object sender, System.EventArgs e)
         {
-            LblDeptoId.Text = "";
-            TxtDescripcion.Text = "";
-            TxtNombre.Text = "";
+            LblDeptoId.Text = string.Empty;
+            TxtDescripcion.Text = string.Empty;
+            TxtNombre.Text = string.Empty;
             ChkActivo.Checked = false;
+
+            BtnLimpiar.Enabled=false;
+            BtnAgregar.Enabled=true;
+            BtnActualizar.Enabled=false;
+            BtnEliminar.Enabled=false;
         }
 
         private void BtnAgregar_Click(object sender, System.EventArgs e)
         {
             if (LblDeptoId.Text == "")
             {
-                ObjDepartamento = new ClsDepartamento()
+                DialogResult result = MessageBox.Show("¿Realmente quieres agregar el registro", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
                 {
-                    Name = TxtNombre.Text,
-                    Remarks = TxtDescripcion.Text,
-                    Activo = true
-                };
+                    ObjDepartamento = new ClsDepartamento()
+                    {
+                        Name = TxtNombre.Text,
+                        Remarks = TxtDescripcion.Text,
+                        Activo = true
+                    };
 
-                ObjDepartamentoLn.Create(ref ObjDepartamento);
-                if (ObjDepartamento.MsjError == null)
-                {
-                    MessageBox.Show("Alta exitosa");
-                    CargarListaDepto();
-                    LblDeptoId.Text = "";
-                    TxtDescripcion.Text = "";
-                    TxtNombre.Text = "";
-                    ChkActivo.Checked = false;
-                }
-                else
-                {
-                    MessageBox.Show(ObjDepartamento.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ObjDepartamentoLn.Create(ref ObjDepartamento);
+                    if (ObjDepartamento.MsjError == null)
+                    {
+                        MessageBox.Show("Alta exitosa");
+                        CargarListaDepto();
+                        LblDeptoId.Text = string.Empty;
+                        TxtDescripcion.Text = string.Empty;
+                        TxtNombre.Text = string.Empty;
+                        ChkActivo.Checked = false;
+
+                        BtnLimpiar.Enabled = false;
+                        BtnAgregar.Enabled = true;
+                        BtnActualizar.Enabled = false;
+                        BtnEliminar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjDepartamento.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
@@ -129,23 +150,32 @@ namespace Proyeccion.Principal
             }
             else
             {
-                ObjDepartamento = new ClsDepartamento()
+                DialogResult result = MessageBox.Show("¿Realmente quieres actualizar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
                 {
-                    DeptoId = Convert.ToByte(LblDeptoId.Text),
-                    Name = TxtNombre.Text,
-                    Remarks = TxtDescripcion.Text,
-                    Activo = ChkActivo.Checked
-                };
+                    ObjDepartamento = new ClsDepartamento()
+                    {
+                        DeptoId = Convert.ToByte(LblDeptoId.Text),
+                        Name = TxtNombre.Text,
+                        Remarks = TxtDescripcion.Text,
+                        Activo = ChkActivo.Checked
+                    };
 
-                ObjDepartamentoLn.Update(ref ObjDepartamento);
-                if (ObjDepartamento.MsjError == null)
-                {
-                    MessageBox.Show("La Area fue actualizada correctamente");
-                    CargarListaDepto();
-                }
-                else
-                {
-                    MessageBox.Show(ObjDepartamento.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ObjDepartamentoLn.Update(ref ObjDepartamento);
+                    if (ObjDepartamento.MsjError == null)
+                    {
+                        MessageBox.Show("La Area fue actualizada correctamente");
+                        CargarListaDepto();
+
+                        BtnLimpiar.Enabled = true;
+                        BtnAgregar.Enabled = false;
+                        BtnActualizar.Enabled = true;
+                        BtnEliminar.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjDepartamento.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -160,47 +190,65 @@ namespace Proyeccion.Principal
             {
                 if (ChkActivo.Checked == false)
                 {
-                    ObjDepartamento = new ClsDepartamento()
+                    DialogResult result = MessageBox.Show("¿Realmente quieres eliminar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        DeptoId = Convert.ToByte(LblDeptoId.Text)
-                    };
+                        ObjDepartamento = new ClsDepartamento()
+                        {
+                            DeptoId = Convert.ToByte(LblDeptoId.Text)
+                        };
 
-                    ObjDepartamentoLn.Delete(ref ObjDepartamento);
-                    if (ObjDepartamento.MsjError == null)
-                    {
-                        MessageBox.Show("Baja exitosa");
-                        CargarListaDepto();
-                        LblDeptoId.Text = "";
-                        TxtDescripcion.Text = "";
-                        TxtNombre.Text = "";
-                        ChkActivo.Checked = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show(ObjDepartamento.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ObjDepartamentoLn.Delete(ref ObjDepartamento);
+                        if (ObjDepartamento.MsjError == null)
+                        {
+                            MessageBox.Show("Baja exitosa");
+                            CargarListaDepto();
+                            LblDeptoId.Text = string.Empty;
+                            TxtDescripcion.Text = string.Empty;
+                            TxtNombre.Text = string.Empty;
+                            ChkActivo.Checked = false;
+
+                            BtnLimpiar.Enabled = false;
+                            BtnAgregar.Enabled = true;
+                            BtnActualizar.Enabled = false;
+                            BtnEliminar.Enabled = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show(ObjDepartamento.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 else
                 {
-                    ObjDepartamento = new ClsDepartamento()
+                    DialogResult result = MessageBox.Show("Se desactivara primero el registro \n ¿Quieres continuar?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        DeptoId = Convert.ToByte(LblDeptoId.Text),
-                        Activo = false
-                    };
+                        ObjDepartamento = new ClsDepartamento()
+                        {
+                            DeptoId = Convert.ToByte(LblDeptoId.Text),
+                            Activo = false
+                        };
 
-                    ObjDepartamentoLn.UpdateActivo(ref ObjDepartamento);
-                    if (ObjDepartamento.MsjError == null)
-                    {
-                        MessageBox.Show("El Departamento fue desactivado");
-                        CargarListaDepto();
-                        LblDeptoId.Text = "";
-                        TxtDescripcion.Text = "";
-                        TxtNombre.Text = "";
-                        ChkActivo.Checked = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show(ObjDepartamento.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ObjDepartamentoLn.UpdateActivo(ref ObjDepartamento);
+                        if (ObjDepartamento.MsjError == null)
+                        {
+                            MessageBox.Show("El Departamento fue desactivado");
+                            CargarListaDepto();
+                            LblDeptoId.Text = string.Empty;
+                            TxtDescripcion.Text = string.Empty;
+                            TxtNombre.Text = string.Empty;
+                            ChkActivo.Checked = false;
+
+                            BtnLimpiar.Enabled = true;
+                            BtnAgregar.Enabled = false;
+                            BtnActualizar.Enabled = true;
+                            BtnEliminar.Enabled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show(ObjDepartamento.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }

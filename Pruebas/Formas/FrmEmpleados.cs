@@ -3,7 +3,6 @@ using LogicaNegocio.Usuario;
 using Pruebas.Formas;
 using Pruebas.Utilidades;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Proyeccion.Principal
@@ -29,7 +28,7 @@ namespace Proyeccion.Principal
         #endregion
 
         #region Variables Publicas
-        public bool bArea, bPuesto, bDepartamento, bPais, bEstado;
+        public bool bPais, bEstado;
         #endregion
 
         #region Metodo Constructor
@@ -73,7 +72,6 @@ namespace Proyeccion.Principal
         #region Metodos Publicos
         public void CargarListaArea()
         {
-            bArea = false;
             ObjArea = new ClsArea();
             ObjAreaLn.CargarCbArea(ref ObjArea);
             if (ObjArea.MsjError == null)
@@ -122,7 +120,6 @@ namespace Proyeccion.Principal
 
         public void CargarListaPais()
         {
-            bPais = false;
             ObjPais = new ClsPais();
             ObjPaisLn.CargarCbPais(ref ObjPais);
             if (ObjPais.MsjError == null)
@@ -429,21 +426,10 @@ namespace Proyeccion.Principal
 
         private void CbArea_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (bArea == true)
+            if (CbArea.Text.Equals("Nueva Area"))
             {
-                bArea = false;
-            }
-            else
-            {
-                if (CbArea.Text.Equals("Nueva Area"))
-                {
-                    FrmArea fmArea = new FrmArea(this);
-                    fmArea.ShowDialog();
-                }
-                else
-                {
-                    bArea = true;
-                }
+                FrmArea fmArea = new FrmArea(this);
+                fmArea.ShowDialog();
             }
         }
 
@@ -459,21 +445,10 @@ namespace Proyeccion.Principal
 
         private void CbDepto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (bDepartamento == true)
+            if (CbDepto.Text.Equals("Nuevo Departamento"))
             {
-                bDepartamento = false;
-            }
-            else
-            {
-                if (CbDepto.Text.Equals("Nuevo Departamento"))
-                {
-                    FrmDepto fmDepto = new FrmDepto(this);
-                    fmDepto.ShowDialog();
-                }
-                else
-                {
-                    bDepartamento = true;
-                }
+                FrmDepto fmDepto = new FrmDepto(this);
+                fmDepto.ShowDialog();
             }
         }
 
@@ -489,9 +464,9 @@ namespace Proyeccion.Principal
 
         private void CbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (bEstado == true)
+            if (CbEstado.Items.Count == 1)
             {
-                bEstado = false;
+
             }
             else
             {
@@ -499,10 +474,6 @@ namespace Proyeccion.Principal
                 {
                     FrmEstado fmEstado = new FrmEstado(this);
                     fmEstado.ShowDialog();
-                }
-                else
-                {
-                    bEstado = true;
                 }
             }
         }
@@ -524,7 +495,6 @@ namespace Proyeccion.Principal
 
         private void CbEstado_DataSourceChanged(object sender, EventArgs e)
         {
-            bEstado = true;
             CbEstado.Text = string.Empty;
         }
 
@@ -535,22 +505,11 @@ namespace Proyeccion.Principal
 
         private void CbPuesto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (bPuesto == true)
+            if (CbPuesto.Text.Equals("Nuevo Puesto"))
             {
-                bPuesto = false;
-            }
-            else
-            {
-                if (CbPuesto.Text.Equals("Nuevo Puesto"))
-                {
-                    FrmPuesto fmPuesto = new FrmPuesto(this);
-                    fmPuesto.ShowDialog();
-                }
-                else
-                {
-                    bPuesto = true;
-                }
-            }
+                FrmPuesto fmPuesto = new FrmPuesto(this);
+                fmPuesto.ShowDialog();
+            }   
         }
 
         private void CbPais_SelectedIndexChanged(object sender, EventArgs e)
@@ -560,11 +519,6 @@ namespace Proyeccion.Principal
                 FrmPais fmPais = new FrmPais(this);
                 fmPais.ShowDialog();
             }
-            else
-            {
-                    
-            }
-            bEstado = true;
             CargarListaEstado();
         }
         #endregion
@@ -578,9 +532,6 @@ namespace Proyeccion.Principal
             BtnAgregar.Enabled = false;
             try
             {
-                bArea = false;
-                bDepartamento = false;
-                bPuesto = false;
                 if (DgvEmpleados.Columns[e.ColumnIndex].Name == "Editar")
                 {
                     ObjEmpleado = new ClsEmpleado()

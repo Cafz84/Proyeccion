@@ -84,7 +84,6 @@ namespace Proyeccion.Principal
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-            FrmEmpleadosHandler.bArea = false;
             FrmEmpleadosHandler.CargarListaArea();
             FrmEmpleadosHandler.CambiarSelectedIndexArea();
         }
@@ -108,10 +107,15 @@ namespace Proyeccion.Principal
                     {
                         MessageBox.Show("Alta exitosa");
                         CargarListaArea();
-                        LblAreaId.Text = "";
-                        TxtNombre.Text = "";
-                        TxtDescripcion.Text = "";
+                        LblAreaId.Text = string.Empty;
+                        TxtNombre.Text = string.Empty;
+                        TxtDescripcion.Text = string.Empty;
                         ChkActivo.Checked = false;
+
+                        BtnLimpiar.Enabled = false;
+                        BtnAgregar.Enabled = true;
+                        BtnActualizar.Enabled = false;
+                        BtnEliminar.Enabled = false;
                     }
                     else
                     {
@@ -160,10 +164,15 @@ namespace Proyeccion.Principal
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
-            LblAreaId.Text = "";
-            TxtNombre.Text = "";
-            TxtDescripcion.Text = "";
+            LblAreaId.Text = string.Empty;
+            TxtNombre.Text = string.Empty;
+            TxtDescripcion.Text = string.Empty;
             ChkActivo.Checked = false;
+
+            BtnLimpiar.Enabled = false;
+            BtnAgregar.Enabled = true;
+            BtnActualizar.Enabled = false;
+            BtnEliminar.Enabled = false;
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)

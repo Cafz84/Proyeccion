@@ -35,7 +35,6 @@
             this.BtnActualizar = new FontAwesome.Sharp.IconButton();
             this.BtnAgregar = new FontAwesome.Sharp.IconButton();
             this.DgvArea = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.LblNombre = new System.Windows.Forms.Label();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
@@ -44,6 +43,7 @@
             this.LblIdArea = new System.Windows.Forms.Label();
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.ChkActivo = new System.Windows.Forms.CheckBox();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvArea)).BeginInit();
             this.SuspendLayout();
@@ -145,15 +145,6 @@
             this.DgvArea.TabIndex = 25;
             this.DgvArea.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvArea_CellContentClick);
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 55;
-            // 
             // TxtNombre
             // 
             this.TxtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
@@ -248,6 +239,15 @@
             this.ChkActivo.Text = "Activo";
             this.ChkActivo.UseVisualStyleBackColor = true;
             // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 55;
+            // 
             // FrmArea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,7 +286,6 @@
         private FontAwesome.Sharp.IconButton BtnActualizar;
         private FontAwesome.Sharp.IconButton BtnAgregar;
         private System.Windows.Forms.DataGridView DgvArea;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.TextBox TxtDescripcion;
@@ -295,5 +294,6 @@
         private System.Windows.Forms.Label LblIdArea;
         private FontAwesome.Sharp.IconButton BtnLimpiar;
         private System.Windows.Forms.CheckBox ChkActivo;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
     }
 }

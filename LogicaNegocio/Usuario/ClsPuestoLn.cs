@@ -49,7 +49,7 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
-            ObjDataBase.DtParametros.Rows.Add(@"@Area", "18", ObjPuesto.Puesto);
+            ObjDataBase.DtParametros.Rows.Add(@"@Puesto", "18", ObjPuesto.Puesto);
             ObjDataBase.DtParametros.Rows.Add(@"@Descripcion", "18", ObjPuesto.Descripcion);
             ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjPuesto.Activo);
 

@@ -108,6 +108,12 @@
     <Compile Include="Formas\FrmArea.Designer.cs">
       <DependentUpon>FrmArea.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formas\FrmCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\FrmCiudad.Designer.cs">
+      <DependentUpon>FrmCiudad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formas\FrmDepto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     <Compile Include="Utilidades\ClsUtilidades.cs" />
     <EmbeddedResource Include="Formas\FrmArea.resx">
       <DependentUpon>FrmArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formas\FrmCiudad.resx">
+      <DependentUpon>FrmCiudad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmDepto.resx">
       <DependentUpon>FrmDepto.cs</DependentUpon>

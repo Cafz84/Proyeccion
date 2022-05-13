@@ -21,6 +21,8 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            ObjDataBase.DtParametros.Rows.Add(@"NamePais", "18", ObjEstado.NamePais);
+
             Ejecutar(ref ObjEstado);
         }
 

@@ -28,7 +28,7 @@ namespace Proyeccion.Principal
         #endregion
 
         #region Variables Publicas
-        public bool bPais, bEstado;
+        bool bEstado = false;
         #endregion
 
         #region Metodo Constructor
@@ -143,6 +143,8 @@ namespace Proyeccion.Principal
             ObjEstadoLn.CargarCbEstado(ref ObjEstado);
             if (ObjEstado.MsjError == null)
             {
+                bEstado = false;
+
                 CbEstado.DisplayMember = "Name";
                 CbEstado.ValueMember = "Code";
                 CbEstado.DataSource = ObjEstado.DtResultados;
@@ -170,12 +172,19 @@ namespace Proyeccion.Principal
 
         public void CambiarSelectedIndexPais()
         {
-            CbPuesto.SelectedIndex = -1;
+            CbPais.SelectedIndex = -1;
         }
 
         public void CambiarSelectedIndexEstado()
         {
-            CbPuesto.SelectedIndex = -1;
+            CbEstado.SelectedIndex = -1;
+            bEstado = true;
+        }
+
+        public string NamePais()
+        {
+            string nombrePais = CbPais.Text;
+            return nombrePais;
         }
         #endregion
 
@@ -464,15 +473,11 @@ namespace Proyeccion.Principal
 
         private void CbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CbEstado.Items.Count == 1)
-            {
-
-            }
-            else
+            if (bEstado == true)
             {
                 if (CbEstado.Text.Equals("Nuevo Estado"))
                 {
-                    FrmEstado fmEstado = new FrmEstado(this);
+                    FrmEstado fmEstado = new FrmEstado(this, CbPais.Text);
                     fmEstado.ShowDialog();
                 }
             }
@@ -520,6 +525,7 @@ namespace Proyeccion.Principal
                 fmPais.ShowDialog();
             }
             CargarListaEstado();
+            CambiarSelectedIndexEstado();
         }
         #endregion
 

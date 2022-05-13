@@ -41,7 +41,7 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.LblCiudad = new System.Windows.Forms.Label();
             this.TxtCP = new System.Windows.Forms.TextBox();
             this.LblCP = new System.Windows.Forms.Label();
             this.TxtNoExt = new System.Windows.Forms.TextBox();
@@ -83,6 +83,7 @@
             this.CbDepto = new System.Windows.Forms.ComboBox();
             this.CbPuesto = new System.Windows.Forms.ComboBox();
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.cbCiudad = new System.Windows.Forms.ComboBox();
             this.TpEmpleados.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).BeginInit();
@@ -139,6 +140,7 @@
             // TpDireccion
             // 
             this.TpDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpDireccion.Controls.Add(this.cbCiudad);
             this.TpDireccion.Controls.Add(this.CbEstado);
             this.TpDireccion.Controls.Add(this.CbPais);
             this.TpDireccion.Controls.Add(this.TxtNoInt);
@@ -146,7 +148,7 @@
             this.TpDireccion.Controls.Add(this.textBox8);
             this.TpDireccion.Controls.Add(this.label8);
             this.TpDireccion.Controls.Add(this.textBox7);
-            this.TpDireccion.Controls.Add(this.label7);
+            this.TpDireccion.Controls.Add(this.LblCiudad);
             this.TpDireccion.Controls.Add(this.TxtCP);
             this.TpDireccion.Controls.Add(this.LblCP);
             this.TpDireccion.Controls.Add(this.TxtNoExt);
@@ -194,7 +196,7 @@
             // 
             this.TxtNoInt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtNoInt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNoInt.Location = new System.Drawing.Point(299, 154);
+            this.TxtNoInt.Location = new System.Drawing.Point(299, 189);
             this.TxtNoInt.Name = "TxtNoInt";
             this.TxtNoInt.Size = new System.Drawing.Size(111, 31);
             this.TxtNoInt.TabIndex = 43;
@@ -204,7 +206,7 @@
             this.LblNoInt.AutoSize = true;
             this.LblNoInt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNoInt.ForeColor = System.Drawing.Color.White;
-            this.LblNoInt.Location = new System.Drawing.Point(220, 157);
+            this.LblNoInt.Location = new System.Drawing.Point(220, 192);
             this.LblNoInt.Name = "LblNoInt";
             this.LblNoInt.Size = new System.Drawing.Size(80, 22);
             this.LblNoInt.TabIndex = 44;
@@ -214,7 +216,7 @@
             // 
             this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.textBox8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(103, 265);
+            this.textBox8.Location = new System.Drawing.Point(103, 300);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(307, 31);
             this.textBox8.TabIndex = 41;
@@ -224,7 +226,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(2, 269);
+            this.label8.Location = new System.Drawing.Point(2, 304);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 22);
             this.label8.TabIndex = 42;
@@ -234,27 +236,27 @@
             // 
             this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.textBox7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(103, 228);
+            this.textBox7.Location = new System.Drawing.Point(103, 263);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(307, 31);
             this.textBox7.TabIndex = 39;
             // 
-            // label7
+            // LblCiudad
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(2, 232);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 22);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "1er Nomb:";
+            this.LblCiudad.AutoSize = true;
+            this.LblCiudad.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCiudad.ForeColor = System.Drawing.Color.White;
+            this.LblCiudad.Location = new System.Drawing.Point(18, 81);
+            this.LblCiudad.Name = "LblCiudad";
+            this.LblCiudad.Size = new System.Drawing.Size(84, 22);
+            this.LblCiudad.TabIndex = 40;
+            this.LblCiudad.Text = "Ciudad:";
             // 
             // TxtCP
             // 
             this.TxtCP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtCP.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCP.Location = new System.Drawing.Point(103, 191);
+            this.TxtCP.Location = new System.Drawing.Point(103, 226);
             this.TxtCP.Name = "TxtCP";
             this.TxtCP.Size = new System.Drawing.Size(307, 31);
             this.TxtCP.TabIndex = 37;
@@ -264,7 +266,7 @@
             this.LblCP.AutoSize = true;
             this.LblCP.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCP.ForeColor = System.Drawing.Color.White;
-            this.LblCP.Location = new System.Drawing.Point(52, 194);
+            this.LblCP.Location = new System.Drawing.Point(52, 229);
             this.LblCP.Name = "LblCP";
             this.LblCP.Size = new System.Drawing.Size(51, 22);
             this.LblCP.TabIndex = 38;
@@ -274,7 +276,7 @@
             // 
             this.TxtNoExt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtNoExt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNoExt.Location = new System.Drawing.Point(103, 154);
+            this.TxtNoExt.Location = new System.Drawing.Point(103, 189);
             this.TxtNoExt.Name = "TxtNoExt";
             this.TxtNoExt.Size = new System.Drawing.Size(111, 31);
             this.TxtNoExt.TabIndex = 35;
@@ -284,7 +286,7 @@
             this.LblNoExt.AutoSize = true;
             this.LblNoExt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNoExt.ForeColor = System.Drawing.Color.White;
-            this.LblNoExt.Location = new System.Drawing.Point(21, 157);
+            this.LblNoExt.Location = new System.Drawing.Point(21, 192);
             this.LblNoExt.Name = "LblNoExt";
             this.LblNoExt.Size = new System.Drawing.Size(82, 22);
             this.LblNoExt.TabIndex = 36;
@@ -294,7 +296,7 @@
             // 
             this.TxtDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtDireccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDireccion.Location = new System.Drawing.Point(103, 117);
+            this.TxtDireccion.Location = new System.Drawing.Point(103, 152);
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(307, 31);
             this.TxtDireccion.TabIndex = 33;
@@ -304,7 +306,7 @@
             this.LblDireccion.AutoSize = true;
             this.LblDireccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDireccion.ForeColor = System.Drawing.Color.White;
-            this.LblDireccion.Location = new System.Drawing.Point(2, 121);
+            this.LblDireccion.Location = new System.Drawing.Point(2, 156);
             this.LblDireccion.Name = "LblDireccion";
             this.LblDireccion.Size = new System.Drawing.Size(101, 22);
             this.LblDireccion.TabIndex = 34;
@@ -314,7 +316,7 @@
             // 
             this.TxtColonia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtColonia.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtColonia.Location = new System.Drawing.Point(103, 80);
+            this.TxtColonia.Location = new System.Drawing.Point(103, 115);
             this.TxtColonia.Name = "TxtColonia";
             this.TxtColonia.Size = new System.Drawing.Size(307, 31);
             this.TxtColonia.TabIndex = 31;
@@ -324,7 +326,7 @@
             this.LblColonia.AutoSize = true;
             this.LblColonia.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblColonia.ForeColor = System.Drawing.Color.White;
-            this.LblColonia.Location = new System.Drawing.Point(18, 83);
+            this.LblColonia.Location = new System.Drawing.Point(18, 118);
             this.LblColonia.Name = "LblColonia";
             this.LblColonia.Size = new System.Drawing.Size(85, 22);
             this.LblColonia.TabIndex = 32;
@@ -482,6 +484,7 @@
             this.TxtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtNombre.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombre.Location = new System.Drawing.Point(119, 56);
+            this.TxtNombre.MaxLength = 50;
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(307, 31);
             this.TxtNombre.TabIndex = 1;
@@ -578,6 +581,7 @@
             this.TxtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtApellido.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtApellido.Location = new System.Drawing.Point(119, 94);
+            this.TxtApellido.MaxLength = 50;
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(622, 31);
             this.TxtApellido.TabIndex = 3;
@@ -587,6 +591,7 @@
             this.TxtTelCasa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtTelCasa.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTelCasa.Location = new System.Drawing.Point(119, 168);
+            this.TxtTelCasa.MaxLength = 20;
             this.TxtTelCasa.Name = "TxtTelCasa";
             this.TxtTelCasa.Size = new System.Drawing.Size(307, 31);
             this.TxtTelCasa.TabIndex = 8;
@@ -596,6 +601,7 @@
             this.TxtTelMovil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtTelMovil.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTelMovil.Location = new System.Drawing.Point(540, 168);
+            this.TxtTelMovil.MaxLength = 20;
             this.TxtTelMovil.Name = "TxtTelMovil";
             this.TxtTelMovil.Size = new System.Drawing.Size(298, 31);
             this.TxtTelMovil.TabIndex = 9;
@@ -605,6 +611,7 @@
             this.TxtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtEmail.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtEmail.Location = new System.Drawing.Point(119, 205);
+            this.TxtEmail.MaxLength = 100;
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(719, 31);
             this.TxtEmail.TabIndex = 10;
@@ -614,6 +621,7 @@
             this.TxtNombre2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtNombre2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombre2.Location = new System.Drawing.Point(540, 57);
+            this.TxtNombre2.MaxLength = 50;
             this.TxtNombre2.Name = "TxtNombre2";
             this.TxtNombre2.Size = new System.Drawing.Size(298, 31);
             this.TxtNombre2.TabIndex = 2;
@@ -720,6 +728,16 @@
             this.BtnLimpiar.UseVisualStyleBackColor = false;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
+            // cbCiudad
+            // 
+            this.cbCiudad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.cbCiudad.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.cbCiudad.FormattingEnabled = true;
+            this.cbCiudad.Location = new System.Drawing.Point(103, 79);
+            this.cbCiudad.Name = "cbCiudad";
+            this.cbCiudad.Size = new System.Drawing.Size(307, 29);
+            this.cbCiudad.TabIndex = 47;
+            // 
             // FrmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -807,7 +825,7 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LblCiudad;
         private System.Windows.Forms.TextBox TxtCP;
         private System.Windows.Forms.Label LblCP;
         private System.Windows.Forms.TextBox TxtNoExt;
@@ -824,5 +842,6 @@
         private System.Windows.Forms.ComboBox CbEstado;
         private System.Windows.Forms.ComboBox CbPais;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.ComboBox cbCiudad;
     }
 }

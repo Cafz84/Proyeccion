@@ -24,7 +24,19 @@ namespace Pruebas.Utilidades
             DataGridViewCellStyle estilo = Dgv.ColumnHeadersDefaultCellStyle;
             estilo.Alignment = DataGridViewContentAlignment.MiddleCenter;
             estilo.Font = new Font(Dgv.Font, FontStyle.Bold);
-            //Dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+            Dgv.AllowUserToAddRows = false;
+            Dgv.AllowUserToDeleteRows = false;
+            Dgv.ReadOnly = true;
+        }
+
+        public void FormatoDgvPEC(ref DataGridView Dgv)
+        {
+            DataGridViewCellStyle estilo = Dgv.ColumnHeadersDefaultCellStyle;
+            estilo.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            estilo.Font = new Font(Dgv.Font, FontStyle.Bold);
+            Dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             Dgv.AllowUserToAddRows = false;

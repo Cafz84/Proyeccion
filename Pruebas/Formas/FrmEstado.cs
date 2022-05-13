@@ -1,6 +1,7 @@
 ﻿using Entidades.Usuario;
 using LogicaNegocio.Usuario;
 using Proyeccion.Principal;
+using Pruebas.Utilidades;
 using System;
 using System.Windows.Forms;
 
@@ -13,8 +14,13 @@ namespace Pruebas.Formas
         private ClsEstado ObjEstado = null;
         private readonly ClsPaisLn ObjPaisLn = new ClsPaisLn();
         private readonly ClsEstadoLn ObjEstadoLn = new ClsEstadoLn();
+        private readonly ClsUtilidades ObjUtilidades = new ClsUtilidades();
 
         private FrmEmpleados FrmEmpleadosHandler;
+        #endregion
+
+        #region Variables Publicas
+        public string nomPais;
         #endregion
 
         #region Metodos Constructores
@@ -24,9 +30,10 @@ namespace Pruebas.Formas
             CargarListaEstado();
         }
 
-        public FrmEstado(FrmEmpleados frmEmpleados)
+        public FrmEstado(FrmEmpleados frmEmpleados, string namePais)
         {
             InitializeComponent();
+            nomPais = namePais;
             CargarListaEstado();
             FrmEmpleadosHandler = frmEmpleados;
         }
@@ -35,11 +42,15 @@ namespace Pruebas.Formas
         #region Metodos Privados
         private void CargarListaEstado()
         {
-            ObjEstado = new ClsEstado();
+            ObjEstado = new ClsEstado()
+            {
+                NamePais = nomPais
+            };
             ObjEstadoLn.Index(ref ObjEstado);
             if (ObjEstado.MsjError == null)
             {
                 DgvEstado.DataSource = ObjEstado.DtResultados;
+                ObjUtilidades.FormatoDataGridView(ref DgvEstado);
             }
             else
             {
@@ -52,7 +63,6 @@ namespace Pruebas.Formas
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-            FrmEmpleadosHandler.bEstado = false;
             FrmEmpleadosHandler.CargarListaEstado();
             FrmEmpleadosHandler.CambiarSelectedIndexEstado();
         }

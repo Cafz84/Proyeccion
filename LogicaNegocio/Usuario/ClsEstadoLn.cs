@@ -1,5 +1,6 @@
 ﻿using AccesoDatos.DataBase;
 using Entidades.Usuario;
+using System;
 using System.Data;
 
 namespace LogicaNegocio.Usuario
@@ -86,6 +87,20 @@ namespace LogicaNegocio.Usuario
             Ejecutar(ref ObjEstado);
         }
 
+        public void ReadCodePais(ref ClsEstado ObjEstado)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "OCRY",
+                NombreSP = "dbo.SP_ObtenerCodePais",
+                Scalar = false
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjEstado.NamePais);
+
+            ObtenerCodePais(ref ObjEstado);
+        }
+
         public void Update(ref ClsEstado ObjEstado)
         {
             ObjDataBase = new ClsDataBase()
@@ -97,7 +112,6 @@ namespace LogicaNegocio.Usuario
 
             ObjDataBase.DtParametros.Rows.Add(@"@Code", "18", ObjEstado.Code);
             ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjEstado.Name);
-            ObjDataBase.DtParametros.Rows.Add(@"@Country", "18", ObjEstado.Country);
 
             Ejecutar(ref ObjEstado);
         }
@@ -133,11 +147,47 @@ namespace LogicaNegocio.Usuario
                     ObjEstado.DtResultados = ObjDataBase.DsResultados.Tables[0];
                     if (ObjEstado.DtResultados.Rows.Count == 1)
                     {
+                        try
+                        {
+                            foreach (DataRow dr in ObjEstado.DtResultados.Rows)
+                            {
+                                ObjEstado.Code = dr["Code"].ToString();
+                                ObjEstado.Name = dr["Name"].ToString();
+                                ObjEstado.Country = dr["Country"].ToString();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+                        
+                    }
+                }
+            }
+            else
+            {
+                ObjEstado.MsjError = ObjDataBase.MensajeErrorDB;
+            }
+        }
+
+        private void ObtenerCodePais(ref ClsEstado ObjEstado)
+        {
+            ObjDataBase.CRUD(ref ObjDataBase);
+
+            if (ObjDataBase.MensajeErrorDB == null)
+            {
+                if (ObjDataBase.Scalar)
+                {
+                    ObjEstado.ValorEscalar = ObjDataBase.ValorScalar;
+                }
+                else
+                {
+                    ObjEstado.DtResultados = ObjDataBase.DsResultados.Tables[0];
+                    if (ObjEstado.DtResultados.Rows.Count == 1)
+                    {
                         foreach (DataRow dr in ObjEstado.DtResultados.Rows)
                         {
-                            ObjEstado.Code = dr["Code"].ToString();
-                            ObjEstado.Name = dr["Name"].ToString();
-                            ObjEstado.Country = dr["Country"].ToString();
+                            ObjEstado.Country = dr["Code"].ToString();
                         }
                     }
                 }

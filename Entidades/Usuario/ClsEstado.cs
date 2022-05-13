@@ -5,7 +5,7 @@ namespace Entidades.Usuario
     public class ClsEstado
     {
         #region Atriburos Privados
-        private string _code, _country, _name, _gNRECode, _gSTCode, _namePais;
+        private string _code, _country, _name, _gNRECode, _gSTCode, _namePais, _codePais;
         private int _userSing, _eCode;
         private char? _gSTIsUT;
 
@@ -27,6 +27,7 @@ namespace Entidades.Usuario
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
         public string NamePais { get => _namePais; set => _namePais = value; }
+        public string CodePais { get => _codePais; set => _codePais = value; }
         #endregion
     }
 }

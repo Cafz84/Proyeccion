@@ -92,31 +92,45 @@ namespace Pruebas.Formas
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
-            TxtCode.Text = "";
-            TxtNombre.Text = "";
+            TxtCode.Text = string.Empty;
+            TxtNombre.Text = string.Empty;
+
+            BtnLimpiar.Enabled = false;
+            BtnAgregar.Enabled = true;
+            BtnActualizar.Enabled = false;
+            BtnEliminar.Enabled = false;
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            if (TxtCode.Text == "")
+            if (TxtCode.Text != string.Empty || TxtNombre.Text != string.Empty)
             {
-                ObjPais = new ClsPais()
+                DialogResult result = MessageBox.Show("¿Realmente quiere agregar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
                 {
-                    Code = TxtCode.Text,
-                    Name = TxtNombre.Text,
-                };
+                    ObjPais = new ClsPais()
+                    {
+                        Code = TxtCode.Text,
+                        Name = TxtNombre.Text,
+                    };
 
-                ObjPaisLn.Create(ref ObjPais);
-                if (ObjPais.MsjError == null)
-                {
-                    MessageBox.Show("Alta exitosa");
-                    CargarListaPais();
-                    TxtCode.Text = "";
-                    TxtNombre.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show(ObjPais.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ObjPaisLn.Create(ref ObjPais);
+                    if (ObjPais.MsjError == null)
+                    {
+                        MessageBox.Show("Alta exitosa");
+                        CargarListaPais();
+                        TxtCode.Text = string.Empty;
+                        TxtNombre.Text = string.Empty;
+
+                        BtnLimpiar.Enabled = false;
+                        BtnAgregar.Enabled = true;
+                        BtnActualizar.Enabled = false;
+                        BtnEliminar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjPais.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
@@ -127,68 +141,89 @@ namespace Pruebas.Formas
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
-            if (TxtCode.Text == "")
+            if (TxtCode.Text == string.Empty || TxtNombre.Text == string.Empty)
             {
                 MessageBox.Show("Selecciona un dato para actualizar");
             }
             else
             {
-                ObjPais = new ClsPais()
-                {
-                    Code = TxtCode.Text,
-                    Name = TxtNombre.Text,
-                };
-
-                ObjPaisLn.Update(ref ObjPais);
-                if (ObjPais.MsjError == null)
-                {
-                    MessageBox.Show("El Pais fue actualizado correctamente");
-                    CargarListaPais();
-                }
-                else
-                {
-                    MessageBox.Show(ObjPais.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void BtnEliminar_Click(object sender, EventArgs e)
-        {
-            if (TxtCode.Text == "")
-            {
-                MessageBox.Show("Debes seleccionar un dato para eliminar");
-            }
-            else
-            {
-                ObjEstado = new ClsEstado()
-                {
-                    Country = TxtCode.Text
-                };
-                ObjEstadoLn.ReadCountry(ref ObjEstado);
-
-                if (ObjEstado.DtResultados.Rows.Count < 1)
+                DialogResult result = MessageBox.Show("¿Realmente quiere actualizar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
                 {
                     ObjPais = new ClsPais()
                     {
-                        Code = TxtCode.Text
+                        Code = TxtCode.Text,
+                        Name = TxtNombre.Text,
                     };
 
-                    ObjPaisLn.Delete(ref ObjPais);
+                    ObjPaisLn.Update(ref ObjPais);
                     if (ObjPais.MsjError == null)
                     {
-                        MessageBox.Show("Baja exitosa");
+                        MessageBox.Show("El Pais fue actualizado correctamente");
                         CargarListaPais();
-                        TxtCode.Text = "";
-                        TxtNombre.Text = "";
+
+                        TxtCode.Text = string.Empty;
+                        TxtNombre.Text = string.Empty;
+
+                        BtnLimpiar.Enabled = false;
+                        BtnAgregar.Enabled = true;
+                        BtnActualizar.Enabled = false;
+                        BtnEliminar.Enabled = false;
                     }
                     else
                     {
                         MessageBox.Show(ObjPais.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
+            }
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (TxtCode.Text == string.Empty || TxtNombre.Text == string.Empty)
+            {
+                MessageBox.Show("Debes seleccionar un dato para eliminar");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("¿Realmente quiere eliminar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("No se puede dar de baja ya que el pais esta ligado con estados");
+                    ObjEstado = new ClsEstado()
+                    {
+                        Country = TxtCode.Text
+                    };
+                    ObjEstadoLn.ReadCountry(ref ObjEstado);
+
+                    if (ObjEstado.DtResultados.Rows.Count < 1)
+                    {
+                        ObjPais = new ClsPais()
+                        {
+                            Code = TxtCode.Text
+                        };
+
+                        ObjPaisLn.Delete(ref ObjPais);
+                        if (ObjPais.MsjError == null)
+                        {
+                            MessageBox.Show("Baja exitosa");
+                            CargarListaPais();
+                            TxtCode.Text = string.Empty;
+                            TxtNombre.Text = string.Empty;
+
+                            BtnLimpiar.Enabled = false;
+                            BtnAgregar.Enabled = true;
+                            BtnActualizar.Enabled = false;
+                            BtnEliminar.Enabled = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show(ObjPais.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede dar de baja ya que el pais esta ligado con estados");
+                    }
                 }
             }
         }

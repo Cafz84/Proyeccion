@@ -30,20 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEstado));
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.LblAreaId = new System.Windows.Forms.Label();
             this.LblCodigo = new System.Windows.Forms.Label();
             this.TxtCode = new System.Windows.Forms.TextBox();
             this.LblPais = new System.Windows.Forms.Label();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.LblNombre = new System.Windows.Forms.Label();
             this.DgvEstado = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.BtnEliminar = new FontAwesome.Sharp.IconButton();
             this.BtnActualizar = new FontAwesome.Sharp.IconButton();
             this.BtnAgregar = new FontAwesome.Sharp.IconButton();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.LblTituloEstado = new System.Windows.Forms.Label();
-            this.CbPais = new System.Windows.Forms.ComboBox();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.LblCodePais = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEstado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +51,7 @@
             // 
             this.BtnLimpiar.BackColor = System.Drawing.Color.BurlyWood;
             this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpiar.Enabled = false;
             this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
@@ -66,16 +66,7 @@
             this.BtnLimpiar.Text = "Limpiar";
             this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // LblAreaId
-            // 
-            this.LblAreaId.AutoSize = true;
-            this.LblAreaId.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblAreaId.ForeColor = System.Drawing.Color.Black;
-            this.LblAreaId.Location = new System.Drawing.Point(42, 51);
-            this.LblAreaId.Name = "LblAreaId";
-            this.LblAreaId.Size = new System.Drawing.Size(0, 22);
-            this.LblAreaId.TabIndex = 54;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // LblCodigo
             // 
@@ -138,11 +129,22 @@
             this.DgvEstado.ReadOnly = true;
             this.DgvEstado.Size = new System.Drawing.Size(658, 273);
             this.DgvEstado.TabIndex = 50;
+            this.DgvEstado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEstado_CellContentClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 55;
             // 
             // BtnEliminar
             // 
             this.BtnEliminar.BackColor = System.Drawing.Color.DarkRed;
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEliminar.Enabled = false;
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminar.ForeColor = System.Drawing.Color.White;
@@ -163,6 +165,7 @@
             // 
             this.BtnActualizar.BackColor = System.Drawing.Color.Goldenrod;
             this.BtnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnActualizar.Enabled = false;
             this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnActualizar.ForeColor = System.Drawing.Color.White;
@@ -222,24 +225,15 @@
             this.LblTituloEstado.TabIndex = 45;
             this.LblTituloEstado.Text = "Estado";
             // 
-            // CbPais
+            // LblCodePais
             // 
-            this.CbPais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.CbPais.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.CbPais.FormattingEnabled = true;
-            this.CbPais.Location = new System.Drawing.Point(107, 120);
-            this.CbPais.Name = "CbPais";
-            this.CbPais.Size = new System.Drawing.Size(425, 29);
-            this.CbPais.TabIndex = 56;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 55;
+            this.LblCodePais.AutoSize = true;
+            this.LblCodePais.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCodePais.ForeColor = System.Drawing.Color.Black;
+            this.LblCodePais.Location = new System.Drawing.Point(103, 122);
+            this.LblCodePais.Name = "LblCodePais";
+            this.LblCodePais.Size = new System.Drawing.Size(0, 22);
+            this.LblCodePais.TabIndex = 56;
             // 
             // FrmEstado
             // 
@@ -247,9 +241,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(682, 450);
-            this.Controls.Add(this.CbPais);
+            this.Controls.Add(this.LblCodePais);
             this.Controls.Add(this.BtnLimpiar);
-            this.Controls.Add(this.LblAreaId);
             this.Controls.Add(this.LblCodigo);
             this.Controls.Add(this.TxtCode);
             this.Controls.Add(this.LblPais);
@@ -273,7 +266,6 @@
 
         #endregion
         private FontAwesome.Sharp.IconButton BtnLimpiar;
-        private System.Windows.Forms.Label LblAreaId;
         private System.Windows.Forms.Label LblCodigo;
         private System.Windows.Forms.TextBox TxtCode;
         private System.Windows.Forms.Label LblPais;
@@ -285,7 +277,7 @@
         private FontAwesome.Sharp.IconButton BtnAgregar;
         private System.Windows.Forms.PictureBox BtnCerrar;
         private System.Windows.Forms.Label LblTituloEstado;
-        private System.Windows.Forms.ComboBox CbPais;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.Label LblCodePais;
     }
 }

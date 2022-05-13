@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCiudad));
-            this.CbEstado = new System.Windows.Forms.ComboBox();
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.LblAreaId = new System.Windows.Forms.Label();
             this.LblCodigo = new System.Windows.Forms.Label();
             this.TxtCode = new System.Windows.Forms.TextBox();
             this.LblEstado = new System.Windows.Forms.Label();
@@ -44,24 +42,16 @@
             this.BtnAgregar = new FontAwesome.Sharp.IconButton();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.LblTituloEstado = new System.Windows.Forms.Label();
+            this.LblCodeEstado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCiudad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // CbEstado
-            // 
-            this.CbEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.CbEstado.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.CbEstado.FormattingEnabled = true;
-            this.CbEstado.Location = new System.Drawing.Point(107, 120);
-            this.CbEstado.Name = "CbEstado";
-            this.CbEstado.Size = new System.Drawing.Size(425, 29);
-            this.CbEstado.TabIndex = 70;
             // 
             // BtnLimpiar
             // 
             this.BtnLimpiar.BackColor = System.Drawing.Color.BurlyWood;
             this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpiar.Enabled = false;
             this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
@@ -77,16 +67,6 @@
             this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnLimpiar.UseVisualStyleBackColor = false;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
-            // 
-            // LblAreaId
-            // 
-            this.LblAreaId.AutoSize = true;
-            this.LblAreaId.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblAreaId.ForeColor = System.Drawing.Color.Black;
-            this.LblAreaId.Location = new System.Drawing.Point(42, 51);
-            this.LblAreaId.Name = "LblAreaId";
-            this.LblAreaId.Size = new System.Drawing.Size(0, 22);
-            this.LblAreaId.TabIndex = 68;
             // 
             // LblCodigo
             // 
@@ -163,6 +143,7 @@
             // 
             this.BtnEliminar.BackColor = System.Drawing.Color.DarkRed;
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEliminar.Enabled = false;
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminar.ForeColor = System.Drawing.Color.White;
@@ -183,6 +164,7 @@
             // 
             this.BtnActualizar.BackColor = System.Drawing.Color.Goldenrod;
             this.BtnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnActualizar.Enabled = false;
             this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnActualizar.ForeColor = System.Drawing.Color.White;
@@ -242,15 +224,24 @@
             this.LblTituloEstado.TabIndex = 59;
             this.LblTituloEstado.Text = "Ciudad";
             // 
+            // LblCodeEstado
+            // 
+            this.LblCodeEstado.AutoSize = true;
+            this.LblCodeEstado.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCodeEstado.ForeColor = System.Drawing.Color.Black;
+            this.LblCodeEstado.Location = new System.Drawing.Point(103, 122);
+            this.LblCodeEstado.Name = "LblCodeEstado";
+            this.LblCodeEstado.Size = new System.Drawing.Size(0, 22);
+            this.LblCodeEstado.TabIndex = 70;
+            // 
             // FrmCiudad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(682, 450);
-            this.Controls.Add(this.CbEstado);
+            this.Controls.Add(this.LblCodeEstado);
             this.Controls.Add(this.BtnLimpiar);
-            this.Controls.Add(this.LblAreaId);
             this.Controls.Add(this.LblCodigo);
             this.Controls.Add(this.TxtCode);
             this.Controls.Add(this.LblEstado);
@@ -273,10 +264,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox CbEstado;
         private FontAwesome.Sharp.IconButton BtnLimpiar;
-        private System.Windows.Forms.Label LblAreaId;
         private System.Windows.Forms.Label LblCodigo;
         private System.Windows.Forms.TextBox TxtCode;
         private System.Windows.Forms.Label LblEstado;
@@ -289,5 +277,6 @@
         private FontAwesome.Sharp.IconButton BtnAgregar;
         private System.Windows.Forms.PictureBox BtnCerrar;
         private System.Windows.Forms.Label LblTituloEstado;
+        private System.Windows.Forms.Label LblCodeEstado;
     }
 }

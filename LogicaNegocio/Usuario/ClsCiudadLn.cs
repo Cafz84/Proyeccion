@@ -71,7 +71,7 @@ namespace LogicaNegocio.Usuario
             Ejecutar(ref ObjCiudad);
         }
 
-        public void ReadCountry(ref ClsCiudad ObjCiudad)
+        public void ReadEstado(ref ClsCiudad ObjCiudad)
         {
             ObjDataBase = new ClsDataBase()
             {
@@ -83,6 +83,20 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Estado", "18", ObjCiudad.Estado);
 
             Ejecutar(ref ObjCiudad);
+        }
+
+        public void ReadCodeEstado(ref ClsCiudad ObjCiudad)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreTabla = "OCST",
+                NombreSP = "dbo.SP_ObtenerCodeEstado",
+                Scalar = false
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjCiudad.Estado);
+
+            ObtenerCodeEstado(ref ObjCiudad);
         }
 
         public void Update(ref ClsCiudad ObjCiudad)
@@ -169,6 +183,34 @@ namespace LogicaNegocio.Usuario
                         }
                     }
                     ObjCiudad.DtResultados.Rows.Add(ObjCiudad.DtResultados.Rows.Count + 1, "Nueva Ciudad");
+                }
+            }
+            else
+            {
+                ObjCiudad.MsjError = ObjDataBase.MensajeErrorDB;
+            }
+        }
+
+        private void ObtenerCodeEstado(ref ClsCiudad ObjCiudad)
+        {
+            ObjDataBase.CRUD(ref ObjDataBase);
+
+            if (ObjDataBase.MensajeErrorDB == null)
+            {
+                if (ObjDataBase.Scalar)
+                {
+                    ObjCiudad.ValorEscalar = ObjDataBase.ValorScalar;
+                }
+                else
+                {
+                    ObjCiudad.DtResultados = ObjDataBase.DsResultados.Tables[0];
+                    if (ObjCiudad.DtResultados.Rows.Count == 1)
+                    {
+                        foreach (DataRow dr in ObjCiudad.DtResultados.Rows)
+                        {
+                            ObjCiudad.Estado = dr["Code"].ToString();
+                        }
+                    }
                 }
             }
             else

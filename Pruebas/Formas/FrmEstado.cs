@@ -165,7 +165,7 @@ namespace Pruebas.Formas
                     {
                         Estado = TxtCode.Text
                     };
-                    ObjCiudadLn.ReadCountry(ref ObjCiudad);
+                    ObjCiudadLn.ReadEstado(ref ObjCiudad);
 
                     if (ObjCiudad.DtResultados.Rows.Count < 1)
                     {

@@ -63,27 +63,140 @@ namespace Pruebas.Formas
         #region Accion con Botones
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
+            TxtCode.Text = string.Empty;
+            TxtNombre.Text = string.Empty;
+            LblCodeEstado.Text = string.Empty;
 
+            BtnLimpiar.Enabled = false;
+            BtnAgregar.Enabled = true;
+            BtnActualizar.Enabled = false;
+            BtnEliminar.Enabled = false;
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+            if (TxtCode.Text != string.Empty || TxtNombre.Text != string.Empty)
+            {
+                DialogResult result = MessageBox.Show("¿Realmente quiere agregar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    ObjCiudad = new ClsCiudad()
+                    {
+                        Code = TxtCode.Text,
+                        Name = TxtNombre.Text,
+                        Estado = nomEstado
+                    };
 
+                    ObjCiudadLn.ReadCodeEstado(ref ObjCiudad);
+
+                    ObjCiudadLn.Create(ref ObjCiudad);
+                    if (ObjCiudad.MsjError == null)
+                    {
+                        MessageBox.Show("Alta exitosa");
+                        CargarListaCiudad();
+                        TxtCode.Text = string.Empty;
+                        TxtNombre.Text = string.Empty;
+
+                        BtnLimpiar.Enabled = false;
+                        BtnAgregar.Enabled = true;
+                        BtnActualizar.Enabled = false;
+                        BtnEliminar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjCiudad.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se puede generar alta si se selecciono para editar favor de limpiar primero");
+            }
         }
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
+            if (TxtCode.Text == string.Empty || TxtNombre.Text == string.Empty)
+            {
+                MessageBox.Show("Selecciona un dato para actualizar");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("¿Realmente quiere actualizar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    ObjCiudad = new ClsCiudad()
+                    {
+                        Code = TxtCode.Text,
+                        Name = TxtNombre.Text,
+                    };
 
+                    ObjCiudadLn.Update(ref ObjCiudad);
+                    if (ObjCiudad.MsjError == null)
+                    {
+                        MessageBox.Show("El Pais fue actualizado correctamente");
+                        CargarListaCiudad();
+
+                        TxtCode.Text = string.Empty;
+                        TxtNombre.Text = string.Empty;
+                        LblCodeEstado.Text = string.Empty;
+
+                        BtnLimpiar.Enabled = false;
+                        BtnAgregar.Enabled = true;
+                        BtnActualizar.Enabled = false;
+                        BtnEliminar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjCiudad.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
+            if (TxtCode.Text == string.Empty || TxtNombre.Text == string.Empty)
+            {
+                MessageBox.Show("Debes seleccionar un dato para eliminar");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("¿Realmente quiere eliminar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    ObjCiudad = new ClsCiudad()
+                    {
+                        Code = TxtCode.Text
+                    };
 
+                    ObjCiudadLn.Delete(ref ObjCiudad);
+                    if (ObjCiudad.MsjError == null)
+                    {
+                        MessageBox.Show("Baja exitosa");
+                        CargarListaCiudad();
+                        TxtCode.Text = string.Empty;
+                        TxtNombre.Text = string.Empty;
+                        LblCodeEstado.Text = string.Empty;
+
+                        BtnLimpiar.Enabled = false;
+                        BtnAgregar.Enabled = true;
+                        BtnActualizar.Enabled = false;
+                        BtnEliminar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjCiudad.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }   
+            }
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            FrmEmpleadosHandler.CargarListaCiudad();
+            FrmEmpleadosHandler.CambiarSelectedIndexCiudad();
         }
         #endregion
     }

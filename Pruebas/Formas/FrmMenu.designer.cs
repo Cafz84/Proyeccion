@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.BarraTitulo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.BtnRestaurar = new System.Windows.Forms.PictureBox();
             this.BtnMinimizar = new System.Windows.Forms.PictureBox();
             this.BtnMaximizar = new System.Windows.Forms.PictureBox();
@@ -39,8 +40,8 @@
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.BtnNominaDestajo = new FontAwesome.Sharp.IconButton();
+            this.BtnFraccion = new FontAwesome.Sharp.IconButton();
             this.BtnEmpleados = new FontAwesome.Sharp.IconButton();
             this.BtnAvances = new FontAwesome.Sharp.IconButton();
             this.BtnEscaneo = new FontAwesome.Sharp.IconButton();
@@ -64,7 +65,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnInicio = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
@@ -89,6 +89,18 @@
             this.BarraTitulo.Size = new System.Drawing.Size(1300, 35);
             this.BarraTitulo.TabIndex = 0;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(581, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 24);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Menu Principal";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnRestaurar
             // 
@@ -150,8 +162,8 @@
             this.MenuVertical.Controls.Add(this.iconButton8);
             this.MenuVertical.Controls.Add(this.iconButton7);
             this.MenuVertical.Controls.Add(this.iconButton6);
-            this.MenuVertical.Controls.Add(this.iconButton5);
-            this.MenuVertical.Controls.Add(this.iconButton4);
+            this.MenuVertical.Controls.Add(this.BtnNominaDestajo);
+            this.MenuVertical.Controls.Add(this.BtnFraccion);
             this.MenuVertical.Controls.Add(this.BtnEmpleados);
             this.MenuVertical.Controls.Add(this.BtnAvances);
             this.MenuVertical.Controls.Add(this.BtnEscaneo);
@@ -259,47 +271,47 @@
             this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton6.UseVisualStyleBackColor = true;
             // 
-            // iconButton5
+            // BtnNominaDestajo
             // 
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.Color.White;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton5.IconColor = System.Drawing.Color.White;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 32;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(4, 272);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(216, 32);
-            this.iconButton5.TabIndex = 33;
-            this.iconButton5.Text = "Usuarios";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
+            this.BtnNominaDestajo.FlatAppearance.BorderSize = 0;
+            this.BtnNominaDestajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.BtnNominaDestajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNominaDestajo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNominaDestajo.ForeColor = System.Drawing.Color.White;
+            this.BtnNominaDestajo.IconChar = FontAwesome.Sharp.IconChar.MoneyBillWave;
+            this.BtnNominaDestajo.IconColor = System.Drawing.Color.White;
+            this.BtnNominaDestajo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnNominaDestajo.IconSize = 32;
+            this.BtnNominaDestajo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnNominaDestajo.Location = new System.Drawing.Point(4, 272);
+            this.BtnNominaDestajo.Name = "BtnNominaDestajo";
+            this.BtnNominaDestajo.Size = new System.Drawing.Size(216, 32);
+            this.BtnNominaDestajo.TabIndex = 33;
+            this.BtnNominaDestajo.Text = "Nomina Destajo";
+            this.BtnNominaDestajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnNominaDestajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnNominaDestajo.UseVisualStyleBackColor = true;
             // 
-            // iconButton4
+            // BtnFraccion
             // 
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.ForeColor = System.Drawing.Color.White;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.MoneyBillWave;
-            this.iconButton4.IconColor = System.Drawing.Color.White;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 32;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(4, 234);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(216, 32);
-            this.iconButton4.TabIndex = 32;
-            this.iconButton4.Text = "Nomina Destajo";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = true;
+            this.BtnFraccion.FlatAppearance.BorderSize = 0;
+            this.BtnFraccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.BtnFraccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnFraccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFraccion.ForeColor = System.Drawing.Color.White;
+            this.BtnFraccion.IconChar = FontAwesome.Sharp.IconChar.Sitemap;
+            this.BtnFraccion.IconColor = System.Drawing.Color.White;
+            this.BtnFraccion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnFraccion.IconSize = 32;
+            this.BtnFraccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnFraccion.Location = new System.Drawing.Point(4, 234);
+            this.BtnFraccion.Name = "BtnFraccion";
+            this.BtnFraccion.Size = new System.Drawing.Size(216, 32);
+            this.BtnFraccion.TabIndex = 32;
+            this.BtnFraccion.Text = "Fracciones";
+            this.BtnFraccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnFraccion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnFraccion.UseVisualStyleBackColor = true;
             // 
             // BtnEmpleados
             // 
@@ -579,18 +591,6 @@
             this.panelContenedor.Size = new System.Drawing.Size(1080, 665);
             this.panelContenedor.TabIndex = 2;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(581, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 24);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Menu Principal";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -652,8 +652,8 @@
         private FontAwesome.Sharp.IconButton iconButton8;
         private FontAwesome.Sharp.IconButton iconButton7;
         private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton BtnNominaDestajo;
+        private FontAwesome.Sharp.IconButton BtnFraccion;
         private System.Windows.Forms.Label label1;
     }
 }

@@ -17,6 +17,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Area",
                 NombreSP = "dbo.SP_Area_Index",
                 Scalar = false
@@ -29,6 +30,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Area",
                 NombreSP = "dbo.SP_CargarArea",
                 Scalar = false
@@ -43,6 +45,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Area",
                 NombreSP = "dbo.SP_Area_Create",
                 Scalar = false
@@ -59,6 +62,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Area",
                 NombreSP = "dbo.SP_Area_Read",
                 Scalar = false
@@ -73,6 +77,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Area",
                 NombreSP = "dbo.SP_Area_Update",
                 Scalar = true
@@ -90,6 +95,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Area",
                 NombreSP = "dbo.SP_Area_UpdateActivo",
                 Scalar = true
@@ -105,6 +111,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Area",
                 NombreSP = "dbo.SP_Area_Delete",
                 Scalar = true

@@ -8,6 +8,7 @@ namespace Entidades.Usuario
         private int _deptoId;
         private string _name, _remarks;
         private bool _activo;
+        private double _costo;
 
         //Atributos de manejo de la base de datos
         private string _msjError, _valorEscalar;
@@ -22,6 +23,7 @@ namespace Entidades.Usuario
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
         public bool Activo { get => _activo; set => _activo = value; }
+        public double Costo { get => _costo; set => _costo = value; }
         #endregion
     }
 }

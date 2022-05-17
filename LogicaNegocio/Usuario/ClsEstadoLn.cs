@@ -17,6 +17,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCST",
                 NombreSP = "dbo.SP_OCST_Index",
                 Scalar = false
@@ -31,6 +32,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCST",
                 NombreSP = "dbo.SP_CargarEstado",
                 Scalar = false
@@ -47,6 +49,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCST",
                 NombreSP = "dbo.SP_OCST_Create",
                 Scalar = false
@@ -63,6 +66,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCST",
                 NombreSP = "dbo.SP_OCST_Read",
                 Scalar = false
@@ -77,6 +81,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCST",
                 NombreSP = "dbo.SP_OCST_ReadCountry",
                 Scalar = false
@@ -91,6 +96,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCRY",
                 NombreSP = "dbo.SP_ObtenerCodePais",
                 Scalar = false
@@ -105,6 +111,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCST",
                 NombreSP = "dbo.SP_OCST_Update",
                 Scalar = true
@@ -120,6 +127,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCST",
                 NombreSP = "dbo.SP_OCST_Delete",
                 Scalar = true

@@ -17,6 +17,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_Index]",
                 Scalar = false
@@ -29,6 +30,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_EmpID]",
                 Scalar = false
@@ -45,6 +47,7 @@ namespace LogicaNegocio.Usuario
             int spEmpIdMax = EmpId(ref ObjEmpleado);
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_Create]",
                 Scalar = true
@@ -85,6 +88,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_Read]",
                 Scalar = false
@@ -98,6 +102,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_Update]",
                 Scalar = true
@@ -137,6 +142,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OHEM",
                 NombreSP = "dbo.SP_OHEM_UpdateActivo",
                 Scalar = true
@@ -152,6 +158,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_Delete]",
                 Scalar = true

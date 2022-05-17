@@ -18,6 +18,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Usuarios",
                 NombreSP = "[SCH_GENERAL].[SP_Usuarios_Index]",
                 Scalar = false
@@ -33,6 +34,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Usuarios",
                 NombreSP = "[SCH_GENERAL].[SP_Usuarios_Create]",
                 Scalar = true
@@ -51,6 +53,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Usuarios",
                 NombreSP = "[SCH_GENERAL].[SP_Usuarios_Read]",
                 Scalar = false
@@ -64,6 +67,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Usuarios",
                 NombreSP = "[SCH_GENERAL].[SP_Usuarios_Update]",
                 Scalar = true
@@ -83,6 +87,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Usuarios",
                 NombreSP = "[SCH_GENERAL].[SP_Usuarios_Delete]",
                 Scalar = true

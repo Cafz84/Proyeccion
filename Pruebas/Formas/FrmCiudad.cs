@@ -10,15 +10,15 @@ namespace Pruebas.Formas
     public partial class FrmCiudad : Form
     {
         #region Variables Privadas
-        private ClsPais ObjPais = null;
-        private ClsEstado ObjEstado = null;
+        //private ClsPais ObjPais = null;
+        //private ClsEstado ObjEstado = null;
         private ClsCiudad ObjCiudad = null;
-        private readonly ClsPaisLn ObjPaisLn = new ClsPaisLn();
-        private readonly ClsEstadoLn ObjEstadoLn = new ClsEstadoLn();
+        //private readonly ClsPaisLn ObjPaisLn = new ClsPaisLn();
+        //private readonly ClsEstadoLn ObjEstadoLn = new ClsEstadoLn();
         private readonly ClsUtilidades ObjUtilidades = new ClsUtilidades();
         private readonly ClsCiudadLn ObjCiudadLn = new ClsCiudadLn();
 
-        private FrmEmpleados FrmEmpleadosHandler;
+        private readonly FrmEmpleados FrmEmpleadosHandler;
         #endregion
 
         #region Variables Publicas
@@ -55,7 +55,7 @@ namespace Pruebas.Formas
             }
             else
             {
-                MessageBox.Show(ObjPais.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ObjCiudad.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
@@ -134,7 +134,7 @@ namespace Pruebas.Formas
                     ObjCiudadLn.Update(ref ObjCiudad);
                     if (ObjCiudad.MsjError == null)
                     {
-                        MessageBox.Show("El Pais fue actualizado correctamente");
+                        MessageBox.Show("La Ciudad fue actualizada correctamente");
                         CargarListaCiudad();
 
                         TxtCode.Text = string.Empty;
@@ -197,6 +197,32 @@ namespace Pruebas.Formas
             this.Close();
             FrmEmpleadosHandler.CargarListaCiudad();
             FrmEmpleadosHandler.CambiarSelectedIndexCiudad();
+        }
+        #endregion
+
+        #region Acciones con DataGridView
+        private void DgvCiudad_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DgvCiudad.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                ObjCiudad = new ClsCiudad()
+                {
+                    Code = DgvCiudad.Rows[e.RowIndex].Cells["Codigo"].Value.ToString(),
+                    Name = DgvCiudad.Rows[e.RowIndex].Cells["Nombre"].Value.ToString(),
+                    Estado = DgvCiudad.Rows[e.RowIndex].Cells["Estado"].Value.ToString()
+                };
+
+                TxtCode.Text = ObjCiudad.Code.ToString();
+
+                ObjCiudadLn.Read(ref ObjCiudad);
+                TxtNombre.Text = ObjCiudad.Name;
+                LblCodeEstado.Text = ObjCiudad.Estado;
+
+                BtnLimpiar.Enabled = true;
+                BtnAgregar.Enabled = false;
+                BtnActualizar.Enabled = true;
+                BtnEliminar.Enabled = true;
+            }
         }
         #endregion
     }

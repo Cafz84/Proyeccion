@@ -36,6 +36,7 @@
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.LblNombre = new System.Windows.Forms.Label();
             this.DgvDepto = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.BtnEliminar = new FontAwesome.Sharp.IconButton();
             this.BtnActualizar = new FontAwesome.Sharp.IconButton();
             this.BtnAgregar = new FontAwesome.Sharp.IconButton();
@@ -43,7 +44,8 @@
             this.LblTituloDepto = new System.Windows.Forms.Label();
             this.ChkActivo = new System.Windows.Forms.CheckBox();
             this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.LblCosto = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDepto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +97,7 @@
             this.TxtNombre.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombre.Location = new System.Drawing.Point(128, 83);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(404, 31);
+            this.TxtNombre.Size = new System.Drawing.Size(307, 31);
             this.TxtNombre.TabIndex = 1;
             // 
             // LblNombre
@@ -120,6 +122,15 @@
             this.DgvDepto.Size = new System.Drawing.Size(658, 273);
             this.DgvDepto.TabIndex = 46;
             this.DgvDepto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDepto_CellContentClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 55;
             // 
             // BtnEliminar
             // 
@@ -211,7 +222,7 @@
             this.ChkActivo.AutoSize = true;
             this.ChkActivo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkActivo.ForeColor = System.Drawing.Color.White;
-            this.ChkActivo.Location = new System.Drawing.Point(128, 47);
+            this.ChkActivo.Location = new System.Drawing.Point(441, 85);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.Size = new System.Drawing.Size(91, 26);
             this.ChkActivo.TabIndex = 54;
@@ -239,14 +250,25 @@
             this.BtnLimpiar.UseVisualStyleBackColor = false;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
-            // Editar
+            // LblCosto
             // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 55;
+            this.LblCosto.AutoSize = true;
+            this.LblCosto.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCosto.ForeColor = System.Drawing.Color.White;
+            this.LblCosto.Location = new System.Drawing.Point(124, 51);
+            this.LblCosto.Name = "LblCosto";
+            this.LblCosto.Size = new System.Drawing.Size(68, 22);
+            this.LblCosto.TabIndex = 56;
+            this.LblCosto.Text = "Costo:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(191, 46);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(197, 31);
+            this.textBox1.TabIndex = 57;
             // 
             // FrmDepto
             // 
@@ -254,6 +276,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(682, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.LblCosto);
             this.Controls.Add(this.ChkActivo);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.LblDeptoId);
@@ -295,5 +319,7 @@
         private System.Windows.Forms.CheckBox ChkActivo;
         private FontAwesome.Sharp.IconButton BtnLimpiar;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.Label LblCosto;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

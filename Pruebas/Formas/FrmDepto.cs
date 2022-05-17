@@ -64,6 +64,7 @@ namespace Proyeccion.Principal
 
                     ObjDepartamentoLn.Read(ref ObjDepartamento);
                     TxtNombre.Text = ObjDepartamento.Name;
+                    TxtCosto.Text = ObjDepartamento.Costo.ToString();
                     TxtDescripcion.Text = ObjDepartamento.Remarks;
                     ChkActivo.Checked = ObjDepartamento.Activo;
 
@@ -91,6 +92,7 @@ namespace Proyeccion.Principal
         private void BtnLimpiar_Click(object sender, System.EventArgs e)
         {
             LblDeptoId.Text = string.Empty;
+            TxtCosto.Text = string.Empty;
             TxtDescripcion.Text = string.Empty;
             TxtNombre.Text = string.Empty;
             ChkActivo.Checked = false;
@@ -103,7 +105,7 @@ namespace Proyeccion.Principal
 
         private void BtnAgregar_Click(object sender, System.EventArgs e)
         {
-            if (LblDeptoId.Text == "")
+            if (LblDeptoId.Text == string.Empty)
             {
                 DialogResult result = MessageBox.Show("¿Realmente quieres agregar el registro", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.OK)
@@ -111,6 +113,7 @@ namespace Proyeccion.Principal
                     ObjDepartamento = new ClsDepartamento()
                     {
                         Name = TxtNombre.Text,
+                        Costo = Convert.ToDouble(TxtCosto.Text),
                         Remarks = TxtDescripcion.Text,
                         Activo = true
                     };
@@ -121,6 +124,7 @@ namespace Proyeccion.Principal
                         MessageBox.Show("Alta exitosa");
                         CargarListaDepto();
                         LblDeptoId.Text = string.Empty;
+                        TxtCosto.Text = string.Empty;
                         TxtDescripcion.Text = string.Empty;
                         TxtNombre.Text = string.Empty;
                         ChkActivo.Checked = false;
@@ -144,7 +148,7 @@ namespace Proyeccion.Principal
 
         private void BtnActualizar_Click(object sender, System.EventArgs e)
         {
-            if (LblDeptoId.Text == "")
+            if (LblDeptoId.Text == string.Empty)
             {
                 MessageBox.Show("Selecciona un dato para actualizar");
             }
@@ -157,6 +161,7 @@ namespace Proyeccion.Principal
                     {
                         DeptoId = Convert.ToByte(LblDeptoId.Text),
                         Name = TxtNombre.Text,
+                        Costo = Convert.ToDouble(TxtCosto.Text),
                         Remarks = TxtDescripcion.Text,
                         Activo = ChkActivo.Checked
                     };
@@ -164,8 +169,14 @@ namespace Proyeccion.Principal
                     ObjDepartamentoLn.Update(ref ObjDepartamento);
                     if (ObjDepartamento.MsjError == null)
                     {
-                        MessageBox.Show("La Area fue actualizada correctamente");
+                        MessageBox.Show("El Departamento fue actualizado correctamente");
                         CargarListaDepto();
+
+                        LblDeptoId.Text = string.Empty;
+                        TxtCosto.Text = string.Empty;
+                        TxtDescripcion.Text = string.Empty;
+                        TxtNombre.Text = string.Empty;
+                        ChkActivo.Checked = false;
 
                         BtnLimpiar.Enabled = true;
                         BtnAgregar.Enabled = false;
@@ -182,7 +193,7 @@ namespace Proyeccion.Principal
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            if (LblDeptoId.Text == "")
+            if (LblDeptoId.Text == string.Empty)
             {
                 MessageBox.Show("Debes seleccionar un dato para eliminar");
             }
@@ -204,6 +215,7 @@ namespace Proyeccion.Principal
                             MessageBox.Show("Baja exitosa");
                             CargarListaDepto();
                             LblDeptoId.Text = string.Empty;
+                            TxtCosto.Text = string.Empty;
                             TxtDescripcion.Text = string.Empty;
                             TxtNombre.Text = string.Empty;
                             ChkActivo.Checked = false;
@@ -236,6 +248,7 @@ namespace Proyeccion.Principal
                             MessageBox.Show("El Departamento fue desactivado");
                             CargarListaDepto();
                             LblDeptoId.Text = string.Empty;
+                            TxtCosto.Text = string.Empty;
                             TxtDescripcion.Text = string.Empty;
                             TxtNombre.Text = string.Empty;
                             ChkActivo.Checked = false;

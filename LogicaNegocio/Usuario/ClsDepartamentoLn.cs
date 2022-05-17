@@ -17,6 +17,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Departamento",
                 NombreSP = "dbo.SP_Departamento_Index",
                 Scalar = false
@@ -29,6 +30,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Departamento",
                 NombreSP = "dbo.SP_CargarDepartamento",
                 Scalar = false
@@ -44,6 +46,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Departamento",
                 NombreSP = "dbo.SP_Departamento_Create",
                 Scalar = false
@@ -52,6 +55,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjDepartamento.Name);
             ObjDataBase.DtParametros.Rows.Add(@"@Remarks", "18", ObjDepartamento.Remarks);
             ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjDepartamento.Activo);
+            ObjDataBase.DtParametros.Rows.Add(@"@Costo", "10", ObjDepartamento.Costo);
 
             Ejecutar(ref ObjDepartamento);
         }
@@ -60,6 +64,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Departamento",
                 NombreSP = "dbo.SP_Departamento_Read",
                 Scalar = false
@@ -74,6 +79,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Departamento",
                 NombreSP = "dbo.SP_Departamento_Update",
                 Scalar = true
@@ -83,6 +89,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjDepartamento.Name);
             ObjDataBase.DtParametros.Rows.Add(@"@Remarks", "18", ObjDepartamento.Remarks);
             ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjDepartamento.Activo);
+            ObjDataBase.DtParametros.Rows.Add(@"@Costo", "10", ObjDepartamento.Costo);
 
             Ejecutar(ref ObjDepartamento);
         }
@@ -91,6 +98,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Departamento",
                 NombreSP = "dbo.SP_Departamento_UpdateActivo",
                 Scalar = true
@@ -106,6 +114,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Area",
                 NombreSP = "dbo.SP_Departamento_Delete",
                 Scalar = true

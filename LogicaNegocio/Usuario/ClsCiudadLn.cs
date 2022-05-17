@@ -15,6 +15,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Ciudad",
                 NombreSP = "dbo.SP_Ciudad_Index",
                 Scalar = false
@@ -29,6 +30,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Ciudad",
                 NombreSP = "dbo.SP_CargarCiudad",
                 Scalar = false
@@ -45,6 +47,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Ciudad",
                 NombreSP = "dbo.SP_Ciudad_Create",
                 Scalar = false
@@ -52,7 +55,7 @@ namespace LogicaNegocio.Usuario
 
             ObjDataBase.DtParametros.Rows.Add(@"@Code", "18", ObjCiudad.Code);
             ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjCiudad.Name);
-            ObjDataBase.DtParametros.Rows.Add(@"@Country", "18", ObjCiudad.Estado);
+            ObjDataBase.DtParametros.Rows.Add(@"@Estado", "18", ObjCiudad.Estado);
 
             Ejecutar(ref ObjCiudad);
         }
@@ -61,6 +64,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Ciudad",
                 NombreSP = "dbo.SP_Ciudad_Read",
                 Scalar = false
@@ -75,6 +79,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Ciudad",
                 NombreSP = "dbo.SP_Ciudad_ReadEstado",
                 Scalar = false
@@ -89,6 +94,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCST",
                 NombreSP = "dbo.SP_ObtenerCodeEstado",
                 Scalar = false
@@ -103,6 +109,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Ciudad",
                 NombreSP = "dbo.SP_Ciudad_Update",
                 Scalar = true
@@ -119,6 +126,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Ciudad",
                 NombreSP = "dbo.SP_Ciudad_Delete",
                 Scalar = true
@@ -146,11 +154,18 @@ namespace LogicaNegocio.Usuario
                     ObjCiudad.DtResultados = ObjDataBase.DsResultados.Tables[0];
                     if (ObjCiudad.DtResultados.Rows.Count == 1)
                     {
-                        foreach (DataRow dr in ObjCiudad.DtResultados.Rows)
+                        try
                         {
-                            ObjCiudad.Code = dr["Code"].ToString();
-                            ObjCiudad.Name = dr["Name"].ToString();
-                            ObjCiudad.Estado = dr["Estado"].ToString();
+                            foreach (DataRow dr in ObjCiudad.DtResultados.Rows)
+                            {
+                                ObjCiudad.Code = dr["Code"].ToString();
+                                ObjCiudad.Name = dr["Name"].ToString();
+                                ObjCiudad.Estado = dr["Estado"].ToString();
+                            }
+                        }
+                        catch
+                        {
+
                         }
                     }
                 }

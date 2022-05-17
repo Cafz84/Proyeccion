@@ -18,6 +18,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Puesto",
                 NombreSP = "dbo.SP_Puesto_Index",
                 Scalar = false
@@ -30,6 +31,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Puesto",
                 NombreSP = "dbo.SP_CargarPuesto",
                 Scalar = false
@@ -44,6 +46,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Puesto",
                 NombreSP = "dbo.SP_Puesto_Create",
                 Scalar = false
@@ -60,6 +63,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Puesto",
                 NombreSP = "dbo.SP_Puesto_Read",
                 Scalar = false
@@ -74,6 +78,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Puesto",
                 NombreSP = "dbo.SP_Puesto_Update",
                 Scalar = true
@@ -91,6 +96,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Puesto",
                 NombreSP = "dbo.SP_Puesto_UpdateActivo",
                 Scalar = true
@@ -106,6 +112,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "Puesto",
                 NombreSP = "dbo.SP_Puesto_Delete",
                 Scalar = true

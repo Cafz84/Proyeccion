@@ -16,6 +16,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCRY",
                 NombreSP = "dbo.SP_OCRY_Index",
                 Scalar = false
@@ -28,6 +29,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCRY",
                 NombreSP = "dbo.SP_CargarPais",
                 Scalar = false
@@ -42,6 +44,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCRY",
                 NombreSP = "dbo.SP_OCRY_Create",
                 Scalar = false
@@ -57,6 +60,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCRY",
                 NombreSP = "dbo.SP_OCRY_Read",
                 Scalar = false
@@ -71,6 +75,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCRY",
                 NombreSP = "dbo.SP_OCRY_Update",
                 Scalar = true
@@ -86,6 +91,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
+                NombreDB = "DB_BasePruebas",
                 NombreTabla = "OCRY",
                 NombreSP = "dbo.SP_OCRY_Delete",
                 Scalar = true

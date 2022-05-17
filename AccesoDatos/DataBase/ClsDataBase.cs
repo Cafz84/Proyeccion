@@ -44,8 +44,6 @@ namespace AccesoDatos.DataBase
             DtParametros.Columns.Add("Nombre");
             DtParametros.Columns.Add("TipoDato");
             DtParametros.Columns.Add("Valor");
-
-            NombreDB= "DB_BasePruebas";
         }
 
         #endregion

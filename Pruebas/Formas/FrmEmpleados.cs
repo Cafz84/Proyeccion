@@ -511,6 +511,11 @@ namespace Proyeccion.Principal
                     fmEstado.ShowDialog();
                 }
             }
+            if (CbEstado.Text != "Nuevo Estado" || CbEstado.Text != string.Empty)
+            {
+                CargarListaCiudad();
+                CambiarSelectedIndexCiudad();
+            }
         }
 
         private void CbCiudad_SelectedIndexChanged(object sender, EventArgs e)

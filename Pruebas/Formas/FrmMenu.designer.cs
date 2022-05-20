@@ -36,16 +36,13 @@
             this.BtnMaximizar = new System.Windows.Forms.PictureBox();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.BtnReportes = new FontAwesome.Sharp.IconButton();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.BtnNominaDestajo = new FontAwesome.Sharp.IconButton();
-            this.BtnFraccion = new FontAwesome.Sharp.IconButton();
-            this.BtnEmpleados = new FontAwesome.Sharp.IconButton();
-            this.BtnAvances = new FontAwesome.Sharp.IconButton();
-            this.BtnEscaneo = new FontAwesome.Sharp.IconButton();
-            this.BtnUsuarios = new FontAwesome.Sharp.IconButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.BtnNominaDestajo = new System.Windows.Forms.Button();
+            this.BtnFraccion = new System.Windows.Forms.Button();
+            this.BtnEmpleados = new System.Windows.Forms.Button();
+            this.BtnAvances = new System.Windows.Forms.Button();
+            this.BtnEscaneo = new System.Windows.Forms.Button();
+            this.BtnUsuarios = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.SubMenuReporte = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
@@ -158,10 +155,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
-            this.MenuVertical.Controls.Add(this.BtnReportes);
-            this.MenuVertical.Controls.Add(this.iconButton8);
-            this.MenuVertical.Controls.Add(this.iconButton7);
-            this.MenuVertical.Controls.Add(this.iconButton6);
+            this.MenuVertical.Controls.Add(this.button1);
             this.MenuVertical.Controls.Add(this.BtnNominaDestajo);
             this.MenuVertical.Controls.Add(this.BtnFraccion);
             this.MenuVertical.Controls.Add(this.BtnEmpleados);
@@ -186,217 +180,139 @@
             this.MenuVertical.Size = new System.Drawing.Size(220, 665);
             this.MenuVertical.TabIndex = 1;
             // 
-            // BtnReportes
+            // button1
             // 
-            this.BtnReportes.FlatAppearance.BorderSize = 0;
-            this.BtnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReportes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReportes.ForeColor = System.Drawing.Color.White;
-            this.BtnReportes.IconChar = FontAwesome.Sharp.IconChar.LaptopCode;
-            this.BtnReportes.IconColor = System.Drawing.Color.White;
-            this.BtnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnReportes.IconSize = 32;
-            this.BtnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnReportes.Location = new System.Drawing.Point(4, 424);
-            this.BtnReportes.Name = "BtnReportes";
-            this.BtnReportes.Size = new System.Drawing.Size(216, 32);
-            this.BtnReportes.TabIndex = 37;
-            this.BtnReportes.Text = "Reportes";
-            this.BtnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnReportes.UseVisualStyleBackColor = true;
-            this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click_1);
-            // 
-            // iconButton8
-            // 
-            this.iconButton8.FlatAppearance.BorderSize = 0;
-            this.iconButton8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton8.ForeColor = System.Drawing.Color.White;
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton8.IconColor = System.Drawing.Color.White;
-            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.IconSize = 32;
-            this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.Location = new System.Drawing.Point(4, 386);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Size = new System.Drawing.Size(216, 32);
-            this.iconButton8.TabIndex = 36;
-            this.iconButton8.Text = "Usuarios";
-            this.iconButton8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton8.UseVisualStyleBackColor = true;
-            // 
-            // iconButton7
-            // 
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.ForeColor = System.Drawing.Color.White;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton7.IconColor = System.Drawing.Color.White;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 32;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(4, 348);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(216, 32);
-            this.iconButton7.TabIndex = 35;
-            this.iconButton7.Text = "Usuarios";
-            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton7.UseVisualStyleBackColor = true;
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.FlatAppearance.BorderSize = 0;
-            this.iconButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton6.ForeColor = System.Drawing.Color.White;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton6.IconColor = System.Drawing.Color.White;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 32;
-            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton6.Location = new System.Drawing.Point(4, 310);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(216, 32);
-            this.iconButton6.TabIndex = 34;
-            this.iconButton6.Text = "Usuarios";
-            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton6.UseVisualStyleBackColor = true;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(4, 348);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(216, 32);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Proyeccion";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // BtnNominaDestajo
             // 
+            this.BtnNominaDestajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
             this.BtnNominaDestajo.FlatAppearance.BorderSize = 0;
             this.BtnNominaDestajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
             this.BtnNominaDestajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnNominaDestajo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNominaDestajo.ForeColor = System.Drawing.Color.White;
-            this.BtnNominaDestajo.IconChar = FontAwesome.Sharp.IconChar.MoneyBillWave;
-            this.BtnNominaDestajo.IconColor = System.Drawing.Color.White;
-            this.BtnNominaDestajo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnNominaDestajo.IconSize = 32;
-            this.BtnNominaDestajo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnNominaDestajo.Image = ((System.Drawing.Image)(resources.GetObject("BtnNominaDestajo.Image")));
+            this.BtnNominaDestajo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnNominaDestajo.Location = new System.Drawing.Point(4, 272);
             this.BtnNominaDestajo.Name = "BtnNominaDestajo";
             this.BtnNominaDestajo.Size = new System.Drawing.Size(216, 32);
-            this.BtnNominaDestajo.TabIndex = 33;
+            this.BtnNominaDestajo.TabIndex = 43;
             this.BtnNominaDestajo.Text = "Nomina Destajo";
             this.BtnNominaDestajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnNominaDestajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnNominaDestajo.UseVisualStyleBackColor = true;
+            this.BtnNominaDestajo.UseVisualStyleBackColor = false;
             // 
             // BtnFraccion
             // 
+            this.BtnFraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
             this.BtnFraccion.FlatAppearance.BorderSize = 0;
             this.BtnFraccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
             this.BtnFraccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFraccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFraccion.ForeColor = System.Drawing.Color.White;
-            this.BtnFraccion.IconChar = FontAwesome.Sharp.IconChar.Sitemap;
-            this.BtnFraccion.IconColor = System.Drawing.Color.White;
-            this.BtnFraccion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnFraccion.IconSize = 32;
-            this.BtnFraccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnFraccion.Image = ((System.Drawing.Image)(resources.GetObject("BtnFraccion.Image")));
+            this.BtnFraccion.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnFraccion.Location = new System.Drawing.Point(4, 234);
             this.BtnFraccion.Name = "BtnFraccion";
             this.BtnFraccion.Size = new System.Drawing.Size(216, 32);
-            this.BtnFraccion.TabIndex = 32;
+            this.BtnFraccion.TabIndex = 42;
             this.BtnFraccion.Text = "Fracciones";
             this.BtnFraccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnFraccion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnFraccion.UseVisualStyleBackColor = true;
+            this.BtnFraccion.UseVisualStyleBackColor = false;
             // 
             // BtnEmpleados
             // 
+            this.BtnEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
             this.BtnEmpleados.FlatAppearance.BorderSize = 0;
             this.BtnEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
             this.BtnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEmpleados.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEmpleados.ForeColor = System.Drawing.Color.White;
-            this.BtnEmpleados.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.BtnEmpleados.IconColor = System.Drawing.Color.White;
-            this.BtnEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnEmpleados.IconSize = 32;
-            this.BtnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("BtnEmpleados.Image")));
+            this.BtnEmpleados.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnEmpleados.Location = new System.Drawing.Point(4, 196);
             this.BtnEmpleados.Name = "BtnEmpleados";
             this.BtnEmpleados.Size = new System.Drawing.Size(216, 32);
-            this.BtnEmpleados.TabIndex = 31;
+            this.BtnEmpleados.TabIndex = 41;
             this.BtnEmpleados.Text = "Empleados";
             this.BtnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnEmpleados.UseVisualStyleBackColor = true;
+            this.BtnEmpleados.UseVisualStyleBackColor = false;
             this.BtnEmpleados.Click += new System.EventHandler(this.BtnEmpleados_Click);
             // 
             // BtnAvances
             // 
+            this.BtnAvances.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
             this.BtnAvances.FlatAppearance.BorderSize = 0;
             this.BtnAvances.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
             this.BtnAvances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAvances.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAvances.ForeColor = System.Drawing.Color.White;
-            this.BtnAvances.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleRight;
-            this.BtnAvances.IconColor = System.Drawing.Color.White;
-            this.BtnAvances.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnAvances.IconSize = 32;
-            this.BtnAvances.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnAvances.Image = ((System.Drawing.Image)(resources.GetObject("BtnAvances.Image")));
+            this.BtnAvances.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnAvances.Location = new System.Drawing.Point(4, 158);
             this.BtnAvances.Name = "BtnAvances";
             this.BtnAvances.Size = new System.Drawing.Size(216, 32);
-            this.BtnAvances.TabIndex = 30;
+            this.BtnAvances.TabIndex = 40;
             this.BtnAvances.Text = "Avances";
             this.BtnAvances.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAvances.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnAvances.UseVisualStyleBackColor = true;
+            this.BtnAvances.UseVisualStyleBackColor = false;
             // 
             // BtnEscaneo
             // 
+            this.BtnEscaneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
             this.BtnEscaneo.FlatAppearance.BorderSize = 0;
             this.BtnEscaneo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
             this.BtnEscaneo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEscaneo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEscaneo.ForeColor = System.Drawing.Color.White;
-            this.BtnEscaneo.IconChar = FontAwesome.Sharp.IconChar.Barcode;
-            this.BtnEscaneo.IconColor = System.Drawing.Color.White;
-            this.BtnEscaneo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnEscaneo.IconSize = 32;
-            this.BtnEscaneo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEscaneo.Image = ((System.Drawing.Image)(resources.GetObject("BtnEscaneo.Image")));
+            this.BtnEscaneo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnEscaneo.Location = new System.Drawing.Point(4, 120);
             this.BtnEscaneo.Name = "BtnEscaneo";
             this.BtnEscaneo.Size = new System.Drawing.Size(216, 32);
-            this.BtnEscaneo.TabIndex = 29;
+            this.BtnEscaneo.TabIndex = 39;
             this.BtnEscaneo.Text = "Escaneo";
             this.BtnEscaneo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEscaneo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnEscaneo.UseVisualStyleBackColor = true;
+            this.BtnEscaneo.UseVisualStyleBackColor = false;
             // 
             // BtnUsuarios
             // 
+            this.BtnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
             this.BtnUsuarios.FlatAppearance.BorderSize = 0;
             this.BtnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
             this.BtnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUsuarios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.BtnUsuarios.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.BtnUsuarios.IconColor = System.Drawing.Color.White;
-            this.BtnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnUsuarios.IconSize = 32;
-            this.BtnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("BtnUsuarios.Image")));
+            this.BtnUsuarios.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnUsuarios.Location = new System.Drawing.Point(4, 82);
             this.BtnUsuarios.Name = "BtnUsuarios";
             this.BtnUsuarios.Size = new System.Drawing.Size(216, 32);
-            this.BtnUsuarios.TabIndex = 28;
+            this.BtnUsuarios.TabIndex = 38;
             this.BtnUsuarios.Text = "Usuarios";
             this.BtnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnUsuarios.UseVisualStyleBackColor = true;
+            this.BtnUsuarios.UseVisualStyleBackColor = false;
             this.BtnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
             // panel10
@@ -644,16 +560,13 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Panel panel12;
-        private FontAwesome.Sharp.IconButton BtnUsuarios;
-        private FontAwesome.Sharp.IconButton BtnEmpleados;
-        private FontAwesome.Sharp.IconButton BtnAvances;
-        private FontAwesome.Sharp.IconButton BtnEscaneo;
-        private FontAwesome.Sharp.IconButton BtnReportes;
-        private FontAwesome.Sharp.IconButton iconButton8;
-        private FontAwesome.Sharp.IconButton iconButton7;
-        private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton BtnNominaDestajo;
-        private FontAwesome.Sharp.IconButton BtnFraccion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnUsuarios;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnNominaDestajo;
+        private System.Windows.Forms.Button BtnFraccion;
+        private System.Windows.Forms.Button BtnEmpleados;
+        private System.Windows.Forms.Button BtnAvances;
+        private System.Windows.Forms.Button BtnEscaneo;
     }
 }

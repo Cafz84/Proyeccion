@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFracciones));
-            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.CbColor = new System.Windows.Forms.ComboBox();
             this.CbDepto = new System.Windows.Forms.ComboBox();
             this.CbEstilo = new System.Windows.Forms.ComboBox();
@@ -48,9 +47,6 @@
             this.LblDescripcion = new System.Windows.Forms.Label();
             this.LblNombre = new System.Windows.Forms.Label();
             this.LblCodFraccion = new System.Windows.Forms.Label();
-            this.BtnEliminar = new FontAwesome.Sharp.IconButton();
-            this.BtnActualizar = new FontAwesome.Sharp.IconButton();
-            this.BtnAgregar = new FontAwesome.Sharp.IconButton();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.LblTituloUsuario = new System.Windows.Forms.Label();
             this.TpEmpleados = new System.Windows.Forms.TabControl();
@@ -82,32 +78,16 @@
             this.TpComentarios = new System.Windows.Forms.TabPage();
             this.TpFinanciera = new System.Windows.Forms.TabPage();
             this.TxtCodFraccion = new System.Windows.Forms.TextBox();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnActualizar = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.BtnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.TpEmpleados.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).BeginInit();
             this.TpDireccion.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // BtnLimpiar
-            // 
-            this.BtnLimpiar.BackColor = System.Drawing.Color.BurlyWood;
-            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnLimpiar.Enabled = false;
-            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.BtnLimpiar.IconColor = System.Drawing.Color.White;
-            this.BtnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnLimpiar.IconSize = 40;
-            this.BtnLimpiar.Location = new System.Drawing.Point(843, 33);
-            this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(214, 51);
-            this.BtnLimpiar.TabIndex = 73;
-            this.BtnLimpiar.Text = "Limpiar";
-            this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnLimpiar.UseVisualStyleBackColor = false;
             // 
             // CbColor
             // 
@@ -299,65 +279,6 @@
             this.LblCodFraccion.Size = new System.Drawing.Size(83, 22);
             this.LblCodFraccion.TabIndex = 62;
             this.LblCodFraccion.Text = "Codigo:";
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.BackColor = System.Drawing.Color.DarkRed;
-            this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEliminar.Enabled = false;
-            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar.ForeColor = System.Drawing.Color.White;
-            this.BtnEliminar.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.BtnEliminar.IconColor = System.Drawing.Color.White;
-            this.BtnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnEliminar.IconSize = 40;
-            this.BtnEliminar.Location = new System.Drawing.Point(843, 195);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(214, 51);
-            this.BtnEliminar.TabIndex = 60;
-            this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // BtnActualizar
-            // 
-            this.BtnActualizar.BackColor = System.Drawing.Color.Goldenrod;
-            this.BtnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnActualizar.Enabled = false;
-            this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnActualizar.ForeColor = System.Drawing.Color.White;
-            this.BtnActualizar.IconChar = FontAwesome.Sharp.IconChar.SyncAlt;
-            this.BtnActualizar.IconColor = System.Drawing.Color.White;
-            this.BtnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnActualizar.IconSize = 40;
-            this.BtnActualizar.Location = new System.Drawing.Point(843, 141);
-            this.BtnActualizar.Name = "BtnActualizar";
-            this.BtnActualizar.Size = new System.Drawing.Size(214, 51);
-            this.BtnActualizar.TabIndex = 59;
-            this.BtnActualizar.Text = "Actualizar";
-            this.BtnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnActualizar.UseVisualStyleBackColor = false;
-            // 
-            // BtnAgregar
-            // 
-            this.BtnAgregar.BackColor = System.Drawing.Color.DarkGreen;
-            this.BtnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.BtnAgregar.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
-            this.BtnAgregar.IconColor = System.Drawing.Color.White;
-            this.BtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnAgregar.IconSize = 40;
-            this.BtnAgregar.Location = new System.Drawing.Point(843, 87);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(214, 51);
-            this.BtnAgregar.TabIndex = 58;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnAgregar.UseVisualStyleBackColor = false;
             // 
             // BtnCerrar
             // 
@@ -698,14 +619,80 @@
             this.TxtCodFraccion.Size = new System.Drawing.Size(179, 31);
             this.TxtCodFraccion.TabIndex = 74;
             // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.BtnEliminar.Enabled = false;
+            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEliminar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminar.ForeColor = System.Drawing.Color.White;
+            this.BtnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnEliminar.Image")));
+            this.BtnEliminar.Location = new System.Drawing.Point(849, 195);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(214, 51);
+            this.BtnEliminar.TabIndex = 83;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // BtnActualizar
+            // 
+            this.BtnActualizar.BackColor = System.Drawing.Color.Goldenrod;
+            this.BtnActualizar.Enabled = false;
+            this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnActualizar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnActualizar.ForeColor = System.Drawing.Color.White;
+            this.BtnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnActualizar.Image")));
+            this.BtnActualizar.Location = new System.Drawing.Point(849, 141);
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.Size = new System.Drawing.Size(214, 51);
+            this.BtnActualizar.TabIndex = 80;
+            this.BtnActualizar.Text = "Actualizar";
+            this.BtnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnActualizar.UseVisualStyleBackColor = false;
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.BackColor = System.Drawing.Color.DarkGreen;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
+            this.BtnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("BtnAgregar.Image")));
+            this.BtnAgregar.Location = new System.Drawing.Point(849, 87);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(214, 51);
+            this.BtnAgregar.TabIndex = 82;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.BackColor = System.Drawing.Color.BurlyWood;
+            this.BtnLimpiar.Enabled = false;
+            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLimpiar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("BtnLimpiar.Image")));
+            this.BtnLimpiar.Location = new System.Drawing.Point(849, 33);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(214, 51);
+            this.BtnLimpiar.TabIndex = 81;
+            this.BtnLimpiar.Text = "Limpiar";
+            this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
+            // 
             // FrmFracciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1080, 665);
-            this.Controls.Add(this.TxtCodFraccion);
+            this.Controls.Add(this.BtnEliminar);
+            this.Controls.Add(this.BtnActualizar);
+            this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnLimpiar);
+            this.Controls.Add(this.TxtCodFraccion);
             this.Controls.Add(this.CbColor);
             this.Controls.Add(this.CbDepto);
             this.Controls.Add(this.CbEstilo);
@@ -724,9 +711,6 @@
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.LblNombre);
             this.Controls.Add(this.LblCodFraccion);
-            this.Controls.Add(this.BtnEliminar);
-            this.Controls.Add(this.BtnActualizar);
-            this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.LblTituloUsuario);
             this.Controls.Add(this.TpEmpleados);
@@ -745,8 +729,6 @@
         }
 
         #endregion
-
-        private FontAwesome.Sharp.IconButton BtnLimpiar;
         private System.Windows.Forms.ComboBox CbColor;
         private System.Windows.Forms.ComboBox CbDepto;
         private System.Windows.Forms.ComboBox CbEstilo;
@@ -765,9 +747,6 @@
         private System.Windows.Forms.Label LblDescripcion;
         private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.Label LblCodFraccion;
-        private FontAwesome.Sharp.IconButton BtnEliminar;
-        private FontAwesome.Sharp.IconButton BtnActualizar;
-        private FontAwesome.Sharp.IconButton BtnAgregar;
         private System.Windows.Forms.PictureBox BtnCerrar;
         private System.Windows.Forms.Label LblTituloUsuario;
         private System.Windows.Forms.TabControl TpEmpleados;
@@ -799,5 +778,9 @@
         private System.Windows.Forms.TabPage TpComentarios;
         private System.Windows.Forms.TabPage TpFinanciera;
         private System.Windows.Forms.TextBox TxtCodFraccion;
+        private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.Button BtnActualizar;
+        private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.Button BtnLimpiar;
     }
 }

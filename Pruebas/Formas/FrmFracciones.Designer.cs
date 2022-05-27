@@ -32,7 +32,7 @@
             this.CbColor = new System.Windows.Forms.ComboBox();
             this.CbDepto = new System.Windows.Forms.ComboBox();
             this.CbEstilo = new System.Windows.Forms.ComboBox();
-            this.LblPuesto = new System.Windows.Forms.Label();
+            this.LblColor = new System.Windows.Forms.Label();
             this.LblDpto = new System.Windows.Forms.Label();
             this.ChkActivo = new System.Windows.Forms.CheckBox();
             this.TxtEmail = new System.Windows.Forms.TextBox();
@@ -48,7 +48,7 @@
             this.LblNombre = new System.Windows.Forms.Label();
             this.LblCodFraccion = new System.Windows.Forms.Label();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
-            this.LblTituloUsuario = new System.Windows.Forms.Label();
+            this.LblTituloFracciones = new System.Windows.Forms.Label();
             this.TpEmpleados = new System.Windows.Forms.TabControl();
             this.TpIndex = new System.Windows.Forms.TabPage();
             this.DgvEmpleados = new System.Windows.Forms.DataGridView();
@@ -119,16 +119,16 @@
             this.CbEstilo.Size = new System.Drawing.Size(208, 29);
             this.CbEstilo.TabIndex = 52;
             // 
-            // LblPuesto
+            // LblColor
             // 
-            this.LblPuesto.AutoSize = true;
-            this.LblPuesto.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPuesto.ForeColor = System.Drawing.Color.White;
-            this.LblPuesto.Location = new System.Drawing.Point(587, 134);
-            this.LblPuesto.Name = "LblPuesto";
-            this.LblPuesto.Size = new System.Drawing.Size(63, 22);
-            this.LblPuesto.TabIndex = 72;
-            this.LblPuesto.Text = "Color:";
+            this.LblColor.AutoSize = true;
+            this.LblColor.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblColor.ForeColor = System.Drawing.Color.White;
+            this.LblColor.Location = new System.Drawing.Point(587, 134);
+            this.LblColor.Name = "LblColor";
+            this.LblColor.Size = new System.Drawing.Size(63, 22);
+            this.LblColor.TabIndex = 72;
+            this.LblColor.Text = "Color:";
             // 
             // LblDpto
             // 
@@ -291,16 +291,16 @@
             this.BtnCerrar.TabIndex = 61;
             this.BtnCerrar.TabStop = false;
             // 
-            // LblTituloUsuario
+            // LblTituloFracciones
             // 
-            this.LblTituloUsuario.AutoSize = true;
-            this.LblTituloUsuario.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTituloUsuario.ForeColor = System.Drawing.Color.White;
-            this.LblTituloUsuario.Location = new System.Drawing.Point(420, 9);
-            this.LblTituloUsuario.Name = "LblTituloUsuario";
-            this.LblTituloUsuario.Size = new System.Drawing.Size(188, 39);
-            this.LblTituloUsuario.TabIndex = 48;
-            this.LblTituloUsuario.Text = "Fracciones";
+            this.LblTituloFracciones.AutoSize = true;
+            this.LblTituloFracciones.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTituloFracciones.ForeColor = System.Drawing.Color.White;
+            this.LblTituloFracciones.Location = new System.Drawing.Point(420, 9);
+            this.LblTituloFracciones.Name = "LblTituloFracciones";
+            this.LblTituloFracciones.Size = new System.Drawing.Size(188, 39);
+            this.LblTituloFracciones.TabIndex = 48;
+            this.LblTituloFracciones.Text = "Fracciones";
             // 
             // TpEmpleados
             // 
@@ -696,7 +696,7 @@
             this.Controls.Add(this.CbColor);
             this.Controls.Add(this.CbDepto);
             this.Controls.Add(this.CbEstilo);
-            this.Controls.Add(this.LblPuesto);
+            this.Controls.Add(this.LblColor);
             this.Controls.Add(this.LblDpto);
             this.Controls.Add(this.ChkActivo);
             this.Controls.Add(this.TxtEmail);
@@ -712,7 +712,7 @@
             this.Controls.Add(this.LblNombre);
             this.Controls.Add(this.LblCodFraccion);
             this.Controls.Add(this.BtnCerrar);
-            this.Controls.Add(this.LblTituloUsuario);
+            this.Controls.Add(this.LblTituloFracciones);
             this.Controls.Add(this.TpEmpleados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmFracciones";
@@ -732,7 +732,7 @@
         private System.Windows.Forms.ComboBox CbColor;
         private System.Windows.Forms.ComboBox CbDepto;
         private System.Windows.Forms.ComboBox CbEstilo;
-        private System.Windows.Forms.Label LblPuesto;
+        private System.Windows.Forms.Label LblColor;
         private System.Windows.Forms.Label LblDpto;
         private System.Windows.Forms.CheckBox ChkActivo;
         private System.Windows.Forms.TextBox TxtEmail;
@@ -748,7 +748,7 @@
         private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.Label LblCodFraccion;
         private System.Windows.Forms.PictureBox BtnCerrar;
-        private System.Windows.Forms.Label LblTituloUsuario;
+        private System.Windows.Forms.Label LblTituloFracciones;
         private System.Windows.Forms.TabControl TpEmpleados;
         private System.Windows.Forms.TabPage TpIndex;
         private System.Windows.Forms.DataGridView DgvEmpleados;

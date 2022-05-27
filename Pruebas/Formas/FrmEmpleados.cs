@@ -73,6 +73,52 @@ namespace Proyeccion.Principal
         #endregion
 
         #region Metodos Publicos
+        public void LimpiarCampos()
+        {
+            //Formulario Empleados
+            LblEmpId.Text = string.Empty;
+            TxtNombre.Text = string.Empty;
+            TxtNombre2.Text = string.Empty;
+            TxtApellido.Text = string.Empty;
+            CbArea.SelectedIndex = -1;
+            CbDepto.SelectedIndex = -1;
+            CbPuesto.SelectedIndex = -1;
+            TxtTelCasa.Text = string.Empty;
+            TxtTelMovil.Text = string.Empty;
+            TxtEmail.Text = string.Empty;
+            ChkActivo.Checked = false;
+
+            //TabControl Direccion
+            CbPais.Text = string.Empty;
+            CbEstado.Text = string.Empty;
+            cbCiudad.Text = string.Empty;
+            TxtColonia.Text = string.Empty;
+            TxtDireccion.Text = string.Empty;
+            TxtNoExt.Text = string.Empty;
+            TxtNoInt.Text = string.Empty;
+            TxtCP.Text = string.Empty;
+
+            //TabControl Gestion
+            DtpFechaInicio.Text = DateTime.Now.ToString();
+            DtpFechaRC.Text = DateTime.Now.ToString();
+            CbMotivoRC.Text = string.Empty;
+
+            //TabControl Personal
+            DtpFechaNacimiento.Text = DateTime.Now.ToString();
+            CbSexo.Text = string.Empty;
+            CbEstadoCivil.Text = string.Empty;
+            TxtNHijos.Text = string.Empty;
+            TxtCURP.Text = string.Empty;
+
+            //TabControl Financiera
+            TxtSalario.Text = string.Empty;
+            TxtSueldoBase.Text = string.Empty;
+            TxtSueldoLimite.Text = string.Empty;
+            CbUSalario.Text = string.Empty;
+            CbUSueldoBase.Text = string.Empty;
+            CbUSueldoLimite.Text = string.Empty;
+        }
+        
         public void CargarListaArea()
         {
             ObjArea = new ClsArea();
@@ -226,27 +272,19 @@ namespace Proyeccion.Principal
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
-            BtnAgregar.Enabled = false;
+            BtnAgregar.Enabled = true;
             BtnEliminar.Enabled = false;
             BtnActualizar.Enabled = false;
-            LblEmpId.Text = string.Empty;
-            TxtNombre.Text = string.Empty;
-            TxtNombre2.Text = string.Empty;
-            TxtApellido.Text = string.Empty;
-            CbArea.SelectedIndex = -1;
-            CbDepto.SelectedIndex = -1;
-            CbPuesto.SelectedIndex = -1;
-            TxtTelCasa.Text = string.Empty;
-            TxtTelMovil.Text = string.Empty;
-            TxtEmail.Text = string.Empty;
-            ChkActivo.Checked = false;
+            BtnLimpiar.Enabled = false;
+
+            LimpiarCampos();
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            if (LblEmpId.Text == "")
+            if (LblEmpId.Text == string.Empty)
             {
-                if (TxtNombre.Text == "")
+                if (TxtNombre.Text == string.Empty)
                 {
                     MessageBox.Show("Se requiere ingresar un nombre de empleado");
                 }
@@ -263,8 +301,8 @@ namespace Proyeccion.Principal
                         HomeTel = TxtTelCasa.Text,
                         Mobile = TxtTelMovil.Text,
                         Email = TxtEmail.Text,
-                        Active = 'Y'
-                        
+                        Active = 'Y',
+                        HomeCountr = CbPais.SelectedValue.ToString()
                     };
 
                     ObjEmpleadoLn.Create(ref ObjEmpleado);
@@ -276,18 +314,9 @@ namespace Proyeccion.Principal
                         BtnLimpiar.Enabled = false;
                         BtnActualizar.Enabled = false;
                         BtnEliminar.Enabled = false;
+                        BtnAgregar.Enabled = true;
 
-                        LblEmpId.Text = string.Empty;
-                        TxtNombre.Text = string.Empty;
-                        TxtNombre2.Text = string.Empty;
-                        TxtApellido.Text = string.Empty;
-                        CbArea.SelectedIndex = -1;
-                        CbDepto.SelectedIndex = -1;
-                        CbPuesto.SelectedIndex = -1;
-                        TxtTelCasa.Text = string.Empty;
-                        TxtTelMovil.Text = string.Empty;
-                        TxtEmail.Text = string.Empty;
-                        ChkActivo.Checked = false;
+                        LimpiarCampos();
                     }
                     else
                     {
@@ -346,17 +375,7 @@ namespace Proyeccion.Principal
                         BtnEliminar.Enabled = false;
                         BtnActualizar.Enabled = false;
 
-                        LblEmpId.Text = string.Empty;
-                        TxtNombre.Text = string.Empty;
-                        TxtNombre2.Text = string.Empty;
-                        TxtApellido.Text = string.Empty;
-                        CbArea.SelectedIndex = -1;
-                        CbDepto.SelectedIndex = -1;
-                        CbPuesto.SelectedIndex = -1;
-                        TxtTelCasa.Text = string.Empty;
-                        TxtTelMovil.Text = string.Empty;
-                        TxtEmail.Text = string.Empty;
-                        ChkActivo.Checked = false;
+                        LimpiarCampos();
                     }
                     else
                     {
@@ -395,17 +414,7 @@ namespace Proyeccion.Principal
                             BtnAgregar.Enabled = true;
                             BtnEliminar.Enabled = false;
 
-                            LblEmpId.Text = string.Empty;
-                            TxtNombre.Text = string.Empty;
-                            TxtNombre2.Text = string.Empty;
-                            TxtApellido.Text = string.Empty;
-                            CbArea.SelectedIndex = -1;
-                            CbDepto.SelectedIndex = -1;
-                            CbPuesto.SelectedIndex = -1;
-                            TxtTelCasa.Text = string.Empty;
-                            TxtTelMovil.Text = string.Empty;
-                            TxtEmail.Text = string.Empty;
-                            ChkActivo.Checked = false;
+                            LimpiarCampos();
                         }
                         else
                         {
@@ -435,17 +444,7 @@ namespace Proyeccion.Principal
                             BtnAgregar.Enabled = true;
                             BtnEliminar.Enabled = false;
 
-                            LblEmpId.Text = string.Empty;
-                            TxtNombre.Text = string.Empty;
-                            TxtNombre2.Text = string.Empty;
-                            TxtApellido.Text = string.Empty;
-                            CbArea.SelectedIndex = -1;
-                            CbDepto.SelectedIndex = -1;
-                            CbPuesto.SelectedIndex = -1;
-                            TxtTelCasa.Text = string.Empty;
-                            TxtTelMovil.Text = string.Empty;
-                            TxtEmail.Text = string.Empty;
-                            ChkActivo.Checked = false;
+                            LimpiarCampos();
                         }
                         else
                         {
@@ -458,18 +457,11 @@ namespace Proyeccion.Principal
         #endregion
 
         #region Acciones con los ComboBox
+        
+        #region Eventos DataSourceChanged
         private void CbArea_DataSourceChanged(object sender, EventArgs e)
         {
             CbArea.Text = string.Empty;
-        }
-
-        private void CbArea_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (CbArea.Text.Equals("Nueva Area"))
-            {
-                FrmArea fmArea = new FrmArea(this);
-                fmArea.ShowDialog();
-            }
         }
 
         private void CbDepto_DataSourceChanged(object sender, EventArgs e)
@@ -482,6 +474,28 @@ namespace Proyeccion.Principal
             CbPuesto.Text = string.Empty;
         }
 
+        private void CbPais_DataSourceChanged(object sender, EventArgs e)
+        {
+            CbPais.Text = string.Empty;
+        }
+
+        private void CbEstado_DataSourceChanged(object sender, EventArgs e)
+        {
+            CbEstado.Text = string.Empty;
+        }
+
+        #endregion
+
+        #region Eventos SelectedIndexChanged
+        private void CbArea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CbArea.Text.Equals("Nueva Area"))
+            {
+                FrmArea fmArea = new FrmArea(this);
+                fmArea.ShowDialog();
+            }
+        }
+
         private void CbDepto_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CbDepto.Text.Equals("Nuevo Departamento"))
@@ -489,16 +503,6 @@ namespace Proyeccion.Principal
                 FrmDepto fmDepto = new FrmDepto(this);
                 fmDepto.ShowDialog();
             }
-        }
-
-        private void CbArea_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
-
-        private void CbDepto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
         }
 
         private void CbEstado_SelectedIndexChanged(object sender, EventArgs e)
@@ -530,38 +534,13 @@ namespace Proyeccion.Principal
             }
         }
 
-        private void CbPais_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled= true;
-        }
-
-        private void CbEstado_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
-
-        private void CbPais_DataSourceChanged(object sender, EventArgs e)
-        {
-            CbPais.Text = string.Empty;
-        }
-
-        private void CbEstado_DataSourceChanged(object sender, EventArgs e)
-        {
-            CbEstado.Text = string.Empty;
-        }
-
-        private void CbPuesto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled= true;
-        }
-
         private void CbPuesto_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CbPuesto.Text.Equals("Nuevo Puesto"))
             {
                 FrmPuesto fmPuesto = new FrmPuesto(this);
                 fmPuesto.ShowDialog();
-            }   
+            }
         }
 
         private void CbPais_SelectedIndexChanged(object sender, EventArgs e)
@@ -585,6 +564,37 @@ namespace Proyeccion.Principal
                 CbEstado.Enabled = true;
             }*/
         }
+
+        #endregion
+
+        #region Eventos KeyPress
+        private void CbArea_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void CbDepto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void CbPais_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled= true;
+        }
+
+        private void CbEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        
+        private void CbPuesto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled= true;
+        }
+
+        #endregion
+
         #endregion
 
         #region Acciones con DataGridView

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleados));
-            this.TpEmpleados = new System.Windows.Forms.TabControl();
+            this.TcEmpleados = new System.Windows.Forms.TabControl();
             this.TpIndex = new System.Windows.Forms.TabPage();
             this.DgvEmpleados = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
@@ -39,9 +39,6 @@
             this.CbPais = new System.Windows.Forms.ComboBox();
             this.TxtNoInt = new System.Windows.Forms.TextBox();
             this.LblNoInt = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.LblCiudad = new System.Windows.Forms.Label();
             this.TxtCP = new System.Windows.Forms.TextBox();
             this.LblCP = new System.Windows.Forms.Label();
@@ -54,8 +51,21 @@
             this.LblEstado = new System.Windows.Forms.Label();
             this.LblPais = new System.Windows.Forms.Label();
             this.TpGestion = new System.Windows.Forms.TabPage();
+            this.LblMotivoRC = new System.Windows.Forms.Label();
+            this.CbMotivoRC = new System.Windows.Forms.ComboBox();
+            this.DtpFechaRC = new System.Windows.Forms.DateTimePicker();
+            this.LblFechaRC = new System.Windows.Forms.Label();
+            this.DtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.LblFechaInicio = new System.Windows.Forms.Label();
             this.TpPersonal = new System.Windows.Forms.TabPage();
-            this.TpComentarios = new System.Windows.Forms.TabPage();
+            this.LblNHijos = new System.Windows.Forms.Label();
+            this.CbEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.TxtNHijos = new System.Windows.Forms.TextBox();
+            this.LblEstdoCivil = new System.Windows.Forms.Label();
+            this.DtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.LblFechaNacimiento = new System.Windows.Forms.Label();
+            this.LblSexo = new System.Windows.Forms.Label();
+            this.CbSexo = new System.Windows.Forms.ComboBox();
             this.TpFinanciera = new System.Windows.Forms.TabPage();
             this.LblTituloUsuario = new System.Windows.Forms.Label();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
@@ -84,27 +94,44 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnActualizar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
-            this.TpEmpleados.SuspendLayout();
+            this.LblCURP = new System.Windows.Forms.Label();
+            this.TxtCURP = new System.Windows.Forms.TextBox();
+            this.TxtSalario = new System.Windows.Forms.TextBox();
+            this.LblSalario = new System.Windows.Forms.Label();
+            this.TxtSueldoBase = new System.Windows.Forms.TextBox();
+            this.LblSueldoBase = new System.Windows.Forms.Label();
+            this.TxtSueldoLimite = new System.Windows.Forms.TextBox();
+            this.LblSueldoLimite = new System.Windows.Forms.Label();
+            this.CbUSalario = new System.Windows.Forms.ComboBox();
+            this.CbUSueldoBase = new System.Windows.Forms.ComboBox();
+            this.CbUSueldoLimite = new System.Windows.Forms.ComboBox();
+            this.GbTipoPago = new System.Windows.Forms.GroupBox();
+            this.RbFijo = new System.Windows.Forms.RadioButton();
+            this.RbVariable = new System.Windows.Forms.RadioButton();
+            this.TcEmpleados.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).BeginInit();
             this.TpDireccion.SuspendLayout();
+            this.TpGestion.SuspendLayout();
+            this.TpPersonal.SuspendLayout();
+            this.TpFinanciera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
+            this.GbTipoPago.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TpEmpleados
+            // TcEmpleados
             // 
-            this.TpEmpleados.Controls.Add(this.TpIndex);
-            this.TpEmpleados.Controls.Add(this.TpDireccion);
-            this.TpEmpleados.Controls.Add(this.TpGestion);
-            this.TpEmpleados.Controls.Add(this.TpPersonal);
-            this.TpEmpleados.Controls.Add(this.TpComentarios);
-            this.TpEmpleados.Controls.Add(this.TpFinanciera);
-            this.TpEmpleados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TpEmpleados.Location = new System.Drawing.Point(12, 247);
-            this.TpEmpleados.Name = "TpEmpleados";
-            this.TpEmpleados.SelectedIndex = 0;
-            this.TpEmpleados.Size = new System.Drawing.Size(1056, 406);
-            this.TpEmpleados.TabIndex = 0;
+            this.TcEmpleados.Controls.Add(this.TpIndex);
+            this.TcEmpleados.Controls.Add(this.TpDireccion);
+            this.TcEmpleados.Controls.Add(this.TpGestion);
+            this.TcEmpleados.Controls.Add(this.TpPersonal);
+            this.TcEmpleados.Controls.Add(this.TpFinanciera);
+            this.TcEmpleados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TcEmpleados.Location = new System.Drawing.Point(12, 247);
+            this.TcEmpleados.Name = "TcEmpleados";
+            this.TcEmpleados.SelectedIndex = 0;
+            this.TcEmpleados.Size = new System.Drawing.Size(1056, 406);
+            this.TcEmpleados.TabIndex = 0;
             // 
             // TpIndex
             // 
@@ -145,9 +172,6 @@
             this.TpDireccion.Controls.Add(this.CbPais);
             this.TpDireccion.Controls.Add(this.TxtNoInt);
             this.TpDireccion.Controls.Add(this.LblNoInt);
-            this.TpDireccion.Controls.Add(this.textBox8);
-            this.TpDireccion.Controls.Add(this.label8);
-            this.TpDireccion.Controls.Add(this.textBox7);
             this.TpDireccion.Controls.Add(this.LblCiudad);
             this.TpDireccion.Controls.Add(this.TxtCP);
             this.TpDireccion.Controls.Add(this.LblCP);
@@ -221,35 +245,6 @@
             this.LblNoInt.Size = new System.Drawing.Size(80, 22);
             this.LblNoInt.TabIndex = 44;
             this.LblNoInt.Text = "No. Int.:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.textBox8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(103, 300);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(307, 31);
-            this.textBox8.TabIndex = 41;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(2, 304);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 22);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "1er Nomb:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.textBox7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(103, 263);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(307, 31);
-            this.textBox7.TabIndex = 39;
             // 
             // LblCiudad
             // 
@@ -367,6 +362,12 @@
             // TpGestion
             // 
             this.TpGestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpGestion.Controls.Add(this.LblMotivoRC);
+            this.TpGestion.Controls.Add(this.CbMotivoRC);
+            this.TpGestion.Controls.Add(this.DtpFechaRC);
+            this.TpGestion.Controls.Add(this.LblFechaRC);
+            this.TpGestion.Controls.Add(this.DtpFechaInicio);
+            this.TpGestion.Controls.Add(this.LblFechaInicio);
             this.TpGestion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpGestion.Location = new System.Drawing.Point(4, 26);
             this.TpGestion.Name = "TpGestion";
@@ -374,9 +375,76 @@
             this.TpGestion.TabIndex = 2;
             this.TpGestion.Text = "Gestión";
             // 
+            // LblMotivoRC
+            // 
+            this.LblMotivoRC.AutoSize = true;
+            this.LblMotivoRC.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMotivoRC.ForeColor = System.Drawing.Color.White;
+            this.LblMotivoRC.Location = new System.Drawing.Point(12, 90);
+            this.LblMotivoRC.Name = "LblMotivoRC";
+            this.LblMotivoRC.Size = new System.Drawing.Size(309, 22);
+            this.LblMotivoRC.TabIndex = 81;
+            this.LblMotivoRC.Text = "Motivo de recesión del contrato:";
+            // 
+            // CbMotivoRC
+            // 
+            this.CbMotivoRC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.CbMotivoRC.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.CbMotivoRC.FormattingEnabled = true;
+            this.CbMotivoRC.Location = new System.Drawing.Point(323, 88);
+            this.CbMotivoRC.Name = "CbMotivoRC";
+            this.CbMotivoRC.Size = new System.Drawing.Size(180, 29);
+            this.CbMotivoRC.TabIndex = 80;
+            // 
+            // DtpFechaRC
+            // 
+            this.DtpFechaRC.Location = new System.Drawing.Point(313, 54);
+            this.DtpFechaRC.Name = "DtpFechaRC";
+            this.DtpFechaRC.Size = new System.Drawing.Size(190, 23);
+            this.DtpFechaRC.TabIndex = 48;
+            // 
+            // LblFechaRC
+            // 
+            this.LblFechaRC.AutoSize = true;
+            this.LblFechaRC.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaRC.ForeColor = System.Drawing.Color.White;
+            this.LblFechaRC.Location = new System.Drawing.Point(12, 55);
+            this.LblFechaRC.Name = "LblFechaRC";
+            this.LblFechaRC.Size = new System.Drawing.Size(303, 22);
+            this.LblFechaRC.TabIndex = 47;
+            this.LblFechaRC.Text = "Fecha de recesión del contrato:";
+            // 
+            // DtpFechaInicio
+            // 
+            this.DtpFechaInicio.Location = new System.Drawing.Point(168, 15);
+            this.DtpFechaInicio.Name = "DtpFechaInicio";
+            this.DtpFechaInicio.Size = new System.Drawing.Size(190, 23);
+            this.DtpFechaInicio.TabIndex = 46;
+            // 
+            // LblFechaInicio
+            // 
+            this.LblFechaInicio.AutoSize = true;
+            this.LblFechaInicio.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaInicio.ForeColor = System.Drawing.Color.White;
+            this.LblFechaInicio.Location = new System.Drawing.Point(12, 16);
+            this.LblFechaInicio.Name = "LblFechaInicio";
+            this.LblFechaInicio.Size = new System.Drawing.Size(155, 22);
+            this.LblFechaInicio.TabIndex = 45;
+            this.LblFechaInicio.Text = "Fecha de Inicio:";
+            // 
             // TpPersonal
             // 
             this.TpPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpPersonal.Controls.Add(this.LblCURP);
+            this.TpPersonal.Controls.Add(this.TxtCURP);
+            this.TpPersonal.Controls.Add(this.LblNHijos);
+            this.TpPersonal.Controls.Add(this.CbEstadoCivil);
+            this.TpPersonal.Controls.Add(this.TxtNHijos);
+            this.TpPersonal.Controls.Add(this.LblEstdoCivil);
+            this.TpPersonal.Controls.Add(this.DtpFechaNacimiento);
+            this.TpPersonal.Controls.Add(this.LblFechaNacimiento);
+            this.TpPersonal.Controls.Add(this.LblSexo);
+            this.TpPersonal.Controls.Add(this.CbSexo);
             this.TpPersonal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpPersonal.Location = new System.Drawing.Point(4, 26);
             this.TpPersonal.Name = "TpPersonal";
@@ -384,19 +452,108 @@
             this.TpPersonal.TabIndex = 3;
             this.TpPersonal.Text = "Personal";
             // 
-            // TpComentarios
+            // LblNHijos
             // 
-            this.TpComentarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.TpComentarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TpComentarios.Location = new System.Drawing.Point(4, 26);
-            this.TpComentarios.Name = "TpComentarios";
-            this.TpComentarios.Size = new System.Drawing.Size(1048, 376);
-            this.TpComentarios.TabIndex = 5;
-            this.TpComentarios.Text = "Comentarios";
+            this.LblNHijos.AutoSize = true;
+            this.LblNHijos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNHijos.ForeColor = System.Drawing.Color.White;
+            this.LblNHijos.Location = new System.Drawing.Point(12, 134);
+            this.LblNHijos.Name = "LblNHijos";
+            this.LblNHijos.Size = new System.Drawing.Size(176, 22);
+            this.LblNHijos.TabIndex = 88;
+            this.LblNHijos.Text = "Cantidad de hijos:";
+            // 
+            // CbEstadoCivil
+            // 
+            this.CbEstadoCivil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.CbEstadoCivil.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.CbEstadoCivil.FormattingEnabled = true;
+            this.CbEstadoCivil.Items.AddRange(new object[] {
+            "Soltero/a",
+            "Casado/a",
+            "Divorciado/a",
+            "Viudo/a"});
+            this.CbEstadoCivil.Location = new System.Drawing.Point(134, 90);
+            this.CbEstadoCivil.Name = "CbEstadoCivil";
+            this.CbEstadoCivil.Size = new System.Drawing.Size(276, 29);
+            this.CbEstadoCivil.TabIndex = 87;
+            // 
+            // TxtNHijos
+            // 
+            this.TxtNHijos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtNHijos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNHijos.Location = new System.Drawing.Point(188, 131);
+            this.TxtNHijos.MaxLength = 50;
+            this.TxtNHijos.Name = "TxtNHijos";
+            this.TxtNHijos.Size = new System.Drawing.Size(222, 31);
+            this.TxtNHijos.TabIndex = 80;
+            // 
+            // LblEstdoCivil
+            // 
+            this.LblEstdoCivil.AutoSize = true;
+            this.LblEstdoCivil.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblEstdoCivil.ForeColor = System.Drawing.Color.White;
+            this.LblEstdoCivil.Location = new System.Drawing.Point(12, 92);
+            this.LblEstdoCivil.Name = "LblEstdoCivil";
+            this.LblEstdoCivil.Size = new System.Drawing.Size(116, 22);
+            this.LblEstdoCivil.TabIndex = 86;
+            this.LblEstdoCivil.Text = "Estado civil:";
+            // 
+            // DtpFechaNacimiento
+            // 
+            this.DtpFechaNacimiento.Location = new System.Drawing.Point(220, 52);
+            this.DtpFechaNacimiento.Name = "DtpFechaNacimiento";
+            this.DtpFechaNacimiento.Size = new System.Drawing.Size(190, 23);
+            this.DtpFechaNacimiento.TabIndex = 85;
+            // 
+            // LblFechaNacimiento
+            // 
+            this.LblFechaNacimiento.AutoSize = true;
+            this.LblFechaNacimiento.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaNacimiento.ForeColor = System.Drawing.Color.White;
+            this.LblFechaNacimiento.Location = new System.Drawing.Point(12, 52);
+            this.LblFechaNacimiento.Name = "LblFechaNacimiento";
+            this.LblFechaNacimiento.Size = new System.Drawing.Size(213, 22);
+            this.LblFechaNacimiento.TabIndex = 84;
+            this.LblFechaNacimiento.Text = "Fecha de Nacimiento:";
+            // 
+            // LblSexo
+            // 
+            this.LblSexo.AutoSize = true;
+            this.LblSexo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSexo.ForeColor = System.Drawing.Color.White;
+            this.LblSexo.Location = new System.Drawing.Point(12, 13);
+            this.LblSexo.Name = "LblSexo";
+            this.LblSexo.Size = new System.Drawing.Size(57, 22);
+            this.LblSexo.TabIndex = 83;
+            this.LblSexo.Text = "Sexo:";
+            // 
+            // CbSexo
+            // 
+            this.CbSexo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.CbSexo.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.CbSexo.FormattingEnabled = true;
+            this.CbSexo.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino"});
+            this.CbSexo.Location = new System.Drawing.Point(188, 11);
+            this.CbSexo.Name = "CbSexo";
+            this.CbSexo.Size = new System.Drawing.Size(222, 29);
+            this.CbSexo.TabIndex = 82;
             // 
             // TpFinanciera
             // 
             this.TpFinanciera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpFinanciera.Controls.Add(this.GbTipoPago);
+            this.TpFinanciera.Controls.Add(this.CbUSueldoLimite);
+            this.TpFinanciera.Controls.Add(this.CbUSueldoBase);
+            this.TpFinanciera.Controls.Add(this.CbUSalario);
+            this.TpFinanciera.Controls.Add(this.TxtSueldoLimite);
+            this.TpFinanciera.Controls.Add(this.LblSueldoLimite);
+            this.TpFinanciera.Controls.Add(this.TxtSueldoBase);
+            this.TpFinanciera.Controls.Add(this.LblSueldoBase);
+            this.TpFinanciera.Controls.Add(this.TxtSalario);
+            this.TpFinanciera.Controls.Add(this.LblSalario);
             this.TpFinanciera.Location = new System.Drawing.Point(4, 26);
             this.TpFinanciera.Name = "TpFinanciera";
             this.TpFinanciera.Padding = new System.Windows.Forms.Padding(3);
@@ -497,7 +654,7 @@
             this.LblTelMovil.AutoSize = true;
             this.LblTelMovil.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTelMovil.ForeColor = System.Drawing.Color.White;
-            this.LblTelMovil.Location = new System.Drawing.Point(450, 174);
+            this.LblTelMovil.Location = new System.Drawing.Point(447, 174);
             this.LblTelMovil.Name = "LblTelMovil";
             this.LblTelMovil.Size = new System.Drawing.Size(96, 22);
             this.LblTelMovil.TabIndex = 30;
@@ -658,6 +815,7 @@
             // BtnLimpiar
             // 
             this.BtnLimpiar.BackColor = System.Drawing.Color.BurlyWood;
+            this.BtnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnLimpiar.Enabled = false;
             this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpiar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -675,6 +833,7 @@
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.Color.DarkGreen;
+            this.BtnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.ForeColor = System.Drawing.Color.White;
@@ -691,6 +850,7 @@
             // BtnActualizar
             // 
             this.BtnActualizar.BackColor = System.Drawing.Color.Goldenrod;
+            this.BtnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnActualizar.Enabled = false;
             this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnActualizar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -708,6 +868,7 @@
             // BtnEliminar
             // 
             this.BtnEliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEliminar.Enabled = false;
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -721,6 +882,179 @@
             this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // LblCURP
+            // 
+            this.LblCURP.AutoSize = true;
+            this.LblCURP.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCURP.ForeColor = System.Drawing.Color.White;
+            this.LblCURP.Location = new System.Drawing.Point(12, 171);
+            this.LblCURP.Name = "LblCURP";
+            this.LblCURP.Size = new System.Drawing.Size(65, 22);
+            this.LblCURP.TabIndex = 90;
+            this.LblCURP.Text = "CURP:";
+            // 
+            // TxtCURP
+            // 
+            this.TxtCURP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtCURP.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCURP.Location = new System.Drawing.Point(83, 168);
+            this.TxtCURP.MaxLength = 50;
+            this.TxtCURP.Name = "TxtCURP";
+            this.TxtCURP.Size = new System.Drawing.Size(327, 31);
+            this.TxtCURP.TabIndex = 89;
+            // 
+            // TxtSalario
+            // 
+            this.TxtSalario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtSalario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSalario.Location = new System.Drawing.Point(143, 17);
+            this.TxtSalario.MaxLength = 50;
+            this.TxtSalario.Name = "TxtSalario";
+            this.TxtSalario.Size = new System.Drawing.Size(136, 31);
+            this.TxtSalario.TabIndex = 27;
+            // 
+            // LblSalario
+            // 
+            this.LblSalario.AutoSize = true;
+            this.LblSalario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSalario.ForeColor = System.Drawing.Color.White;
+            this.LblSalario.Location = new System.Drawing.Point(14, 20);
+            this.LblSalario.Name = "LblSalario";
+            this.LblSalario.Size = new System.Drawing.Size(74, 22);
+            this.LblSalario.TabIndex = 28;
+            this.LblSalario.Text = "Salario:";
+            // 
+            // TxtSueldoBase
+            // 
+            this.TxtSueldoBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtSueldoBase.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSueldoBase.Location = new System.Drawing.Point(143, 54);
+            this.TxtSueldoBase.MaxLength = 50;
+            this.TxtSueldoBase.Name = "TxtSueldoBase";
+            this.TxtSueldoBase.Size = new System.Drawing.Size(136, 31);
+            this.TxtSueldoBase.TabIndex = 29;
+            // 
+            // LblSueldoBase
+            // 
+            this.LblSueldoBase.AutoSize = true;
+            this.LblSueldoBase.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSueldoBase.ForeColor = System.Drawing.Color.White;
+            this.LblSueldoBase.Location = new System.Drawing.Point(14, 57);
+            this.LblSueldoBase.Name = "LblSueldoBase";
+            this.LblSueldoBase.Size = new System.Drawing.Size(126, 22);
+            this.LblSueldoBase.TabIndex = 30;
+            this.LblSueldoBase.Text = "Sueldo base:";
+            // 
+            // TxtSueldoLimite
+            // 
+            this.TxtSueldoLimite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtSueldoLimite.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSueldoLimite.Location = new System.Drawing.Point(143, 91);
+            this.TxtSueldoLimite.MaxLength = 50;
+            this.TxtSueldoLimite.Name = "TxtSueldoLimite";
+            this.TxtSueldoLimite.Size = new System.Drawing.Size(136, 31);
+            this.TxtSueldoLimite.TabIndex = 31;
+            // 
+            // LblSueldoLimite
+            // 
+            this.LblSueldoLimite.AutoSize = true;
+            this.LblSueldoLimite.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSueldoLimite.ForeColor = System.Drawing.Color.White;
+            this.LblSueldoLimite.Location = new System.Drawing.Point(14, 94);
+            this.LblSueldoLimite.Name = "LblSueldoLimite";
+            this.LblSueldoLimite.Size = new System.Drawing.Size(132, 22);
+            this.LblSueldoLimite.TabIndex = 32;
+            this.LblSueldoLimite.Text = "Sueldo Limite:";
+            // 
+            // CbUSalario
+            // 
+            this.CbUSalario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.CbUSalario.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.CbUSalario.FormattingEnabled = true;
+            this.CbUSalario.Items.AddRange(new object[] {
+            "Hora",
+            "Día",
+            "Semana",
+            "Mes",
+            "Ejercicio",
+            "Quincenal",
+            "Bisemanal"});
+            this.CbUSalario.Location = new System.Drawing.Point(285, 17);
+            this.CbUSalario.Name = "CbUSalario";
+            this.CbUSalario.Size = new System.Drawing.Size(179, 29);
+            this.CbUSalario.TabIndex = 80;
+            // 
+            // CbUSueldoBase
+            // 
+            this.CbUSueldoBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.CbUSueldoBase.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.CbUSueldoBase.FormattingEnabled = true;
+            this.CbUSueldoBase.Items.AddRange(new object[] {
+            "Hora",
+            "Día",
+            "Semana",
+            "Mes",
+            "Ejercicio",
+            "Quincenal",
+            "Bisemanal"});
+            this.CbUSueldoBase.Location = new System.Drawing.Point(285, 55);
+            this.CbUSueldoBase.Name = "CbUSueldoBase";
+            this.CbUSueldoBase.Size = new System.Drawing.Size(179, 29);
+            this.CbUSueldoBase.TabIndex = 81;
+            // 
+            // CbUSueldoLimite
+            // 
+            this.CbUSueldoLimite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.CbUSueldoLimite.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.CbUSueldoLimite.FormattingEnabled = true;
+            this.CbUSueldoLimite.Items.AddRange(new object[] {
+            "Hora",
+            "Día",
+            "Semana",
+            "Mes",
+            "Ejercicio",
+            "Quincenal",
+            "Bisemanal"});
+            this.CbUSueldoLimite.Location = new System.Drawing.Point(285, 92);
+            this.CbUSueldoLimite.Name = "CbUSueldoLimite";
+            this.CbUSueldoLimite.Size = new System.Drawing.Size(179, 29);
+            this.CbUSueldoLimite.TabIndex = 82;
+            // 
+            // GbTipoPago
+            // 
+            this.GbTipoPago.Controls.Add(this.RbVariable);
+            this.GbTipoPago.Controls.Add(this.RbFijo);
+            this.GbTipoPago.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GbTipoPago.ForeColor = System.Drawing.Color.White;
+            this.GbTipoPago.Location = new System.Drawing.Point(487, 18);
+            this.GbTipoPago.Name = "GbTipoPago";
+            this.GbTipoPago.Size = new System.Drawing.Size(161, 103);
+            this.GbTipoPago.TabIndex = 83;
+            this.GbTipoPago.TabStop = false;
+            this.GbTipoPago.Text = "Tipo de Pago";
+            // 
+            // RbFijo
+            // 
+            this.RbFijo.AutoSize = true;
+            this.RbFijo.Checked = true;
+            this.RbFijo.Location = new System.Drawing.Point(14, 30);
+            this.RbFijo.Name = "RbFijo";
+            this.RbFijo.Size = new System.Drawing.Size(55, 26);
+            this.RbFijo.TabIndex = 0;
+            this.RbFijo.TabStop = true;
+            this.RbFijo.Text = "Fijo";
+            this.RbFijo.UseVisualStyleBackColor = true;
+            // 
+            // RbVariable
+            // 
+            this.RbVariable.AutoSize = true;
+            this.RbVariable.Location = new System.Drawing.Point(14, 62);
+            this.RbVariable.Name = "RbVariable";
+            this.RbVariable.Size = new System.Drawing.Size(106, 26);
+            this.RbVariable.TabIndex = 1;
+            this.RbVariable.Text = "Variable";
+            this.RbVariable.UseVisualStyleBackColor = true;
             // 
             // FrmEmpleados
             // 
@@ -755,16 +1089,24 @@
             this.Controls.Add(this.LblIdEmpleado);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.LblTituloUsuario);
-            this.Controls.Add(this.TpEmpleados);
+            this.Controls.Add(this.TcEmpleados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmEmpleados";
             this.Text = "FrmEmpleados";
-            this.TpEmpleados.ResumeLayout(false);
+            this.TcEmpleados.ResumeLayout(false);
             this.TpIndex.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).EndInit();
             this.TpDireccion.ResumeLayout(false);
             this.TpDireccion.PerformLayout();
+            this.TpGestion.ResumeLayout(false);
+            this.TpGestion.PerformLayout();
+            this.TpPersonal.ResumeLayout(false);
+            this.TpPersonal.PerformLayout();
+            this.TpFinanciera.ResumeLayout(false);
+            this.TpFinanciera.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
+            this.GbTipoPago.ResumeLayout(false);
+            this.GbTipoPago.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -772,7 +1114,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl TpEmpleados;
+        private System.Windows.Forms.TabControl TcEmpleados;
         private System.Windows.Forms.TabPage TpIndex;
         private System.Windows.Forms.TabPage TpDireccion;
         private System.Windows.Forms.Label LblTituloUsuario;
@@ -797,14 +1139,10 @@
         private System.Windows.Forms.Label LblPuesto;
         private System.Windows.Forms.TabPage TpGestion;
         private System.Windows.Forms.TabPage TpPersonal;
-        private System.Windows.Forms.TabPage TpComentarios;
         private System.Windows.Forms.DataGridView DgvEmpleados;
         private System.Windows.Forms.ComboBox CbArea;
         private System.Windows.Forms.ComboBox CbDepto;
         private System.Windows.Forms.ComboBox CbPuesto;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label LblCiudad;
         private System.Windows.Forms.TextBox TxtCP;
         private System.Windows.Forms.Label LblCP;
@@ -827,5 +1165,33 @@
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnActualizar;
         private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.DateTimePicker DtpFechaRC;
+        private System.Windows.Forms.Label LblFechaRC;
+        private System.Windows.Forms.DateTimePicker DtpFechaInicio;
+        private System.Windows.Forms.Label LblFechaInicio;
+        private System.Windows.Forms.Label LblMotivoRC;
+        private System.Windows.Forms.ComboBox CbMotivoRC;
+        private System.Windows.Forms.Label LblSexo;
+        private System.Windows.Forms.ComboBox CbSexo;
+        private System.Windows.Forms.Label LblNHijos;
+        private System.Windows.Forms.ComboBox CbEstadoCivil;
+        private System.Windows.Forms.TextBox TxtNHijos;
+        private System.Windows.Forms.Label LblEstdoCivil;
+        private System.Windows.Forms.DateTimePicker DtpFechaNacimiento;
+        private System.Windows.Forms.Label LblFechaNacimiento;
+        private System.Windows.Forms.Label LblCURP;
+        private System.Windows.Forms.TextBox TxtCURP;
+        private System.Windows.Forms.GroupBox GbTipoPago;
+        private System.Windows.Forms.RadioButton RbVariable;
+        private System.Windows.Forms.RadioButton RbFijo;
+        private System.Windows.Forms.ComboBox CbUSueldoLimite;
+        private System.Windows.Forms.ComboBox CbUSueldoBase;
+        private System.Windows.Forms.ComboBox CbUSalario;
+        private System.Windows.Forms.TextBox TxtSueldoLimite;
+        private System.Windows.Forms.Label LblSueldoLimite;
+        private System.Windows.Forms.TextBox TxtSueldoBase;
+        private System.Windows.Forms.Label LblSueldoBase;
+        private System.Windows.Forms.TextBox TxtSalario;
+        private System.Windows.Forms.Label LblSalario;
     }
 }

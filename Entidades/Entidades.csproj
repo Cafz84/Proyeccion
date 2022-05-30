@@ -46,9 +46,11 @@
     <Compile Include="Usuario\ClsCiudad.cs" />
     <Compile Include="Usuario\ClsDepartamento.cs" />
     <Compile Include="Usuario\ClsEmpleado.cs" />
+    <Compile Include="Usuario\ClsEscaneo.cs" />
     <Compile Include="Usuario\ClsEstado.cs" />
     <Compile Include="Usuario\ClsPais.cs" />
     <Compile Include="Usuario\ClsPuesto.cs" />
+    <Compile Include="Usuario\ClsTipoEscaneo.cs" />
     <Compile Include="Usuario\ClsUser.cs" />
     <Compile Include="Usuario\ClsUsuario.cs" />
   </ItemGroup>

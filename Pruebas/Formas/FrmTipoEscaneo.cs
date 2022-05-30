@@ -1,31 +1,32 @@
 ﻿using Entidades.Usuario;
 using LogicaNegocio.Usuario;
+using Proyeccion.Principal;
 using Pruebas.Utilidades;
 using System;
 using System.Windows.Forms;
 
-namespace Proyeccion.Principal
+namespace Pruebas.Formas
 {
-    public partial class FrmArea : Form
+    public partial class FrmTipoEscaneo : Form
     {
         #region Variables Privadas
-        private ClsArea ObjArea = null;
+        private ClsTipoEscaneo ObjTipoEscaneo = null;
         private readonly ClsUtilidades ObjUtilidades = new ClsUtilidades();
-        private readonly ClsAreaLn ObjAreaLn = new ClsAreaLn();
+        private readonly ClsTipoEscaneoLn ObjTipoEscaneoLn = new ClsTipoEscaneoLn();
 
-        private readonly FrmEmpleados FrmEmpleadosHandler;
+        private readonly FrmEscaneo FrmEscaneoHandler;
         #endregion
 
         #region Constructores
-        public FrmArea()
+        public FrmTipoEscaneo()
         {
             InitializeComponent();
         }
 
-        public FrmArea(FrmEmpleados frmEmpleados)
+        public FrmTipoEscaneo(FrmEmpleados frmEmpleados)
         {
             InitializeComponent();
-            CargarListaArea();
+            CargarListaTipoEscaneo();
             FrmEmpleadosHandler = frmEmpleados;
         }
         #endregion
@@ -33,7 +34,7 @@ namespace Proyeccion.Principal
         #region Metodos Privados
         private void LimpiarDatos()
         {
-            LblAreaId.Text = string.Empty;
+            LblTipoId.Text = string.Empty;
             TxtNombre.Text = string.Empty;
             TxtDescripcion.Text = string.Empty;
             ChkActivo.Checked = false;
@@ -43,87 +44,59 @@ namespace Proyeccion.Principal
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
         }
-        
-        private void CargarListaArea()
+        private void CargarListaTipoEscaneo()
         {
-            ObjArea = new ClsArea();
-            ObjAreaLn.Index(ref ObjArea);
-            if (ObjArea.MsjError == null)
+            ObjTipoEscaneo = new ClsTipoEscaneo();
+            ObjTipoEscaneoLn.Index(ref ObjTipoEscaneo);
+            if (ObjTipoEscaneo.MsjError == null)
             {
-                DgvArea.DataSource = ObjArea.DtResultados;
-                ObjUtilidades.FormatoDataGridView(ref DgvArea);
+                DgvTipoEscaneo.DataSource = ObjTipoEscaneo.DtResultados;
+                ObjUtilidades.FormatoDataGridView(ref DgvTipoEscaneo);
             }
             else
             {
-                MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ObjTipoEscaneo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
 
-        #region Accion con DataGridView
-        private void DgvArea_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (DgvArea.Columns[e.ColumnIndex].Name == "Editar")
-                {
-                    ObjArea = new ClsArea()
-                    {
-                        AreaId = Convert.ToByte(DgvArea.Rows[e.RowIndex].Cells["AreaId"].Value.ToString())
-                    };
-
-                    LblAreaId.Text = ObjArea.AreaId.ToString();
-
-                    ObjAreaLn.Read(ref ObjArea);
-                    TxtNombre.Text = ObjArea.Area;
-                    TxtDescripcion.Text = ObjArea.Descripcion;
-                    ChkActivo.Checked = ObjArea.Activo;
-
-                    BtnActualizar.Enabled = true;
-                    BtnLimpiar.Enabled = true;
-                    BtnAgregar.Enabled = false;
-                    BtnEliminar.Enabled = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-        #endregion
-
-        #region Accion con los Botones
+        #region Accion con Botones
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-            FrmEmpleadosHandler.CargarListaArea();
-            FrmEmpleadosHandler.CambiarSelectedIndexArea();
+            FrmEscaneoHandler.CargarListaTipoEscaneo();
+            FrmEscaneoHandler.CambiarSelectedIndexTipoEscaneo();
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            if (LblAreaId.Text == string.Empty)
+            if (LblTipoId.Text == string.Empty)
             {
                 DialogResult respuesta = MessageBox.Show("¿Realmente quiere agregar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (respuesta == DialogResult.OK)
                 {
-                    ObjArea = new ClsArea()
+                    ObjTipoEscaneo = new ClsTipoEscaneo()
                     {
-                        Area = TxtNombre.Text,
+                        Nombre = TxtNombre.Text,
                         Descripcion = TxtDescripcion.Text,
                         Activo = true
                     };
 
-                    ObjAreaLn.Create(ref ObjArea);
-                    if (ObjArea.MsjError == null)
+                    ObjTipoEscaneoLn.Create(ref ObjTipoEscaneo);
+                    if (ObjTipoEscaneo.MsjError == null)
                     {
                         MessageBox.Show("Alta exitosa");
-                        CargarListaArea();
+                        CargarListaTipoEscaneo();
                         LimpiarDatos();
                     }
                     else
                     {
-                        MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ObjTipoEscaneo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -135,7 +108,7 @@ namespace Proyeccion.Principal
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
-            if (LblAreaId.Text == string.Empty)
+            if (LblTipoId.Text == string.Empty)
             {
                 MessageBox.Show("Selecciona un dato para actualizar");
             }
@@ -144,37 +117,32 @@ namespace Proyeccion.Principal
                 DialogResult result = MessageBox.Show("¿Realmente quieres actualizar el registo?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.OK)
                 {
-                    ObjArea = new ClsArea()
+                    ObjTipoEscaneo = new ClsTipoEscaneo()
                     {
-                        AreaId = Convert.ToByte(LblAreaId.Text),
-                        Area = TxtNombre.Text,
+                        TipoId = Convert.ToByte(LblTipoId.Text),
+                        Nombre = TxtNombre.Text,
                         Descripcion = TxtDescripcion.Text,
                         Activo = ChkActivo.Checked
                     };
 
-                    ObjAreaLn.Update(ref ObjArea);
-                    if (ObjArea.MsjError == null)
+                    ObjTipoEscaneoLn.Update(ref ObjTipoEscaneo);
+                    if (ObjTipoEscaneo.MsjError == null)
                     {
                         MessageBox.Show("La Area fue actualizada correctamente");
-                        CargarListaArea();
+                        CargarListaTipoEscaneo();
                         LimpiarDatos();
                     }
                     else
                     {
-                        MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ObjTipoEscaneo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
         }
 
-        private void BtnLimpiar_Click(object sender, EventArgs e)
-        {
-            LimpiarDatos();
-        }
-
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            if (LblAreaId.Text == "")
+            if (LblTipoId.Text == string.Empty)
             {
                 MessageBox.Show("Debes seleccionar un dato para eliminar");
             }
@@ -185,21 +153,21 @@ namespace Proyeccion.Principal
                     DialogResult result = MessageBox.Show("¿Realmente quiere eliminar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (result == DialogResult.OK)
                     {
-                        ObjArea = new ClsArea()
+                        ObjTipoEscaneo = new ClsTipoEscaneo()
                         {
-                            AreaId = Convert.ToByte(LblAreaId.Text)
+                            TipoId = Convert.ToByte(LblTipoId.Text)
                         };
 
-                        ObjAreaLn.Delete(ref ObjArea);
-                        if (ObjArea.MsjError == null)
+                        ObjTipoEscaneoLn.Delete(ref ObjTipoEscaneo);
+                        if (ObjTipoEscaneo.MsjError == null)
                         {
                             MessageBox.Show("Baja exitosa");
-                            CargarListaArea();
+                            CargarListaTipoEscaneo();
                             LimpiarDatos();
                         }
                         else
                         {
-                            MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(ObjTipoEscaneo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -208,22 +176,22 @@ namespace Proyeccion.Principal
                     DialogResult result = MessageBox.Show("El registro se desactivara pirmero \n ¿Quieres continuar?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (result == DialogResult.OK)
                     {
-                        ObjArea = new ClsArea()
+                        ObjTipoEscaneo = new ClsTipoEscaneo()
                         {
-                            AreaId = Convert.ToByte(LblAreaId.Text),
+                            TipoId = Convert.ToByte(LblTipoId.Text),
                             Activo = false
                         };
 
-                        ObjAreaLn.UpdateActivo(ref ObjArea);
-                        if (ObjArea.MsjError == null)
+                        ObjTipoEscaneoLn.UpdateActivo(ref ObjTipoEscaneo);
+                        if (ObjTipoEscaneo.MsjError == null)
                         {
                             MessageBox.Show("La Area fue desactivada");
-                            CargarListaArea();
+                            CargarListaTipoEscaneo();
                             LimpiarDatos();
                         }
                         else
                         {
-                            MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(ObjTipoEscaneo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }

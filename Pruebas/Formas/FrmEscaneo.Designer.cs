@@ -96,7 +96,16 @@
             this.RbComplemento = new System.Windows.Forms.RadioButton();
             this.RbNormal = new System.Windows.Forms.RadioButton();
             this.CbTipoEscaneo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblTipo = new System.Windows.Forms.Label();
+            this.LblEmbarqueN = new System.Windows.Forms.Label();
+            this.LblNEmbarque = new System.Windows.Forms.Label();
+            this.LblNCaja = new System.Windows.Forms.Label();
+            this.LblCajaN = new System.Windows.Forms.Label();
+            this.BtnAbrirEmbarque = new System.Windows.Forms.PictureBox();
+            this.BtnCerrarEmbarque = new System.Windows.Forms.PictureBox();
+            this.BtnActualizarEmbarque = new System.Windows.Forms.PictureBox();
+            this.LblNEscaneoXCaja = new System.Windows.Forms.Label();
+            this.LblLinea = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.TcEmpleados.SuspendLayout();
             this.TpEscaneo.SuspendLayout();
@@ -107,6 +116,9 @@
             this.TpFinanciera.SuspendLayout();
             this.GbTipoPago.SuspendLayout();
             this.GbSelecc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnAbrirEmbarque)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrarEmbarque)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnActualizarEmbarque)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnEliminar
@@ -146,6 +158,7 @@
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.Color.DarkGreen;
+            this.BtnAgregar.Enabled = false;
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.ForeColor = System.Drawing.Color.White;
@@ -201,9 +214,10 @@
             // 
             // TxtEscaneo
             // 
-            this.TxtEscaneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtEscaneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TxtEscaneo.Enabled = false;
             this.TxtEscaneo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtEscaneo.Location = new System.Drawing.Point(178, 170);
+            this.TxtEscaneo.Location = new System.Drawing.Point(178, 187);
             this.TxtEscaneo.MaxLength = 50;
             this.TxtEscaneo.Name = "TxtEscaneo";
             this.TxtEscaneo.Size = new System.Drawing.Size(305, 31);
@@ -214,7 +228,7 @@
             this.LblEscaneo.AutoSize = true;
             this.LblEscaneo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEscaneo.ForeColor = System.Drawing.Color.White;
-            this.LblEscaneo.Location = new System.Drawing.Point(77, 174);
+            this.LblEscaneo.Location = new System.Drawing.Point(77, 191);
             this.LblEscaneo.Name = "LblEscaneo";
             this.LblEscaneo.Size = new System.Drawing.Size(93, 22);
             this.LblEscaneo.TabIndex = 87;
@@ -223,8 +237,9 @@
             // TxtPrograma
             // 
             this.TxtPrograma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtPrograma.Enabled = false;
             this.TxtPrograma.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPrograma.Location = new System.Drawing.Point(178, 91);
+            this.TxtPrograma.Location = new System.Drawing.Point(178, 108);
             this.TxtPrograma.MaxLength = 50;
             this.TxtPrograma.Name = "TxtPrograma";
             this.TxtPrograma.Size = new System.Drawing.Size(176, 31);
@@ -235,7 +250,7 @@
             this.LblPrograma.AutoSize = true;
             this.LblPrograma.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPrograma.ForeColor = System.Drawing.Color.White;
-            this.LblPrograma.Location = new System.Drawing.Point(28, 94);
+            this.LblPrograma.Location = new System.Drawing.Point(28, 111);
             this.LblPrograma.Name = "LblPrograma";
             this.LblPrograma.Size = new System.Drawing.Size(142, 22);
             this.LblPrograma.TabIndex = 89;
@@ -272,6 +287,7 @@
             this.DgvEscaneo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvEscaneo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});
+            this.DgvEscaneo.Enabled = false;
             this.DgvEscaneo.Location = new System.Drawing.Point(0, 0);
             this.DgvEscaneo.Name = "DgvEscaneo";
             this.DgvEscaneo.Size = new System.Drawing.Size(1048, 376);
@@ -857,7 +873,7 @@
             this.GbSelecc.Controls.Add(this.RbNormal);
             this.GbSelecc.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbSelecc.ForeColor = System.Drawing.Color.White;
-            this.GbSelecc.Location = new System.Drawing.Point(572, 78);
+            this.GbSelecc.Location = new System.Drawing.Point(572, 95);
             this.GbSelecc.Name = "GbSelecc";
             this.GbSelecc.Size = new System.Drawing.Size(185, 118);
             this.GbSelecc.TabIndex = 91;
@@ -877,7 +893,7 @@
             // RbComplemento
             // 
             this.RbComplemento.AutoSize = true;
-            this.RbComplemento.Location = new System.Drawing.Point(18, 57);
+            this.RbComplemento.Location = new System.Drawing.Point(18, 56);
             this.RbComplemento.Name = "RbComplemento";
             this.RbComplemento.Size = new System.Drawing.Size(160, 26);
             this.RbComplemento.TabIndex = 1;
@@ -899,23 +915,130 @@
             // CbTipoEscaneo
             // 
             this.CbTipoEscaneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.CbTipoEscaneo.Enabled = false;
             this.CbTipoEscaneo.Font = new System.Drawing.Font("Century Gothic", 13F);
             this.CbTipoEscaneo.FormattingEnabled = true;
-            this.CbTipoEscaneo.Location = new System.Drawing.Point(178, 131);
+            this.CbTipoEscaneo.Location = new System.Drawing.Point(178, 148);
             this.CbTipoEscaneo.Name = "CbTipoEscaneo";
             this.CbTipoEscaneo.Size = new System.Drawing.Size(305, 29);
             this.CbTipoEscaneo.TabIndex = 48;
             // 
-            // label1
+            // LblTipo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(119, 133);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 22);
-            this.label1.TabIndex = 92;
-            this.label1.Text = "Tipo:";
+            this.LblTipo.AutoSize = true;
+            this.LblTipo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTipo.ForeColor = System.Drawing.Color.White;
+            this.LblTipo.Location = new System.Drawing.Point(119, 150);
+            this.LblTipo.Name = "LblTipo";
+            this.LblTipo.Size = new System.Drawing.Size(51, 22);
+            this.LblTipo.TabIndex = 92;
+            this.LblTipo.Text = "Tipo:";
+            // 
+            // LblEmbarqueN
+            // 
+            this.LblEmbarqueN.AutoSize = true;
+            this.LblEmbarqueN.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblEmbarqueN.ForeColor = System.Drawing.Color.White;
+            this.LblEmbarqueN.Location = new System.Drawing.Point(23, 68);
+            this.LblEmbarqueN.Name = "LblEmbarqueN";
+            this.LblEmbarqueN.Size = new System.Drawing.Size(147, 22);
+            this.LblEmbarqueN.TabIndex = 93;
+            this.LblEmbarqueN.Text = "No. Embarque:";
+            // 
+            // LblNEmbarque
+            // 
+            this.LblNEmbarque.AutoSize = true;
+            this.LblNEmbarque.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNEmbarque.ForeColor = System.Drawing.Color.Black;
+            this.LblNEmbarque.Location = new System.Drawing.Point(176, 68);
+            this.LblNEmbarque.Name = "LblNEmbarque";
+            this.LblNEmbarque.Size = new System.Drawing.Size(0, 22);
+            this.LblNEmbarque.TabIndex = 94;
+            // 
+            // LblNCaja
+            // 
+            this.LblNCaja.AutoSize = true;
+            this.LblNCaja.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNCaja.ForeColor = System.Drawing.Color.Black;
+            this.LblNCaja.Location = new System.Drawing.Point(399, 68);
+            this.LblNCaja.Name = "LblNCaja";
+            this.LblNCaja.Size = new System.Drawing.Size(0, 22);
+            this.LblNCaja.TabIndex = 96;
+            // 
+            // LblCajaN
+            // 
+            this.LblCajaN.AutoSize = true;
+            this.LblCajaN.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCajaN.ForeColor = System.Drawing.Color.White;
+            this.LblCajaN.Location = new System.Drawing.Point(304, 68);
+            this.LblCajaN.Name = "LblCajaN";
+            this.LblCajaN.Size = new System.Drawing.Size(95, 22);
+            this.LblCajaN.TabIndex = 95;
+            this.LblCajaN.Text = "No. Caja:";
+            // 
+            // BtnAbrirEmbarque
+            // 
+            this.BtnAbrirEmbarque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BtnAbrirEmbarque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BtnAbrirEmbarque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAbrirEmbarque.Image = ((System.Drawing.Image)(resources.GetObject("BtnAbrirEmbarque.Image")));
+            this.BtnAbrirEmbarque.Location = new System.Drawing.Point(12, 9);
+            this.BtnAbrirEmbarque.Name = "BtnAbrirEmbarque";
+            this.BtnAbrirEmbarque.Size = new System.Drawing.Size(51, 49);
+            this.BtnAbrirEmbarque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnAbrirEmbarque.TabIndex = 97;
+            this.BtnAbrirEmbarque.TabStop = false;
+            this.BtnAbrirEmbarque.Click += new System.EventHandler(this.BtnAbrirEmbarque_Click);
+            // 
+            // BtnCerrarEmbarque
+            // 
+            this.BtnCerrarEmbarque.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnCerrarEmbarque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BtnCerrarEmbarque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCerrarEmbarque.Enabled = false;
+            this.BtnCerrarEmbarque.Image = ((System.Drawing.Image)(resources.GetObject("BtnCerrarEmbarque.Image")));
+            this.BtnCerrarEmbarque.Location = new System.Drawing.Point(126, 9);
+            this.BtnCerrarEmbarque.Name = "BtnCerrarEmbarque";
+            this.BtnCerrarEmbarque.Size = new System.Drawing.Size(51, 49);
+            this.BtnCerrarEmbarque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnCerrarEmbarque.TabIndex = 98;
+            this.BtnCerrarEmbarque.TabStop = false;
+            this.BtnCerrarEmbarque.Click += new System.EventHandler(this.BtnCerrarEmbarque_Click);
+            // 
+            // BtnActualizarEmbarque
+            // 
+            this.BtnActualizarEmbarque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BtnActualizarEmbarque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BtnActualizarEmbarque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnActualizarEmbarque.Image = ((System.Drawing.Image)(resources.GetObject("BtnActualizarEmbarque.Image")));
+            this.BtnActualizarEmbarque.Location = new System.Drawing.Point(69, 9);
+            this.BtnActualizarEmbarque.Name = "BtnActualizarEmbarque";
+            this.BtnActualizarEmbarque.Size = new System.Drawing.Size(51, 49);
+            this.BtnActualizarEmbarque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnActualizarEmbarque.TabIndex = 99;
+            this.BtnActualizarEmbarque.TabStop = false;
+            this.BtnActualizarEmbarque.Click += new System.EventHandler(this.BtnActualizarEmbarque_Click);
+            // 
+            // LblNEscaneoXCaja
+            // 
+            this.LblNEscaneoXCaja.AutoSize = true;
+            this.LblNEscaneoXCaja.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNEscaneoXCaja.ForeColor = System.Drawing.Color.Black;
+            this.LblNEscaneoXCaja.Location = new System.Drawing.Point(696, 68);
+            this.LblNEscaneoXCaja.Name = "LblNEscaneoXCaja";
+            this.LblNEscaneoXCaja.Size = new System.Drawing.Size(0, 22);
+            this.LblNEscaneoXCaja.TabIndex = 101;
+            // 
+            // LblLinea
+            // 
+            this.LblLinea.AutoSize = true;
+            this.LblLinea.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLinea.ForeColor = System.Drawing.Color.White;
+            this.LblLinea.Location = new System.Drawing.Point(568, 68);
+            this.LblLinea.Name = "LblLinea";
+            this.LblLinea.Size = new System.Drawing.Size(129, 22);
+            this.LblLinea.TabIndex = 100;
+            this.LblLinea.Text = "No. Escaneo:";
             // 
             // FrmEscaneo
             // 
@@ -923,7 +1046,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1080, 665);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LblNEscaneoXCaja);
+            this.Controls.Add(this.LblLinea);
+            this.Controls.Add(this.BtnActualizarEmbarque);
+            this.Controls.Add(this.BtnCerrarEmbarque);
+            this.Controls.Add(this.BtnAbrirEmbarque);
+            this.Controls.Add(this.LblNCaja);
+            this.Controls.Add(this.LblCajaN);
+            this.Controls.Add(this.LblNEmbarque);
+            this.Controls.Add(this.LblEmbarqueN);
+            this.Controls.Add(this.LblTipo);
             this.Controls.Add(this.CbTipoEscaneo);
             this.Controls.Add(this.GbSelecc);
             this.Controls.Add(this.TcEmpleados);
@@ -956,6 +1088,9 @@
             this.GbTipoPago.PerformLayout();
             this.GbSelecc.ResumeLayout(false);
             this.GbSelecc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnAbrirEmbarque)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrarEmbarque)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnActualizarEmbarque)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1030,6 +1165,15 @@
         private System.Windows.Forms.RadioButton RbComplemento;
         private System.Windows.Forms.RadioButton RbNormal;
         private System.Windows.Forms.ComboBox CbTipoEscaneo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblTipo;
+        private System.Windows.Forms.Label LblEmbarqueN;
+        private System.Windows.Forms.Label LblNEmbarque;
+        private System.Windows.Forms.Label LblNCaja;
+        private System.Windows.Forms.Label LblCajaN;
+        private System.Windows.Forms.PictureBox BtnAbrirEmbarque;
+        private System.Windows.Forms.PictureBox BtnCerrarEmbarque;
+        private System.Windows.Forms.PictureBox BtnActualizarEmbarque;
+        private System.Windows.Forms.Label LblNEscaneoXCaja;
+        private System.Windows.Forms.Label LblLinea;
     }
 }

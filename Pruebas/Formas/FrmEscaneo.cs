@@ -65,7 +65,7 @@ namespace Pruebas.Formas
         #region Accion con Botones
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
@@ -84,6 +84,39 @@ namespace Pruebas.Formas
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAbrirEmbarque_Click(object sender, EventArgs e)
+        {
+            ObjEscaneo = new ClsEscaneo();
+            ObjEscaneoLn.ReadEmbarqueMax(ref ObjEscaneo);
+            if (ObjEscaneo.MsjError == null)
+            {
+                LblNEmbarque.Text = ObjEscaneo.NEmbarque.ToString();
+            }
+            else
+            {
+                MessageBox.Show(ObjEscaneo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            BtnAbrirEmbarque.Enabled = false;
+            BtnActualizarEmbarque.Enabled = false;
+            BtnCerrarEmbarque.Enabled = true;
+
+            TxtPrograma.Enabled = true;
+            CbTipoEscaneo.Enabled = true;
+            TxtEscaneo.Enabled = true;
+            DgvEscaneo.Enabled = true;
+        }
+
+        private void BtnActualizarEmbarque_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCerrarEmbarque_Click(object sender, EventArgs e)
         {
 
         }

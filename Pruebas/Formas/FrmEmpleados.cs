@@ -26,7 +26,7 @@ namespace Proyeccion.Principal
         private readonly ClsEstadoLn ObjEstadoLn = new ClsEstadoLn();
         private readonly ClsCiudadLn ObjCiudadLn = new ClsCiudadLn();
 
-        private FrmEmpleados intance;
+        private readonly FrmEmpleados intance;
         #endregion
 
         #region Variables Publicas

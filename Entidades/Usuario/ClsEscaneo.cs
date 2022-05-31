@@ -6,8 +6,8 @@ namespace Entidades.Usuario
     public class ClsEscaneo
     {
         #region Variables Privadas
-        private int _programa, _cantidad, _nCajaEmbarque;
-        private string _escaneo, _area, _selecc, _pO, _itemCode, _cod_Modelo, _modelo, _cod_Color, _color, _punto;
+        private int _programa, _cantidad, _nCajaEmbarque, _nEscaneoXCaja, _nEmbarque;
+        private string _escaneo, _area, _selecc, _pO, _itemCode, _cod_Modelo, _modelo, _cod_Color, _color, _punto, _error;
         private DateTime _fechaAlta;
 
         //Atributos de manejo de la base de datos
@@ -33,6 +33,9 @@ namespace Entidades.Usuario
         public string MsjError { get => _msjError; set => _msjError = value; }
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
+        public string Error { get => _error; set => _error = value; }
+        public int NEscaneoXCaja { get => _nEscaneoXCaja; set => _nEscaneoXCaja = value; }
+        public int NEmbarque { get => _nEmbarque; set => _nEmbarque = value; }
         #endregion
     }
 }

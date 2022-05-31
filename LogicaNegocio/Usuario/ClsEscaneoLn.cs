@@ -43,6 +43,9 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Color", "18", ObjEscaneo.Color);
             ObjDataBase.DtParametros.Rows.Add(@"@Punto", "18", ObjEscaneo.Punto);
             ObjDataBase.DtParametros.Rows.Add(@"@FechaAlta", "14", ObjEscaneo.FechaAlta);
+            ObjDataBase.DtParametros.Rows.Add(@"@Error", "18", ObjEscaneo.Error);
+            ObjDataBase.DtParametros.Rows.Add(@"@NEscaneoXCaja", "4", ObjEscaneo.NEscaneoXCaja);
+            ObjDataBase.DtParametros.Rows.Add(@"@NEmbarque", "4", ObjEscaneo.NEmbarque);
 
             Ejecutar(ref ObjEscaneo);
         }
@@ -57,10 +60,25 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            ObjDataBase.DtParametros.Rows.Add(@"@NEmbarque", "4", ObjEscaneo.NEmbarque);
             ObjDataBase.DtParametros.Rows.Add(@"@Programa", "4", ObjEscaneo.Programa);
             ObjDataBase.DtParametros.Rows.Add(@"@Escaneo", "18", ObjEscaneo.Escaneo);
-            
+            ObjDataBase.DtParametros.Rows.Add(@"@NEscaneoXCaja", "4", ObjEscaneo.NEscaneoXCaja);
+
             Ejecutar(ref ObjEscaneo);
+        }
+
+        public void ReadEmbarqueMax(ref ClsEscaneo ObjEscaneo)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "Escaneo",
+                NombreSP = "[dbo].[SP_Escaneo_ReadEmbarqueMax]",
+                Scalar = false
+            };
+
+            EjecutarEmbarqueMax(ref ObjEscaneo);
         }
 
         public void Update(ref ClsEscaneo ObjEscaneo)
@@ -87,6 +105,9 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Color", "18", ObjEscaneo.Color);
             ObjDataBase.DtParametros.Rows.Add(@"@Punto", "18", ObjEscaneo.Punto);
             ObjDataBase.DtParametros.Rows.Add(@"@FechaAlta", "14", ObjEscaneo.FechaAlta);
+            ObjDataBase.DtParametros.Rows.Add(@"@Error", "18", ObjEscaneo.Error);
+            ObjDataBase.DtParametros.Rows.Add(@"@NEscaneoXCaja", "4", ObjEscaneo.NEscaneoXCaja);
+            ObjDataBase.DtParametros.Rows.Add(@"@NEmbarque", "4", ObjEscaneo.NEmbarque);
 
             Ejecutar(ref ObjEscaneo);
         }
@@ -101,8 +122,10 @@ namespace LogicaNegocio.Usuario
                 Scalar = true
             };
 
+            ObjDataBase.DtParametros.Rows.Add(@"@NEmbarque", "4", ObjEscaneo.NEmbarque);
             ObjDataBase.DtParametros.Rows.Add(@"@Programa", "4", ObjEscaneo.Programa);
             ObjDataBase.DtParametros.Rows.Add(@"@Escaneo", "18", ObjEscaneo.Escaneo);
+            ObjDataBase.DtParametros.Rows.Add(@"@NEscaneoXCaja", "4", ObjEscaneo.NEscaneoXCaja);
 
             Ejecutar(ref ObjEscaneo);
         }
@@ -188,6 +211,52 @@ namespace LogicaNegocio.Usuario
                                 ObjEscaneo.FechaAlta = DateTime.Today;
                             else
                                 ObjEscaneo.FechaAlta = Convert.ToDateTime(dr["FechaAlta"].ToString());
+
+                            if (dr["Error"] == DBNull.Value)
+                                ObjEscaneo.Error = string.Empty;
+                            else
+                                ObjEscaneo.Error = dr["Error"].ToString();
+
+                            if (dr["NEscaneoXCaja"] == DBNull.Value)
+                                ObjEscaneo.NEscaneoXCaja = 0;
+                            else
+                                ObjEscaneo.NEscaneoXCaja = Convert.ToInt16(dr["NEscaneoXCaja"].ToString());
+
+                            if (dr["NEmbarque"] == DBNull.Value)
+                                ObjEscaneo.NEmbarque = 0;
+                            else
+                                ObjEscaneo.NEmbarque = Convert.ToInt16(dr["NEmbarque"].ToString());
+                        }
+                    }
+                }
+            }
+            else
+            {
+                ObjEscaneo.MsjError = ObjDataBase.MensajeErrorDB;
+            }
+        }
+
+        private void EjecutarEmbarqueMax(ref ClsEscaneo ObjEscaneo)
+        {
+            ObjDataBase.CRUD(ref ObjDataBase);
+
+            if (ObjDataBase.MensajeErrorDB == null)
+            {
+                if (ObjDataBase.Scalar)
+                {
+                    ObjEscaneo.ValorEscalar = ObjDataBase.ValorScalar;
+                }
+                else
+                {
+                    ObjEscaneo.DtResultados = ObjDataBase.DsResultados.Tables[0];
+                    if (ObjEscaneo.DtResultados.Rows.Count == 1)
+                    {
+                        foreach (DataRow dr in ObjEscaneo.DtResultados.Rows)
+                        {
+                            if (dr["MaxEmbarque"] == DBNull.Value)
+                                ObjEscaneo.NEmbarque = 1;
+                            else
+                                ObjEscaneo.NEmbarque = Convert.ToInt16(dr["MaxEmbarque"].ToString())+1;
                         }
                     }
                 }

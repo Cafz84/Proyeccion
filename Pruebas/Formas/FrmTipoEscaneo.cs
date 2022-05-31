@@ -23,11 +23,11 @@ namespace Pruebas.Formas
             InitializeComponent();
         }
 
-        public FrmTipoEscaneo(FrmEmpleados frmEmpleados)
+        public FrmTipoEscaneo(FrmEscaneo frmEscaneo)
         {
             InitializeComponent();
             CargarListaTipoEscaneo();
-            FrmEmpleadosHandler = frmEmpleados;
+            FrmEscaneoHandler = frmEscaneo;
         }
         #endregion
 

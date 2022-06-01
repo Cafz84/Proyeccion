@@ -221,7 +221,8 @@
             this.TxtEscaneo.MaxLength = 50;
             this.TxtEscaneo.Name = "TxtEscaneo";
             this.TxtEscaneo.Size = new System.Drawing.Size(305, 31);
-            this.TxtEscaneo.TabIndex = 86;
+            this.TxtEscaneo.TabIndex = 3;
+            this.TxtEscaneo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtEscaneo_KeyDown);
             // 
             // LblEscaneo
             // 
@@ -243,7 +244,7 @@
             this.TxtPrograma.MaxLength = 50;
             this.TxtPrograma.Name = "TxtPrograma";
             this.TxtPrograma.Size = new System.Drawing.Size(176, 31);
-            this.TxtPrograma.TabIndex = 88;
+            this.TxtPrograma.TabIndex = 1;
             // 
             // LblPrograma
             // 
@@ -921,7 +922,8 @@
             this.CbTipoEscaneo.Location = new System.Drawing.Point(178, 148);
             this.CbTipoEscaneo.Name = "CbTipoEscaneo";
             this.CbTipoEscaneo.Size = new System.Drawing.Size(305, 29);
-            this.CbTipoEscaneo.TabIndex = 48;
+            this.CbTipoEscaneo.TabIndex = 2;
+            this.CbTipoEscaneo.SelectedIndexChanged += new System.EventHandler(this.CbTipoEscaneo_SelectedIndexChanged);
             // 
             // LblTipo
             // 

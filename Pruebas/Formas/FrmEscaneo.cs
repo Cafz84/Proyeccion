@@ -11,11 +11,13 @@ namespace Pruebas.Formas
         #region Variables Privadas
         private ClsEscaneo ObjEscaneo = null;
         private ClsTipoEscaneo ObjTipoEscaneo = null;
+        private ClsReadDatosEscaneo ObjReadDatosEscaneo = null;
         private readonly ClsEscaneoLn ObjEscaneoLn = new ClsEscaneoLn();
         private readonly ClsTipoEscaneoLn ObjTipoEscaneoLn = new ClsTipoEscaneoLn();
         private readonly ClsUtilidades ObjUtilidades = new ClsUtilidades();
+        private readonly ClsReadDatosEscaneoLn ObjReadDatosEscaneoLn = new ClsReadDatosEscaneoLn();
 
-        private FrmEscaneo intance;
+        private readonly FrmEscaneo intance;
         #endregion
 
         #region Constructores
@@ -23,7 +25,7 @@ namespace Pruebas.Formas
         {
             InitializeComponent();
             CargarListaEscaneo();
-            CargarListaTipoEscaneo();
+            intance = this;
         }
         #endregion
 
@@ -54,6 +56,7 @@ namespace Pruebas.Formas
                 CbTipoEscaneo.DisplayMember = "Nombre";
                 CbTipoEscaneo.ValueMember = "TipoId";
                 CbTipoEscaneo.DataSource = ObjTipoEscaneo.DtResultados;
+                CbTipoEscaneo.SelectedIndex = -1;
             }
             else
             {
@@ -90,25 +93,31 @@ namespace Pruebas.Formas
 
         private void BtnAbrirEmbarque_Click(object sender, EventArgs e)
         {
-            ObjEscaneo = new ClsEscaneo();
-            ObjEscaneoLn.ReadEmbarqueMax(ref ObjEscaneo);
-            if (ObjEscaneo.MsjError == null)
+            DialogResult resultado = MessageBox.Show("¿Quieres abrir un embarque?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (resultado == DialogResult.OK)
             {
-                LblNEmbarque.Text = ObjEscaneo.NEmbarque.ToString();
-            }
-            else
-            {
-                MessageBox.Show(ObjEscaneo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                ObjEscaneo = new ClsEscaneo();
+                ObjEscaneoLn.ReadEmbarqueMax(ref ObjEscaneo);
+                if (ObjEscaneo.MsjError == null)
+                {
+                    LblNEmbarque.Text = ObjEscaneo.NEmbarque.ToString();
+                }
+                else
+                {
+                    MessageBox.Show(ObjEscaneo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-            BtnAbrirEmbarque.Enabled = false;
-            BtnActualizarEmbarque.Enabled = false;
-            BtnCerrarEmbarque.Enabled = true;
+                CargarListaTipoEscaneo();
 
-            TxtPrograma.Enabled = true;
-            CbTipoEscaneo.Enabled = true;
-            TxtEscaneo.Enabled = true;
-            DgvEscaneo.Enabled = true;
+                BtnAbrirEmbarque.Enabled = false;
+                BtnActualizarEmbarque.Enabled = false;
+                BtnCerrarEmbarque.Enabled = true;
+
+                TxtPrograma.Enabled = true;
+                CbTipoEscaneo.Enabled = true;
+                TxtEscaneo.Enabled = true;
+                DgvEscaneo.Enabled = true;
+            }
         }
 
         private void BtnActualizarEmbarque_Click(object sender, EventArgs e)
@@ -119,6 +128,43 @@ namespace Pruebas.Formas
         private void BtnCerrarEmbarque_Click(object sender, EventArgs e)
         {
 
+        }
+        #endregion
+
+        #region Acciones con ComboBox
+        private void CbTipoEscaneo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CbTipoEscaneo.Text.Equals("Nuevo Tipo"))
+            {
+                FrmTipoEscaneo fmTipoEscaneo = new FrmTipoEscaneo(this);
+                fmTipoEscaneo.ShowDialog();
+            }
+        }
+        #endregion
+
+        #region Acciones con TextBox
+        private void TxtEscaneo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (TxtPrograma.Text == string.Empty)
+                {
+                    MessageBox.Show("No puede estar vacio el programa", "Mensaje de sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TxtEscaneo.Text = string.Empty;
+                    TxtPrograma.Focus();
+                }
+                else if (CbTipoEscaneo.Text == string.Empty)
+                {
+                    MessageBox.Show("No puede estar vacio el tipo de escaneo", "Mensaje de sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TxtEscaneo.Text = string.Empty;
+                    CbTipoEscaneo.Focus();
+                }
+                else
+                {
+                    TxtEscaneo.Text = string.Empty;
+                    TxtEscaneo.Focus();
+                }
+            }
         }
         #endregion
     }

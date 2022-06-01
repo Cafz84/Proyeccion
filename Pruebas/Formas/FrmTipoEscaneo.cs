@@ -65,7 +65,6 @@ namespace Pruebas.Formas
         {
             this.Close();
             FrmEscaneoHandler.CargarListaTipoEscaneo();
-            FrmEscaneoHandler.CambiarSelectedIndexTipoEscaneo();
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
@@ -195,6 +194,38 @@ namespace Pruebas.Formas
                         }
                     }
                 }
+            }
+        }
+        #endregion
+
+        #region Acciones con DataGridView
+        private void DgvTipoEscaneo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (DgvTipoEscaneo.Columns[e.ColumnIndex].Name == "Editar")
+                {
+                    ObjTipoEscaneo = new ClsTipoEscaneo()
+                    {
+                        TipoId = Convert.ToByte(DgvTipoEscaneo.Rows[e.RowIndex].Cells["TipoId"].Value.ToString())
+                    };
+
+                    LblTipoId.Text = ObjTipoEscaneo.TipoId.ToString();
+
+                    ObjTipoEscaneoLn.Read(ref ObjTipoEscaneo);
+                    TxtNombre.Text = ObjTipoEscaneo.Nombre;
+                    TxtDescripcion.Text = ObjTipoEscaneo.Descripcion;
+                    ChkActivo.Checked = ObjTipoEscaneo.Activo;
+
+                    BtnActualizar.Enabled = true;
+                    BtnLimpiar.Enabled = true;
+                    BtnAgregar.Enabled = false;
+                    BtnEliminar.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
         #endregion

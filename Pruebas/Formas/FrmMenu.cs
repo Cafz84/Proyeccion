@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Pruebas.Formas;
 
 namespace Proyeccion.Principal
 {
@@ -95,6 +96,11 @@ namespace Proyeccion.Principal
         private void BtnEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFrmHijo(new FrmEmpleados());
+        }
+
+        private void BtnEscaneo_Click(object sender, EventArgs e)
+        {
+            AbrirFrmHijo(new FrmEscaneo());
         }
     }
 }

@@ -198,6 +198,7 @@
             this.DgvTipoEscaneo.ReadOnly = true;
             this.DgvTipoEscaneo.Size = new System.Drawing.Size(658, 273);
             this.DgvTipoEscaneo.TabIndex = 51;
+            this.DgvTipoEscaneo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTipoEscaneo_CellContentClick);
             // 
             // Editar
             // 

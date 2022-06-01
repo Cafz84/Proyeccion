@@ -294,6 +294,7 @@
             this.BtnEscaneo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEscaneo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnEscaneo.UseVisualStyleBackColor = false;
+            this.BtnEscaneo.Click += new System.EventHandler(this.BtnEscaneo_Click);
             // 
             // BtnUsuarios
             // 

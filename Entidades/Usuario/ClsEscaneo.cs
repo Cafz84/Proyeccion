@@ -6,7 +6,8 @@ namespace Entidades.Usuario
     public class ClsEscaneo
     {
         #region Variables Privadas
-        private int _programa, _cantidad, _nCajaEmbarque, _nEscaneoXCaja, _nEmbarque;
+        private int _programa, _nCajaEmbarque, _nEscaneoXCaja, _nEmbarque;
+        private double _cantidad;
         private string _escaneo, _area, _selecc, _pO, _itemCode, _cod_Modelo, _modelo, _cod_Color, _color, _punto, _error;
         private DateTime _fechaAlta;
 
@@ -17,7 +18,7 @@ namespace Entidades.Usuario
 
         #region Variables Publicas
         public int Programa { get => _programa; set => _programa = value; }
-        public int Cantidad { get => _cantidad; set => _cantidad = value; }
+        public double Cantidad { get => _cantidad; set => _cantidad = value; }
         public int NCajaEmbarque { get => _nCajaEmbarque; set => _nCajaEmbarque = value; }
         public string Escaneo { get => _escaneo; set => _escaneo = value; }
         public string Area { get => _area; set => _area = value; }

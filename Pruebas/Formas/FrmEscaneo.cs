@@ -18,6 +18,7 @@ namespace Pruebas.Formas
         private readonly ClsReadDatosEscaneoLn ObjReadDatosEscaneoLn = new ClsReadDatosEscaneoLn();
 
         private readonly FrmEscaneo intance;
+        private int nCaja, linea;
         #endregion
 
         #region Constructores
@@ -113,6 +114,8 @@ namespace Pruebas.Formas
                 BtnActualizarEmbarque.Enabled = false;
                 BtnCerrarEmbarque.Enabled = true;
 
+                LblNCaja.Text = "1";
+                LblNEscaneoXCaja.Text = "1";
                 TxtPrograma.Enabled = true;
                 CbTipoEscaneo.Enabled = true;
                 TxtEscaneo.Enabled = true;
@@ -140,6 +143,7 @@ namespace Pruebas.Formas
                 fmTipoEscaneo.ShowDialog();
             }
         }
+
         #endregion
 
         #region Acciones con TextBox
@@ -161,8 +165,61 @@ namespace Pruebas.Formas
                 }
                 else
                 {
-                    TxtEscaneo.Text = string.Empty;
-                    TxtEscaneo.Focus();
+                    //Se llama el porcedimiento para extraer la información del escaneo
+                    ObjReadDatosEscaneo = new ClsReadDatosEscaneo()
+                    {
+                        OrdenProduccion = TxtPrograma.Text,
+                        Codigo = TxtEscaneo.Text
+                    };
+                    ObjReadDatosEscaneoLn.ReadDatosEscaneo(ref ObjReadDatosEscaneo);
+
+                    if (ObjReadDatosEscaneo.MsjError == null)
+                    {
+                        ObjEscaneo = new ClsEscaneo()
+                        {
+                            Programa = Convert.ToInt32(ObjReadDatosEscaneo.OrdenProduccion),
+                            Escaneo = ObjReadDatosEscaneo.Codigo,
+                            Area = CbTipoEscaneo.Text,
+                            Cantidad = Convert.ToDouble(ObjReadDatosEscaneo.Cantidad),
+                            NCajaEmbarque = Convert.ToInt32(LblNCaja.Text),
+                            PO = ObjReadDatosEscaneo.PO,
+                            ItemCode = ObjReadDatosEscaneo.Codigo,
+                            Cod_Modelo = ObjReadDatosEscaneo.U_Argns_Mod,
+                            Modelo = ObjReadDatosEscaneo.Estilo,
+                            Cod_Color = ObjReadDatosEscaneo.U_Argns_Col,
+                            Punto = ObjReadDatosEscaneo.USA,
+                            FechaAlta = DateTime.Now,
+                            Error = ObjReadDatosEscaneo.MsjError,
+                            NEscaneoXCaja = Convert.ToInt32(LblNEscaneoXCaja.Text),
+                            NEmbarque = Convert.ToInt32(LblNEmbarque.Text)
+                        };
+                        if (RbNormal.Checked == true)
+                        {
+                            ObjEscaneo.Selecc = "Normal";
+                        }
+                        else if (RbComplemento.Checked == true) {
+                            ObjEscaneo.Selecc = "Complemento";
+                        }
+                        else if (RbBGrade.Checked == true)
+                        {
+                            ObjEscaneo.Selecc = "B-Grade";
+                        }
+
+                        ObjEscaneoLn.Create(ref ObjEscaneo);
+                        if (ObjEscaneo.MsjError == null)
+                        {
+                            TxtEscaneo.Text = string.Empty;
+                            TxtEscaneo.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show(ObjEscaneo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(ObjReadDatosEscaneo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

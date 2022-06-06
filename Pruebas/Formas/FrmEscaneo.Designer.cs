@@ -1036,7 +1036,7 @@
             this.LblLinea.AutoSize = true;
             this.LblLinea.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblLinea.ForeColor = System.Drawing.Color.White;
-            this.LblLinea.Location = new System.Drawing.Point(568, 68);
+            this.LblLinea.Location = new System.Drawing.Point(567, 68);
             this.LblLinea.Name = "LblLinea";
             this.LblLinea.Size = new System.Drawing.Size(129, 22);
             this.LblLinea.TabIndex = 100;

@@ -17,7 +17,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "Laboraciones_Monnaaci_P",
+                NombreDB = "Lavoraziones_Monnaaci_P",
                 NombreTabla = "OWOR",
                 NombreSP = "dbo.SPC_ReadDatosEscaneo",
                 Scalar = false

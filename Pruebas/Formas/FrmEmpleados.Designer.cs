@@ -58,6 +58,8 @@
             this.DtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.LblFechaInicio = new System.Windows.Forms.Label();
             this.TpPersonal = new System.Windows.Forms.TabPage();
+            this.LblCURP = new System.Windows.Forms.Label();
+            this.TxtCURP = new System.Windows.Forms.TextBox();
             this.LblNHijos = new System.Windows.Forms.Label();
             this.CbEstadoCivil = new System.Windows.Forms.ComboBox();
             this.TxtNHijos = new System.Windows.Forms.TextBox();
@@ -67,6 +69,18 @@
             this.LblSexo = new System.Windows.Forms.Label();
             this.CbSexo = new System.Windows.Forms.ComboBox();
             this.TpFinanciera = new System.Windows.Forms.TabPage();
+            this.GbTipoPago = new System.Windows.Forms.GroupBox();
+            this.RbVariable = new System.Windows.Forms.RadioButton();
+            this.RbFijo = new System.Windows.Forms.RadioButton();
+            this.CbUSueldoLimite = new System.Windows.Forms.ComboBox();
+            this.CbUSueldoBase = new System.Windows.Forms.ComboBox();
+            this.CbUSalario = new System.Windows.Forms.ComboBox();
+            this.TxtSueldoLimite = new System.Windows.Forms.TextBox();
+            this.LblSueldoLimite = new System.Windows.Forms.Label();
+            this.TxtSueldoBase = new System.Windows.Forms.TextBox();
+            this.LblSueldoBase = new System.Windows.Forms.Label();
+            this.TxtSalario = new System.Windows.Forms.TextBox();
+            this.LblSalario = new System.Windows.Forms.Label();
             this.LblTituloUsuario = new System.Windows.Forms.Label();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
@@ -94,20 +108,6 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnActualizar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
-            this.LblCURP = new System.Windows.Forms.Label();
-            this.TxtCURP = new System.Windows.Forms.TextBox();
-            this.TxtSalario = new System.Windows.Forms.TextBox();
-            this.LblSalario = new System.Windows.Forms.Label();
-            this.TxtSueldoBase = new System.Windows.Forms.TextBox();
-            this.LblSueldoBase = new System.Windows.Forms.Label();
-            this.TxtSueldoLimite = new System.Windows.Forms.TextBox();
-            this.LblSueldoLimite = new System.Windows.Forms.Label();
-            this.CbUSalario = new System.Windows.Forms.ComboBox();
-            this.CbUSueldoBase = new System.Windows.Forms.ComboBox();
-            this.CbUSueldoLimite = new System.Windows.Forms.ComboBox();
-            this.GbTipoPago = new System.Windows.Forms.GroupBox();
-            this.RbFijo = new System.Windows.Forms.RadioButton();
-            this.RbVariable = new System.Windows.Forms.RadioButton();
             this.TcEmpleados.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).BeginInit();
@@ -115,8 +115,8 @@
             this.TpGestion.SuspendLayout();
             this.TpPersonal.SuspendLayout();
             this.TpFinanciera.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.GbTipoPago.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // TcEmpleados
@@ -452,6 +452,27 @@
             this.TpPersonal.TabIndex = 3;
             this.TpPersonal.Text = "Personal";
             // 
+            // LblCURP
+            // 
+            this.LblCURP.AutoSize = true;
+            this.LblCURP.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCURP.ForeColor = System.Drawing.Color.White;
+            this.LblCURP.Location = new System.Drawing.Point(12, 171);
+            this.LblCURP.Name = "LblCURP";
+            this.LblCURP.Size = new System.Drawing.Size(65, 22);
+            this.LblCURP.TabIndex = 90;
+            this.LblCURP.Text = "CURP:";
+            // 
+            // TxtCURP
+            // 
+            this.TxtCURP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtCURP.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCURP.Location = new System.Drawing.Point(83, 168);
+            this.TxtCURP.MaxLength = 50;
+            this.TxtCURP.Name = "TxtCURP";
+            this.TxtCURP.Size = new System.Drawing.Size(327, 31);
+            this.TxtCURP.TabIndex = 89;
+            // 
             // LblNHijos
             // 
             this.LblNHijos.AutoSize = true;
@@ -560,6 +581,161 @@
             this.TpFinanciera.Size = new System.Drawing.Size(1048, 376);
             this.TpFinanciera.TabIndex = 6;
             this.TpFinanciera.Text = "Financiera";
+            // 
+            // GbTipoPago
+            // 
+            this.GbTipoPago.Controls.Add(this.RbVariable);
+            this.GbTipoPago.Controls.Add(this.RbFijo);
+            this.GbTipoPago.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GbTipoPago.ForeColor = System.Drawing.Color.White;
+            this.GbTipoPago.Location = new System.Drawing.Point(487, 18);
+            this.GbTipoPago.Name = "GbTipoPago";
+            this.GbTipoPago.Size = new System.Drawing.Size(161, 103);
+            this.GbTipoPago.TabIndex = 83;
+            this.GbTipoPago.TabStop = false;
+            this.GbTipoPago.Text = "Tipo de Pago";
+            // 
+            // RbVariable
+            // 
+            this.RbVariable.AutoSize = true;
+            this.RbVariable.Location = new System.Drawing.Point(14, 62);
+            this.RbVariable.Name = "RbVariable";
+            this.RbVariable.Size = new System.Drawing.Size(106, 26);
+            this.RbVariable.TabIndex = 1;
+            this.RbVariable.Text = "Variable";
+            this.RbVariable.UseVisualStyleBackColor = true;
+            // 
+            // RbFijo
+            // 
+            this.RbFijo.AutoSize = true;
+            this.RbFijo.Checked = true;
+            this.RbFijo.Location = new System.Drawing.Point(14, 30);
+            this.RbFijo.Name = "RbFijo";
+            this.RbFijo.Size = new System.Drawing.Size(55, 26);
+            this.RbFijo.TabIndex = 0;
+            this.RbFijo.TabStop = true;
+            this.RbFijo.Text = "Fijo";
+            this.RbFijo.UseVisualStyleBackColor = true;
+            // 
+            // CbUSueldoLimite
+            // 
+            this.CbUSueldoLimite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.CbUSueldoLimite.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.CbUSueldoLimite.FormattingEnabled = true;
+            this.CbUSueldoLimite.Items.AddRange(new object[] {
+            "Hora",
+            "Día",
+            "Semana",
+            "Mes",
+            "Ejercicio",
+            "Quincenal",
+            "Bisemanal"});
+            this.CbUSueldoLimite.Location = new System.Drawing.Point(285, 92);
+            this.CbUSueldoLimite.Name = "CbUSueldoLimite";
+            this.CbUSueldoLimite.Size = new System.Drawing.Size(179, 29);
+            this.CbUSueldoLimite.TabIndex = 82;
+            // 
+            // CbUSueldoBase
+            // 
+            this.CbUSueldoBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.CbUSueldoBase.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.CbUSueldoBase.FormattingEnabled = true;
+            this.CbUSueldoBase.Items.AddRange(new object[] {
+            "Hora",
+            "Día",
+            "Semana",
+            "Mes",
+            "Ejercicio",
+            "Quincenal",
+            "Bisemanal"});
+            this.CbUSueldoBase.Location = new System.Drawing.Point(285, 55);
+            this.CbUSueldoBase.Name = "CbUSueldoBase";
+            this.CbUSueldoBase.Size = new System.Drawing.Size(179, 29);
+            this.CbUSueldoBase.TabIndex = 81;
+            // 
+            // CbUSalario
+            // 
+            this.CbUSalario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.CbUSalario.Font = new System.Drawing.Font("Century Gothic", 13F);
+            this.CbUSalario.FormattingEnabled = true;
+            this.CbUSalario.Items.AddRange(new object[] {
+            "Hora",
+            "Día",
+            "Semana",
+            "Mes",
+            "Ejercicio",
+            "Quincenal",
+            "Bisemanal"});
+            this.CbUSalario.Location = new System.Drawing.Point(285, 17);
+            this.CbUSalario.Name = "CbUSalario";
+            this.CbUSalario.Size = new System.Drawing.Size(179, 29);
+            this.CbUSalario.TabIndex = 80;
+            // 
+            // TxtSueldoLimite
+            // 
+            this.TxtSueldoLimite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtSueldoLimite.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSueldoLimite.Location = new System.Drawing.Point(143, 91);
+            this.TxtSueldoLimite.MaxLength = 50;
+            this.TxtSueldoLimite.Name = "TxtSueldoLimite";
+            this.TxtSueldoLimite.Size = new System.Drawing.Size(136, 31);
+            this.TxtSueldoLimite.TabIndex = 31;
+            this.TxtSueldoLimite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSueldoLimite_KeyPress);
+            // 
+            // LblSueldoLimite
+            // 
+            this.LblSueldoLimite.AutoSize = true;
+            this.LblSueldoLimite.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSueldoLimite.ForeColor = System.Drawing.Color.White;
+            this.LblSueldoLimite.Location = new System.Drawing.Point(14, 94);
+            this.LblSueldoLimite.Name = "LblSueldoLimite";
+            this.LblSueldoLimite.Size = new System.Drawing.Size(132, 22);
+            this.LblSueldoLimite.TabIndex = 32;
+            this.LblSueldoLimite.Text = "Sueldo Limite:";
+            // 
+            // TxtSueldoBase
+            // 
+            this.TxtSueldoBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtSueldoBase.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSueldoBase.Location = new System.Drawing.Point(143, 54);
+            this.TxtSueldoBase.MaxLength = 50;
+            this.TxtSueldoBase.Name = "TxtSueldoBase";
+            this.TxtSueldoBase.Size = new System.Drawing.Size(136, 31);
+            this.TxtSueldoBase.TabIndex = 29;
+            this.TxtSueldoBase.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSueldoBase_KeyPress);
+            // 
+            // LblSueldoBase
+            // 
+            this.LblSueldoBase.AutoSize = true;
+            this.LblSueldoBase.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSueldoBase.ForeColor = System.Drawing.Color.White;
+            this.LblSueldoBase.Location = new System.Drawing.Point(14, 57);
+            this.LblSueldoBase.Name = "LblSueldoBase";
+            this.LblSueldoBase.Size = new System.Drawing.Size(126, 22);
+            this.LblSueldoBase.TabIndex = 30;
+            this.LblSueldoBase.Text = "Sueldo base:";
+            // 
+            // TxtSalario
+            // 
+            this.TxtSalario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtSalario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSalario.Location = new System.Drawing.Point(143, 17);
+            this.TxtSalario.MaxLength = 50;
+            this.TxtSalario.Name = "TxtSalario";
+            this.TxtSalario.Size = new System.Drawing.Size(136, 31);
+            this.TxtSalario.TabIndex = 27;
+            this.TxtSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSalario_KeyPress);
+            // 
+            // LblSalario
+            // 
+            this.LblSalario.AutoSize = true;
+            this.LblSalario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSalario.ForeColor = System.Drawing.Color.White;
+            this.LblSalario.Location = new System.Drawing.Point(14, 20);
+            this.LblSalario.Name = "LblSalario";
+            this.LblSalario.Size = new System.Drawing.Size(74, 22);
+            this.LblSalario.TabIndex = 28;
+            this.LblSalario.Text = "Salario:";
             // 
             // LblTituloUsuario
             // 
@@ -883,179 +1059,6 @@
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
-            // LblCURP
-            // 
-            this.LblCURP.AutoSize = true;
-            this.LblCURP.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCURP.ForeColor = System.Drawing.Color.White;
-            this.LblCURP.Location = new System.Drawing.Point(12, 171);
-            this.LblCURP.Name = "LblCURP";
-            this.LblCURP.Size = new System.Drawing.Size(65, 22);
-            this.LblCURP.TabIndex = 90;
-            this.LblCURP.Text = "CURP:";
-            // 
-            // TxtCURP
-            // 
-            this.TxtCURP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.TxtCURP.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCURP.Location = new System.Drawing.Point(83, 168);
-            this.TxtCURP.MaxLength = 50;
-            this.TxtCURP.Name = "TxtCURP";
-            this.TxtCURP.Size = new System.Drawing.Size(327, 31);
-            this.TxtCURP.TabIndex = 89;
-            // 
-            // TxtSalario
-            // 
-            this.TxtSalario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.TxtSalario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSalario.Location = new System.Drawing.Point(143, 17);
-            this.TxtSalario.MaxLength = 50;
-            this.TxtSalario.Name = "TxtSalario";
-            this.TxtSalario.Size = new System.Drawing.Size(136, 31);
-            this.TxtSalario.TabIndex = 27;
-            // 
-            // LblSalario
-            // 
-            this.LblSalario.AutoSize = true;
-            this.LblSalario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSalario.ForeColor = System.Drawing.Color.White;
-            this.LblSalario.Location = new System.Drawing.Point(14, 20);
-            this.LblSalario.Name = "LblSalario";
-            this.LblSalario.Size = new System.Drawing.Size(74, 22);
-            this.LblSalario.TabIndex = 28;
-            this.LblSalario.Text = "Salario:";
-            // 
-            // TxtSueldoBase
-            // 
-            this.TxtSueldoBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.TxtSueldoBase.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSueldoBase.Location = new System.Drawing.Point(143, 54);
-            this.TxtSueldoBase.MaxLength = 50;
-            this.TxtSueldoBase.Name = "TxtSueldoBase";
-            this.TxtSueldoBase.Size = new System.Drawing.Size(136, 31);
-            this.TxtSueldoBase.TabIndex = 29;
-            // 
-            // LblSueldoBase
-            // 
-            this.LblSueldoBase.AutoSize = true;
-            this.LblSueldoBase.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSueldoBase.ForeColor = System.Drawing.Color.White;
-            this.LblSueldoBase.Location = new System.Drawing.Point(14, 57);
-            this.LblSueldoBase.Name = "LblSueldoBase";
-            this.LblSueldoBase.Size = new System.Drawing.Size(126, 22);
-            this.LblSueldoBase.TabIndex = 30;
-            this.LblSueldoBase.Text = "Sueldo base:";
-            // 
-            // TxtSueldoLimite
-            // 
-            this.TxtSueldoLimite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.TxtSueldoLimite.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSueldoLimite.Location = new System.Drawing.Point(143, 91);
-            this.TxtSueldoLimite.MaxLength = 50;
-            this.TxtSueldoLimite.Name = "TxtSueldoLimite";
-            this.TxtSueldoLimite.Size = new System.Drawing.Size(136, 31);
-            this.TxtSueldoLimite.TabIndex = 31;
-            // 
-            // LblSueldoLimite
-            // 
-            this.LblSueldoLimite.AutoSize = true;
-            this.LblSueldoLimite.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSueldoLimite.ForeColor = System.Drawing.Color.White;
-            this.LblSueldoLimite.Location = new System.Drawing.Point(14, 94);
-            this.LblSueldoLimite.Name = "LblSueldoLimite";
-            this.LblSueldoLimite.Size = new System.Drawing.Size(132, 22);
-            this.LblSueldoLimite.TabIndex = 32;
-            this.LblSueldoLimite.Text = "Sueldo Limite:";
-            // 
-            // CbUSalario
-            // 
-            this.CbUSalario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.CbUSalario.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.CbUSalario.FormattingEnabled = true;
-            this.CbUSalario.Items.AddRange(new object[] {
-            "Hora",
-            "Día",
-            "Semana",
-            "Mes",
-            "Ejercicio",
-            "Quincenal",
-            "Bisemanal"});
-            this.CbUSalario.Location = new System.Drawing.Point(285, 17);
-            this.CbUSalario.Name = "CbUSalario";
-            this.CbUSalario.Size = new System.Drawing.Size(179, 29);
-            this.CbUSalario.TabIndex = 80;
-            // 
-            // CbUSueldoBase
-            // 
-            this.CbUSueldoBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.CbUSueldoBase.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.CbUSueldoBase.FormattingEnabled = true;
-            this.CbUSueldoBase.Items.AddRange(new object[] {
-            "Hora",
-            "Día",
-            "Semana",
-            "Mes",
-            "Ejercicio",
-            "Quincenal",
-            "Bisemanal"});
-            this.CbUSueldoBase.Location = new System.Drawing.Point(285, 55);
-            this.CbUSueldoBase.Name = "CbUSueldoBase";
-            this.CbUSueldoBase.Size = new System.Drawing.Size(179, 29);
-            this.CbUSueldoBase.TabIndex = 81;
-            // 
-            // CbUSueldoLimite
-            // 
-            this.CbUSueldoLimite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.CbUSueldoLimite.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.CbUSueldoLimite.FormattingEnabled = true;
-            this.CbUSueldoLimite.Items.AddRange(new object[] {
-            "Hora",
-            "Día",
-            "Semana",
-            "Mes",
-            "Ejercicio",
-            "Quincenal",
-            "Bisemanal"});
-            this.CbUSueldoLimite.Location = new System.Drawing.Point(285, 92);
-            this.CbUSueldoLimite.Name = "CbUSueldoLimite";
-            this.CbUSueldoLimite.Size = new System.Drawing.Size(179, 29);
-            this.CbUSueldoLimite.TabIndex = 82;
-            // 
-            // GbTipoPago
-            // 
-            this.GbTipoPago.Controls.Add(this.RbVariable);
-            this.GbTipoPago.Controls.Add(this.RbFijo);
-            this.GbTipoPago.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GbTipoPago.ForeColor = System.Drawing.Color.White;
-            this.GbTipoPago.Location = new System.Drawing.Point(487, 18);
-            this.GbTipoPago.Name = "GbTipoPago";
-            this.GbTipoPago.Size = new System.Drawing.Size(161, 103);
-            this.GbTipoPago.TabIndex = 83;
-            this.GbTipoPago.TabStop = false;
-            this.GbTipoPago.Text = "Tipo de Pago";
-            // 
-            // RbFijo
-            // 
-            this.RbFijo.AutoSize = true;
-            this.RbFijo.Checked = true;
-            this.RbFijo.Location = new System.Drawing.Point(14, 30);
-            this.RbFijo.Name = "RbFijo";
-            this.RbFijo.Size = new System.Drawing.Size(55, 26);
-            this.RbFijo.TabIndex = 0;
-            this.RbFijo.TabStop = true;
-            this.RbFijo.Text = "Fijo";
-            this.RbFijo.UseVisualStyleBackColor = true;
-            // 
-            // RbVariable
-            // 
-            this.RbVariable.AutoSize = true;
-            this.RbVariable.Location = new System.Drawing.Point(14, 62);
-            this.RbVariable.Name = "RbVariable";
-            this.RbVariable.Size = new System.Drawing.Size(106, 26);
-            this.RbVariable.TabIndex = 1;
-            this.RbVariable.Text = "Variable";
-            this.RbVariable.UseVisualStyleBackColor = true;
-            // 
             // FrmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1104,9 +1107,9 @@
             this.TpPersonal.PerformLayout();
             this.TpFinanciera.ResumeLayout(false);
             this.TpFinanciera.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.GbTipoPago.ResumeLayout(false);
             this.GbTipoPago.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

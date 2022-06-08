@@ -17,7 +17,7 @@ namespace Proyeccion.Principal
         private ClsPais ObjPais = null;
         private ClsEstado ObjEstado = null;
         private ClsCiudad ObjCiudad = null;
-        private ClsUtilidades ObjUtilidades = new ClsUtilidades();
+        private readonly ClsUtilidades ObjUtilidades = new ClsUtilidades();
         private readonly ClsEmpleadoLn ObjEmpleadoLn = new ClsEmpleadoLn();
         private readonly ClsAreaLn ObjAreaLn = new ClsAreaLn();
         private readonly ClsDepartamentoLn ObjDepartamentoLn = new ClsDepartamentoLn();
@@ -404,7 +404,7 @@ namespace Proyeccion.Principal
                         };
 
                         ObjEmpleadoLn.Delete(ref ObjEmpleado);
-                        if (ObjArea.MsjError == null)
+                        if (ObjEmpleado.MsjError == null)
                         {
                             MessageBox.Show("Baja exitosa");
                             CargarListaEmpleados();
@@ -418,7 +418,7 @@ namespace Proyeccion.Principal
                         }
                         else
                         {
-                            MessageBox.Show(ObjArea.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(ObjEmpleado.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -592,7 +592,6 @@ namespace Proyeccion.Principal
         {
             e.Handled= true;
         }
-
         #endregion
 
         #endregion
@@ -638,6 +637,53 @@ namespace Proyeccion.Principal
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+        #endregion
+
+        #region Acciones con TextBox
+        private void TxtSalario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para que solo acepte numeros y no texto
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            //Para que solo se pueda colocar un solo punto y no mas
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtSueldoLimite_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para que solo acepte numeros y no texto
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            //Para que solo se pueda colocar un solo punto y no mas
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtSueldoBase_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para que solo acepte numeros y no texto
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            //Para que solo se pueda colocar un solo punto y no mas
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
         #endregion

@@ -102,5 +102,10 @@ namespace Proyeccion.Principal
         {
             AbrirFrmHijo(new FrmEscaneo());
         }
+
+        private void BtnFraccion_Click(object sender, EventArgs e)
+        {
+            AbrirFrmHijo(new FrmFracciones());
+        }
     }
 }

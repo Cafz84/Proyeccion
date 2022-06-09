@@ -107,5 +107,10 @@ namespace Proyeccion.Principal
         {
             AbrirFrmHijo(new FrmFracciones());
         }
+
+        private void BtnFraccEstilo_Click(object sender, EventArgs e)
+        {
+            AbrirFrmHijo(new FrmFraccEstilo());
+        }
     }
 }

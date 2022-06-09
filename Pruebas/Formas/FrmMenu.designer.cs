@@ -36,6 +36,7 @@
             this.BtnMaximizar = new System.Windows.Forms.PictureBox();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.BtnFraccEstilo = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.BtnNominaDestajo = new System.Windows.Forms.Button();
             this.BtnFraccion = new System.Windows.Forms.Button();
@@ -62,7 +63,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnInicio = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.BtnFraccEstilo = new System.Windows.Forms.Button();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
@@ -181,6 +181,26 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(220, 665);
             this.MenuVertical.TabIndex = 1;
+            // 
+            // BtnFraccEstilo
+            // 
+            this.BtnFraccEstilo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.BtnFraccEstilo.FlatAppearance.BorderSize = 0;
+            this.BtnFraccEstilo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.BtnFraccEstilo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnFraccEstilo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFraccEstilo.ForeColor = System.Drawing.Color.White;
+            this.BtnFraccEstilo.Image = ((System.Drawing.Image)(resources.GetObject("BtnFraccEstilo.Image")));
+            this.BtnFraccEstilo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnFraccEstilo.Location = new System.Drawing.Point(4, 310);
+            this.BtnFraccEstilo.Name = "BtnFraccEstilo";
+            this.BtnFraccEstilo.Size = new System.Drawing.Size(216, 32);
+            this.BtnFraccEstilo.TabIndex = 44;
+            this.BtnFraccEstilo.Text = "Fracc. x Estilo";
+            this.BtnFraccEstilo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnFraccEstilo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnFraccEstilo.UseVisualStyleBackColor = false;
+            this.BtnFraccEstilo.Click += new System.EventHandler(this.BtnFraccEstilo_Click);
             // 
             // button1
             // 
@@ -510,25 +530,6 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1080, 665);
             this.panelContenedor.TabIndex = 2;
-            // 
-            // BtnFraccEstilo
-            // 
-            this.BtnFraccEstilo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
-            this.BtnFraccEstilo.FlatAppearance.BorderSize = 0;
-            this.BtnFraccEstilo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.BtnFraccEstilo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFraccEstilo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnFraccEstilo.ForeColor = System.Drawing.Color.White;
-            this.BtnFraccEstilo.Image = ((System.Drawing.Image)(resources.GetObject("BtnFraccEstilo.Image")));
-            this.BtnFraccEstilo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFraccEstilo.Location = new System.Drawing.Point(4, 310);
-            this.BtnFraccEstilo.Name = "BtnFraccEstilo";
-            this.BtnFraccEstilo.Size = new System.Drawing.Size(216, 32);
-            this.BtnFraccEstilo.TabIndex = 44;
-            this.BtnFraccEstilo.Text = "Fracc. x Estilo";
-            this.BtnFraccEstilo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFraccEstilo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnFraccEstilo.UseVisualStyleBackColor = false;
             // 
             // FrmMenu
             // 

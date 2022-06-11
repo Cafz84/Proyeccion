@@ -118,11 +118,11 @@ namespace LogicaNegocio.Usuario
                         foreach (DataRow dr in ObjFraccEstilo.DtResultados.Rows)
                         {
                             ObjFraccEstilo.U_IdEstilo = dr["U_IdEstilo"].ToString();
-                            ObjFraccEstilo.U_IdFraccion = Convert.ToInt16(dr["Codigo"].ToString());
+                            ObjFraccEstilo.U_IdFraccion = Convert.ToInt16(dr["U_IdFraccion"].ToString());
                             ObjFraccEstilo.U_ModCode = dr["U_ModCode"].ToString();
-                            ObjFraccEstilo.U_ModDesc = dr["U_ModDesc"].ToString();
+                            ObjFraccEstilo.U_ModDesc = dr["Estilo"].ToString();
                             ObjFraccEstilo.U_CodigoFraccion = dr["U_CodigoFraccion"].ToString();
-                            ObjFraccEstilo.U_NameFraccion = dr["U_NameFraccion"].ToString();
+                            ObjFraccEstilo.U_NameFraccion = dr["Fraccion"].ToString();
                         }
                     }
                 }

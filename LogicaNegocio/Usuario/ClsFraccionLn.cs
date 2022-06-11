@@ -26,7 +26,7 @@ namespace LogicaNegocio.Usuario
         }
         #endregion
 
-        #region CRUD Empleado
+        #region CRUD Fracciones
         public void Create(ref ClsFraccion ObjFraccion)
         {
             ObjDataBase = new ClsDataBase()

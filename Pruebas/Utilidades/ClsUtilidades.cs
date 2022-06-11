@@ -12,6 +12,7 @@ namespace Pruebas.Utilidades
             estilo.Font = new Font(Dgv.Font, FontStyle.Bold);
             Dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            Dgv.RowHeadersWidth = 20;
             Dgv.Columns[0].DisplayIndex = Dgv.ColumnCount - 1;
             
             Dgv.AllowUserToAddRows = false;
@@ -25,6 +26,7 @@ namespace Pruebas.Utilidades
             estilo.Alignment = DataGridViewContentAlignment.MiddleCenter;
             estilo.Font = new Font(Dgv.Font, FontStyle.Bold);
             Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            Dgv.RowHeadersWidth = 20;
 
             Dgv.AllowUserToAddRows = false;
             Dgv.AllowUserToDeleteRows = false;
@@ -38,6 +40,7 @@ namespace Pruebas.Utilidades
             estilo.Font = new Font(Dgv.Font, FontStyle.Bold);
             Dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            Dgv.RowHeadersWidth = 20;
 
             Dgv.AllowUserToAddRows = false;
             Dgv.AllowUserToDeleteRows = false;

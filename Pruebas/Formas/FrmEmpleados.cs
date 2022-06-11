@@ -117,6 +117,12 @@ namespace Proyeccion.Principal
             CbUSalario.Text = string.Empty;
             CbUSueldoBase.Text = string.Empty;
             CbUSueldoLimite.Text = string.Empty;
+
+            //Activacion de botones
+            BtnAgregar.Enabled = true;
+            BtnEliminar.Enabled = false;
+            BtnActualizar.Enabled = false;
+            BtnLimpiar.Enabled = false;
         }
         
         public void CargarListaArea()
@@ -272,11 +278,6 @@ namespace Proyeccion.Principal
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
-            BtnAgregar.Enabled = true;
-            BtnEliminar.Enabled = false;
-            BtnActualizar.Enabled = false;
-            BtnLimpiar.Enabled = false;
-
             LimpiarCampos();
         }
 
@@ -290,37 +291,36 @@ namespace Proyeccion.Principal
                 }
                 else
                 {
-                    ObjEmpleado = new ClsEmpleado()
+                    DialogResult dialogResult = MessageBox.Show("¿Realmente quiere dar de alta el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.OK)
                     {
-                        FirstName = TxtNombre.Text,
-                        MiddleName = TxtNombre2.Text,
-                        LastName = TxtApellido.Text,
-                        JobTitle = CbArea.Text,
-                        Dept = Convert.ToInt16(CbDepto.SelectedValue),
-                        Position = Convert.ToInt16(CbPuesto.SelectedValue),
-                        HomeTel = TxtTelCasa.Text,
-                        Mobile = TxtTelMovil.Text,
-                        Email = TxtEmail.Text,
-                        Active = 'Y',
-                        HomeCountr = CbPais.SelectedValue.ToString()
-                    };
+                        ObjEmpleado = new ClsEmpleado()
+                        {
+                            FirstName = TxtNombre.Text,
+                            MiddleName = TxtNombre2.Text,
+                            LastName = TxtApellido.Text,
+                            JobTitle = CbArea.Text,
+                            Dept = Convert.ToInt16(CbDepto.SelectedValue),
+                            Position = Convert.ToInt16(CbPuesto.SelectedValue),
+                            HomeTel = TxtTelCasa.Text,
+                            Mobile = TxtTelMovil.Text,
+                            Email = TxtEmail.Text,
+                            Active = 'Y',
+                            HomeCountr = CbPais.SelectedValue.ToString()
+                        };
 
-                    ObjEmpleadoLn.Create(ref ObjEmpleado);
-                    if (ObjEmpleado.MsjError == null)
-                    {
-                        MessageBox.Show("Alta exitosa");
-                        CargarListaEmpleados();
-                        
-                        BtnLimpiar.Enabled = false;
-                        BtnActualizar.Enabled = false;
-                        BtnEliminar.Enabled = false;
-                        BtnAgregar.Enabled = true;
+                        ObjEmpleadoLn.Create(ref ObjEmpleado);
+                        if (ObjEmpleado.MsjError == null)
+                        {
+                            MessageBox.Show("Alta exitosa");
+                            CargarListaEmpleados();
 
-                        LimpiarCampos();
-                    }
-                    else
-                    {
-                        MessageBox.Show(ObjEmpleado.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            LimpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show(ObjEmpleado.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
@@ -369,12 +369,6 @@ namespace Proyeccion.Principal
                     {
                         MessageBox.Show("El empleado fue actualizado correctamente");
                         CargarListaEmpleados();
-
-                        BtnLimpiar.Enabled = false;
-                        BtnAgregar.Enabled = true;
-                        BtnEliminar.Enabled = false;
-                        BtnActualizar.Enabled = false;
-
                         LimpiarCampos();
                     }
                     else
@@ -408,11 +402,6 @@ namespace Proyeccion.Principal
                         {
                             MessageBox.Show("Baja exitosa");
                             CargarListaEmpleados();
-
-                            BtnLimpiar.Enabled = false;
-                            BtnActualizar.Enabled = false;
-                            BtnAgregar.Enabled = true;
-                            BtnEliminar.Enabled = false;
 
                             LimpiarCampos();
                         }

@@ -53,6 +53,7 @@
     <Compile Include="Usuario\ClsPaisLn.cs" />
     <Compile Include="Usuario\ClsPuestoLn.cs" />
     <Compile Include="Usuario\ClsReadDatosEscaneoLn.cs" />
+    <Compile Include="Usuario\ClsTablasSAPLn.cs" />
     <Compile Include="Usuario\ClsTipoEscaneoLn.cs" />
     <Compile Include="Usuario\ClsUserLn.cs" />
     <Compile Include="Usuario\ClsUsuarioLn.cs" />

@@ -35,32 +35,32 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
-            this.DgvFracciones = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DgvEstilo = new System.Windows.Forms.DataGridView();
+            this.DgvFraccEstilo = new System.Windows.Forms.DataGridView();
             this.LblIdE = new System.Windows.Forms.Label();
             this.LblNomE = new System.Windows.Forms.Label();
             this.LblCodE = new System.Windows.Forms.Label();
             this.GbEstilo = new System.Windows.Forms.GroupBox();
+            this.LblNomEstilo = new System.Windows.Forms.Label();
+            this.LblCodEstilo = new System.Windows.Forms.Label();
+            this.LblIdEstilo = new System.Windows.Forms.Label();
             this.GbFraccion = new System.Windows.Forms.GroupBox();
+            this.LblNomFraccion = new System.Windows.Forms.Label();
+            this.LblCodFraccion = new System.Windows.Forms.Label();
+            this.LblIdFraccion = new System.Windows.Forms.Label();
             this.LblIdF = new System.Windows.Forms.Label();
             this.LblNomF = new System.Windows.Forms.Label();
             this.LblCodF = new System.Windows.Forms.Label();
-            this.LblIdEstilo = new System.Windows.Forms.Label();
-            this.LblIdFraccion = new System.Windows.Forms.Label();
-            this.LblCodEstilo = new System.Windows.Forms.Label();
-            this.LblCodFraccion = new System.Windows.Forms.Label();
-            this.LblNomFraccion = new System.Windows.Forms.Label();
-            this.LblNomEstilo = new System.Windows.Forms.Label();
+            this.SelE = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DgvFraccion = new System.Windows.Forms.DataGridView();
+            this.SelF = new System.Windows.Forms.DataGridViewImageColumn();
+            this.EditFE = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvFracciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvEstilo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFraccEstilo)).BeginInit();
             this.GbEstilo.SuspendLayout();
             this.GbFraccion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFraccion)).BeginInit();
             this.SuspendLayout();
             // 
             // LblTituloFraccEstilo
@@ -89,6 +89,7 @@
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnActualizar
             // 
@@ -105,6 +106,7 @@
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnActualizar.UseVisualStyleBackColor = false;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnAgregar
             // 
@@ -120,6 +122,7 @@
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // BtnLimpiar
             // 
@@ -136,6 +139,7 @@
             this.BtnLimpiar.Text = "Limpiar";
             this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // BtnCerrar
             // 
@@ -147,60 +151,28 @@
             this.BtnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnCerrar.TabIndex = 84;
             this.BtnCerrar.TabStop = false;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
-            // DgvFracciones
+            // DgvEstilo
             // 
-            this.DgvFracciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvFracciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Editar});
-            this.DgvFracciones.Location = new System.Drawing.Point(340, 249);
-            this.DgvFracciones.Name = "DgvFracciones";
-            this.DgvFracciones.Size = new System.Drawing.Size(364, 411);
-            this.DgvFracciones.TabIndex = 89;
+            this.DgvEstilo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvEstilo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SelE});
+            this.DgvEstilo.Location = new System.Drawing.Point(340, 249);
+            this.DgvEstilo.Name = "DgvEstilo";
+            this.DgvEstilo.Size = new System.Drawing.Size(364, 411);
+            this.DgvEstilo.TabIndex = 89;
+            this.DgvEstilo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEstilo_CellContentClick);
             // 
-            // Editar
+            // DgvFraccEstilo
             // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 55;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn1});
-            this.dataGridView1.Location = new System.Drawing.Point(710, 249);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(364, 411);
-            this.dataGridView1.TabIndex = 90;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Editar";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 55;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn2});
-            this.dataGridView2.Location = new System.Drawing.Point(5, 249);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(329, 411);
-            this.dataGridView2.TabIndex = 91;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "Editar";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 55;
+            this.DgvFraccEstilo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvFraccEstilo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EditFE});
+            this.DgvFraccEstilo.Location = new System.Drawing.Point(5, 249);
+            this.DgvFraccEstilo.Name = "DgvFraccEstilo";
+            this.DgvFraccEstilo.Size = new System.Drawing.Size(329, 411);
+            this.DgvFraccEstilo.TabIndex = 91;
             // 
             // LblIdE
             // 
@@ -252,6 +224,36 @@
             this.GbEstilo.TabStop = false;
             this.GbEstilo.Text = "Datos Estilo";
             // 
+            // LblNomEstilo
+            // 
+            this.LblNomEstilo.AutoSize = true;
+            this.LblNomEstilo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNomEstilo.ForeColor = System.Drawing.Color.Black;
+            this.LblNomEstilo.Location = new System.Drawing.Point(101, 61);
+            this.LblNomEstilo.Name = "LblNomEstilo";
+            this.LblNomEstilo.Size = new System.Drawing.Size(0, 22);
+            this.LblNomEstilo.TabIndex = 99;
+            // 
+            // LblCodEstilo
+            // 
+            this.LblCodEstilo.AutoSize = true;
+            this.LblCodEstilo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCodEstilo.ForeColor = System.Drawing.Color.Black;
+            this.LblCodEstilo.Location = new System.Drawing.Point(434, 27);
+            this.LblCodEstilo.Name = "LblCodEstilo";
+            this.LblCodEstilo.Size = new System.Drawing.Size(0, 22);
+            this.LblCodEstilo.TabIndex = 96;
+            // 
+            // LblIdEstilo
+            // 
+            this.LblIdEstilo.AutoSize = true;
+            this.LblIdEstilo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblIdEstilo.ForeColor = System.Drawing.Color.Black;
+            this.LblIdEstilo.Location = new System.Drawing.Point(49, 27);
+            this.LblIdEstilo.Name = "LblIdEstilo";
+            this.LblIdEstilo.Size = new System.Drawing.Size(0, 22);
+            this.LblIdEstilo.TabIndex = 95;
+            // 
             // GbFraccion
             // 
             this.GbFraccion.Controls.Add(this.LblNomFraccion);
@@ -268,6 +270,36 @@
             this.GbFraccion.TabIndex = 96;
             this.GbFraccion.TabStop = false;
             this.GbFraccion.Text = "Datos Fracción";
+            // 
+            // LblNomFraccion
+            // 
+            this.LblNomFraccion.AutoSize = true;
+            this.LblNomFraccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNomFraccion.ForeColor = System.Drawing.Color.Black;
+            this.LblNomFraccion.Location = new System.Drawing.Point(101, 61);
+            this.LblNomFraccion.Name = "LblNomFraccion";
+            this.LblNomFraccion.Size = new System.Drawing.Size(0, 22);
+            this.LblNomFraccion.TabIndex = 98;
+            // 
+            // LblCodFraccion
+            // 
+            this.LblCodFraccion.AutoSize = true;
+            this.LblCodFraccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCodFraccion.ForeColor = System.Drawing.Color.Black;
+            this.LblCodFraccion.Location = new System.Drawing.Point(434, 27);
+            this.LblCodFraccion.Name = "LblCodFraccion";
+            this.LblCodFraccion.Size = new System.Drawing.Size(0, 22);
+            this.LblCodFraccion.TabIndex = 97;
+            // 
+            // LblIdFraccion
+            // 
+            this.LblIdFraccion.AutoSize = true;
+            this.LblIdFraccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblIdFraccion.ForeColor = System.Drawing.Color.Black;
+            this.LblIdFraccion.Location = new System.Drawing.Point(49, 27);
+            this.LblIdFraccion.Name = "LblIdFraccion";
+            this.LblIdFraccion.Size = new System.Drawing.Size(0, 22);
+            this.LblIdFraccion.TabIndex = 96;
             // 
             // LblIdF
             // 
@@ -302,65 +334,40 @@
             this.LblCodF.TabIndex = 94;
             this.LblCodF.Text = "Código:";
             // 
-            // LblIdEstilo
+            // SelE
             // 
-            this.LblIdEstilo.AutoSize = true;
-            this.LblIdEstilo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblIdEstilo.ForeColor = System.Drawing.Color.Black;
-            this.LblIdEstilo.Location = new System.Drawing.Point(49, 27);
-            this.LblIdEstilo.Name = "LblIdEstilo";
-            this.LblIdEstilo.Size = new System.Drawing.Size(0, 22);
-            this.LblIdEstilo.TabIndex = 95;
+            this.SelE.HeaderText = "Sel";
+            this.SelE.Image = ((System.Drawing.Image)(resources.GetObject("SelE.Image")));
+            this.SelE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelE.Name = "SelE";
+            this.SelE.Width = 35;
             // 
-            // LblIdFraccion
+            // DgvFraccion
             // 
-            this.LblIdFraccion.AutoSize = true;
-            this.LblIdFraccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblIdFraccion.ForeColor = System.Drawing.Color.Black;
-            this.LblIdFraccion.Location = new System.Drawing.Point(49, 27);
-            this.LblIdFraccion.Name = "LblIdFraccion";
-            this.LblIdFraccion.Size = new System.Drawing.Size(0, 22);
-            this.LblIdFraccion.TabIndex = 96;
+            this.DgvFraccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvFraccion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SelF});
+            this.DgvFraccion.Location = new System.Drawing.Point(710, 248);
+            this.DgvFraccion.Name = "DgvFraccion";
+            this.DgvFraccion.Size = new System.Drawing.Size(364, 411);
+            this.DgvFraccion.TabIndex = 97;
+            this.DgvFraccion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvFraccion_CellContentClick);
             // 
-            // LblCodEstilo
+            // SelF
             // 
-            this.LblCodEstilo.AutoSize = true;
-            this.LblCodEstilo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCodEstilo.ForeColor = System.Drawing.Color.Black;
-            this.LblCodEstilo.Location = new System.Drawing.Point(434, 27);
-            this.LblCodEstilo.Name = "LblCodEstilo";
-            this.LblCodEstilo.Size = new System.Drawing.Size(0, 22);
-            this.LblCodEstilo.TabIndex = 96;
+            this.SelF.HeaderText = "Sel";
+            this.SelF.Image = ((System.Drawing.Image)(resources.GetObject("SelF.Image")));
+            this.SelF.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelF.Name = "SelF";
+            this.SelF.Width = 35;
             // 
-            // LblCodFraccion
+            // EditFE
             // 
-            this.LblCodFraccion.AutoSize = true;
-            this.LblCodFraccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCodFraccion.ForeColor = System.Drawing.Color.Black;
-            this.LblCodFraccion.Location = new System.Drawing.Point(434, 27);
-            this.LblCodFraccion.Name = "LblCodFraccion";
-            this.LblCodFraccion.Size = new System.Drawing.Size(0, 22);
-            this.LblCodFraccion.TabIndex = 97;
-            // 
-            // LblNomFraccion
-            // 
-            this.LblNomFraccion.AutoSize = true;
-            this.LblNomFraccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNomFraccion.ForeColor = System.Drawing.Color.Black;
-            this.LblNomFraccion.Location = new System.Drawing.Point(101, 61);
-            this.LblNomFraccion.Name = "LblNomFraccion";
-            this.LblNomFraccion.Size = new System.Drawing.Size(0, 22);
-            this.LblNomFraccion.TabIndex = 98;
-            // 
-            // LblNomEstilo
-            // 
-            this.LblNomEstilo.AutoSize = true;
-            this.LblNomEstilo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNomEstilo.ForeColor = System.Drawing.Color.Black;
-            this.LblNomEstilo.Location = new System.Drawing.Point(101, 61);
-            this.LblNomEstilo.Name = "LblNomEstilo";
-            this.LblNomEstilo.Size = new System.Drawing.Size(0, 22);
-            this.LblNomEstilo.TabIndex = 99;
+            this.EditFE.HeaderText = "Editar";
+            this.EditFE.Image = ((System.Drawing.Image)(resources.GetObject("EditFE.Image")));
+            this.EditFE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EditFE.Name = "EditFE";
+            this.EditFE.Width = 40;
             // 
             // FrmFraccEstilo
             // 
@@ -368,11 +375,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1080, 665);
+            this.Controls.Add(this.DgvFraccion);
             this.Controls.Add(this.GbFraccion);
             this.Controls.Add(this.GbEstilo);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.DgvFracciones);
+            this.Controls.Add(this.DgvFraccEstilo);
+            this.Controls.Add(this.DgvEstilo);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnActualizar);
             this.Controls.Add(this.BtnAgregar);
@@ -383,13 +390,13 @@
             this.Name = "FrmFraccEstilo";
             this.Text = "FrmFraccEstilo";
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvFracciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvEstilo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFraccEstilo)).EndInit();
             this.GbEstilo.ResumeLayout(false);
             this.GbEstilo.PerformLayout();
             this.GbFraccion.ResumeLayout(false);
             this.GbFraccion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFraccion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,12 +410,8 @@
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnLimpiar;
         private System.Windows.Forms.PictureBox BtnCerrar;
-        private System.Windows.Forms.DataGridView DgvFracciones;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridView DgvEstilo;
+        private System.Windows.Forms.DataGridView DgvFraccEstilo;
         private System.Windows.Forms.Label LblIdE;
         private System.Windows.Forms.Label LblNomE;
         private System.Windows.Forms.Label LblCodE;
@@ -423,5 +426,9 @@
         private System.Windows.Forms.Label LblNomFraccion;
         private System.Windows.Forms.Label LblCodFraccion;
         private System.Windows.Forms.Label LblIdFraccion;
+        private System.Windows.Forms.DataGridViewImageColumn SelE;
+        private System.Windows.Forms.DataGridView DgvFraccion;
+        private System.Windows.Forms.DataGridViewImageColumn SelF;
+        private System.Windows.Forms.DataGridViewImageColumn EditFE;
     }
 }

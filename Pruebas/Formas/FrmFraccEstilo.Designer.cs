@@ -36,7 +36,9 @@
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.DgvEstilo = new System.Windows.Forms.DataGridView();
+            this.SelE = new System.Windows.Forms.DataGridViewImageColumn();
             this.DgvFraccEstilo = new System.Windows.Forms.DataGridView();
+            this.EditFE = new System.Windows.Forms.DataGridViewImageColumn();
             this.LblIdE = new System.Windows.Forms.Label();
             this.LblNomE = new System.Windows.Forms.Label();
             this.LblCodE = new System.Windows.Forms.Label();
@@ -51,10 +53,8 @@
             this.LblIdF = new System.Windows.Forms.Label();
             this.LblNomF = new System.Windows.Forms.Label();
             this.LblCodF = new System.Windows.Forms.Label();
-            this.SelE = new System.Windows.Forms.DataGridViewImageColumn();
             this.DgvFraccion = new System.Windows.Forms.DataGridView();
             this.SelF = new System.Windows.Forms.DataGridViewImageColumn();
-            this.EditFE = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEstilo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFraccEstilo)).BeginInit();
@@ -164,6 +164,14 @@
             this.DgvEstilo.TabIndex = 89;
             this.DgvEstilo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEstilo_CellContentClick);
             // 
+            // SelE
+            // 
+            this.SelE.HeaderText = "Sel";
+            this.SelE.Image = ((System.Drawing.Image)(resources.GetObject("SelE.Image")));
+            this.SelE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelE.Name = "SelE";
+            this.SelE.Width = 35;
+            // 
             // DgvFraccEstilo
             // 
             this.DgvFraccEstilo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -173,6 +181,15 @@
             this.DgvFraccEstilo.Name = "DgvFraccEstilo";
             this.DgvFraccEstilo.Size = new System.Drawing.Size(329, 411);
             this.DgvFraccEstilo.TabIndex = 91;
+            this.DgvFraccEstilo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvFraccEstilo_CellContentClick);
+            // 
+            // EditFE
+            // 
+            this.EditFE.HeaderText = "Editar";
+            this.EditFE.Image = ((System.Drawing.Image)(resources.GetObject("EditFE.Image")));
+            this.EditFE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EditFE.Name = "EditFE";
+            this.EditFE.Width = 40;
             // 
             // LblIdE
             // 
@@ -334,14 +351,6 @@
             this.LblCodF.TabIndex = 94;
             this.LblCodF.Text = "Código:";
             // 
-            // SelE
-            // 
-            this.SelE.HeaderText = "Sel";
-            this.SelE.Image = ((System.Drawing.Image)(resources.GetObject("SelE.Image")));
-            this.SelE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.SelE.Name = "SelE";
-            this.SelE.Width = 35;
-            // 
             // DgvFraccion
             // 
             this.DgvFraccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -360,14 +369,6 @@
             this.SelF.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.SelF.Name = "SelF";
             this.SelF.Width = 35;
-            // 
-            // EditFE
-            // 
-            this.EditFE.HeaderText = "Editar";
-            this.EditFE.Image = ((System.Drawing.Image)(resources.GetObject("EditFE.Image")));
-            this.EditFE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.EditFE.Name = "EditFE";
-            this.EditFE.Width = 40;
             // 
             // FrmFraccEstilo
             // 

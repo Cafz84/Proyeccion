@@ -239,6 +239,7 @@
             this.BtnNominaDestajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnNominaDestajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnNominaDestajo.UseVisualStyleBackColor = false;
+            this.BtnNominaDestajo.Click += new System.EventHandler(this.BtnNominaDestajo_Click);
             // 
             // BtnFraccion
             // 

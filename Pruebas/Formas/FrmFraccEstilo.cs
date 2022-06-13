@@ -39,7 +39,7 @@ namespace Pruebas.Formas
             LblNomFraccion.Text = string.Empty;
 
             BtnLimpiar.Enabled = false;
-            BtnActualizar.Enabled = true;
+            BtnAgregar.Enabled = true;
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
         }
@@ -250,6 +250,24 @@ namespace Pruebas.Formas
                 LblIdFraccion.Text = DgvFraccion.Rows[e.RowIndex].Cells["FraccionId"].Value.ToString();
                 LblCodFraccion.Text = DgvFraccion.Rows[e.RowIndex].Cells["Codigo"].Value.ToString();
                 LblNomFraccion.Text = DgvFraccion.Rows[e.RowIndex].Cells["Fraccion"].Value.ToString();
+            }
+        }
+
+        private void DgvFraccEstilo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DgvFraccEstilo.Columns[e.ColumnIndex].Name == "EditFE")
+            {
+                LblIdEstilo.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["U_IdEstilo"].Value.ToString();
+                LblCodEstilo.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["U_ModCode"].Value.ToString();
+                LblNomEstilo.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Estilo"].Value.ToString();
+                LblIdFraccion.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["U_IdFraccion"].Value.ToString();
+                LblCodFraccion.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["U_CodigoFraccion"].Value.ToString();
+                LblNomFraccion.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Fraccion"].Value.ToString();
+
+                BtnLimpiar.Enabled = true;
+                BtnAgregar.Enabled = false;
+                BtnActualizar.Enabled = true;
+                BtnEliminar.Enabled = true;
             }
         }
         #endregion

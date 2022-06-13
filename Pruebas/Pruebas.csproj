@@ -133,6 +133,12 @@
     <Compile Include="Formas\FrmDepto.Designer.cs">
       <DependentUpon>FrmDepto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formas\FrmDestajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\FrmDestajo.Designer.cs">
+      <DependentUpon>FrmDestajo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formas\FrmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmDepto.resx">
       <DependentUpon>FrmDepto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formas\FrmDestajo.resx">
+      <DependentUpon>FrmDestajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmEmpleados.resx">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>

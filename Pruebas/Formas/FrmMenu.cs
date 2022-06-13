@@ -112,5 +112,10 @@ namespace Proyeccion.Principal
         {
             AbrirFrmHijo(new FrmFraccEstilo());
         }
+
+        private void BtnNominaDestajo_Click(object sender, EventArgs e)
+        {
+            AbrirFrmHijo(new FrmDestajo());
+        }
     }
 }

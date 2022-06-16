@@ -200,6 +200,7 @@
             this.cbCiudad.Name = "cbCiudad";
             this.cbCiudad.Size = new System.Drawing.Size(307, 29);
             this.cbCiudad.TabIndex = 47;
+            this.cbCiudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbCiudad_KeyPress);
             // 
             // CbEstado
             // 
@@ -211,7 +212,6 @@
             this.CbEstado.Size = new System.Drawing.Size(307, 29);
             this.CbEstado.TabIndex = 46;
             this.CbEstado.SelectedIndexChanged += new System.EventHandler(this.CbEstado_SelectedIndexChanged);
-            this.CbEstado.DataSourceChanged += new System.EventHandler(this.CbEstado_DataSourceChanged);
             this.CbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbEstado_KeyPress);
             // 
             // CbPais
@@ -223,7 +223,6 @@
             this.CbPais.Name = "CbPais";
             this.CbPais.Size = new System.Drawing.Size(307, 29);
             this.CbPais.TabIndex = 45;
-            this.CbPais.DataSourceChanged += new System.EventHandler(this.CbPais_DataSourceChanged);
             this.CbPais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbPais_KeyPress);
             // 
             // TxtNoInt
@@ -265,6 +264,7 @@
             this.TxtCP.Name = "TxtCP";
             this.TxtCP.Size = new System.Drawing.Size(307, 31);
             this.TxtCP.TabIndex = 37;
+            this.TxtCP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCP_KeyPress);
             // 
             // LblCP
             // 
@@ -395,12 +395,14 @@
             this.CbMotivoRC.Name = "CbMotivoRC";
             this.CbMotivoRC.Size = new System.Drawing.Size(180, 29);
             this.CbMotivoRC.TabIndex = 80;
+            this.CbMotivoRC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbMotivoRC_KeyPress);
             // 
             // DtpFechaRC
             // 
-            this.DtpFechaRC.Location = new System.Drawing.Point(313, 54);
+            this.DtpFechaRC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaRC.Location = new System.Drawing.Point(321, 54);
             this.DtpFechaRC.Name = "DtpFechaRC";
-            this.DtpFechaRC.Size = new System.Drawing.Size(190, 23);
+            this.DtpFechaRC.Size = new System.Drawing.Size(89, 23);
             this.DtpFechaRC.TabIndex = 48;
             // 
             // LblFechaRC
@@ -416,10 +418,12 @@
             // 
             // DtpFechaInicio
             // 
-            this.DtpFechaInicio.Location = new System.Drawing.Point(168, 15);
+            this.DtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaInicio.Location = new System.Drawing.Point(321, 16);
             this.DtpFechaInicio.Name = "DtpFechaInicio";
-            this.DtpFechaInicio.Size = new System.Drawing.Size(190, 23);
+            this.DtpFechaInicio.Size = new System.Drawing.Size(89, 23);
             this.DtpFechaInicio.TabIndex = 46;
+            this.DtpFechaInicio.ValueChanged += new System.EventHandler(this.DtpFechaInicio_ValueChanged);
             // 
             // LblFechaInicio
             // 
@@ -498,6 +502,7 @@
             this.CbEstadoCivil.Name = "CbEstadoCivil";
             this.CbEstadoCivil.Size = new System.Drawing.Size(276, 29);
             this.CbEstadoCivil.TabIndex = 87;
+            this.CbEstadoCivil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbEstadoCivil_KeyPress);
             // 
             // TxtNHijos
             // 
@@ -508,6 +513,7 @@
             this.TxtNHijos.Name = "TxtNHijos";
             this.TxtNHijos.Size = new System.Drawing.Size(222, 31);
             this.TxtNHijos.TabIndex = 80;
+            this.TxtNHijos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNHijos_KeyPress);
             // 
             // LblEstdoCivil
             // 
@@ -522,10 +528,12 @@
             // 
             // DtpFechaNacimiento
             // 
-            this.DtpFechaNacimiento.Location = new System.Drawing.Point(220, 52);
+            this.DtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaNacimiento.Location = new System.Drawing.Point(313, 52);
             this.DtpFechaNacimiento.Name = "DtpFechaNacimiento";
-            this.DtpFechaNacimiento.Size = new System.Drawing.Size(190, 23);
+            this.DtpFechaNacimiento.Size = new System.Drawing.Size(97, 23);
             this.DtpFechaNacimiento.TabIndex = 85;
+            this.DtpFechaNacimiento.ValueChanged += new System.EventHandler(this.DtpFechaNacimiento_ValueChanged);
             // 
             // LblFechaNacimiento
             // 
@@ -561,6 +569,7 @@
             this.CbSexo.Name = "CbSexo";
             this.CbSexo.Size = new System.Drawing.Size(222, 29);
             this.CbSexo.TabIndex = 82;
+            this.CbSexo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbSexo_KeyPress);
             // 
             // TpFinanciera
             // 
@@ -634,6 +643,7 @@
             this.CbUSueldoLimite.Name = "CbUSueldoLimite";
             this.CbUSueldoLimite.Size = new System.Drawing.Size(179, 29);
             this.CbUSueldoLimite.TabIndex = 82;
+            this.CbUSueldoLimite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbUSueldoLimite_KeyPress);
             // 
             // CbUSueldoBase
             // 
@@ -652,6 +662,7 @@
             this.CbUSueldoBase.Name = "CbUSueldoBase";
             this.CbUSueldoBase.Size = new System.Drawing.Size(179, 29);
             this.CbUSueldoBase.TabIndex = 81;
+            this.CbUSueldoBase.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbUSueldoBase_KeyPress);
             // 
             // CbUSalario
             // 
@@ -670,6 +681,7 @@
             this.CbUSalario.Name = "CbUSalario";
             this.CbUSalario.Size = new System.Drawing.Size(179, 29);
             this.CbUSalario.TabIndex = 80;
+            this.CbUSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbUSalario_KeyPress);
             // 
             // TxtSueldoLimite
             // 
@@ -742,7 +754,7 @@
             this.LblTituloUsuario.AutoSize = true;
             this.LblTituloUsuario.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTituloUsuario.ForeColor = System.Drawing.Color.White;
-            this.LblTituloUsuario.Location = new System.Drawing.Point(421, 9);
+            this.LblTituloUsuario.Location = new System.Drawing.Point(421, 3);
             this.LblTituloUsuario.Name = "LblTituloUsuario";
             this.LblTituloUsuario.Size = new System.Drawing.Size(190, 39);
             this.LblTituloUsuario.TabIndex = 1;
@@ -961,7 +973,6 @@
             this.CbArea.Name = "CbArea";
             this.CbArea.Size = new System.Drawing.Size(208, 29);
             this.CbArea.TabIndex = 5;
-            this.CbArea.DataSourceChanged += new System.EventHandler(this.CbArea_DataSourceChanged);
             this.CbArea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbArea_KeyPress);
             // 
             // CbDepto
@@ -973,7 +984,6 @@
             this.CbDepto.Name = "CbDepto";
             this.CbDepto.Size = new System.Drawing.Size(208, 29);
             this.CbDepto.TabIndex = 6;
-            this.CbDepto.DataSourceChanged += new System.EventHandler(this.CbDepto_DataSourceChanged);
             this.CbDepto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbDepto_KeyPress);
             // 
             // CbPuesto
@@ -985,7 +995,6 @@
             this.CbPuesto.Name = "CbPuesto";
             this.CbPuesto.Size = new System.Drawing.Size(180, 29);
             this.CbPuesto.TabIndex = 7;
-            this.CbPuesto.DataSourceChanged += new System.EventHandler(this.CbPuesto_DataSourceChanged);
             this.CbPuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbPuesto_KeyPress);
             // 
             // BtnLimpiar

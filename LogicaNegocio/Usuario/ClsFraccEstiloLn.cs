@@ -43,6 +43,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@U_ModDesc", "18", ObjFraccEstilo.U_ModDesc);
             ObjDataBase.DtParametros.Rows.Add(@"@U_CodigoFraccion", "18", ObjFraccEstilo.U_CodigoFraccion);
             ObjDataBase.DtParametros.Rows.Add(@"@U_NameFraccion", "18", ObjFraccEstilo.U_NameFraccion);
+            ObjDataBase.DtParametros.Rows.Add(@"@Cantidad", "4", ObjFraccEstilo.Cantidad);
 
             Ejecutar(ref ObjFraccEstilo);
         }
@@ -80,6 +81,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@U_ModDesc", "18", ObjFraccEstilo.U_ModDesc);
             ObjDataBase.DtParametros.Rows.Add(@"@U_CodigoFraccion", "18", ObjFraccEstilo.U_CodigoFraccion);
             ObjDataBase.DtParametros.Rows.Add(@"@U_NameFraccion", "18", ObjFraccEstilo.U_NameFraccion);
+            ObjDataBase.DtParametros.Rows.Add(@"@Cantidad", "4", ObjFraccEstilo.Cantidad);
             Ejecutar(ref ObjFraccEstilo);
         }
 
@@ -123,6 +125,7 @@ namespace LogicaNegocio.Usuario
                             ObjFraccEstilo.U_ModDesc = dr["Estilo"].ToString();
                             ObjFraccEstilo.U_CodigoFraccion = dr["U_CodigoFraccion"].ToString();
                             ObjFraccEstilo.U_NameFraccion = dr["Fraccion"].ToString();
+                            ObjFraccEstilo.Cantidad = Convert.ToInt16(dr["Cantidad"].ToString());
                         }
                     }
                 }

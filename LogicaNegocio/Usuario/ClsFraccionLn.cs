@@ -43,6 +43,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjFraccion.Activo);
             ObjDataBase.DtParametros.Rows.Add(@"@Tiempo", "10", ObjFraccion.Tiempo);
             ObjDataBase.DtParametros.Rows.Add(@"@Costo", "6", ObjFraccion.Costo);
+            ObjDataBase.DtParametros.Rows.Add(@"@CostoMuestra", "9", ObjFraccion.CostoMuestra);
 
             Ejecutar(ref ObjFraccion);
         }
@@ -78,6 +79,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjFraccion.Activo);
             ObjDataBase.DtParametros.Rows.Add(@"@Tiempo", "10", ObjFraccion.Tiempo);
             ObjDataBase.DtParametros.Rows.Add(@"@Costo", "6", ObjFraccion.Costo);
+            ObjDataBase.DtParametros.Rows.Add(@"@CostoMuestra", "9", ObjFraccion.CostoMuestra);
             Ejecutar(ref ObjFraccion);
         }
 
@@ -144,6 +146,11 @@ namespace LogicaNegocio.Usuario
                                 ObjFraccion.Costo = 0;
                             else
                                 ObjFraccion.Costo = Convert.ToDouble(dr["Costo"].ToString());
+
+                            if (dr["CostoMuestra"] == DBNull.Value)
+                                ObjFraccion.CostoMuestra = 0;
+                            else
+                                ObjFraccion.CostoMuestra = Convert.ToSingle(dr["CostoMuestra"].ToString());
                         }
                     }
                 }

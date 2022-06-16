@@ -50,6 +50,8 @@
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.LblId = new System.Windows.Forms.Label();
             this.LblFraccionId = new System.Windows.Forms.Label();
+            this.TxtCostoMuestra = new System.Windows.Forms.TextBox();
+            this.LblCostoMuestra = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFracciones)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +61,7 @@
             this.ChkActivo.AutoSize = true;
             this.ChkActivo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkActivo.ForeColor = System.Drawing.Color.White;
-            this.ChkActivo.Location = new System.Drawing.Point(754, 71);
+            this.ChkActivo.Location = new System.Drawing.Point(752, 76);
             this.ChkActivo.Name = "ChkActivo";
             this.ChkActivo.Size = new System.Drawing.Size(91, 26);
             this.ChkActivo.TabIndex = 51;
@@ -70,10 +72,10 @@
             // 
             this.TxtCosto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtCosto.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCosto.Location = new System.Drawing.Point(547, 181);
+            this.TxtCosto.Location = new System.Drawing.Point(389, 186);
             this.TxtCosto.MaxLength = 50;
             this.TxtCosto.Name = "TxtCosto";
-            this.TxtCosto.Size = new System.Drawing.Size(298, 31);
+            this.TxtCosto.Size = new System.Drawing.Size(136, 31);
             this.TxtCosto.TabIndex = 7;
             this.TxtCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCosto_KeyPress);
             // 
@@ -81,10 +83,10 @@
             // 
             this.TxtTiempo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtTiempo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTiempo.Location = new System.Drawing.Point(126, 181);
+            this.TxtTiempo.Location = new System.Drawing.Point(124, 186);
             this.TxtTiempo.MaxLength = 50;
             this.TxtTiempo.Name = "TxtTiempo";
-            this.TxtTiempo.Size = new System.Drawing.Size(233, 31);
+            this.TxtTiempo.Size = new System.Drawing.Size(142, 31);
             this.TxtTiempo.TabIndex = 4;
             this.TxtTiempo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTiempo_KeyPress);
             // 
@@ -92,7 +94,7 @@
             // 
             this.TxtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtDescripcion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDescripcion.Location = new System.Drawing.Point(126, 144);
+            this.TxtDescripcion.Location = new System.Drawing.Point(124, 149);
             this.TxtDescripcion.MaxLength = 100;
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(719, 31);
@@ -102,7 +104,7 @@
             // 
             this.TxtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtNombre.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombre.Location = new System.Drawing.Point(126, 107);
+            this.TxtNombre.Location = new System.Drawing.Point(124, 112);
             this.TxtNombre.MaxLength = 100;
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(719, 31);
@@ -113,7 +115,7 @@
             this.LblTelMovil.AutoSize = true;
             this.LblTelMovil.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTelMovil.ForeColor = System.Drawing.Color.White;
-            this.LblTelMovil.Location = new System.Drawing.Point(482, 184);
+            this.LblTelMovil.Location = new System.Drawing.Point(324, 189);
             this.LblTelMovil.Name = "LblTelMovil";
             this.LblTelMovil.Size = new System.Drawing.Size(68, 22);
             this.LblTelMovil.TabIndex = 67;
@@ -124,7 +126,7 @@
             this.LblTiempo.AutoSize = true;
             this.LblTiempo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTiempo.ForeColor = System.Drawing.Color.White;
-            this.LblTiempo.Location = new System.Drawing.Point(49, 184);
+            this.LblTiempo.Location = new System.Drawing.Point(47, 189);
             this.LblTiempo.Name = "LblTiempo";
             this.LblTiempo.Size = new System.Drawing.Size(80, 22);
             this.LblTiempo.TabIndex = 66;
@@ -135,7 +137,7 @@
             this.LblDescripcion.AutoSize = true;
             this.LblDescripcion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDescripcion.ForeColor = System.Drawing.Color.White;
-            this.LblDescripcion.Location = new System.Drawing.Point(9, 147);
+            this.LblDescripcion.Location = new System.Drawing.Point(7, 152);
             this.LblDescripcion.Name = "LblDescripcion";
             this.LblDescripcion.Size = new System.Drawing.Size(121, 22);
             this.LblDescripcion.TabIndex = 64;
@@ -146,7 +148,7 @@
             this.LblNombre.AutoSize = true;
             this.LblNombre.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNombre.ForeColor = System.Drawing.Color.White;
-            this.LblNombre.Location = new System.Drawing.Point(40, 113);
+            this.LblNombre.Location = new System.Drawing.Point(38, 118);
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(89, 22);
             this.LblNombre.TabIndex = 63;
@@ -157,11 +159,11 @@
             this.LblCodFraccion.AutoSize = true;
             this.LblCodFraccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCodFraccion.ForeColor = System.Drawing.Color.White;
-            this.LblCodFraccion.Location = new System.Drawing.Point(268, 76);
+            this.LblCodFraccion.Location = new System.Drawing.Point(266, 77);
             this.LblCodFraccion.Name = "LblCodFraccion";
             this.LblCodFraccion.Size = new System.Drawing.Size(83, 22);
             this.LblCodFraccion.TabIndex = 62;
-            this.LblCodFraccion.Text = "Codigo:";
+            this.LblCodFraccion.Text = "Código:";
             // 
             // BtnCerrar
             // 
@@ -180,7 +182,7 @@
             this.LblTituloFracciones.AutoSize = true;
             this.LblTituloFracciones.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTituloFracciones.ForeColor = System.Drawing.Color.White;
-            this.LblTituloFracciones.Location = new System.Drawing.Point(420, 9);
+            this.LblTituloFracciones.Location = new System.Drawing.Point(420, 11);
             this.LblTituloFracciones.Name = "LblTituloFracciones";
             this.LblTituloFracciones.Size = new System.Drawing.Size(188, 39);
             this.LblTituloFracciones.TabIndex = 48;
@@ -190,7 +192,7 @@
             // 
             this.TxtCodFraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtCodFraccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodFraccion.Location = new System.Drawing.Point(348, 69);
+            this.TxtCodFraccion.Location = new System.Drawing.Point(346, 74);
             this.TxtCodFraccion.MaxLength = 100;
             this.TxtCodFraccion.Name = "TxtCodFraccion";
             this.TxtCodFraccion.Size = new System.Drawing.Size(179, 31);
@@ -287,7 +289,7 @@
             this.LblId.AutoSize = true;
             this.LblId.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblId.ForeColor = System.Drawing.Color.White;
-            this.LblId.Location = new System.Drawing.Point(96, 74);
+            this.LblId.Location = new System.Drawing.Point(94, 79);
             this.LblId.Name = "LblId";
             this.LblId.Size = new System.Drawing.Size(33, 22);
             this.LblId.TabIndex = 85;
@@ -298,10 +300,31 @@
             this.LblFraccionId.AutoSize = true;
             this.LblFraccionId.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFraccionId.ForeColor = System.Drawing.Color.Black;
-            this.LblFraccionId.Location = new System.Drawing.Point(122, 74);
+            this.LblFraccionId.Location = new System.Drawing.Point(120, 79);
             this.LblFraccionId.Name = "LblFraccionId";
             this.LblFraccionId.Size = new System.Drawing.Size(0, 22);
             this.LblFraccionId.TabIndex = 86;
+            // 
+            // TxtCostoMuestra
+            // 
+            this.TxtCostoMuestra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtCostoMuestra.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCostoMuestra.Location = new System.Drawing.Point(707, 186);
+            this.TxtCostoMuestra.MaxLength = 50;
+            this.TxtCostoMuestra.Name = "TxtCostoMuestra";
+            this.TxtCostoMuestra.Size = new System.Drawing.Size(136, 31);
+            this.TxtCostoMuestra.TabIndex = 87;
+            // 
+            // LblCostoMuestra
+            // 
+            this.LblCostoMuestra.AutoSize = true;
+            this.LblCostoMuestra.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCostoMuestra.ForeColor = System.Drawing.Color.White;
+            this.LblCostoMuestra.Location = new System.Drawing.Point(562, 189);
+            this.LblCostoMuestra.Name = "LblCostoMuestra";
+            this.LblCostoMuestra.Size = new System.Drawing.Size(147, 22);
+            this.LblCostoMuestra.TabIndex = 88;
+            this.LblCostoMuestra.Text = "Costo Muestra:";
             // 
             // FrmFracciones
             // 
@@ -309,6 +332,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1080, 665);
+            this.Controls.Add(this.TxtCostoMuestra);
+            this.Controls.Add(this.LblCostoMuestra);
             this.Controls.Add(this.LblFraccionId);
             this.Controls.Add(this.LblId);
             this.Controls.Add(this.DgvFracciones);
@@ -361,5 +386,7 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.Label LblId;
         private System.Windows.Forms.Label LblFraccionId;
+        private System.Windows.Forms.TextBox TxtCostoMuestra;
+        private System.Windows.Forms.Label LblCostoMuestra;
     }
 }

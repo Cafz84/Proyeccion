@@ -20,7 +20,7 @@ namespace Entidades.Usuario
             _jTCode, _extEmpNo, _birthPlace, _pymMeth, _exemptCurr, _addiCurr, _fatherName, _cPF, _cRC, _uFCRC, _iDType, _manualNUM, _passIssuer,
             _qualCode, _bPLink, _u_ARGNS_OperCode, _u_ARGNS_Shift;
         private char? _sex, _salaryUnit, _empCostUnt, _martStatus, _dispMidNam, _namePos, _dispComma, debBAOwner, _contResp, _repLegal, _dirfDeclar,
-            _active, _pRWebAccss, _prePRWeb;
+            _active, _pRWebAccss, _prePRWeb, _uSueldoBase, _uSueldoLimite, _tipoPago;
         private DateTime? _startDate, _termDate, _birthDate, _passportEx, _updateDate, _passIssue;
         private decimal _salary, _emplCost, _exemptAmnt, _addiAmnt, _sueldoBase, _sueldoLimite;
 
@@ -163,6 +163,9 @@ namespace Entidades.Usuario
         public decimal SueldoBase { get => _sueldoBase; set => _sueldoBase = value; }
         public decimal SueldoLimite { get => _sueldoLimite; set => _sueldoLimite = value; }
         public int AreaId { get => _areaId; set => _areaId = value; }
+        public char? USueldoBase { get => _uSueldoBase; set => _uSueldoBase = value; }
+        public char? USueldoLimite { get => _uSueldoLimite; set => _uSueldoLimite = value; }
+        public char? TipoPago { get => _tipoPago; set => _tipoPago = value; }
 
         #endregion
     }

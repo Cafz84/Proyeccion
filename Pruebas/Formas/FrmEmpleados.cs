@@ -52,6 +52,12 @@ namespace Proyeccion.Principal
             this.CbPais.SelectedIndexChanged += new System.EventHandler(this.CbPais_SelectedIndexChanged);
             this.cbCiudad.SelectedIndexChanged += new System.EventHandler(this.CbCiudad_SelectedIndexChanged);
             intance = this;
+            DtpFechaInicio.Format = DateTimePickerFormat.Custom;
+            DtpFechaInicio.CustomFormat = " ";
+            DtpFechaNacimiento.Format = DateTimePickerFormat.Custom;
+            DtpFechaNacimiento.CustomFormat = " ";
+            DtpFechaRC.Format = DateTimePickerFormat.Custom;
+            DtpFechaRC.CustomFormat = " ";
         }
         #endregion
 
@@ -99,12 +105,15 @@ namespace Proyeccion.Principal
             TxtCP.Text = string.Empty;
 
             //TabControl Gestion
-            DtpFechaInicio.Text = DateTime.Now.ToString();
-            DtpFechaRC.Text = DateTime.Now.ToString();
+            DtpFechaInicio.Format = DateTimePickerFormat.Custom;
+            DtpFechaInicio.CustomFormat = " ";
+            DtpFechaRC.Format = DateTimePickerFormat.Custom;
+            DtpFechaRC.CustomFormat = " ";
             CbMotivoRC.Text = string.Empty;
 
             //TabControl Personal
-            DtpFechaNacimiento.Text = DateTime.Now.ToString();
+            DtpFechaNacimiento.Format = DateTimePickerFormat.Custom;
+            DtpFechaNacimiento.CustomFormat = " ";
             CbSexo.Text = string.Empty;
             CbEstadoCivil.Text = string.Empty;
             TxtNHijos.Text = string.Empty;
@@ -306,8 +315,149 @@ namespace Proyeccion.Principal
                             Mobile = TxtTelMovil.Text,
                             Email = TxtEmail.Text,
                             Active = 'Y',
-                            HomeCountr = CbPais.SelectedValue.ToString()
+                            HomeCountr = CbPais.SelectedValue.ToString(),
+                            HomeState = CbEstado.SelectedValue.ToString(),
+                            HomeCounty = cbCiudad.SelectedValue.ToString(),
+                            HomeCity = cbCiudad.Text,
+                            HomeBlock = TxtColonia.Text,
+                            HomeStreet = TxtDireccion.Text,
+                            StreetNoH = TxtNoExt.Text,
+                            HomeBuild = TxtNoInt.Text,
+                            HomeZip = TxtCP.Text,
+                            Sex = CbSexo.Text[0],
+                            NChildren = Convert.ToInt16(TxtNHijos.Text),
+                            GovID = TxtCURP.Text,
+                            Salary = Convert.ToDecimal(TxtSalario.Text),
+                            SueldoBase = Convert.ToDecimal(TxtSueldoBase.Text),
+                            SueldoLimite = Convert.ToDecimal(TxtSueldoLimite.Text)
                         };
+
+                        if (DtpFechaInicio.Text == " ")
+                        {
+                            ObjEmpleado.StartDate = null;
+                        }
+                        else
+                        {
+                            ObjEmpleado.StartDate = DtpFechaInicio.Value;
+                        }
+
+                        if (DtpFechaRC.Text == " ")
+                        {
+                            ObjEmpleado.TermDate = null;
+                        }
+                        else
+                        {
+                            ObjEmpleado.TermDate = DtpFechaInicio.Value;
+                        }
+
+                        if (DtpFechaNacimiento.Text == " ")
+                        {
+                            ObjEmpleado.BirthDate = null;
+                        }
+                        else
+                        {
+                            ObjEmpleado.BirthDate = DtpFechaNacimiento.Value;
+                        }
+
+                        if (RbFijo.Checked)
+                        {
+                            ObjEmpleado.TipoPago = 'F';
+                        }
+                        else if (RbVariable.Checked)
+                        {
+                            ObjEmpleado.TipoPago = 'V';
+                        }
+
+                        switch (CbEstadoCivil.Text)
+                        {
+                            case "Soltero/a":
+                                ObjEmpleado.MartStatus = 'S';
+                                break;
+                            case "Casado/a":
+                                ObjEmpleado.MartStatus = 'M';
+                                break;
+                            case "Divorciado/a":
+                                ObjEmpleado.MartStatus = 'D';
+                                break;
+                            case "Viudo/a":
+                                ObjEmpleado.MartStatus = 'W';
+                                break;
+                        }
+
+                        switch (CbUSalario.Text)
+                        {
+                            case "Hora":
+                                ObjEmpleado.SalaryUnit = 'H';
+                                break;
+                            case "Día":
+                                ObjEmpleado.SalaryUnit = 'D';
+                                break;
+                            case "Semana":
+                                ObjEmpleado.SalaryUnit = 'S';
+                                break;
+                            case "Bisemanal":
+                                ObjEmpleado.SalaryUnit = 'B';
+                                break;
+                            case "Quincenal":
+                                ObjEmpleado.SalaryUnit = 'Q';
+                                break;
+                            case "Mes":
+                                ObjEmpleado.SalaryUnit = 'M';
+                                break;
+                            case "Ejercicio":
+                                ObjEmpleado.SalaryUnit = 'E';
+                                break;
+                        }
+
+                        switch (CbUSueldoBase.Text)
+                        {
+                            case "Hora":
+                                ObjEmpleado.USueldoBase = 'H';
+                                break;
+                            case "Día":
+                                ObjEmpleado.USueldoBase = 'D';
+                                break;
+                            case "Semana":
+                                ObjEmpleado.USueldoBase = 'S';
+                                break;
+                            case "Bisemanal":
+                                ObjEmpleado.USueldoBase = 'B';
+                                break;
+                            case "Quincenal":
+                                ObjEmpleado.USueldoBase = 'Q';
+                                break;
+                            case "Mes":
+                                ObjEmpleado.USueldoBase = 'M';
+                                break;
+                            case "Ejercicio":
+                                ObjEmpleado.USueldoBase = 'E';
+                                break;
+                        }
+
+                        switch (CbUSueldoLimite.Text)
+                        {
+                            case "Hora":
+                                ObjEmpleado.USueldoLimite = 'H';
+                                break;
+                            case "Día":
+                                ObjEmpleado.USueldoLimite = 'D';
+                                break;
+                            case "Semana":
+                                ObjEmpleado.USueldoLimite = 'S';
+                                break;
+                            case "Bisemanal":
+                                ObjEmpleado.USueldoLimite = 'B';
+                                break;
+                            case "Quincenal":
+                                ObjEmpleado.USueldoLimite = 'Q';
+                                break;
+                            case "Mes":
+                                ObjEmpleado.USueldoLimite = 'M';
+                                break;
+                            case "Ejercicio":
+                                ObjEmpleado.USueldoLimite = 'E';
+                                break;
+                        }
 
                         ObjEmpleadoLn.Create(ref ObjEmpleado);
                         if (ObjEmpleado.MsjError == null)
@@ -353,8 +503,51 @@ namespace Proyeccion.Principal
                         Position = Convert.ToInt16(CbPuesto.SelectedValue),
                         HomeTel = TxtTelCasa.Text,
                         Mobile = TxtTelMovil.Text,
-                        Email = TxtEmail.Text
+                        Email = TxtEmail.Text,
+                        HomeCountr = CbPais.SelectedValue.ToString(),
+                        HomeState = CbEstado.SelectedValue.ToString(),
+                        HomeCounty = cbCiudad.SelectedValue.ToString(),
+                        HomeCity = cbCiudad.Text,
+                        HomeBlock = TxtColonia.Text,
+                        HomeStreet = TxtDireccion.Text,
+                        StreetNoH = TxtNoExt.Text,
+                        HomeBuild = TxtNoInt.Text,
+                        HomeZip = TxtCP.Text,
+                        Sex = CbSexo.Text[0],
+                        NChildren = Convert.ToInt16(TxtNHijos.Text),
+                        GovID = TxtCURP.Text,
+                        Salary = Convert.ToDecimal(TxtSalario.Text),
+                        SueldoBase = Convert.ToDecimal(TxtSueldoBase.Text),
+                        SueldoLimite = Convert.ToDecimal(TxtSueldoLimite.Text)
                     };
+
+                    if (DtpFechaInicio.Text == " ")
+                    {
+                        ObjEmpleado.StartDate = null;
+                    }
+                    else
+                    {
+                        ObjEmpleado.StartDate = DtpFechaInicio.Value;
+                    }
+
+                    if (DtpFechaRC.Text == " ")
+                    {
+                        ObjEmpleado.TermDate = null;
+                    }
+                    else
+                    {
+                        ObjEmpleado.TermDate = DtpFechaInicio.Value;
+                    }
+
+                    if (DtpFechaNacimiento.Text == " ")
+                    {
+                        ObjEmpleado.BirthDate = null;
+                    }
+                    else
+                    {
+                        ObjEmpleado.BirthDate = DtpFechaNacimiento.Value;
+                    }
+
                     if (ChkActivo.Checked)
                     {
                         ObjEmpleado.Active = 'Y';
@@ -362,6 +555,106 @@ namespace Proyeccion.Principal
                     else
                     {
                         ObjEmpleado.Active = 'N';
+                    }
+
+                    if (RbFijo.Checked)
+                    {
+                        ObjEmpleado.TipoPago = 'F';
+                    }
+                    else if (RbVariable.Checked)
+                    {
+                        ObjEmpleado.TipoPago = 'V';
+                    }
+
+                    switch (CbEstadoCivil.Text)
+                    {
+                        case "Soltero/a":
+                            ObjEmpleado.MartStatus = 'S';
+                            break;
+                        case "Casado/a":
+                            ObjEmpleado.MartStatus = 'M';
+                            break;
+                        case "Divorciado/a":
+                            ObjEmpleado.MartStatus = 'D';
+                            break;
+                        case "Viudo/a":
+                            ObjEmpleado.MartStatus = 'W';
+                            break;
+                    }
+
+                    switch (CbUSalario.Text)
+                    {
+                        case "Hora":
+                            ObjEmpleado.SalaryUnit = 'H';
+                            break;
+                        case "Día":
+                            ObjEmpleado.SalaryUnit = 'D';
+                            break;
+                        case "Semana":
+                            ObjEmpleado.SalaryUnit = 'S';
+                            break;
+                        case "Bisemanal":
+                            ObjEmpleado.SalaryUnit = 'B';
+                            break;
+                        case "Quincenal":
+                            ObjEmpleado.SalaryUnit = 'Q';
+                            break;
+                        case "Mes":
+                            ObjEmpleado.SalaryUnit = 'M';
+                            break;
+                        case "Ejercicio":
+                            ObjEmpleado.SalaryUnit = 'E';
+                            break;
+                    }
+
+                    switch (CbUSueldoBase.Text)
+                    {
+                        case "Hora":
+                            ObjEmpleado.USueldoBase = 'H';
+                            break;
+                        case "Día":
+                            ObjEmpleado.USueldoBase = 'D';
+                            break;
+                        case "Semana":
+                            ObjEmpleado.USueldoBase = 'S';
+                            break;
+                        case "Bisemanal":
+                            ObjEmpleado.USueldoBase = 'B';
+                            break;
+                        case "Quincenal":
+                            ObjEmpleado.USueldoBase = 'Q';
+                            break;
+                        case "Mes":
+                            ObjEmpleado.USueldoBase = 'M';
+                            break;
+                        case "Ejercicio":
+                            ObjEmpleado.USueldoBase = 'E';
+                            break;
+                    }
+
+                    switch (CbUSueldoLimite.Text)
+                    {
+                        case "Hora":
+                            ObjEmpleado.USueldoLimite = 'H';
+                            break;
+                        case "Día":
+                            ObjEmpleado.USueldoLimite = 'D';
+                            break;
+                        case "Semana":
+                            ObjEmpleado.USueldoLimite = 'S';
+                            break;
+                        case "Bisemanal":
+                            ObjEmpleado.USueldoLimite = 'B';
+                            break;
+                        case "Quincenal":
+                            ObjEmpleado.USueldoLimite = 'Q';
+                            break;
+                        case "Mes":
+                            ObjEmpleado.USueldoLimite = 'M';
+                            break;
+                        case "Ejercicio":
+                            ObjEmpleado.USueldoLimite = 'E';
+                            break;
                     }
 
                     ObjEmpleadoLn.Update(ref ObjEmpleado);
@@ -447,34 +740,6 @@ namespace Proyeccion.Principal
 
         #region Acciones con los ComboBox
         
-        #region Eventos DataSourceChanged
-        private void CbArea_DataSourceChanged(object sender, EventArgs e)
-        {
-            CbArea.Text = string.Empty;
-        }
-
-        private void CbDepto_DataSourceChanged(object sender, EventArgs e)
-        {
-            CbDepto.Text = string.Empty;
-        }
-
-        private void CbPuesto_DataSourceChanged(object sender, EventArgs e)
-        {
-            CbPuesto.Text = string.Empty;
-        }
-
-        private void CbPais_DataSourceChanged(object sender, EventArgs e)
-        {
-            CbPais.Text = string.Empty;
-        }
-
-        private void CbEstado_DataSourceChanged(object sender, EventArgs e)
-        {
-            CbEstado.Text = string.Empty;
-        }
-
-        #endregion
-
         #region Eventos SelectedIndexChanged
         private void CbArea_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -541,19 +806,7 @@ namespace Proyeccion.Principal
             }
             CargarListaEstado();
             CambiarSelectedIndexEstado();
-
-            /*if (CbPais.Text.Equals("Nuevo Pais") || CbPais.Text.Equals(string.Empty))
-            {
-                cbCiudad.Enabled = false;
-                CbEstado.Enabled = false;
-            }
-            else
-            {
-                cbCiudad.Enabled = true;
-                CbEstado.Enabled = true;
-            }*/
         }
-
         #endregion
 
         #region Eventos KeyPress
@@ -581,6 +834,41 @@ namespace Proyeccion.Principal
         {
             e.Handled= true;
         }
+
+        private void cbCiudad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void CbMotivoRC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void CbSexo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void CbEstadoCivil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void CbUSalario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void CbUSueldoBase_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void CbUSueldoLimite_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
         #endregion
 
         #endregion
@@ -588,6 +876,7 @@ namespace Proyeccion.Principal
         #region Acciones con DataGridView
         private void DgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            LimpiarCampos();
             BtnActualizar.Enabled = true;
             BtnEliminar.Enabled = true;
             BtnLimpiar.Enabled = true;
@@ -613,6 +902,56 @@ namespace Proyeccion.Principal
                     TxtTelCasa.Text = ObjEmpleado.HomeTel;
                     TxtTelMovil.Text = ObjEmpleado.Mobile;
                     TxtEmail.Text = ObjEmpleado.Email;
+                    CbPais.SelectedValue = ObjEmpleado.HomeCountr;
+                    CbEstado.SelectedValue = ObjEmpleado.HomeState;
+                    cbCiudad.SelectedValue = ObjEmpleado.HomeCounty;
+                    TxtColonia.Text = ObjEmpleado.HomeBlock;
+                    TxtDireccion.Text = ObjEmpleado.HomeStreet;
+                    TxtNoExt.Text = ObjEmpleado.StreetNoH;
+                    TxtNoInt.Text = ObjEmpleado.HomeBuild;
+                    TxtCP.Text = ObjEmpleado.HomeZip;
+                    TxtNHijos.Text = Convert.ToString(ObjEmpleado.NChildren);
+                    TxtCURP.Text = ObjEmpleado.GovID;
+                    TxtSalario.Text = Convert.ToString(ObjEmpleado.Salary);
+                    TxtSueldoBase.Text = Convert.ToString(ObjEmpleado.SueldoBase);
+                    TxtSueldoLimite.Text = Convert.ToString(ObjEmpleado.SueldoLimite);
+                    
+                    if (ObjEmpleado.StartDate == null)
+                    {
+                        DtpFechaInicio.Format = DateTimePickerFormat.Custom;
+                        DtpFechaInicio.CustomFormat = " ";
+                    }
+                    else
+                    {
+                        DtpFechaInicio.Format = DateTimePickerFormat.Custom;
+                        DtpFechaInicio.CustomFormat = "dd/MM/yyyy";
+                        DtpFechaInicio.Value = Convert.ToDateTime(ObjEmpleado.StartDate);
+                    }
+
+                    if (ObjEmpleado.TermDate == null)
+                    {
+                        DtpFechaRC.Format = DateTimePickerFormat.Custom;
+                        DtpFechaRC.CustomFormat = " ";
+                    }
+                    else
+                    {
+                        DtpFechaRC.Format = DateTimePickerFormat.Custom;
+                        DtpFechaRC.CustomFormat = "dd/MM/yyyy";
+                        DtpFechaRC.Value = Convert.ToDateTime(ObjEmpleado.TermDate);
+                    }
+
+                    if (ObjEmpleado.BirthDate == null)
+                    {
+                        DtpFechaNacimiento.Format = DateTimePickerFormat.Custom;
+                        DtpFechaNacimiento.CustomFormat = " ";
+                    }
+                    else
+                    {
+                        DtpFechaNacimiento.Format = DateTimePickerFormat.Custom;
+                        DtpFechaNacimiento.CustomFormat = "dd/MM/yyyy";
+                        DtpFechaNacimiento.Value = Convert.ToDateTime(ObjEmpleado.BirthDate);
+                    }
+
                     if (ObjEmpleado.Active == 'Y')
                     {
                         ChkActivo.Checked = true;
@@ -620,6 +959,115 @@ namespace Proyeccion.Principal
                     else
                     {
                         ChkActivo.Checked = false;
+                    }
+
+                    if (ObjEmpleado.Sex == 'F')
+                    {
+                        CbSexo.Text = "Femenino";
+                    }
+                    else
+                    {
+                        CbSexo.Text = "Masculino";
+                    }
+
+                    if (ObjEmpleado.TipoPago == 'F')
+                    {
+                        RbFijo.Checked = true;
+                    }
+                    else if (ObjEmpleado.TipoPago == 'V')
+                    {
+                        RbVariable.Checked = true;
+                    }
+
+                    switch (ObjEmpleado.MartStatus)
+                    {
+                        case 'S':
+                            CbEstadoCivil.Text = "Soltero/a";
+                            break;
+                        case 'M':
+                            CbEstadoCivil.Text = "Casado/a";
+                            break;
+                        case 'D':
+                            CbEstadoCivil.Text = "Divorciado/a";
+                            break;
+                        case 'W':
+                            CbEstadoCivil.Text = "Viudo/a";
+                            break;
+                    }
+
+                    switch (ObjEmpleado.SalaryUnit)
+                    {
+                        case 'H':
+                            CbUSalario.Text = "Hora";
+                            break;
+                        case 'S':
+                            CbUSalario.Text = "Semana";
+                            break;
+                        case 'B':
+                            CbUSalario.Text = "Bisemanal";
+                            break;
+                        case 'Q':
+                            CbUSalario.Text = "Quincenal";
+                            break;
+                        case 'M':
+                            CbUSalario.Text = "Mes";
+                            break;
+                        case 'E':
+                            CbUSalario.Text = "Ejercicio";
+                            break;
+                        case 'D':
+                            CbUSalario.Text = "Día";
+                            break;
+                    }
+
+                    switch (ObjEmpleado.USueldoBase)
+                    {
+                        case 'H':
+                            CbUSueldoBase.Text = "Hora";
+                            break;
+                        case 'S':
+                            CbUSueldoBase.Text = "Semana";
+                            break;
+                        case 'B':
+                            CbUSueldoBase.Text = "Bisemanal";
+                            break;
+                        case 'Q':
+                            CbUSueldoBase.Text = "Quincenal";
+                            break;
+                        case 'M':
+                            CbUSueldoBase.Text = "Mes";
+                            break;
+                        case 'E':
+                            CbUSueldoBase.Text = "Ejercicio";
+                            break;
+                        case 'D':
+                            CbUSueldoBase.Text = "Día";
+                            break;
+                    }
+
+                    switch (ObjEmpleado.USueldoLimite)
+                    {
+                        case 'H':
+                            CbUSueldoLimite.Text = "Hora";
+                            break;
+                        case 'S':
+                            CbUSueldoLimite.Text = "Semana";
+                            break;
+                        case 'B':
+                            CbUSueldoLimite.Text = "Bisemanal";
+                            break;
+                        case 'Q':
+                            CbUSueldoLimite.Text = "Quincenal";
+                            break;
+                        case 'M':
+                            CbUSueldoLimite.Text = "Mes";
+                            break;
+                        case 'E':
+                            CbUSueldoLimite.Text = "Ejercicio";
+                            break;
+                        case 'D':
+                            CbUSueldoLimite.Text = "Día";
+                            break;
                     }
                 }
             }
@@ -674,6 +1122,32 @@ namespace Proyeccion.Principal
             {
                 e.Handled = true;
             }
+        }
+
+        private void TxtNHijos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para que solo acepte numeros y no texto
+            e.Handled = !char.IsDigit(e.KeyChar);
+        }
+
+        private void TxtCP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para que solo acepte numeros y no texto
+            e.Handled = !char.IsDigit(e.KeyChar);
+        }
+        #endregion
+
+        #region Acciones con DateTimePicker
+        private void DtpFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+            DtpFechaInicio.Format = DateTimePickerFormat.Custom;
+            DtpFechaInicio.CustomFormat = "dd/MM/yyyy";
+        }
+
+        private void DtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            DtpFechaNacimiento.Format = DateTimePickerFormat.Custom;
+            DtpFechaNacimiento.CustomFormat = "dd/MM/yyyy";
         }
         #endregion
     }

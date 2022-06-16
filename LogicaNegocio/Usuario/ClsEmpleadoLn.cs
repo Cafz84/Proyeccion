@@ -80,6 +80,14 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@sueldoBase", "8", ObjEmpleado.SueldoBase);
             ObjDataBase.DtParametros.Rows.Add(@"@sueldoLimite", "8", ObjEmpleado.SueldoLimite);
             ObjDataBase.DtParametros.Rows.Add(@"@Active", "15", ObjEmpleado.Active);
+            ObjDataBase.DtParametros.Rows.Add(@"@TipoPago", "15", ObjEmpleado.TipoPago);
+            ObjDataBase.DtParametros.Rows.Add(@"@StreetNoH", "18", ObjEmpleado.StreetNoH);
+            ObjDataBase.DtParametros.Rows.Add(@"@nChildren", "3", ObjEmpleado.NChildren);
+            ObjDataBase.DtParametros.Rows.Add(@"@HomeBuild", "18", ObjEmpleado.HomeBuild);
+            ObjDataBase.DtParametros.Rows.Add(@"@USueldoBase", "15", ObjEmpleado.USueldoBase);
+            ObjDataBase.DtParametros.Rows.Add(@"@USueldoLimite", "15", ObjEmpleado.USueldoLimite);
+            ObjDataBase.DtParametros.Rows.Add(@"@TermDate", "14", ObjEmpleado.TermDate);
+            ObjDataBase.DtParametros.Rows.Add(@"@martStatus", "15", ObjEmpleado.MartStatus);
 
             Ejecutar(ref ObjEmpleado);
         }
@@ -135,6 +143,14 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@sueldoBase", "8", ObjEmpleado.SueldoBase);
             ObjDataBase.DtParametros.Rows.Add(@"@sueldoLimite", "8", ObjEmpleado.SueldoLimite);
             ObjDataBase.DtParametros.Rows.Add(@"@Active", "15", ObjEmpleado.Active);
+            ObjDataBase.DtParametros.Rows.Add(@"@TipoPago", "15", ObjEmpleado.TipoPago);
+            ObjDataBase.DtParametros.Rows.Add(@"@StreetNoH", "18", ObjEmpleado.StreetNoH);
+            ObjDataBase.DtParametros.Rows.Add(@"@nChildren", "3", ObjEmpleado.NChildren);
+            ObjDataBase.DtParametros.Rows.Add(@"@HomeBuild", "18", ObjEmpleado.HomeBuild);
+            ObjDataBase.DtParametros.Rows.Add(@"@USueldoBase", "15", ObjEmpleado.USueldoBase);
+            ObjDataBase.DtParametros.Rows.Add(@"@USueldoLimite", "15", ObjEmpleado.USueldoLimite);
+            ObjDataBase.DtParametros.Rows.Add(@"@TermDate", "14", ObjEmpleado.TermDate);
+            ObjDataBase.DtParametros.Rows.Add(@"@martStatus", "15", ObjEmpleado.MartStatus);
             Ejecutar(ref ObjEmpleado);
         }
 
@@ -319,6 +335,46 @@ namespace LogicaNegocio.Usuario
                                 ObjEmpleado.Active = 'N';
                             else
                                 ObjEmpleado.Active = Convert.ToChar(dr["Active"].ToString());
+
+                            if (dr["TipoPago"] == DBNull.Value)
+                                ObjEmpleado.TipoPago = 'F';
+                            else
+                                ObjEmpleado.TipoPago = Convert.ToChar(dr["TipoPago"].ToString());
+
+                            if (dr["StreetNoH"] == DBNull.Value)
+                                ObjEmpleado.StreetNoH = "";
+                            else
+                                ObjEmpleado.StreetNoH = dr["StreetNoH"].ToString();
+
+                            if (dr["nChildren"] == DBNull.Value)
+                                ObjEmpleado.NChildren = 0;
+                            else
+                                ObjEmpleado.NChildren = Convert.ToInt16(dr["nChildren"].ToString());
+
+                            if (dr["HomeBuild"] == DBNull.Value)
+                                ObjEmpleado.HomeBuild = "";
+                            else
+                                ObjEmpleado.HomeBuild = dr["HomeBuild"].ToString();
+
+                            if (dr["USueldoBase"] == DBNull.Value)
+                                ObjEmpleado.USueldoBase = null;
+                            else
+                                ObjEmpleado.USueldoBase = Convert.ToChar(dr["USueldoBase"].ToString());
+
+                            if (dr["USueldoLimite"] == DBNull.Value)
+                                ObjEmpleado.USueldoLimite = null;
+                            else
+                                ObjEmpleado.USueldoLimite = Convert.ToChar(dr["USueldoLimite"].ToString());
+
+                            if (dr["termDate"] == DBNull.Value)
+                                ObjEmpleado.TermDate = null;
+                            else
+                                ObjEmpleado.TermDate = Convert.ToDateTime(dr["termDate"].ToString());
+
+                            if (dr["martStatus"] == DBNull.Value)
+                                ObjEmpleado.MartStatus = null;
+                            else
+                                ObjEmpleado.MartStatus = Convert.ToChar(dr["martStatus"].ToString());
                         }
                     }
                 }

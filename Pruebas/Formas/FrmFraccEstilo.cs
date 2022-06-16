@@ -37,6 +37,7 @@ namespace Pruebas.Formas
             LblIdFraccion.Text = string.Empty;
             LblCodFraccion.Text = string.Empty;
             LblNomFraccion.Text = string.Empty;
+            TxtCantidad.Text = "1";
 
             BtnLimpiar.Enabled = false;
             BtnAgregar.Enabled = true;
@@ -49,6 +50,7 @@ namespace Pruebas.Formas
             LblIdFraccion.Text = string.Empty;
             LblCodFraccion.Text = string.Empty;
             LblNomFraccion.Text = string.Empty;
+            TxtCantidad.Text = "1";
 
             BtnLimpiar.Enabled = false;
             BtnActualizar.Enabled = true;
@@ -70,6 +72,7 @@ namespace Pruebas.Formas
                 DgvFraccEstilo.Columns["U_IdFraccion"].Visible = false;
                 DgvFraccEstilo.Columns["U_ModCode"].Visible = false;
                 DgvFraccEstilo.Columns["U_CodigoFraccion"].Visible = false;
+                DgvFraccEstilo.Columns["Cantidad"].Visible = false;
             }
             else
             {
@@ -151,7 +154,8 @@ namespace Pruebas.Formas
                         U_ModCode = LblCodEstilo.Text,
                         U_ModDesc = LblNomEstilo.Text,
                         U_CodigoFraccion = LblCodFraccion.Text,
-                        U_NameFraccion = LblNomFraccion.Text
+                        U_NameFraccion = LblNomFraccion.Text,
+                        Cantidad =Convert.ToInt16(TxtCantidad.Text)
                     };
 
                     ObjFraccEstiloLn.Create(ref ObjFraccEstilo);
@@ -190,7 +194,8 @@ namespace Pruebas.Formas
                         U_ModCode = LblCodEstilo.Text,
                         U_ModDesc = LblNomEstilo.Text,
                         U_CodigoFraccion = LblCodFraccion.Text,
-                        U_NameFraccion = LblNomFraccion.Text
+                        U_NameFraccion = LblNomFraccion.Text,
+                        Cantidad = Convert.ToInt16(TxtCantidad.Text)
                     };
 
                     ObjFraccEstiloLn.Update(ref ObjFraccEstilo);
@@ -263,12 +268,21 @@ namespace Pruebas.Formas
                 LblIdFraccion.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["U_IdFraccion"].Value.ToString();
                 LblCodFraccion.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["U_CodigoFraccion"].Value.ToString();
                 LblNomFraccion.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Fraccion"].Value.ToString();
+                TxtCantidad.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString();
 
                 BtnLimpiar.Enabled = true;
                 BtnAgregar.Enabled = false;
                 BtnActualizar.Enabled = true;
                 BtnEliminar.Enabled = true;
             }
+        }
+        #endregion
+
+        #region Acciones con TextBox
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para que solo acepte numeros y no texto
+            e.Handled = !char.IsDigit(e.KeyChar);
         }
         #endregion
     }

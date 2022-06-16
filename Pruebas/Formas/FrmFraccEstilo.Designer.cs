@@ -55,6 +55,8 @@
             this.LblCodF = new System.Windows.Forms.Label();
             this.DgvFraccion = new System.Windows.Forms.DataGridView();
             this.SelF = new System.Windows.Forms.DataGridViewImageColumn();
+            this.LblCantidad = new System.Windows.Forms.Label();
+            this.TxtCantidad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEstilo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFraccEstilo)).BeginInit();
@@ -273,6 +275,8 @@
             // 
             // GbFraccion
             // 
+            this.GbFraccion.Controls.Add(this.TxtCantidad);
+            this.GbFraccion.Controls.Add(this.LblCantidad);
             this.GbFraccion.Controls.Add(this.LblNomFraccion);
             this.GbFraccion.Controls.Add(this.LblCodFraccion);
             this.GbFraccion.Controls.Add(this.LblIdFraccion);
@@ -370,6 +374,30 @@
             this.SelF.Name = "SelF";
             this.SelF.Width = 35;
             // 
+            // LblCantidad
+            // 
+            this.LblCantidad.AutoSize = true;
+            this.LblCantidad.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCantidad.ForeColor = System.Drawing.Color.White;
+            this.LblCantidad.Location = new System.Drawing.Point(633, 27);
+            this.LblCantidad.Name = "LblCantidad";
+            this.LblCantidad.Size = new System.Drawing.Size(104, 22);
+            this.LblCantidad.TabIndex = 99;
+            this.LblCantidad.Text = "Cantidad:";
+            // 
+            // TxtCantidad
+            // 
+            this.TxtCantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TxtCantidad.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCantidad.Location = new System.Drawing.Point(743, 22);
+            this.TxtCantidad.MaxLength = 50;
+            this.TxtCantidad.Name = "TxtCantidad";
+            this.TxtCantidad.Size = new System.Drawing.Size(44, 31);
+            this.TxtCantidad.TabIndex = 100;
+            this.TxtCantidad.Text = "1";
+            this.TxtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
+            // 
             // FrmFraccEstilo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,5 +459,7 @@
         private System.Windows.Forms.DataGridView DgvFraccion;
         private System.Windows.Forms.DataGridViewImageColumn SelF;
         private System.Windows.Forms.DataGridViewImageColumn EditFE;
+        private System.Windows.Forms.Label LblCantidad;
+        private System.Windows.Forms.TextBox TxtCantidad;
     }
 }

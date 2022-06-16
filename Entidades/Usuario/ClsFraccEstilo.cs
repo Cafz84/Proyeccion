@@ -6,7 +6,7 @@ namespace Entidades.Usuario
     {
         #region Variables Privadas
         private string _u_IdEstilo, _u_ModCode, _u_ModDesc, _u_CodigoFraccion, _u_NameFraccion, _idEstilo;
-        private int _u_IdFraccion, _idFraccion;
+        private int _u_IdFraccion, _idFraccion, _cantidad;
 
         //Atributos de manejo de la base de datos
         private string _msjError, _valorEscalar;
@@ -25,6 +25,7 @@ namespace Entidades.Usuario
         public string IdEstilo { get => _idEstilo; set => _idEstilo = value; }
         public int IdFraccion { get => _idFraccion; set => _idFraccion = value; }
         public string U_ModDesc { get => _u_ModDesc; set => _u_ModDesc = value; }
+        public int Cantidad { get => _cantidad; set => _cantidad = value; }
         #endregion
     }
 }

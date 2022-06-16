@@ -10,6 +10,7 @@ namespace Entidades.Usuario
         private string _codigo, _name, _descripcion;
         private bool _activo;
         private double _costo, _tiempo;
+        private float _costoMuestra;
 
         //Atributos de manejo de la base de datos
         private string _msjError, _valorEscalar;
@@ -27,6 +28,7 @@ namespace Entidades.Usuario
         public string MsjError { get => _msjError; set => _msjError = value; }
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
+        public float CostoMuestra { get => _costoMuestra; set => _costoMuestra = value; }
         #endregion
     }
 }

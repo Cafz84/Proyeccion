@@ -7,6 +7,10 @@ namespace Entidades.Usuario
         #region Variables Privadas
         private string _code, _u_ModCode, _u_ModDesc;
 
+        //Atributos para Busqueda de Programa y su cantidad
+        private string _programa, _estilo, _color;
+        private decimal _cantPedido;
+
         //Atributos de manejo de la base de datos
         private string _msjError, _valorEscalar;
         private DataTable _dtResultados;
@@ -19,6 +23,10 @@ namespace Entidades.Usuario
         public string MsjError { get => _msjError; set => _msjError = value; }
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
+        public string Programa { get => _programa; set => _programa = value; }
+        public string Estilo { get => _estilo; set => _estilo = value; }
+        public decimal CantPedido { get => _cantPedido; set => _cantPedido = value; }
+        public string Color { get => _color; set => _color = value; }
         #endregion
     }
 }

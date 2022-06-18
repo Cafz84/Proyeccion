@@ -45,7 +45,7 @@
             this.LblNombre = new System.Windows.Forms.Label();
             this.LblEmpId = new System.Windows.Forms.Label();
             this.LblFraccId = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblPrograma = new System.Windows.Forms.Label();
             this.LblEstilo = new System.Windows.Forms.Label();
             this.LblTEstilo = new System.Windows.Forms.Label();
             this.LblTColor = new System.Windows.Forms.Label();
@@ -59,17 +59,27 @@
             this.LblTCantidad = new System.Windows.Forms.Label();
             this.TcEmpleados = new System.Windows.Forms.TabControl();
             this.TpIndex = new System.Windows.Forms.TabPage();
-            this.DgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.DgvDestajo = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpTrabajador = new System.Windows.Forms.TabPage();
+            this.DgvEmpleado = new System.Windows.Forms.DataGridView();
+            this.SelT = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpFraccion = new System.Windows.Forms.TabPage();
+            this.DgvFraccion = new System.Windows.Forms.DataGridView();
+            this.TpMuestra = new System.Windows.Forms.TabPage();
             this.LblTFraccion = new System.Windows.Forms.Label();
             this.LblFraccion = new System.Windows.Forms.Label();
-            this.TpMuestra = new System.Windows.Forms.TabPage();
+            this.SelF = new System.Windows.Forms.DataGridViewImageColumn();
+            this.LblCXE = new System.Windows.Forms.Label();
+            this.LblTCXE = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.TcEmpleados.SuspendLayout();
             this.TpIndex.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvDestajo)).BeginInit();
+            this.TpTrabajador.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleado)).BeginInit();
+            this.TpFraccion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFraccion)).BeginInit();
             this.SuspendLayout();
             // 
             // LblTituloFraccEstilo
@@ -98,6 +108,7 @@
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnActualizar
             // 
@@ -114,6 +125,7 @@
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnActualizar.UseVisualStyleBackColor = false;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnAgregar
             // 
@@ -129,11 +141,11 @@
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // BtnLimpiar
             // 
             this.BtnLimpiar.BackColor = System.Drawing.Color.BurlyWood;
-            this.BtnLimpiar.Enabled = false;
             this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpiar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
@@ -145,6 +157,7 @@
             this.BtnLimpiar.Text = "Limpiar";
             this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // BtnCerrar
             // 
@@ -156,6 +169,7 @@
             this.BtnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnCerrar.TabIndex = 89;
             this.BtnCerrar.TabStop = false;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // TxtPrograma
             // 
@@ -165,8 +179,9 @@
             this.TxtPrograma.MaxLength = 50;
             this.TxtPrograma.Name = "TxtPrograma";
             this.TxtPrograma.Size = new System.Drawing.Size(88, 31);
-            this.TxtPrograma.TabIndex = 102;
+            this.TxtPrograma.TabIndex = 3;
             this.TxtPrograma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtPrograma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPrograma_KeyDown);
             // 
             // LblTrabajador
             // 
@@ -183,11 +198,11 @@
             // 
             this.TxtCantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtCantidad.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCantidad.Location = new System.Drawing.Point(752, 201);
+            this.TxtCantidad.Location = new System.Drawing.Point(752, 206);
             this.TxtCantidad.MaxLength = 50;
             this.TxtCantidad.Name = "TxtCantidad";
             this.TxtCantidad.Size = new System.Drawing.Size(88, 31);
-            this.TxtCantidad.TabIndex = 104;
+            this.TxtCantidad.TabIndex = 4;
             this.TxtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LblSemana
@@ -209,14 +224,14 @@
             this.CbSemana.Location = new System.Drawing.Point(116, 46);
             this.CbSemana.Name = "CbSemana";
             this.CbSemana.Size = new System.Drawing.Size(77, 29);
-            this.CbSemana.TabIndex = 105;
+            this.CbSemana.TabIndex = 1;
             // 
             // LblIdTrabajador
             // 
             this.LblIdTrabajador.AutoSize = true;
             this.LblIdTrabajador.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblIdTrabajador.ForeColor = System.Drawing.Color.White;
-            this.LblIdTrabajador.Location = new System.Drawing.Point(247, 48);
+            this.LblIdTrabajador.Location = new System.Drawing.Point(232, 48);
             this.LblIdTrabajador.Name = "LblIdTrabajador";
             this.LblIdTrabajador.Size = new System.Drawing.Size(138, 22);
             this.LblIdTrabajador.TabIndex = 106;
@@ -227,7 +242,7 @@
             this.LblIdFraccion.AutoSize = true;
             this.LblIdFraccion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblIdFraccion.ForeColor = System.Drawing.Color.White;
-            this.LblIdFraccion.Location = new System.Drawing.Point(531, 48);
+            this.LblIdFraccion.Location = new System.Drawing.Point(460, 48);
             this.LblIdFraccion.Name = "LblIdFraccion";
             this.LblIdFraccion.Size = new System.Drawing.Size(117, 22);
             this.LblIdFraccion.TabIndex = 107;
@@ -248,33 +263,31 @@
             this.LblEmpId.AutoSize = true;
             this.LblEmpId.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEmpId.ForeColor = System.Drawing.Color.Black;
-            this.LblEmpId.Location = new System.Drawing.Point(386, 48);
+            this.LblEmpId.Location = new System.Drawing.Point(371, 48);
             this.LblEmpId.Name = "LblEmpId";
-            this.LblEmpId.Size = new System.Drawing.Size(115, 22);
+            this.LblEmpId.Size = new System.Drawing.Size(0, 22);
             this.LblEmpId.TabIndex = 109;
-            this.LblEmpId.Text = "Trabajador:";
             // 
             // LblFraccId
             // 
             this.LblFraccId.AutoSize = true;
             this.LblFraccId.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFraccId.ForeColor = System.Drawing.Color.Black;
-            this.LblFraccId.Location = new System.Drawing.Point(649, 48);
+            this.LblFraccId.Location = new System.Drawing.Point(578, 48);
             this.LblFraccId.Name = "LblFraccId";
-            this.LblFraccId.Size = new System.Drawing.Size(115, 22);
+            this.LblFraccId.Size = new System.Drawing.Size(0, 22);
             this.LblFraccId.TabIndex = 110;
-            this.LblFraccId.Text = "Trabajador:";
             // 
-            // label1
+            // LblPrograma
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 148);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 22);
-            this.label1.TabIndex = 111;
-            this.label1.Text = "Programa:";
+            this.LblPrograma.AutoSize = true;
+            this.LblPrograma.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPrograma.ForeColor = System.Drawing.Color.White;
+            this.LblPrograma.Location = new System.Drawing.Point(24, 148);
+            this.LblPrograma.Name = "LblPrograma";
+            this.LblPrograma.Size = new System.Drawing.Size(106, 22);
+            this.LblPrograma.TabIndex = 111;
+            this.LblPrograma.Text = "Programa:";
             // 
             // LblEstilo
             // 
@@ -283,9 +296,8 @@
             this.LblEstilo.ForeColor = System.Drawing.Color.Black;
             this.LblEstilo.Location = new System.Drawing.Point(301, 121);
             this.LblEstilo.Name = "LblEstilo";
-            this.LblEstilo.Size = new System.Drawing.Size(115, 22);
+            this.LblEstilo.Size = new System.Drawing.Size(0, 22);
             this.LblEstilo.TabIndex = 112;
-            this.LblEstilo.Text = "Trabajador:";
             // 
             // LblTEstilo
             // 
@@ -316,9 +328,8 @@
             this.LblColor.ForeColor = System.Drawing.Color.Black;
             this.LblColor.Location = new System.Drawing.Point(301, 150);
             this.LblColor.Name = "LblColor";
-            this.LblColor.Size = new System.Drawing.Size(115, 22);
+            this.LblColor.Size = new System.Drawing.Size(0, 22);
             this.LblColor.TabIndex = 114;
-            this.LblColor.Text = "Trabajador:";
             // 
             // LblTPP
             // 
@@ -338,9 +349,8 @@
             this.LblPP.ForeColor = System.Drawing.Color.Black;
             this.LblPP.Location = new System.Drawing.Point(301, 176);
             this.LblPP.Name = "LblPP";
-            this.LblPP.Size = new System.Drawing.Size(54, 22);
+            this.LblPP.Size = new System.Drawing.Size(0, 22);
             this.LblPP.TabIndex = 117;
-            this.LblPP.Text = "1000";
             // 
             // LblPagado
             // 
@@ -349,9 +359,8 @@
             this.LblPagado.ForeColor = System.Drawing.Color.Black;
             this.LblPagado.Location = new System.Drawing.Point(474, 176);
             this.LblPagado.Name = "LblPagado";
-            this.LblPagado.Size = new System.Drawing.Size(54, 22);
+            this.LblPagado.Size = new System.Drawing.Size(0, 22);
             this.LblPagado.TabIndex = 119;
-            this.LblPagado.Text = "1000";
             // 
             // LblTPagado
             // 
@@ -371,9 +380,8 @@
             this.LblRestante.ForeColor = System.Drawing.Color.Black;
             this.LblRestante.Location = new System.Drawing.Point(657, 176);
             this.LblRestante.Name = "LblRestante";
-            this.LblRestante.Size = new System.Drawing.Size(54, 22);
+            this.LblRestante.Size = new System.Drawing.Size(0, 22);
             this.LblRestante.TabIndex = 121;
-            this.LblRestante.Text = "1000";
             // 
             // LblTRestante
             // 
@@ -391,7 +399,7 @@
             this.LblTCantidad.AutoSize = true;
             this.LblTCantidad.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTCantidad.ForeColor = System.Drawing.Color.White;
-            this.LblTCantidad.Location = new System.Drawing.Point(641, 204);
+            this.LblTCantidad.Location = new System.Drawing.Point(641, 209);
             this.LblTCantidad.Name = "LblTCantidad";
             this.LblTCantidad.Size = new System.Drawing.Size(104, 22);
             this.LblTCantidad.TabIndex = 122;
@@ -408,12 +416,12 @@
             this.TcEmpleados.Name = "TcEmpleados";
             this.TcEmpleados.SelectedIndex = 0;
             this.TcEmpleados.Size = new System.Drawing.Size(1073, 422);
-            this.TcEmpleados.TabIndex = 123;
+            this.TcEmpleados.TabIndex = 2;
             // 
             // TpIndex
             // 
             this.TpIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.TpIndex.Controls.Add(this.DgvEmpleados);
+            this.TpIndex.Controls.Add(this.DgvDestajo);
             this.TpIndex.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpIndex.Location = new System.Drawing.Point(4, 26);
             this.TpIndex.Name = "TpIndex";
@@ -422,15 +430,15 @@
             this.TpIndex.TabIndex = 0;
             this.TpIndex.Text = "Index";
             // 
-            // DgvEmpleados
+            // DgvDestajo
             // 
-            this.DgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvDestajo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvDestajo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});
-            this.DgvEmpleados.Location = new System.Drawing.Point(0, 0);
-            this.DgvEmpleados.Name = "DgvEmpleados";
-            this.DgvEmpleados.Size = new System.Drawing.Size(1065, 392);
-            this.DgvEmpleados.TabIndex = 0;
+            this.DgvDestajo.Location = new System.Drawing.Point(0, 0);
+            this.DgvDestajo.Name = "DgvDestajo";
+            this.DgvDestajo.Size = new System.Drawing.Size(1065, 392);
+            this.DgvDestajo.TabIndex = 0;
             // 
             // Editar
             // 
@@ -443,6 +451,7 @@
             // TpTrabajador
             // 
             this.TpTrabajador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpTrabajador.Controls.Add(this.DgvEmpleado);
             this.TpTrabajador.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpTrabajador.Location = new System.Drawing.Point(4, 26);
             this.TpTrabajador.Name = "TpTrabajador";
@@ -451,15 +460,55 @@
             this.TpTrabajador.TabIndex = 1;
             this.TpTrabajador.Text = "Trabajador";
             // 
+            // DgvEmpleado
+            // 
+            this.DgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SelT});
+            this.DgvEmpleado.Location = new System.Drawing.Point(0, 0);
+            this.DgvEmpleado.Name = "DgvEmpleado";
+            this.DgvEmpleado.Size = new System.Drawing.Size(1065, 392);
+            this.DgvEmpleado.TabIndex = 1;
+            this.DgvEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmpleado_CellContentClick);
+            // 
+            // SelT
+            // 
+            this.SelT.HeaderText = "Sel";
+            this.SelT.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.SelT.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelT.Name = "SelT";
+            this.SelT.Width = 55;
+            // 
             // TpFraccion
             // 
             this.TpFraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpFraccion.Controls.Add(this.DgvFraccion);
             this.TpFraccion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpFraccion.Location = new System.Drawing.Point(4, 26);
             this.TpFraccion.Name = "TpFraccion";
             this.TpFraccion.Size = new System.Drawing.Size(1065, 392);
             this.TpFraccion.TabIndex = 2;
             this.TpFraccion.Text = "Fracción";
+            // 
+            // DgvFraccion
+            // 
+            this.DgvFraccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvFraccion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SelF});
+            this.DgvFraccion.Location = new System.Drawing.Point(0, 0);
+            this.DgvFraccion.Name = "DgvFraccion";
+            this.DgvFraccion.Size = new System.Drawing.Size(1065, 392);
+            this.DgvFraccion.TabIndex = 2;
+            this.DgvFraccion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvFraccion_CellContentClick);
+            // 
+            // TpMuestra
+            // 
+            this.TpMuestra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpMuestra.Location = new System.Drawing.Point(4, 26);
+            this.TpMuestra.Name = "TpMuestra";
+            this.TpMuestra.Size = new System.Drawing.Size(1065, 392);
+            this.TpMuestra.TabIndex = 3;
+            this.TpMuestra.Text = "Muestra";
             // 
             // LblTFraccion
             // 
@@ -479,18 +528,37 @@
             this.LblFraccion.ForeColor = System.Drawing.Color.Black;
             this.LblFraccion.Location = new System.Drawing.Point(119, 204);
             this.LblFraccion.Name = "LblFraccion";
-            this.LblFraccion.Size = new System.Drawing.Size(115, 22);
+            this.LblFraccion.Size = new System.Drawing.Size(0, 22);
             this.LblFraccion.TabIndex = 125;
-            this.LblFraccion.Text = "Trabajador:";
             // 
-            // TpMuestra
+            // SelF
             // 
-            this.TpMuestra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.TpMuestra.Location = new System.Drawing.Point(4, 26);
-            this.TpMuestra.Name = "TpMuestra";
-            this.TpMuestra.Size = new System.Drawing.Size(1065, 392);
-            this.TpMuestra.TabIndex = 3;
-            this.TpMuestra.Text = "Muestra";
+            this.SelF.HeaderText = "Sel";
+            this.SelF.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.SelF.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelF.Name = "SelF";
+            this.SelF.Width = 55;
+            // 
+            // LblCXE
+            // 
+            this.LblCXE.AutoSize = true;
+            this.LblCXE.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCXE.ForeColor = System.Drawing.Color.Black;
+            this.LblCXE.Location = new System.Drawing.Point(751, 48);
+            this.LblCXE.Name = "LblCXE";
+            this.LblCXE.Size = new System.Drawing.Size(0, 22);
+            this.LblCXE.TabIndex = 127;
+            // 
+            // LblTCXE
+            // 
+            this.LblTCXE.AutoSize = true;
+            this.LblTCXE.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTCXE.ForeColor = System.Drawing.Color.White;
+            this.LblTCXE.Location = new System.Drawing.Point(693, 48);
+            this.LblTCXE.Name = "LblTCXE";
+            this.LblTCXE.Size = new System.Drawing.Size(52, 22);
+            this.LblTCXE.TabIndex = 126;
+            this.LblTCXE.Text = "CXE:";
             // 
             // FrmDestajo
             // 
@@ -498,6 +566,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1080, 665);
+            this.Controls.Add(this.LblCXE);
+            this.Controls.Add(this.LblTCXE);
             this.Controls.Add(this.LblFraccion);
             this.Controls.Add(this.LblTFraccion);
             this.Controls.Add(this.BtnEliminar);
@@ -513,7 +583,7 @@
             this.Controls.Add(this.LblColor);
             this.Controls.Add(this.LblTEstilo);
             this.Controls.Add(this.LblEstilo);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LblPrograma);
             this.Controls.Add(this.LblFraccId);
             this.Controls.Add(this.LblEmpId);
             this.Controls.Add(this.LblNombre);
@@ -535,7 +605,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.TcEmpleados.ResumeLayout(false);
             this.TpIndex.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvDestajo)).EndInit();
+            this.TpTrabajador.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleado)).EndInit();
+            this.TpFraccion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFraccion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -559,7 +633,7 @@
         private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.Label LblEmpId;
         private System.Windows.Forms.Label LblFraccId;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblPrograma;
         private System.Windows.Forms.Label LblEstilo;
         private System.Windows.Forms.Label LblTEstilo;
         private System.Windows.Forms.Label LblTColor;
@@ -573,12 +647,18 @@
         private System.Windows.Forms.Label LblTCantidad;
         private System.Windows.Forms.TabControl TcEmpleados;
         private System.Windows.Forms.TabPage TpIndex;
-        private System.Windows.Forms.DataGridView DgvEmpleados;
+        private System.Windows.Forms.DataGridView DgvDestajo;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.TabPage TpTrabajador;
         private System.Windows.Forms.TabPage TpFraccion;
         private System.Windows.Forms.TabPage TpMuestra;
         private System.Windows.Forms.Label LblTFraccion;
         private System.Windows.Forms.Label LblFraccion;
+        private System.Windows.Forms.DataGridView DgvEmpleado;
+        private System.Windows.Forms.DataGridView DgvFraccion;
+        private System.Windows.Forms.DataGridViewImageColumn SelT;
+        private System.Windows.Forms.DataGridViewImageColumn SelF;
+        private System.Windows.Forms.Label LblCXE;
+        private System.Windows.Forms.Label LblTCXE;
     }
 }

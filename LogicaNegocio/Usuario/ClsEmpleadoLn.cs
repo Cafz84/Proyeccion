@@ -26,6 +26,19 @@ namespace LogicaNegocio.Usuario
             Ejecutar(ref ObjEmpleado);
         }
 
+        public void IndexActivoVariable(ref ClsEmpleado ObjEmpleado)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "OHEM",
+                NombreSP = "[dbo].[SP_OHEM_IndexActivoVariable]",
+                Scalar = false
+            };
+
+            EjecutarActivoVariable(ref ObjEmpleado);
+        }
+
         public int EmpId(ref ClsEmpleado ObjEmpleado)
         {
             ObjDataBase = new ClsDataBase()
@@ -377,6 +390,27 @@ namespace LogicaNegocio.Usuario
                                 ObjEmpleado.MartStatus = Convert.ToChar(dr["martStatus"].ToString());
                         }
                     }
+                }
+            }
+            else
+            {
+                ObjEmpleado.MsjError = ObjDataBase.MensajeErrorDB;
+            }
+        }
+
+        private void EjecutarActivoVariable(ref ClsEmpleado ObjEmpleado)
+        {
+            ObjDataBase.CRUD(ref ObjDataBase);
+
+            if (ObjDataBase.MensajeErrorDB == null)
+            {
+                if (ObjDataBase.Scalar)
+                {
+                    ObjEmpleado.ValorEscalar = ObjDataBase.ValorScalar;
+                }
+                else
+                {
+                    ObjEmpleado.DtResultados = ObjDataBase.DsResultados.Tables[0];
                 }
             }
             else

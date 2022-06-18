@@ -45,6 +45,7 @@
     <Compile Include="Usuario\ClsAreaLn.cs" />
     <Compile Include="Usuario\ClsCiudadLn.cs" />
     <Compile Include="Usuario\ClsDepartamentoLn.cs" />
+    <Compile Include="Usuario\ClsDestajoLn.cs" />
     <Compile Include="Usuario\ClsEmpleadoLn.cs" />
     <Compile Include="Usuario\ClsEscaneoLn.cs" />
     <Compile Include="Usuario\ClsEstadoLn.cs" />

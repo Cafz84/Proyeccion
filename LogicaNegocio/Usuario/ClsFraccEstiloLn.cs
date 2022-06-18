@@ -63,6 +63,20 @@ namespace LogicaNegocio.Usuario
             Ejecutar(ref ObjFraccEstilo);
         }
 
+        public void ReadEstilo(ref ClsFraccEstilo ObjFraccEstilo)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "FraccxEstilo",
+                NombreSP = "[dbo].[SP_FraccxEstilo_ReadEstilo]",
+                Scalar = false
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@U_ModDesc", "18", ObjFraccEstilo.U_ModDesc);
+            EjecutarReadEstilo(ref ObjFraccEstilo);
+        }
+
         public void Update(ref ClsFraccEstilo ObjFraccEstilo)
         {
             ObjDataBase = new ClsDataBase()
@@ -124,6 +138,36 @@ namespace LogicaNegocio.Usuario
                             ObjFraccEstilo.U_ModCode = dr["U_ModCode"].ToString();
                             ObjFraccEstilo.U_ModDesc = dr["Estilo"].ToString();
                             ObjFraccEstilo.U_CodigoFraccion = dr["U_CodigoFraccion"].ToString();
+                            ObjFraccEstilo.U_NameFraccion = dr["Fraccion"].ToString();
+                            ObjFraccEstilo.Cantidad = Convert.ToInt16(dr["Cantidad"].ToString());
+                        }
+                    }
+                }
+            }
+            else
+            {
+                ObjFraccEstilo.MsjError = ObjDataBase.MensajeErrorDB;
+            }
+        }
+
+        private void EjecutarReadEstilo(ref ClsFraccEstilo ObjFraccEstilo)
+        {
+            ObjDataBase.CRUD(ref ObjDataBase);
+
+            if (ObjDataBase.MensajeErrorDB == null)
+            {
+                if (ObjDataBase.Scalar)
+                {
+                    ObjFraccEstilo.ValorEscalar = ObjDataBase.ValorScalar;
+                }
+                else
+                {
+                    ObjFraccEstilo.DtResultados = ObjDataBase.DsResultados.Tables[0];
+                    if (ObjFraccEstilo.DtResultados.Rows.Count == 1)
+                    {
+                        foreach (DataRow dr in ObjFraccEstilo.DtResultados.Rows)
+                        {
+                            ObjFraccEstilo.U_IdFraccion = Convert.ToInt16(dr["Id"].ToString());
                             ObjFraccEstilo.U_NameFraccion = dr["Fraccion"].ToString();
                             ObjFraccEstilo.Cantidad = Convert.ToInt16(dr["Cantidad"].ToString());
                         }

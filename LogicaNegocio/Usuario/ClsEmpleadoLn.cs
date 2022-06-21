@@ -105,6 +105,25 @@ namespace LogicaNegocio.Usuario
             Ejecutar(ref ObjEmpleado);
         }
 
+        public void CreateGrupo(ref ClsEmpleado ObjEmpleado)
+        {
+            int spEmpIdMax = EmpId(ref ObjEmpleado);
+            ObjEmpleado.EmpID = spEmpIdMax;
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "OHEM",
+                NombreSP = "[dbo].[SP_OHEM_CreateGrupo]",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@empID", "4", spEmpIdMax);
+            ObjDataBase.DtParametros.Rows.Add(@"@firstName", "18", ObjEmpleado.FirstName);
+            ObjDataBase.DtParametros.Rows.Add(@"@Active", "15", 'N');
+
+            Ejecutar(ref ObjEmpleado);
+        }
+
         public void Read(ref ClsEmpleado ObjEmpleado)
         {
             ObjDataBase = new ClsDataBase()
@@ -179,6 +198,22 @@ namespace LogicaNegocio.Usuario
 
             ObjDataBase.DtParametros.Rows.Add(@"@empId", "4", ObjEmpleado.EmpID);
             ObjDataBase.DtParametros.Rows.Add(@"@Active", "15", ObjEmpleado.Active);
+
+            Ejecutar(ref ObjEmpleado);
+        }
+
+        public void UpdateGrupo(ref ClsEmpleado ObjEmpleado)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "OHEM",
+                NombreSP = "dbo.SP_OHEM_UpdateGrupo",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@empId", "4", ObjEmpleado.EmpID);
+            ObjDataBase.DtParametros.Rows.Add(@"@firstName", "18", ObjEmpleado.FirstName);
 
             Ejecutar(ref ObjEmpleado);
         }

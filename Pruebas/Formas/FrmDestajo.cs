@@ -13,11 +13,16 @@ namespace Pruebas.Formas
         private ClsEmpleado ObjEmpleado = null;
         private ClsFraccEstilo ObjFraccEstilo = null;
         private ClsTablasSAP ObjTablasSAP = null;
+        private ClsFraccion ObjFraccion = null;
+        private ClsGrupo ObjGrupo = null;
         private readonly ClsDestajoLn ObjDestajoLn = new ClsDestajoLn();
         private readonly ClsEmpleadoLn ObjEmpleadoLn = new ClsEmpleadoLn();
         private readonly ClsFraccEstiloLn ObjFraccEstiloLn = new ClsFraccEstiloLn();
         private readonly ClsTablasSAPLn ObjTabasSAPLn = new ClsTablasSAPLn();
+        private readonly ClsFraccionLn ObjFraccionLn = new ClsFraccionLn();
         private readonly ClsUtilidades ObjUtilidades = new ClsUtilidades();
+        private readonly ClsGrupoLn ObjGrupoLn = new ClsGrupoLn();
+        private readonly FrmDestajo intance;
         #endregion
 
         #region Metodo Constructor
@@ -26,6 +31,9 @@ namespace Pruebas.Formas
             InitializeComponent();
             CargarListaDestajo();
             CargarListaEmpleado();
+            CargarListaMuestra();
+            CargarListaGrupo();
+            intance = this;
             
             //Se llena Combo con el No. de semanas del año
             for (int i = 0; i < 52; i++)
@@ -66,6 +74,17 @@ namespace Pruebas.Formas
             }
         }
 
+        private void CargarListaMuestra()
+        {
+            ObjFraccion = new ClsFraccion();
+            ObjFraccionLn.ReadMuestra(ref ObjFraccion);
+            if (ObjFraccion.MsjError == null)
+            {
+                DgvMuestra.DataSource = ObjFraccion.DtResultados;
+                ObjUtilidades.FormatoDgvPEC(ref DgvMuestra);
+            }
+        }
+
         private void Limpiar()
         {
             CbSemana.SelectedIndex = -1;
@@ -87,6 +106,23 @@ namespace Pruebas.Formas
             BtnAgregar.Enabled = true;
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
+        }
+        #endregion
+
+        #region Metodos Publicos
+        public void CargarListaGrupo()
+        {
+            ObjGrupo = new ClsGrupo();
+            ObjGrupoLn.CargarIndexGrupo(ref ObjGrupo);
+            if (ObjGrupo.MsjError == null)
+            {
+                DgvGrupo.DataSource = ObjGrupo.DtResultados;
+                ObjUtilidades.FormatoDgvPEC(ref DgvGrupo);
+            }
+            else
+            {
+                MessageBox.Show(ObjGrupo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         #endregion
 
@@ -112,6 +148,17 @@ namespace Pruebas.Formas
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCrear_Click(object sender, EventArgs e)
+        {
+            FrmGrupo frmGrupo = new FrmGrupo(this);
+            frmGrupo.ShowDialog();
+        }
+
+        private void BtnRelacion_Click(object sender, EventArgs e)
         {
 
         }
@@ -152,6 +199,31 @@ namespace Pruebas.Formas
                 }
 
                 LblRestante.Text = (Convert.ToSingle(LblPP.Text) - Convert.ToSingle(LblPagado.Text)).ToString();
+            }
+        }
+
+        private void DgvMuestra_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DgvMuestra.Columns[e.ColumnIndex].Name == "SelM")
+            {
+                TxtPrograma.Text = "MUESTRA";
+                LblEstilo.Text = DgvMuestra.Rows[e.RowIndex].Cells["Estilo"].Value.ToString();
+                LblColor.Text = "N/A";
+                LblPP.Text = "N/A";
+                LblPagado.Text = "N/A";
+                LblRestante.Text = "N/A";
+
+                ObjFraccEstilo = new ClsFraccEstilo()
+                {
+                    U_ModDesc = LblEstilo.Text
+                };
+
+                ObjFraccEstiloLn.ReadMuestra(ref ObjFraccEstilo);
+                if (ObjFraccEstilo.MsjError == null)
+                {
+                    DgvFraccion.DataSource = ObjFraccEstilo.DtResultados;
+                    ObjUtilidades.FormatoDgvPEC(ref DgvFraccion);
+                }
             }
         }
         #endregion

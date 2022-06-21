@@ -62,6 +62,19 @@ namespace LogicaNegocio.Usuario
             Ejecutar(ref ObjFraccion);
         }
 
+        public void ReadMuestra(ref ClsFraccion ObjFraccion)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "Fraccion",
+                NombreSP = "[dbo].[SP_Fraccion_ReadMuestra]",
+                Scalar = false
+            };
+
+            EjecutarReadMuestra(ref ObjFraccion);
+        }
+
         public void Update(ref ClsFraccion ObjFraccion)
         {
             ObjDataBase = new ClsDataBase()
@@ -151,6 +164,34 @@ namespace LogicaNegocio.Usuario
                                 ObjFraccion.CostoMuestra = 0;
                             else
                                 ObjFraccion.CostoMuestra = Convert.ToSingle(dr["CostoMuestra"].ToString());
+                        }
+                    }
+                }
+            }
+            else
+            {
+                ObjFraccion.MsjError = ObjDataBase.MensajeErrorDB;
+            }
+        }
+
+        private void EjecutarReadMuestra(ref ClsFraccion ObjFraccion)
+        {
+            ObjDataBase.CRUD(ref ObjDataBase);
+
+            if (ObjDataBase.MensajeErrorDB == null)
+            {
+                if (ObjDataBase.Scalar)
+                {
+                    ObjFraccion.ValorEscalar = ObjDataBase.ValorScalar;
+                }
+                else
+                {
+                    ObjFraccion.DtResultados = ObjDataBase.DsResultados.Tables[0];
+                    if (ObjFraccion.DtResultados.Rows.Count == 1)
+                    {
+                        foreach (DataRow dr in ObjFraccion.DtResultados.Rows)
+                        {
+                            ObjFraccion.Estilo = dr["Estilo"].ToString();
                         }
                     }
                 }

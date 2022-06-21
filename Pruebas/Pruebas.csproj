@@ -169,6 +169,12 @@
     <Compile Include="Formas\FrmFracciones.Designer.cs">
       <DependentUpon>FrmFracciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formas\FrmGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\FrmGrupo.Designer.cs">
+      <DependentUpon>FrmGrupo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formas\FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmFracciones.resx">
       <DependentUpon>FrmFracciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formas\FrmGrupo.resx">
+      <DependentUpon>FrmGrupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
@@ -335,6 +344,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\3592869-compose-create-edit-edit-file-office-pencil-writing-creative_107746.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group_icon-icons32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\partnership_icon_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

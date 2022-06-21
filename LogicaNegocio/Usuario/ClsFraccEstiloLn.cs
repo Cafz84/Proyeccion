@@ -77,6 +77,20 @@ namespace LogicaNegocio.Usuario
             EjecutarReadEstilo(ref ObjFraccEstilo);
         }
 
+        public void ReadMuestra(ref ClsFraccEstilo ObjFraccEstilo)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "FraccxEstilo",
+                NombreSP = "[dbo].[SP_FraccxEstilo_ReadMuestra]",
+                Scalar = false
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@U_ModDesc", "18", ObjFraccEstilo.U_ModDesc);
+            EjecutarReadEstilo(ref ObjFraccEstilo);
+        }
+
         public void Update(ref ClsFraccEstilo ObjFraccEstilo)
         {
             ObjDataBase = new ClsDataBase()

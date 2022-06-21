@@ -7,7 +7,7 @@ namespace Entidades.Usuario
     {
         #region Variables Privadas
         private int _fraccionId;
-        private string _codigo, _name, _descripcion;
+        private string _codigo, _name, _descripcion, _estilo;
         private bool _activo;
         private double _costo, _tiempo;
         private float _costoMuestra;
@@ -29,6 +29,7 @@ namespace Entidades.Usuario
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
         public float CostoMuestra { get => _costoMuestra; set => _costoMuestra = value; }
+        public string Estilo { get => _estilo; set => _estilo = value; }
         #endregion
     }
 }

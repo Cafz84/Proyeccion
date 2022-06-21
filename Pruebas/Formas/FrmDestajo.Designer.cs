@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDestajo));
             this.LblTituloFraccEstilo = new System.Windows.Forms.Label();
-            this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnActualizar = new System.Windows.Forms.Button();
-            this.BtnAgregar = new System.Windows.Forms.Button();
-            this.BtnLimpiar = new System.Windows.Forms.Button();
-            this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.TxtPrograma = new System.Windows.Forms.TextBox();
             this.LblTrabajador = new System.Windows.Forms.Label();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
@@ -60,19 +55,34 @@
             this.TcEmpleados = new System.Windows.Forms.TabControl();
             this.TpIndex = new System.Windows.Forms.TabPage();
             this.DgvDestajo = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpTrabajador = new System.Windows.Forms.TabPage();
             this.DgvEmpleado = new System.Windows.Forms.DataGridView();
-            this.SelT = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpFraccion = new System.Windows.Forms.TabPage();
             this.DgvFraccion = new System.Windows.Forms.DataGridView();
             this.TpMuestra = new System.Windows.Forms.TabPage();
             this.LblTFraccion = new System.Windows.Forms.Label();
             this.LblFraccion = new System.Windows.Forms.Label();
-            this.SelF = new System.Windows.Forms.DataGridViewImageColumn();
             this.LblCXE = new System.Windows.Forms.Label();
             this.LblTCXE = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
+            this.DgvMuestra = new System.Windows.Forms.DataGridView();
+            this.TpGrupo = new System.Windows.Forms.TabPage();
+            this.DgvGrupo = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.SelT = new System.Windows.Forms.DataGridViewImageColumn();
+            this.SelF = new System.Windows.Forms.DataGridViewImageColumn();
+            this.SelM = new System.Windows.Forms.DataGridViewImageColumn();
+            this.BtnRelacion = new System.Windows.Forms.Button();
+            this.BtnCrear = new System.Windows.Forms.Button();
+            this.BtnActualizar = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.BtnLimpiar = new System.Windows.Forms.Button();
+            this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.TcEmpleados.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDestajo)).BeginInit();
@@ -80,6 +90,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleado)).BeginInit();
             this.TpFraccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFraccion)).BeginInit();
+            this.TpMuestra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvMuestra)).BeginInit();
+            this.TpGrupo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvGrupo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // LblTituloFraccEstilo
@@ -92,84 +107,6 @@
             this.LblTituloFraccEstilo.Size = new System.Drawing.Size(274, 39);
             this.LblTituloFraccEstilo.TabIndex = 50;
             this.LblTituloFraccEstilo.Text = "Captura Destajo";
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.BackColor = System.Drawing.Color.DarkRed;
-            this.BtnEliminar.Enabled = false;
-            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar.ForeColor = System.Drawing.Color.White;
-            this.BtnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnEliminar.Image")));
-            this.BtnEliminar.Location = new System.Drawing.Point(854, 190);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(214, 51);
-            this.BtnEliminar.TabIndex = 93;
-            this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnEliminar.UseVisualStyleBackColor = false;
-            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
-            // 
-            // BtnActualizar
-            // 
-            this.BtnActualizar.BackColor = System.Drawing.Color.Goldenrod;
-            this.BtnActualizar.Enabled = false;
-            this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnActualizar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnActualizar.ForeColor = System.Drawing.Color.White;
-            this.BtnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnActualizar.Image")));
-            this.BtnActualizar.Location = new System.Drawing.Point(854, 136);
-            this.BtnActualizar.Name = "BtnActualizar";
-            this.BtnActualizar.Size = new System.Drawing.Size(214, 51);
-            this.BtnActualizar.TabIndex = 90;
-            this.BtnActualizar.Text = "Actualizar";
-            this.BtnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnActualizar.UseVisualStyleBackColor = false;
-            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
-            // 
-            // BtnAgregar
-            // 
-            this.BtnAgregar.BackColor = System.Drawing.Color.DarkGreen;
-            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.BtnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("BtnAgregar.Image")));
-            this.BtnAgregar.Location = new System.Drawing.Point(854, 82);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(214, 51);
-            this.BtnAgregar.TabIndex = 92;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnAgregar.UseVisualStyleBackColor = false;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
-            // BtnLimpiar
-            // 
-            this.BtnLimpiar.BackColor = System.Drawing.Color.BurlyWood;
-            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLimpiar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("BtnLimpiar.Image")));
-            this.BtnLimpiar.Location = new System.Drawing.Point(854, 27);
-            this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(214, 51);
-            this.BtnLimpiar.TabIndex = 91;
-            this.BtnLimpiar.Text = "Limpiar";
-            this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnLimpiar.UseVisualStyleBackColor = false;
-            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
-            // 
-            // BtnCerrar
-            // 
-            this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCerrar.Image")));
-            this.BtnCerrar.Location = new System.Drawing.Point(1060, -1);
-            this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(21, 24);
-            this.BtnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnCerrar.TabIndex = 89;
-            this.BtnCerrar.TabStop = false;
-            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // TxtPrograma
             // 
@@ -411,6 +348,7 @@
             this.TcEmpleados.Controls.Add(this.TpTrabajador);
             this.TcEmpleados.Controls.Add(this.TpFraccion);
             this.TcEmpleados.Controls.Add(this.TpMuestra);
+            this.TcEmpleados.Controls.Add(this.TpGrupo);
             this.TcEmpleados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TcEmpleados.Location = new System.Drawing.Point(3, 240);
             this.TcEmpleados.Name = "TcEmpleados";
@@ -440,14 +378,6 @@
             this.DgvDestajo.Size = new System.Drawing.Size(1065, 392);
             this.DgvDestajo.TabIndex = 0;
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 55;
-            // 
             // TpTrabajador
             // 
             this.TpTrabajador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
@@ -470,14 +400,6 @@
             this.DgvEmpleado.Size = new System.Drawing.Size(1065, 392);
             this.DgvEmpleado.TabIndex = 1;
             this.DgvEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmpleado_CellContentClick);
-            // 
-            // SelT
-            // 
-            this.SelT.HeaderText = "Sel";
-            this.SelT.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
-            this.SelT.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.SelT.Name = "SelT";
-            this.SelT.Width = 55;
             // 
             // TpFraccion
             // 
@@ -504,6 +426,7 @@
             // TpMuestra
             // 
             this.TpMuestra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpMuestra.Controls.Add(this.DgvMuestra);
             this.TpMuestra.Location = new System.Drawing.Point(4, 26);
             this.TpMuestra.Name = "TpMuestra";
             this.TpMuestra.Size = new System.Drawing.Size(1065, 392);
@@ -531,14 +454,6 @@
             this.LblFraccion.Size = new System.Drawing.Size(0, 22);
             this.LblFraccion.TabIndex = 125;
             // 
-            // SelF
-            // 
-            this.SelF.HeaderText = "Sel";
-            this.SelF.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
-            this.SelF.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.SelF.Name = "SelF";
-            this.SelF.Width = 55;
-            // 
             // LblCXE
             // 
             this.LblCXE.AutoSize = true;
@@ -559,6 +474,222 @@
             this.LblTCXE.Size = new System.Drawing.Size(52, 22);
             this.LblTCXE.TabIndex = 126;
             this.LblTCXE.Text = "CXE:";
+            // 
+            // DgvMuestra
+            // 
+            this.DgvMuestra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvMuestra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SelM});
+            this.DgvMuestra.Location = new System.Drawing.Point(0, 0);
+            this.DgvMuestra.Name = "DgvMuestra";
+            this.DgvMuestra.Size = new System.Drawing.Size(1065, 392);
+            this.DgvMuestra.TabIndex = 3;
+            this.DgvMuestra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMuestra_CellContentClick);
+            // 
+            // TpGrupo
+            // 
+            this.TpGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpGrupo.Controls.Add(this.BtnRelacion);
+            this.TpGrupo.Controls.Add(this.BtnCrear);
+            this.TpGrupo.Controls.Add(this.DgvGrupo);
+            this.TpGrupo.Location = new System.Drawing.Point(4, 26);
+            this.TpGrupo.Name = "TpGrupo";
+            this.TpGrupo.Padding = new System.Windows.Forms.Padding(3);
+            this.TpGrupo.Size = new System.Drawing.Size(1065, 392);
+            this.TpGrupo.TabIndex = 4;
+            this.TpGrupo.Text = "Grupo";
+            // 
+            // DgvGrupo
+            // 
+            this.DgvGrupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvGrupo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn1});
+            this.DgvGrupo.Location = new System.Drawing.Point(0, 0);
+            this.DgvGrupo.Name = "DgvGrupo";
+            this.DgvGrupo.Size = new System.Drawing.Size(514, 392);
+            this.DgvGrupo.TabIndex = 2;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Sel";
+            this.dataGridViewImageColumn1.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 55;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Sel";
+            this.dataGridViewImageColumn2.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 55;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.HeaderText = "Sel";
+            this.dataGridViewImageColumn3.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.Width = 55;
+            // 
+            // dataGridViewImageColumn4
+            // 
+            this.dataGridViewImageColumn4.HeaderText = "Sel";
+            this.dataGridViewImageColumn4.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.Width = 55;
+            // 
+            // dataGridViewImageColumn5
+            // 
+            this.dataGridViewImageColumn5.HeaderText = "Sel";
+            this.dataGridViewImageColumn5.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.dataGridViewImageColumn5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
+            this.dataGridViewImageColumn5.Width = 55;
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.BtnEliminar.Enabled = false;
+            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEliminar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminar.ForeColor = System.Drawing.Color.White;
+            this.BtnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnEliminar.Image")));
+            this.BtnEliminar.Location = new System.Drawing.Point(854, 190);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(214, 51);
+            this.BtnEliminar.TabIndex = 93;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 55;
+            // 
+            // SelT
+            // 
+            this.SelT.HeaderText = "Sel";
+            this.SelT.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.SelT.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelT.Name = "SelT";
+            this.SelT.Width = 55;
+            // 
+            // SelF
+            // 
+            this.SelF.HeaderText = "Sel";
+            this.SelF.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.SelF.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelF.Name = "SelF";
+            this.SelF.Width = 55;
+            // 
+            // SelM
+            // 
+            this.SelM.HeaderText = "Sel";
+            this.SelM.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.SelM.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelM.Name = "SelM";
+            this.SelM.Width = 55;
+            // 
+            // BtnRelacion
+            // 
+            this.BtnRelacion.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BtnRelacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRelacion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRelacion.ForeColor = System.Drawing.Color.White;
+            this.BtnRelacion.Image = global::Pruebas.Properties.Resources.partnership_icon_32x32;
+            this.BtnRelacion.Location = new System.Drawing.Point(891, 56);
+            this.BtnRelacion.Name = "BtnRelacion";
+            this.BtnRelacion.Size = new System.Drawing.Size(170, 44);
+            this.BtnRelacion.TabIndex = 129;
+            this.BtnRelacion.Text = "Relacionar";
+            this.BtnRelacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnRelacion.UseVisualStyleBackColor = false;
+            this.BtnRelacion.Click += new System.EventHandler(this.BtnRelacion_Click);
+            // 
+            // BtnCrear
+            // 
+            this.BtnCrear.BackColor = System.Drawing.Color.Green;
+            this.BtnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCrear.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCrear.ForeColor = System.Drawing.Color.White;
+            this.BtnCrear.Image = global::Pruebas.Properties.Resources.Group_icon_icons32x32;
+            this.BtnCrear.Location = new System.Drawing.Point(891, 6);
+            this.BtnCrear.Name = "BtnCrear";
+            this.BtnCrear.Size = new System.Drawing.Size(170, 44);
+            this.BtnCrear.TabIndex = 128;
+            this.BtnCrear.Text = "Crear Grupo";
+            this.BtnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCrear.UseVisualStyleBackColor = false;
+            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
+            // 
+            // BtnActualizar
+            // 
+            this.BtnActualizar.BackColor = System.Drawing.Color.Goldenrod;
+            this.BtnActualizar.Enabled = false;
+            this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnActualizar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnActualizar.ForeColor = System.Drawing.Color.White;
+            this.BtnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnActualizar.Image")));
+            this.BtnActualizar.Location = new System.Drawing.Point(854, 136);
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.Size = new System.Drawing.Size(214, 51);
+            this.BtnActualizar.TabIndex = 90;
+            this.BtnActualizar.Text = "Actualizar";
+            this.BtnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnActualizar.UseVisualStyleBackColor = false;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.BackColor = System.Drawing.Color.DarkGreen;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
+            this.BtnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("BtnAgregar.Image")));
+            this.BtnAgregar.Location = new System.Drawing.Point(854, 82);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(214, 51);
+            this.BtnAgregar.TabIndex = 92;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.BackColor = System.Drawing.Color.BurlyWood;
+            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLimpiar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("BtnLimpiar.Image")));
+            this.BtnLimpiar.Location = new System.Drawing.Point(854, 27);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(214, 51);
+            this.BtnLimpiar.TabIndex = 91;
+            this.BtnLimpiar.Text = "Limpiar";
+            this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            // 
+            // BtnCerrar
+            // 
+            this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCerrar.Image")));
+            this.BtnCerrar.Location = new System.Drawing.Point(1060, -1);
+            this.BtnCerrar.Name = "BtnCerrar";
+            this.BtnCerrar.Size = new System.Drawing.Size(21, 24);
+            this.BtnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnCerrar.TabIndex = 89;
+            this.BtnCerrar.TabStop = false;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // FrmDestajo
             // 
@@ -602,7 +733,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDestajo";
             this.Text = "FrmDestajo";
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.TcEmpleados.ResumeLayout(false);
             this.TpIndex.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvDestajo)).EndInit();
@@ -610,6 +740,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleado)).EndInit();
             this.TpFraccion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvFraccion)).EndInit();
+            this.TpMuestra.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvMuestra)).EndInit();
+            this.TpGrupo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvGrupo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,5 +795,16 @@
         private System.Windows.Forms.DataGridViewImageColumn SelF;
         private System.Windows.Forms.Label LblCXE;
         private System.Windows.Forms.Label LblTCXE;
+        private System.Windows.Forms.DataGridView DgvMuestra;
+        private System.Windows.Forms.DataGridViewImageColumn SelM;
+        private System.Windows.Forms.TabPage TpGrupo;
+        private System.Windows.Forms.Button BtnCrear;
+        private System.Windows.Forms.DataGridView DgvGrupo;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.Button BtnRelacion;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
     }
 }

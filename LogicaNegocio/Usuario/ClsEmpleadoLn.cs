@@ -39,6 +39,19 @@ namespace LogicaNegocio.Usuario
             EjecutarActivoVariable(ref ObjEmpleado);
         }
 
+        public void IndexRelacion(ref ClsEmpleado ObjEmpleado)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "OHEM",
+                NombreSP = "[dbo].[SP_OHEM_IndexRelacion]",
+                Scalar = false
+            };
+
+            EjecutarActivoVariable(ref ObjEmpleado);
+        }
+
         public int EmpId(ref ClsEmpleado ObjEmpleado)
         {
             ObjDataBase = new ClsDataBase()

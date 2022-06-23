@@ -153,6 +153,7 @@
             this.LblTituloGrupo.Size = new System.Drawing.Size(117, 39);
             this.LblTituloGrupo.TabIndex = 49;
             this.LblTituloGrupo.Text = "Grupo";
+            this.LblTituloGrupo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblTituloGrupo_MouseDown);
             // 
             // dataGridViewImageColumn1
             // 
@@ -264,6 +265,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmGrupo";
             this.Text = "FrmGrupo";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmGrupo_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.DgvGrupo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.ResumeLayout(false);

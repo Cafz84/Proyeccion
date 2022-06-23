@@ -120,6 +120,9 @@
   <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Editar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -226,7 +229,7 @@
   <data name="BtnActualizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7CAAAOwgEVKEqAAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7BAAAOwQG4kWvtAAAAB3RJ
         TUUH5gUUDSQ2Ldj66wAABcZJREFUSEuNlgtUzncYx/9vV4qsUFLvmy70ehljUWpUNGtnbJnhmMtsdljC
         UewU0mxNWe7aaFIO5tZ2MrqwVLqIN128JZR1wSQrS669eqvvnuf3xtkVzznP+f/O7/d8P8/v9vzeV3qO
         GZAryWdKhgaxkqVppmTdXSOc20bUx2P6GI59OZN1N+KPA3mYZGOmlnnYak0+cEXfJV5wXOUvnNvcx2Mc
@@ -258,7 +261,7 @@
   <data name="BtnAgregar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7CAAAOwgEVKEqAAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7BAAAOwQG4kWvtAAAAB3RJ
         TUUH5gUUDSIaSVoxjgAABpRJREFUSEuVlntQ1OUax58FWYNCLjLcpsQB59jpVGMW2sScOhl64nZcEMro
         YCWi5smYcREFEj2iYY3BwqaCiihIJHIVKuQSFFdTYaGSWyC7XJb7VVgWVr7n+a3bP86xmZ6Zz77zu7zP
         532f9913l/4oHMPkFNEDAsBXZmLakWRJH5yy5AuxcG/XOMhom1T/7p8K35RSfVLHsFOWIWVtr3/aNBQW

@@ -164,6 +164,7 @@
             this.LblTituloPuesto.Size = new System.Drawing.Size(119, 39);
             this.LblTituloPuesto.TabIndex = 45;
             this.LblTituloPuesto.Text = "Puesto";
+            this.LblTituloPuesto.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblTituloPuesto_MouseDown);
             // 
             // BtnEliminar
             // 
@@ -255,6 +256,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPuesto";
             this.Text = "FrmPuesto";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmPuesto_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.DgvPuesto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.ResumeLayout(false);

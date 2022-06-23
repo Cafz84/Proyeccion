@@ -119,6 +119,7 @@
             this.LblTituloPais.Size = new System.Drawing.Size(77, 39);
             this.LblTituloPais.TabIndex = 45;
             this.LblTituloPais.Text = "Pais";
+            this.LblTituloPais.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblTituloPais_MouseDown);
             // 
             // TxtCode
             // 
@@ -216,6 +217,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPais";
             this.Text = "FrmPais";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmPais_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.DgvPais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.ResumeLayout(false);

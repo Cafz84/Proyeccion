@@ -55,6 +55,7 @@
     <Compile Include="Usuario\ClsPais.cs" />
     <Compile Include="Usuario\ClsPuesto.cs" />
     <Compile Include="Usuario\ClsReadDatosEscaneo.cs" />
+    <Compile Include="Usuario\ClsRGrupoEmpleado.cs" />
     <Compile Include="Usuario\ClsTablasSAP.cs" />
     <Compile Include="Usuario\ClsTipoEscaneo.cs" />
     <Compile Include="Usuario\ClsUser.cs" />

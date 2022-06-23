@@ -58,6 +58,7 @@
             this.LblTituloArea.Size = new System.Drawing.Size(93, 39);
             this.LblTituloArea.TabIndex = 2;
             this.LblTituloArea.Text = "Area";
+            this.LblTituloArea.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblTituloArea_MouseDown);
             // 
             // BtnCerrar
             // 
@@ -255,6 +256,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmArea";
             this.Text = "FrmArea";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmArea_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvArea)).EndInit();
             this.ResumeLayout(false);

@@ -141,6 +141,7 @@
             this.LblTituloEstado.Size = new System.Drawing.Size(121, 39);
             this.LblTituloEstado.TabIndex = 45;
             this.LblTituloEstado.Text = "Estado";
+            this.LblTituloEstado.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblTituloEstado_MouseDown);
             // 
             // LblCodePais
             // 
@@ -241,6 +242,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmEstado";
             this.Text = "FrmEstado";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmEstado_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.DgvEstado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.ResumeLayout(false);

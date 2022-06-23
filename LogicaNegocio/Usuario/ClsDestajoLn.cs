@@ -42,6 +42,95 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@UFraccId", "4", ObjDestajo.UFraccId);
             EjecutarPagados(ref ObjDestajo);
         }
+
+        public void Create(ref ClsDestajo ObjDestajo)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "Destajo",
+                NombreSP = "dbo.SP_Destajo_Create",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@UEmpId", "4", ObjDestajo.UEmpId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UFraccId", "4", ObjDestajo.UFraccId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UEstilo", "18", ObjDestajo.UEstilo);
+            ObjDataBase.DtParametros.Rows.Add(@"@Programa", "18", ObjDestajo.Programa);
+            ObjDataBase.DtParametros.Rows.Add(@"@UColor", "18", ObjDestajo.UColor);
+            ObjDataBase.DtParametros.Rows.Add(@"@Cantidad", "9", ObjDestajo.Cantidad);
+            ObjDataBase.DtParametros.Rows.Add(@"@FechaCaptura", "14", ObjDestajo.FechaCaptura);
+            ObjDataBase.DtParametros.Rows.Add(@"@Semana", "3", ObjDestajo.Semana);
+            ObjDataBase.DtParametros.Rows.Add(@"@Pago", "9", ObjDestajo.Pago);
+            ObjDataBase.DtParametros.Rows.Add(@"@UFracCosto", "9", ObjDestajo.UFracCosto);
+            ObjDataBase.DtParametros.Rows.Add(@"@UCantidadFE", "4", ObjDestajo.UCantidadFE);
+            Ejecutar(ref ObjDestajo);
+        }
+
+        public void Read(ref ClsDestajo ObjDestajo)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "Destajo",
+                NombreSP = "dbo.SP_Destajo_Read",
+                Scalar = false
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@UEmpId", "4", ObjDestajo.UEmpId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UFraccId", "4", ObjDestajo.UFraccId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UEstilo", "18", ObjDestajo.UEstilo);
+            ObjDataBase.DtParametros.Rows.Add(@"@Programa", "18", ObjDestajo.Programa);
+            ObjDataBase.DtParametros.Rows.Add(@"@Semana", "3", ObjDestajo.Semana);
+            Ejecutar(ref ObjDestajo);
+        }
+
+        public void Update(ref ClsDestajo ObjDestajo)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "Destajo",
+                NombreSP = "dbo.SP_Destajo_Update",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@UEmpId", "4", ObjDestajo.UEmpId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UFraccId", "4", ObjDestajo.UFraccId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UEstilo", "18", ObjDestajo.UEstilo);
+            ObjDataBase.DtParametros.Rows.Add(@"@Programa", "18", ObjDestajo.Programa);
+            ObjDataBase.DtParametros.Rows.Add(@"@UColor", "18", ObjDestajo.UColor);
+            ObjDataBase.DtParametros.Rows.Add(@"@Cantidad", "9", ObjDestajo.Cantidad);
+            ObjDataBase.DtParametros.Rows.Add(@"@FechaCaptura", "14", ObjDestajo.FechaCaptura);
+            ObjDataBase.DtParametros.Rows.Add(@"@Semana", "3", ObjDestajo.Semana);
+            ObjDataBase.DtParametros.Rows.Add(@"@Pago", "9", ObjDestajo.Pago);
+            ObjDataBase.DtParametros.Rows.Add(@"@UFracCosto", "9", ObjDestajo.UFracCosto);
+            ObjDataBase.DtParametros.Rows.Add(@"@UCantidadFE", "4", ObjDestajo.UCantidadFE);
+            ObjDataBase.DtParametros.Rows.Add(@"@CEmpId", "4", ObjDestajo.CEmpId);
+            ObjDataBase.DtParametros.Rows.Add(@"@CFraccId", "4", ObjDestajo.CFraccId);
+            ObjDataBase.DtParametros.Rows.Add(@"@CEstilo", "18", ObjDestajo.CEmpId);
+            ObjDataBase.DtParametros.Rows.Add(@"@CPrograma", "18", ObjDestajo.CPrograma);
+            ObjDataBase.DtParametros.Rows.Add(@"@CSemana", "3", ObjDestajo.CSemana);
+            Ejecutar(ref ObjDestajo);
+        }
+
+        public void Delete(ref ClsDestajo ObjDestajo)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "Destajo",
+                NombreSP = "dbo.SP_Destajo_Delete",
+                Scalar = true
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@UEmpId", "4", ObjDestajo.UEmpId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UFraccId", "4", ObjDestajo.UFraccId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UEstilo", "18", ObjDestajo.UEstilo);
+            ObjDataBase.DtParametros.Rows.Add(@"@Programa", "18", ObjDestajo.Programa);
+            ObjDataBase.DtParametros.Rows.Add(@"@Semana", "3", ObjDestajo.Semana);
+            Ejecutar(ref ObjDestajo);
+        }
         #endregion
 
         #region Metodos Privados

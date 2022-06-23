@@ -26,7 +26,7 @@
     <ProductName>ERP Calzado Monnaaci</ProductName>
     <PublisherName>Cristian Frausto</PublisherName>
     <SuiteName>Produccion Calzado</SuiteName>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>15</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -205,6 +205,12 @@
     <Compile Include="Formas\FrmPuesto.Designer.cs">
       <DependentUpon>FrmPuesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formas\FrmRGrupoEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\FrmRGrupoEmp.Designer.cs">
+      <DependentUpon>FrmRGrupoEmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formas\FrmTipoEscaneo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmPuesto.resx">
       <DependentUpon>FrmPuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formas\FrmRGrupoEmp.resx">
+      <DependentUpon>FrmRGrupoEmp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmTipoEscaneo.resx">
       <DependentUpon>FrmTipoEscaneo.cs</DependentUpon>

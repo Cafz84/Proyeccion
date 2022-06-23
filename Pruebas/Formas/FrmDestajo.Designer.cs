@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDestajo));
-            this.LblTituloFraccEstilo = new System.Windows.Forms.Label();
+            this.LblTDestajo = new System.Windows.Forms.Label();
             this.TxtPrograma = new System.Windows.Forms.TextBox();
             this.LblTrabajador = new System.Windows.Forms.Label();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
@@ -52,38 +52,38 @@
             this.LblRestante = new System.Windows.Forms.Label();
             this.LblTRestante = new System.Windows.Forms.Label();
             this.LblTCantidad = new System.Windows.Forms.Label();
-            this.TcEmpleados = new System.Windows.Forms.TabControl();
+            this.TcDestajo = new System.Windows.Forms.TabControl();
             this.TpIndex = new System.Windows.Forms.TabPage();
             this.DgvDestajo = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpTrabajador = new System.Windows.Forms.TabPage();
             this.DgvEmpleado = new System.Windows.Forms.DataGridView();
+            this.SelT = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpFraccion = new System.Windows.Forms.TabPage();
             this.DgvFraccion = new System.Windows.Forms.DataGridView();
+            this.SelF = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpMuestra = new System.Windows.Forms.TabPage();
+            this.DgvMuestra = new System.Windows.Forms.DataGridView();
+            this.SelM = new System.Windows.Forms.DataGridViewImageColumn();
+            this.TpGrupo = new System.Windows.Forms.TabPage();
+            this.BtnRelacion = new System.Windows.Forms.Button();
+            this.BtnCrear = new System.Windows.Forms.Button();
+            this.DgvGrupo = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.LblTFraccion = new System.Windows.Forms.Label();
             this.LblFraccion = new System.Windows.Forms.Label();
             this.LblCXE = new System.Windows.Forms.Label();
             this.LblTCXE = new System.Windows.Forms.Label();
-            this.DgvMuestra = new System.Windows.Forms.DataGridView();
-            this.TpGrupo = new System.Windows.Forms.TabPage();
-            this.DgvGrupo = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.BtnEliminar = new System.Windows.Forms.Button();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.SelT = new System.Windows.Forms.DataGridViewImageColumn();
-            this.SelF = new System.Windows.Forms.DataGridViewImageColumn();
-            this.SelM = new System.Windows.Forms.DataGridViewImageColumn();
-            this.BtnRelacion = new System.Windows.Forms.Button();
-            this.BtnCrear = new System.Windows.Forms.Button();
             this.BtnActualizar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
-            this.TcEmpleados.SuspendLayout();
+            this.TcDestajo.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDestajo)).BeginInit();
             this.TpTrabajador.SuspendLayout();
@@ -97,16 +97,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
-            // LblTituloFraccEstilo
+            // LblTDestajo
             // 
-            this.LblTituloFraccEstilo.AutoSize = true;
-            this.LblTituloFraccEstilo.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTituloFraccEstilo.ForeColor = System.Drawing.Color.White;
-            this.LblTituloFraccEstilo.Location = new System.Drawing.Point(374, -1);
-            this.LblTituloFraccEstilo.Name = "LblTituloFraccEstilo";
-            this.LblTituloFraccEstilo.Size = new System.Drawing.Size(274, 39);
-            this.LblTituloFraccEstilo.TabIndex = 50;
-            this.LblTituloFraccEstilo.Text = "Captura Destajo";
+            this.LblTDestajo.AutoSize = true;
+            this.LblTDestajo.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTDestajo.ForeColor = System.Drawing.Color.White;
+            this.LblTDestajo.Location = new System.Drawing.Point(374, -1);
+            this.LblTDestajo.Name = "LblTDestajo";
+            this.LblTDestajo.Size = new System.Drawing.Size(274, 39);
+            this.LblTDestajo.TabIndex = 50;
+            this.LblTDestajo.Text = "Captura Destajo";
             // 
             // TxtPrograma
             // 
@@ -342,19 +342,19 @@
             this.LblTCantidad.TabIndex = 122;
             this.LblTCantidad.Text = "Cantidad:";
             // 
-            // TcEmpleados
+            // TcDestajo
             // 
-            this.TcEmpleados.Controls.Add(this.TpIndex);
-            this.TcEmpleados.Controls.Add(this.TpTrabajador);
-            this.TcEmpleados.Controls.Add(this.TpFraccion);
-            this.TcEmpleados.Controls.Add(this.TpMuestra);
-            this.TcEmpleados.Controls.Add(this.TpGrupo);
-            this.TcEmpleados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TcEmpleados.Location = new System.Drawing.Point(3, 240);
-            this.TcEmpleados.Name = "TcEmpleados";
-            this.TcEmpleados.SelectedIndex = 0;
-            this.TcEmpleados.Size = new System.Drawing.Size(1073, 422);
-            this.TcEmpleados.TabIndex = 2;
+            this.TcDestajo.Controls.Add(this.TpIndex);
+            this.TcDestajo.Controls.Add(this.TpTrabajador);
+            this.TcDestajo.Controls.Add(this.TpFraccion);
+            this.TcDestajo.Controls.Add(this.TpMuestra);
+            this.TcDestajo.Controls.Add(this.TpGrupo);
+            this.TcDestajo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TcDestajo.Location = new System.Drawing.Point(3, 240);
+            this.TcDestajo.Name = "TcDestajo";
+            this.TcDestajo.SelectedIndex = 0;
+            this.TcDestajo.Size = new System.Drawing.Size(1073, 422);
+            this.TcDestajo.TabIndex = 2;
             // 
             // TpIndex
             // 
@@ -377,6 +377,14 @@
             this.DgvDestajo.Name = "DgvDestajo";
             this.DgvDestajo.Size = new System.Drawing.Size(1065, 392);
             this.DgvDestajo.TabIndex = 0;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 55;
             // 
             // TpTrabajador
             // 
@@ -401,6 +409,14 @@
             this.DgvEmpleado.TabIndex = 1;
             this.DgvEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmpleado_CellContentClick);
             // 
+            // SelT
+            // 
+            this.SelT.HeaderText = "Sel";
+            this.SelT.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.SelT.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelT.Name = "SelT";
+            this.SelT.Width = 55;
+            // 
             // TpFraccion
             // 
             this.TpFraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
@@ -423,6 +439,14 @@
             this.DgvFraccion.TabIndex = 2;
             this.DgvFraccion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvFraccion_CellContentClick);
             // 
+            // SelF
+            // 
+            this.SelF.HeaderText = "Sel";
+            this.SelF.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.SelF.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelF.Name = "SelF";
+            this.SelF.Width = 55;
+            // 
             // TpMuestra
             // 
             this.TpMuestra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
@@ -432,6 +456,88 @@
             this.TpMuestra.Size = new System.Drawing.Size(1065, 392);
             this.TpMuestra.TabIndex = 3;
             this.TpMuestra.Text = "Muestra";
+            // 
+            // DgvMuestra
+            // 
+            this.DgvMuestra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvMuestra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SelM});
+            this.DgvMuestra.Location = new System.Drawing.Point(0, 0);
+            this.DgvMuestra.Name = "DgvMuestra";
+            this.DgvMuestra.Size = new System.Drawing.Size(1065, 392);
+            this.DgvMuestra.TabIndex = 3;
+            this.DgvMuestra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMuestra_CellContentClick);
+            // 
+            // SelM
+            // 
+            this.SelM.HeaderText = "Sel";
+            this.SelM.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.SelM.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelM.Name = "SelM";
+            this.SelM.Width = 55;
+            // 
+            // TpGrupo
+            // 
+            this.TpGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpGrupo.Controls.Add(this.BtnRelacion);
+            this.TpGrupo.Controls.Add(this.BtnCrear);
+            this.TpGrupo.Controls.Add(this.DgvGrupo);
+            this.TpGrupo.Location = new System.Drawing.Point(4, 26);
+            this.TpGrupo.Name = "TpGrupo";
+            this.TpGrupo.Padding = new System.Windows.Forms.Padding(3);
+            this.TpGrupo.Size = new System.Drawing.Size(1065, 392);
+            this.TpGrupo.TabIndex = 4;
+            this.TpGrupo.Text = "Grupo";
+            // 
+            // BtnRelacion
+            // 
+            this.BtnRelacion.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BtnRelacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRelacion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRelacion.ForeColor = System.Drawing.Color.White;
+            this.BtnRelacion.Image = global::Pruebas.Properties.Resources.partnership_icon_32x32;
+            this.BtnRelacion.Location = new System.Drawing.Point(891, 56);
+            this.BtnRelacion.Name = "BtnRelacion";
+            this.BtnRelacion.Size = new System.Drawing.Size(170, 44);
+            this.BtnRelacion.TabIndex = 129;
+            this.BtnRelacion.Text = "Relacionar";
+            this.BtnRelacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnRelacion.UseVisualStyleBackColor = false;
+            this.BtnRelacion.Click += new System.EventHandler(this.BtnRelacion_Click);
+            // 
+            // BtnCrear
+            // 
+            this.BtnCrear.BackColor = System.Drawing.Color.Green;
+            this.BtnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCrear.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCrear.ForeColor = System.Drawing.Color.White;
+            this.BtnCrear.Image = global::Pruebas.Properties.Resources.Group_icon_icons32x32;
+            this.BtnCrear.Location = new System.Drawing.Point(891, 6);
+            this.BtnCrear.Name = "BtnCrear";
+            this.BtnCrear.Size = new System.Drawing.Size(170, 44);
+            this.BtnCrear.TabIndex = 128;
+            this.BtnCrear.Text = "Crear Grupo";
+            this.BtnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCrear.UseVisualStyleBackColor = false;
+            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
+            // 
+            // DgvGrupo
+            // 
+            this.DgvGrupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvGrupo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn1});
+            this.DgvGrupo.Location = new System.Drawing.Point(0, 0);
+            this.DgvGrupo.Name = "DgvGrupo";
+            this.DgvGrupo.Size = new System.Drawing.Size(885, 392);
+            this.DgvGrupo.TabIndex = 2;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Sel";
+            this.dataGridViewImageColumn1.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 55;
             // 
             // LblTFraccion
             // 
@@ -474,48 +580,6 @@
             this.LblTCXE.Size = new System.Drawing.Size(52, 22);
             this.LblTCXE.TabIndex = 126;
             this.LblTCXE.Text = "CXE:";
-            // 
-            // DgvMuestra
-            // 
-            this.DgvMuestra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvMuestra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SelM});
-            this.DgvMuestra.Location = new System.Drawing.Point(0, 0);
-            this.DgvMuestra.Name = "DgvMuestra";
-            this.DgvMuestra.Size = new System.Drawing.Size(1065, 392);
-            this.DgvMuestra.TabIndex = 3;
-            this.DgvMuestra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMuestra_CellContentClick);
-            // 
-            // TpGrupo
-            // 
-            this.TpGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            this.TpGrupo.Controls.Add(this.BtnRelacion);
-            this.TpGrupo.Controls.Add(this.BtnCrear);
-            this.TpGrupo.Controls.Add(this.DgvGrupo);
-            this.TpGrupo.Location = new System.Drawing.Point(4, 26);
-            this.TpGrupo.Name = "TpGrupo";
-            this.TpGrupo.Padding = new System.Windows.Forms.Padding(3);
-            this.TpGrupo.Size = new System.Drawing.Size(1065, 392);
-            this.TpGrupo.TabIndex = 4;
-            this.TpGrupo.Text = "Grupo";
-            // 
-            // DgvGrupo
-            // 
-            this.DgvGrupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvGrupo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn1});
-            this.DgvGrupo.Location = new System.Drawing.Point(0, 0);
-            this.DgvGrupo.Name = "DgvGrupo";
-            this.DgvGrupo.Size = new System.Drawing.Size(514, 392);
-            this.DgvGrupo.TabIndex = 2;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Sel";
-            this.dataGridViewImageColumn1.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 55;
             // 
             // dataGridViewImageColumn2
             // 
@@ -565,70 +629,6 @@
             this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 55;
-            // 
-            // SelT
-            // 
-            this.SelT.HeaderText = "Sel";
-            this.SelT.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
-            this.SelT.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.SelT.Name = "SelT";
-            this.SelT.Width = 55;
-            // 
-            // SelF
-            // 
-            this.SelF.HeaderText = "Sel";
-            this.SelF.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
-            this.SelF.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.SelF.Name = "SelF";
-            this.SelF.Width = 55;
-            // 
-            // SelM
-            // 
-            this.SelM.HeaderText = "Sel";
-            this.SelM.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
-            this.SelM.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.SelM.Name = "SelM";
-            this.SelM.Width = 55;
-            // 
-            // BtnRelacion
-            // 
-            this.BtnRelacion.BackColor = System.Drawing.Color.RoyalBlue;
-            this.BtnRelacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRelacion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRelacion.ForeColor = System.Drawing.Color.White;
-            this.BtnRelacion.Image = global::Pruebas.Properties.Resources.partnership_icon_32x32;
-            this.BtnRelacion.Location = new System.Drawing.Point(891, 56);
-            this.BtnRelacion.Name = "BtnRelacion";
-            this.BtnRelacion.Size = new System.Drawing.Size(170, 44);
-            this.BtnRelacion.TabIndex = 129;
-            this.BtnRelacion.Text = "Relacionar";
-            this.BtnRelacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnRelacion.UseVisualStyleBackColor = false;
-            this.BtnRelacion.Click += new System.EventHandler(this.BtnRelacion_Click);
-            // 
-            // BtnCrear
-            // 
-            this.BtnCrear.BackColor = System.Drawing.Color.Green;
-            this.BtnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCrear.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCrear.ForeColor = System.Drawing.Color.White;
-            this.BtnCrear.Image = global::Pruebas.Properties.Resources.Group_icon_icons32x32;
-            this.BtnCrear.Location = new System.Drawing.Point(891, 6);
-            this.BtnCrear.Name = "BtnCrear";
-            this.BtnCrear.Size = new System.Drawing.Size(170, 44);
-            this.BtnCrear.TabIndex = 128;
-            this.BtnCrear.Text = "Crear Grupo";
-            this.BtnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnCrear.UseVisualStyleBackColor = false;
-            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
             // BtnActualizar
             // 
@@ -702,7 +702,7 @@
             this.Controls.Add(this.LblFraccion);
             this.Controls.Add(this.LblTFraccion);
             this.Controls.Add(this.BtnEliminar);
-            this.Controls.Add(this.TcEmpleados);
+            this.Controls.Add(this.TcDestajo);
             this.Controls.Add(this.LblTCantidad);
             this.Controls.Add(this.LblRestante);
             this.Controls.Add(this.LblTRestante);
@@ -729,11 +729,11 @@
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnCerrar);
-            this.Controls.Add(this.LblTituloFraccEstilo);
+            this.Controls.Add(this.LblTDestajo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDestajo";
             this.Text = "FrmDestajo";
-            this.TcEmpleados.ResumeLayout(false);
+            this.TcDestajo.ResumeLayout(false);
             this.TpIndex.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvDestajo)).EndInit();
             this.TpTrabajador.ResumeLayout(false);
@@ -752,7 +752,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label LblTituloFraccEstilo;
+        private System.Windows.Forms.Label LblTDestajo;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnActualizar;
         private System.Windows.Forms.Button BtnAgregar;
@@ -780,7 +780,7 @@
         private System.Windows.Forms.Label LblRestante;
         private System.Windows.Forms.Label LblTRestante;
         private System.Windows.Forms.Label LblTCantidad;
-        private System.Windows.Forms.TabControl TcEmpleados;
+        private System.Windows.Forms.TabControl TcDestajo;
         private System.Windows.Forms.TabPage TpIndex;
         private System.Windows.Forms.DataGridView DgvDestajo;
         private System.Windows.Forms.DataGridViewImageColumn Editar;

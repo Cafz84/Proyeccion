@@ -6,8 +6,8 @@ namespace Entidades.Usuario
     public class ClsDestajo
     {
         #region Variables Privadas
-        private int _uEmpId, _uFraccId, _uCantidadFE, _semana;
-        private string _uEstilo, _programa, _uColor, _nombre;
+        private int _uEmpId, _uFraccId, _uCantidadFE, _semana, _cEmpId, _cFraccId, _cSemana;
+        private string _uEstilo, _programa, _uColor, _nombre, _cEstilo, _cPrograma;
         private float _cantidad, _pago, _uFracCosto, _pagado, _restante;
         private DateTime _fechaCaptura;
 
@@ -34,6 +34,11 @@ namespace Entidades.Usuario
         public string Nombre { get => _nombre; set => _nombre = value; }
         public float Pagado { get => _pagado; set => _pagado = value; }
         public float Restante { get => _restante; set => _restante = value; }
+        public int CEmpId { get => _cEmpId; set => _cEmpId = value; }
+        public int CFraccId { get => _cFraccId; set => _cFraccId = value; }
+        public int CSemana { get => _cSemana; set => _cSemana = value; }
+        public string CEstilo { get => _cEstilo; set => _cEstilo = value; }
+        public string CPrograma { get => _cPrograma; set => _cPrograma = value; }
         #endregion
     }
 }

@@ -1,8 +1,8 @@
 ﻿using Entidades.Usuario;
 using LogicaNegocio.Usuario;
-using Proyeccion.Principal;
 using Pruebas.Utilidades;
 using System;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Pruebas.Formas
@@ -227,6 +227,25 @@ namespace Pruebas.Formas
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+        #endregion
+
+        #region Mover la ventana
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        private void FrmTipoEscaneo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void LblTituloTipoEscaneo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         #endregion
     }

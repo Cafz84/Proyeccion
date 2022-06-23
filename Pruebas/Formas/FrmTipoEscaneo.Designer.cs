@@ -232,6 +232,7 @@
             this.LblTituloTipoEscaneo.Size = new System.Drawing.Size(275, 39);
             this.LblTituloTipoEscaneo.TabIndex = 49;
             this.LblTituloTipoEscaneo.Text = "Tipo de Escaneo";
+            this.LblTituloTipoEscaneo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblTituloTipoEscaneo_MouseDown);
             // 
             // FrmTipoEscaneo
             // 
@@ -256,6 +257,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTipoEscaneo";
             this.Text = "FrmTipoEscaneo";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmTipoEscaneo_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.DgvTipoEscaneo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.ResumeLayout(false);

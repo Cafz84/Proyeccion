@@ -154,6 +154,7 @@
             this.LblTituloDepto.Size = new System.Drawing.Size(250, 39);
             this.LblTituloDepto.TabIndex = 41;
             this.LblTituloDepto.Text = "Departamento";
+            this.LblTituloDepto.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblTituloDepto_MouseDown);
             // 
             // ChkActivo
             // 
@@ -279,6 +280,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDepto";
             this.Text = "FrmDepto";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmDepto_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.DgvDepto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.ResumeLayout(false);

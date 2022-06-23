@@ -173,6 +173,9 @@
   <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="Editar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYa
@@ -218,7 +221,7 @@
   <data name="BtnAgregar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7CAAAOwgEVKEqAAAAAB3RJ
         TUUH5gUUDSIaSVoxjgAABpRJREFUSEuVlntQ1OUax58FWYNCLjLcpsQB59jpVGMW2sScOhl64nZcEMro
         YCWi5smYcREFEj2iYY3BwqaCiihIJHIVKuQSFFdTYaGSWyC7XJb7VVgWVr7n+a3bP86xmZ6Zz77zu7zP
         532f9913l/4oHMPkFNEDAsBXZmLakWRJH5yy5AuxcG/XOMhom1T/7p8K35RSfVLHsFOWIWVtr3/aNBQW
@@ -253,7 +256,7 @@
   <data name="BtnActualizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7CAAAOwgEVKEqAAAAAB3RJ
         TUUH5gUUEC0W04pRSQAABdRJREFUSEuNlnlQlWUUxr/LqqCYuCDCRRAT1Mw/0riiYDhkRGbZoCmmllOZ
         KSpageDOKIrmRjaAW5ga4kgh4IIXlFWQRfZNFgERFQOU7cIFns55762pqdQzc+ae+d7n/N7tnBek55gO
         uT35YklXJ1gaaqiURg7ME86xHn3jMY2GtS9nsoF6/DOG3FcyM8qQKcxVBh52GOE1AzZ+bsI55m88xhqh

@@ -178,10 +178,17 @@ namespace LogicaNegocio.Usuario
                     ObjGrupo.DtResultados = ObjDataBase.DsResultados.Tables[0];
                     if (ObjGrupo.DtResultados.Rows.Count == 1)
                     {
-                        foreach (DataRow dr in ObjGrupo.DtResultados.Rows)
+                        try
                         {
-                            ObjGrupo.GrupoDId = Convert.ToByte(dr["GrupoDId"].ToString());
-                            ObjGrupo.Grupo = dr["Grupo"].ToString();
+                            foreach (DataRow dr in ObjGrupo.DtResultados.Rows)
+                            {
+                                ObjGrupo.GrupoDId = Convert.ToByte(dr["GrupoDId"].ToString());
+                                ObjGrupo.Grupo = dr["Grupo"].ToString();
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Log = e.ToString();
                         }
                     }
                 }

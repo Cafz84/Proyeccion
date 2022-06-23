@@ -131,7 +131,6 @@ namespace Proyeccion.Principal
             BtnAgregar.Enabled = true;
             BtnEliminar.Enabled = false;
             BtnActualizar.Enabled = false;
-            BtnLimpiar.Enabled = false;
         }
         
         public void CargarListaArea()

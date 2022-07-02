@@ -83,9 +83,39 @@ namespace Pruebas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_document03_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder-document03-24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_document03_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder-document03-32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap partnership_icon_32x32 {
             get {
                 object obj = ResourceManager.GetObject("partnership_icon_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xmag_search_find_export_locate_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("xmag_search_find_export_locate_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

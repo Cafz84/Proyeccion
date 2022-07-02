@@ -114,10 +114,14 @@ namespace Proyeccion.Principal
                     ObjDepartamento = new ClsDepartamento()
                     {
                         Name = TxtNombre.Text,
-                        Costo = Convert.ToDouble(TxtCosto.Text),
                         Remarks = TxtDescripcion.Text,
                         Activo = true
                     };
+
+                    if (TxtCosto.Text == string.Empty)
+                        ObjDepartamento.Costo = 0;
+                    else
+                        ObjDepartamento.Costo = Convert.ToDouble(TxtCosto.Text);
 
                     ObjDepartamentoLn.Create(ref ObjDepartamento);
                     if (ObjDepartamento.MsjError == null)

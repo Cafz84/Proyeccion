@@ -5,8 +5,9 @@ namespace Entidades.Usuario
     public class ClsFraccEstilo
     {
         #region Variables Privadas
-        private string _u_IdEstilo, _u_ModCode, _u_ModDesc, _u_CodigoFraccion, _u_NameFraccion, _idEstilo;
+        private string _u_IdEstilo, _u_ModCode, _u_ModDesc, _u_CodigoFraccion, _u_NameFraccion, _idEstilo, _bNombre, _programa;
         private int _u_IdFraccion, _idFraccion, _cantidad;
+        private double _tiempo, _costo, _costoMuestra;
 
         //Atributos de manejo de la base de datos
         private string _msjError, _valorEscalar;
@@ -26,6 +27,11 @@ namespace Entidades.Usuario
         public int IdFraccion { get => _idFraccion; set => _idFraccion = value; }
         public string U_ModDesc { get => _u_ModDesc; set => _u_ModDesc = value; }
         public int Cantidad { get => _cantidad; set => _cantidad = value; }
+        public string BNombre { get => _bNombre; set => _bNombre = value; }
+        public double Tiempo { get => _tiempo; set => _tiempo = value; }
+        public double Costo { get => _costo; set => _costo = value; }
+        public double CostoMuestra { get => _costoMuestra; set => _costoMuestra = value; }
+        public string Programa { get => _programa; set => _programa = value; }
         #endregion
     }
 }

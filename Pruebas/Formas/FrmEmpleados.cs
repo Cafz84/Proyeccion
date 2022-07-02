@@ -3,6 +3,7 @@ using LogicaNegocio.Usuario;
 using Pruebas.Formas;
 using Pruebas.Utilidades;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Proyeccion.Principal
@@ -64,12 +65,18 @@ namespace Proyeccion.Principal
         #region Metodos Privados
         private void CargarListaEmpleados()
         {
-            ObjEmpleado = new ClsEmpleado();
+            ObjEmpleado = new ClsEmpleado()
+            {
+                Nombre = TxtBTrabajador.Text
+            };
             ObjEmpleadoLn.Index(ref ObjEmpleado);
             if (ObjEmpleado.MsjError == null)
             {
                 DgvEmpleados.DataSource = ObjEmpleado.DtResultados;
                 ObjUtilidades.FormatoDgvEmpleado(ref DgvEmpleados);
+                DgvEmpleados.Columns["ID"].Visible = false;
+                DgvEmpleados.Columns["Editar"].Width = 35;
+                DgvEmpleados.Columns["Nombre"].Width = 300;
             }
             else
             {
@@ -86,9 +93,9 @@ namespace Proyeccion.Principal
             TxtNombre.Text = string.Empty;
             TxtNombre2.Text = string.Empty;
             TxtApellido.Text = string.Empty;
-            CbArea.SelectedIndex = -1;
-            CbDepto.SelectedIndex = -1;
-            CbPuesto.SelectedIndex = -1;
+            CbArea.Text = string.Empty;
+            CbDepto.Text = string.Empty;
+            CbPuesto.Text = string.Empty;
             TxtTelCasa.Text = string.Empty;
             TxtTelMovil.Text = string.Empty;
             TxtEmail.Text = string.Empty;
@@ -304,34 +311,75 @@ namespace Proyeccion.Principal
                     {
                         ObjEmpleado = new ClsEmpleado()
                         {
-                            FirstName = TxtNombre.Text,
-                            MiddleName = TxtNombre2.Text,
-                            LastName = TxtApellido.Text,
+                            FirstName = TxtNombre.Text.ToUpper(),
+                            MiddleName = TxtNombre2.Text.ToUpper(),
+                            LastName = TxtApellido.Text.ToUpper(),
                             JobTitle = CbArea.Text,
-                            Dept = Convert.ToInt16(CbDepto.SelectedValue),
-                            Position = Convert.ToInt16(CbPuesto.SelectedValue),
                             HomeTel = TxtTelCasa.Text,
                             Mobile = TxtTelMovil.Text,
                             Email = TxtEmail.Text,
                             Active = 'Y',
-                            HomeCountr = CbPais.SelectedValue.ToString(),
-                            HomeState = CbEstado.SelectedValue.ToString(),
-                            HomeCounty = cbCiudad.SelectedValue.ToString(),
                             HomeCity = cbCiudad.Text,
                             HomeBlock = TxtColonia.Text,
                             HomeStreet = TxtDireccion.Text,
                             StreetNoH = TxtNoExt.Text,
                             HomeBuild = TxtNoInt.Text,
                             HomeZip = TxtCP.Text,
-                            Sex = CbSexo.Text[0],
-                            NChildren = Convert.ToInt16(TxtNHijos.Text),
                             GovID = TxtCURP.Text,
-                            Salary = Convert.ToDecimal(TxtSalario.Text),
-                            SueldoBase = Convert.ToDecimal(TxtSueldoBase.Text),
-                            SueldoLimite = Convert.ToDecimal(TxtSueldoLimite.Text)
+                            UpdateDate = DateTime.Today.Date
                         };
 
-                        if (DtpFechaInicio.Text == " ")
+                        if (TxtSueldoBase.Text == string.Empty)
+                            ObjEmpleado.SueldoBase = 0;
+                        else
+                            ObjEmpleado.SueldoBase = Convert.ToDecimal(TxtSueldoBase.Text);
+
+                        if (TxtSueldoLimite.Text == string.Empty)
+                            ObjEmpleado.SueldoLimite = 0;
+                        else
+                            ObjEmpleado.SueldoLimite = Convert.ToDecimal(TxtSueldoLimite.Text);
+
+                        if (TxtSalario.Text == string.Empty)
+                            ObjEmpleado.Salary = 0;
+                        else
+                            ObjEmpleado.Salary = Convert.ToDecimal(TxtSalario.Text);
+
+                        if (TxtNHijos.Text == string.Empty)
+                            ObjEmpleado.NChildren = null;
+                        else
+                            ObjEmpleado.NChildren = Convert.ToInt16(TxtNHijos.Text);
+
+                        if (CbSexo.Text == string.Empty)
+                            ObjEmpleado.Sex = null;
+                        else
+                            ObjEmpleado.Sex = CbSexo.Text[0];
+
+                        if (CbDepto.Text == string.Empty)
+                            ObjEmpleado.Dept = null;
+                        else
+                            ObjEmpleado.Dept = Convert.ToInt16(CbDepto.SelectedValue);
+
+                        if (CbPuesto.Text == string.Empty)
+                            ObjEmpleado.Position = null;
+                        else
+                            ObjEmpleado.Position = Convert.ToInt16(CbPuesto.SelectedValue);
+
+                        if (CbPais.Text == string.Empty)
+                            ObjEmpleado.HomeCountr = null;
+                        else
+                            ObjEmpleado.HomeCountr = CbPais.SelectedValue.ToString();
+
+                        if (CbEstado.Text == string.Empty)
+                            ObjEmpleado.HomeState = null;
+                        else
+                            ObjEmpleado.HomeState = CbEstado.SelectedValue.ToString();
+
+                        if (cbCiudad.Text == string.Empty)
+                            ObjEmpleado.HomeCounty = null;
+                        else
+                            ObjEmpleado.HomeCounty = cbCiudad.SelectedValue.ToString();
+
+                        if (Regex.Replace(DtpFechaInicio.Text, @"\s", "") == "")
                         {
                             ObjEmpleado.StartDate = null;
                         }
@@ -340,7 +388,7 @@ namespace Proyeccion.Principal
                             ObjEmpleado.StartDate = DtpFechaInicio.Value;
                         }
 
-                        if (DtpFechaRC.Text == " ")
+                        if (Regex.Replace(DtpFechaRC.Text, @"\s", "") == "")
                         {
                             ObjEmpleado.TermDate = null;
                         }
@@ -349,7 +397,7 @@ namespace Proyeccion.Principal
                             ObjEmpleado.TermDate = DtpFechaInicio.Value;
                         }
 
-                        if (DtpFechaNacimiento.Text == " ")
+                        if (Regex.Replace(DtpFechaNacimiento.Text, @"\s", "") == "")
                         {
                             ObjEmpleado.BirthDate = null;
                         }
@@ -494,33 +542,74 @@ namespace Proyeccion.Principal
                     ObjEmpleado = new ClsEmpleado()
                     {
                         EmpID = Convert.ToInt16(LblEmpId.Text),
-                        FirstName = TxtNombre.Text,
-                        MiddleName = TxtNombre2.Text,
-                        LastName = TxtApellido.Text,
+                        FirstName = TxtNombre.Text.ToUpper(),
+                        MiddleName = TxtNombre2.Text.ToUpper(),
+                        LastName = TxtApellido.Text.ToUpper(),
                         JobTitle = CbArea.Text,
-                        Dept = Convert.ToInt16(CbDepto.SelectedValue),
-                        Position = Convert.ToInt16(CbPuesto.SelectedValue),
                         HomeTel = TxtTelCasa.Text,
                         Mobile = TxtTelMovil.Text,
                         Email = TxtEmail.Text,
-                        HomeCountr = CbPais.SelectedValue.ToString(),
-                        HomeState = CbEstado.SelectedValue.ToString(),
-                        HomeCounty = cbCiudad.SelectedValue.ToString(),
                         HomeCity = cbCiudad.Text,
                         HomeBlock = TxtColonia.Text,
                         HomeStreet = TxtDireccion.Text,
                         StreetNoH = TxtNoExt.Text,
                         HomeBuild = TxtNoInt.Text,
                         HomeZip = TxtCP.Text,
-                        Sex = CbSexo.Text[0],
-                        NChildren = Convert.ToInt16(TxtNHijos.Text),
                         GovID = TxtCURP.Text,
-                        Salary = Convert.ToDecimal(TxtSalario.Text),
-                        SueldoBase = Convert.ToDecimal(TxtSueldoBase.Text),
-                        SueldoLimite = Convert.ToDecimal(TxtSueldoLimite.Text)
+                        UpdateDate = DateTime.Today.Date
                     };
 
-                    if (DtpFechaInicio.Text == " ")
+                    if (TxtSueldoBase.Text == string.Empty)
+                        ObjEmpleado.SueldoBase = 0;
+                    else
+                        ObjEmpleado.SueldoBase = Convert.ToDecimal(TxtSueldoBase.Text);
+
+                    if (TxtSueldoLimite.Text == string.Empty)
+                        ObjEmpleado.SueldoLimite = 0;
+                    else
+                        ObjEmpleado.SueldoLimite = Convert.ToDecimal(TxtSueldoLimite.Text);
+
+                    if (TxtSalario.Text == string.Empty)
+                        ObjEmpleado.Salary = 0;
+                    else
+                        ObjEmpleado.Salary = Convert.ToDecimal(TxtSalario.Text);
+
+                    if (TxtNHijos.Text == string.Empty)
+                        ObjEmpleado.NChildren = null;
+                    else
+                        ObjEmpleado.NChildren = Convert.ToInt16(TxtNHijos.Text);
+
+                    if (CbSexo.Text == string.Empty)
+                        ObjEmpleado.Sex = null;
+                    else
+                        ObjEmpleado.Sex = CbSexo.Text[0];
+
+                    if (CbDepto.Text == string.Empty)
+                        ObjEmpleado.Dept = null;
+                    else
+                        ObjEmpleado.Dept = Convert.ToInt16(CbDepto.SelectedValue);
+
+                    if (CbPuesto.Text == string.Empty)
+                        ObjEmpleado.Position = null;
+                    else
+                        ObjEmpleado.Position = Convert.ToInt16(CbPuesto.SelectedValue);
+
+                    if (CbPais.Text == string.Empty)
+                        ObjEmpleado.HomeCountr = null;
+                    else
+                        ObjEmpleado.HomeCountr = CbPais.SelectedValue.ToString();
+
+                    if (CbEstado.Text == string.Empty)
+                        ObjEmpleado.HomeState = null;
+                    else
+                        ObjEmpleado.HomeState = CbEstado.SelectedValue.ToString();
+
+                    if (cbCiudad.Text == string.Empty)
+                        ObjEmpleado.HomeCounty = null;
+                    else
+                        ObjEmpleado.HomeCounty = cbCiudad.SelectedValue.ToString();
+
+                    if (Regex.Replace(DtpFechaInicio.Text, @"\s", "") == "")
                     {
                         ObjEmpleado.StartDate = null;
                     }
@@ -529,7 +618,7 @@ namespace Proyeccion.Principal
                         ObjEmpleado.StartDate = DtpFechaInicio.Value;
                     }
 
-                    if (DtpFechaRC.Text == " ")
+                    if (Regex.Replace(DtpFechaRC.Text, @"\s", "") == "")
                     {
                         ObjEmpleado.TermDate = null;
                     }
@@ -538,7 +627,7 @@ namespace Proyeccion.Principal
                         ObjEmpleado.TermDate = DtpFechaInicio.Value;
                     }
 
-                    if (DtpFechaNacimiento.Text == " ")
+                    if (Regex.Replace(DtpFechaNacimiento.Text, @"\s", "") == "")
                     {
                         ObjEmpleado.BirthDate = null;
                     }
@@ -1134,6 +1223,11 @@ namespace Proyeccion.Principal
             //Para que solo acepte numeros y no texto
             e.Handled = !char.IsDigit(e.KeyChar);
         }
+
+        private void TxtBTrabajador_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaEmpleados();
+        }
         #endregion
 
         #region Acciones con DateTimePicker
@@ -1141,6 +1235,12 @@ namespace Proyeccion.Principal
         {
             DtpFechaInicio.Format = DateTimePickerFormat.Custom;
             DtpFechaInicio.CustomFormat = "dd/MM/yyyy";
+        }
+
+        private void DtpFechaRC_ValueChanged(object sender, EventArgs e)
+        {
+            DtpFechaRC.Format = DateTimePickerFormat.Custom;
+            DtpFechaRC.CustomFormat = "dd/MM/yyyy";
         }
 
         private void DtpFechaNacimiento_ValueChanged(object sender, EventArgs e)

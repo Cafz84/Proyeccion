@@ -117,5 +117,10 @@ namespace Proyeccion.Principal
         {
             AbrirFrmHijo(new FrmDestajo());
         }
+
+        private void BtnRevDestajo_Click(object sender, EventArgs e)
+        {
+            AbrirFrmHijo(new FrmRevDestajo());
+        }
     }
 }

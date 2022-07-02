@@ -22,6 +22,8 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            ObjDataBase.DtParametros.Rows.Add(@"@Codigo", "18", ObjTablasSAP.U_ModCode);
+            ObjDataBase.DtParametros.Rows.Add(@"@Estilo", "18", ObjTablasSAP.U_ModDesc);
             Ejecutar(ref ObjTablasSAP);
         }
         #endregion
@@ -61,7 +63,7 @@ namespace LogicaNegocio.Usuario
                         foreach (DataRow dr in ObjTablasSAP.DtResultados.Rows)
                         {
                             ObjTablasSAP.Code = dr["Code"].ToString();
-                            ObjTablasSAP.U_ModCode = dr["U_ModCode"].ToString();
+                            ObjTablasSAP.U_ModCode = dr["Codigo"].ToString();
                             ObjTablasSAP.U_ModDesc = dr["Estilo"].ToString();
                         }
                     }

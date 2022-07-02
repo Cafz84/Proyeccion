@@ -38,6 +38,20 @@ namespace LogicaNegocio.Usuario
 
             CargarListaGrupo(ref ObjGrupo);
         }
+
+        public void CargarIndexBGrupo(ref ClsGrupo ObjGrupo)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "GrupoD",
+                NombreSP = "dbo.SP_CargarBGrupoD",
+                Scalar = false
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@Grupo", "18", ObjGrupo.Grupo);
+            CargarListaGrupo(ref ObjGrupo);
+        }
         #endregion
 
         #region CRUD Grupo

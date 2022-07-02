@@ -56,12 +56,31 @@ namespace Pruebas.Formas
         #region Metodos Privados
         private void CargarListaDestajo()
         {
-            ObjDestajo = new ClsDestajo();
+            ObjDestajo = new ClsDestajo()
+            {
+                Nombre = TxtBINombre.Text,
+                Fraccion = TxtBIFraccion.Text
+            };
+            if (TxtBISemana.Text == string.Empty)
+            {
+                ObjDestajo.Semana = 0;
+            }
+            else
+            {
+                ObjDestajo.Semana = Convert.ToInt16(TxtBISemana.Text);
+            }
+
             ObjDestajoLn.Index(ref ObjDestajo);
             if (ObjDestajo.MsjError == null)
             {
                 DgvDestajo.DataSource = ObjDestajo.DtResultados;
                 ObjUtilidades.FormatoDgvEmpleado(ref DgvDestajo);
+                DgvDestajo.Columns["UEmpId"].Visible = false;
+                DgvDestajo.Columns["UFraccId"].Visible = false;
+                DgvDestajo.Columns["FechaCaptura"].Visible = false;
+                DgvDestajo.Columns["UFracCosto"].Visible = false;
+                DgvDestajo.Columns["UCantidadFE"].Visible = false;
+                DgvDestajo.Columns["Pago"].Visible = false;
             }
             else
             {
@@ -71,12 +90,18 @@ namespace Pruebas.Formas
 
         private void CargarListaEmpleado()
         {
-            ObjEmpleado = new ClsEmpleado();
+            ObjEmpleado = new ClsEmpleado()
+            {
+                Nombre = TxtBTrabajador.Text
+            };
+
             ObjEmpleadoLn.IndexActivoVariable(ref ObjEmpleado);
             if (ObjEmpleado.MsjError == null)
             {
                 DgvEmpleado.DataSource = ObjEmpleado.DtResultados;
                 ObjUtilidades.FormatoDgvPEC(ref DgvEmpleado);
+                DgvEmpleado.Columns["empID"].Visible = false;
+                DgvEmpleado.Columns["SelT"].Width = 30;
             }
             else
             {
@@ -84,14 +109,81 @@ namespace Pruebas.Formas
             }
         }
 
+        private void CargarListaFraccEstilo()
+        {
+            ObjFraccEstilo = new ClsFraccEstilo()
+            {
+                U_ModDesc = LblEstilo.Text,
+                BNombre = TxtBFraccion.Text,
+                Programa = TxtPrograma.Text
+            };
+
+            ObjFraccEstiloLn.ReadEstilo(ref ObjFraccEstilo);
+            if (ObjFraccEstilo.MsjError == null)
+            {
+                DgvFraccion.DataSource = ObjFraccEstilo.DtResultados;
+                ObjUtilidades.FormatoDgvPEC(ref DgvFraccion);
+                DgvFraccion.Columns["Id"].Visible = false;
+                DgvFraccion.Columns["SelF"].Width = 30;
+                DgvFraccion.Columns["Fraccion"].Width = 400;
+            }
+            else
+            {
+                MessageBox.Show(ObjFraccEstilo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void CargarListaMuestra()
         {
-            ObjFraccion = new ClsFraccion();
-            ObjFraccionLn.ReadMuestra(ref ObjFraccion);
-            if (ObjFraccion.MsjError == null)
+            ObjFraccEstilo = new ClsFraccEstilo();
+            ObjFraccEstiloLn.ReadMuestra(ref ObjFraccEstilo);
+            if (ObjFraccEstilo.MsjError == null)
             {
-                DgvMuestra.DataSource = ObjFraccion.DtResultados;
+                DgvMuestra.DataSource = ObjFraccEstilo.DtResultados;
                 ObjUtilidades.FormatoDgvPEC(ref DgvMuestra);
+            }
+        }
+
+        private void CargarDatosPrograma()
+        {
+            ObjTablasSAP = new ClsTablasSAP()
+            {
+                Programa = TxtPrograma.Text
+            };
+
+            ObjTabasSAPLn.ReadPedidoCantidad(ref ObjTablasSAP);
+            if (ObjTablasSAP.MsjError == null)
+            {
+                LblEstilo.Text = ObjTablasSAP.Estilo;
+                LblColor.Text = ObjTablasSAP.Color;
+                LblPP.Text = ObjTablasSAP.CantPedido.ToString();
+                if (LblEstilo.Text != string.Empty)
+                {
+                    TxtBFraccion.Enabled = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show(ObjTablasSAP.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RevisarPagados()
+        {
+            ObjDestajo = new ClsDestajo()
+            {
+                Programa = TxtPrograma.Text,
+                UFraccId = Convert.ToInt16(LblFraccId.Text)
+            };
+
+            ObjDestajoLn.ReadPagados(ref ObjDestajo);
+            if (ObjDestajo.MsjError == null)
+            {
+                LblPagado.Text = ObjDestajo.Pagado.ToString();
+            }
+            else
+            {
+                MessageBox.Show(ObjDestajo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -111,6 +203,12 @@ namespace Pruebas.Formas
             TxtCantidad.Text = string.Empty;
             DgvFraccion.DataSource = null;
             DgvFraccion.Rows.Clear();
+            TxtBFraccion.Text = string.Empty;
+            TxtBFraccion.Enabled = false;
+            TxtBIFraccion.Text = string.Empty;
+            TxtBINombre.Text = string.Empty;
+            TxtBISemana.Text = string.Empty;
+            TxtBGrupo.Text = string.Empty;
 
             fracCosto = 0;
             uEmpId = 0;
@@ -375,6 +473,33 @@ namespace Pruebas.Formas
             }
         }
 
+        private void DgvDestajo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DgvDestajo.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                CbSemana.Text = DgvEmpleado.Rows[e.RowIndex].Cells["Semana"].Value.ToString();
+                LblEmpId.Text = DgvEmpleado.Rows[e.RowIndex].Cells["UEmpID"].Value.ToString();
+                LblFraccId.Text = DgvEmpleado.Rows[e.RowIndex].Cells["UFraccId"].Value.ToString();
+                LblCXE.Text = DgvEmpleado.Rows[e.RowIndex].Cells["UCantidadFE"].Value.ToString();
+                LblNombre.Text = DgvEmpleado.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                TxtPrograma.Text = DgvEmpleado.Rows[e.RowIndex].Cells["Programa"].Value.ToString();
+                CargarDatosPrograma();
+                LblFraccion.Text = DgvEmpleado.Rows[e.RowIndex].Cells["Fraccion"].Value.ToString();
+                RevisarPagados();
+                TxtCantidad.Text = DgvEmpleado.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString();
+                fracCosto = Convert.ToSingle(DgvEmpleado.Rows[e.RowIndex].Cells["UFracCosto"].Value.ToString());
+                LblRestante.Text = Convert.ToString(Convert.ToInt16(LblPP.Text) - Convert.ToSingle(LblPagado.Text));
+
+                uEmpId = Convert.ToInt16(LblEmpId.Text);
+                uFraccId = Convert.ToInt16(LblFraccId.Text);
+                uEstilo = LblEstilo.Text;
+                uPrograma = TxtPrograma.Text;
+                uSemana = Convert.ToInt16(CbSemana.Text);
+
+                CargarListaFraccEstilo();
+            }
+        }
+
         private void DgvFraccion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (DgvFraccion.Columns[e.ColumnIndex].Name == "SelF")
@@ -382,22 +507,16 @@ namespace Pruebas.Formas
                 LblFraccId.Text = DgvFraccion.Rows[e.RowIndex].Cells["Id"].Value.ToString();
                 LblFraccion.Text = DgvFraccion.Rows[e.RowIndex].Cells["Fraccion"].Value.ToString();
                 LblCXE.Text = DgvFraccion.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString();
-
-                ObjDestajo = new ClsDestajo()
+                if (TxtPrograma.Text == "MUESTRA")
                 {
-                    Programa = TxtPrograma.Text,
-                    UFraccId = Convert.ToInt16(LblFraccId.Text)
-                };
-
-                ObjDestajoLn.ReadPagados(ref ObjDestajo);
-                if (ObjDestajo.MsjError == null)
-                {
-                    LblPagado.Text = ObjDestajo.Pagado.ToString();
+                    fracCosto = Convert.ToSingle(DgvFraccion.Rows[e.RowIndex].Cells["CostoMuestra"].Value.ToString());
                 }
                 else
                 {
-                    MessageBox.Show(ObjDestajo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    fracCosto = Convert.ToSingle(DgvFraccion.Rows[e.RowIndex].Cells["Costo"].Value.ToString());
                 }
+
+                RevisarPagados();
 
                 LblRestante.Text = (Convert.ToSingle(LblPP.Text) - Convert.ToSingle(LblPagado.Text)).ToString();
             }
@@ -414,18 +533,13 @@ namespace Pruebas.Formas
                 LblPagado.Text = "N/A";
                 LblRestante.Text = "N/A";
 
-                ObjFraccEstilo = new ClsFraccEstilo()
-                {
-                    U_ModDesc = LblEstilo.Text
-                };
-
-                ObjFraccEstiloLn.ReadMuestra(ref ObjFraccEstilo);
-                if (ObjFraccEstilo.MsjError == null)
-                {
-                    DgvFraccion.DataSource = ObjFraccEstilo.DtResultados;
-                    ObjUtilidades.FormatoDgvPEC(ref DgvFraccion);
-                }
+                CargarListaFraccEstilo();
             }
+        }
+
+        private void DgvGrupo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
         #endregion
 
@@ -434,58 +548,102 @@ namespace Pruebas.Formas
         {
             if (e.KeyCode == Keys.Enter)
             {
-                ObjTablasSAP = new ClsTablasSAP()
+                if (TxtPrograma.Text != string.Empty)
                 {
-                    Programa = TxtPrograma.Text
-                };
+                    CargarDatosPrograma();
 
-                ObjTabasSAPLn.ReadPedidoCantidad(ref ObjTablasSAP);
-                if (ObjTablasSAP.MsjError == null)
-                {
-                    LblEstilo.Text = ObjTablasSAP.Estilo;
-                    LblColor.Text = ObjTablasSAP.Color;
-                    LblPP.Text = ObjTablasSAP.CantPedido.ToString();
+                    //Revisar si ya se pago algo de la Fraccion y que no este vacia la captura de la Fracción
+                    if (LblFraccId.Text != string.Empty)
+                    {
+                        RevisarPagados();
+                    }
+
+                    CargarListaFraccEstilo();
                 }
                 else
                 {
-                    MessageBox.Show(ObjTablasSAP.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Favor de colocar un programa valido");
+                    TxtPrograma.Focus();
                 }
+            }
+        }
 
-                //Revisar si ya se pago algo de la Fraccion y que no este vacia la captura de la Fracción
-                if (LblFraccId.Text != string.Empty)
+        private void TxtBFraccion_TextChanged(object sender, EventArgs e)
+        {
+            if (DgvFraccion.DataSource != null)
+            {
+                CargarListaFraccEstilo();
+            }
+        }
+
+        private void TxtBINombre_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaDestajo();
+        }
+
+        private void TxtBISemana_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaDestajo();
+        }
+
+        private void TxtBIFraccion_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaDestajo();
+        }
+
+        private void TxtBISemana_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para que solo acepte numeros y no texto
+            e.Handled = !char.IsDigit(e.KeyChar);
+        }
+
+        private void TxtBTrabajador_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaEmpleado();
+        }
+
+        private void TxtBMuestra_TextChanged(object sender, EventArgs e)
+        {
+            if (TxtBMuestra.Text != string.Empty)
+            {
+                ObjFraccion = new ClsFraccion()
                 {
-                    ObjDestajo = new ClsDestajo()
-                    {
-                        Programa = TxtPrograma.Text,
-                        UFraccId = Convert.ToInt16(LblFraccId.Text)
-                    };
-
-                    ObjDestajoLn.ReadPagados(ref ObjDestajo);
-                    if (ObjDestajo.MsjError == null)
-                    {
-                        LblPagado.Text = ObjDestajo.Pagado.ToString();
-                    }
-                    else
-                    {
-                        MessageBox.Show(ObjDestajo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
-                //Se carga la lista de fracciones
-                ObjFraccEstilo = new ClsFraccEstilo()
-                {
-                    U_ModDesc = LblEstilo.Text
+                    Name = TxtBMuestra.Text
                 };
-                ObjFraccEstiloLn.ReadEstilo(ref ObjFraccEstilo);
-                if (ObjFraccEstilo.MsjError == null)
+                ObjFraccionLn.ReadBMuestra(ref ObjFraccion);
+                if (ObjFraccion.MsjError == null)
                 {
-                    DgvFraccion.DataSource = ObjFraccEstilo.DtResultados;
-                    ObjUtilidades.FormatoDgvPEC(ref DgvFraccion);
+                    DgvMuestra.DataSource = ObjFraccion.DtResultados;
+                    ObjUtilidades.FormatoDgvPEC(ref DgvMuestra);
+                }
+            }
+            else
+            {
+                CargarListaMuestra();
+            }
+        }
+
+        private void TxtBGrupo_TextChanged(object sender, EventArgs e)
+        {
+            if (TxtBGrupo.Text != string.Empty)
+            {
+                ObjGrupo = new ClsGrupo();
+                ObjGrupoLn.CargarIndexBGrupo(ref ObjGrupo);
+                if (ObjGrupo.MsjError == null)
+                {
+                    DgvGrupo.DataSource = ObjGrupo.DtResultados;
+                    ObjUtilidades.FormatoDgvPEC(ref DgvGrupo);
+
+                    DgvGrupo.Columns["Id"].Visible = false;
                 }
                 else
                 {
-                    MessageBox.Show(ObjFraccEstilo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ObjGrupo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                CargarListaGrupo();
             }
         }
         #endregion

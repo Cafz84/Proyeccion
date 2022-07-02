@@ -30,10 +30,7 @@ namespace Pruebas.Formas
             ChkActivo.Checked = false;
             TxtNombre.Text = string.Empty;
             TxtDescripcion.Text = string.Empty;
-            TxtTiempo.Text = string.Empty;
-            TxtCosto.Text = string.Empty;
 
-            BtnLimpiar.Enabled = false;
             BtnAgregar.Enabled = true;
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
@@ -41,12 +38,21 @@ namespace Pruebas.Formas
 
         private void CargarListaFracciones()
         {
-            ObjFraccion = new ClsFraccion();
+            ObjFraccion = new ClsFraccion()
+            {
+                Name = TxtBFraccion.Text,
+                Codigo = TxtBCodFraccion.Text
+            };
+
             ObjFraccionLn.Index(ref ObjFraccion);
             if (ObjFraccion.MsjError == null)
             {
                 DgvFracciones.DataSource = ObjFraccion.DtResultados;
-                ObjUtilidades.FormatoDgvEmpleado(ref DgvFracciones);
+                ObjUtilidades.FormatoDgvPEC(ref DgvFracciones);
+                DgvFracciones.Columns["FraccionId"].Visible = false;
+                DgvFracciones.Columns["Editar"].Width = 30;
+                DgvFracciones.Columns["Codigo"].Width = 55;
+                DgvFracciones.Columns["Fraccion"].Width = 300;
             }
             else
             {
@@ -90,8 +96,6 @@ namespace Pruebas.Formas
                             Codigo = TxtCodFraccion.Text,
                             Name = TxtNombre.Text,
                             Descripcion = TxtDescripcion.Text,
-                            Tiempo = Convert.ToDouble(TxtTiempo.Text),
-                            Costo = Convert.ToDouble(TxtCosto.Text),
                             Activo = true
                         };
 
@@ -132,9 +136,7 @@ namespace Pruebas.Formas
                         FraccionId = Convert.ToInt16(LblFraccionId.Text),
                         Codigo = TxtCodFraccion.Text,
                         Name = TxtNombre.Text,
-                        Descripcion = TxtDescripcion.Text,
-                        Tiempo = Convert.ToDouble(TxtTiempo.Text),
-                        Costo = Convert.ToDouble(TxtCosto.Text)
+                        Descripcion = TxtDescripcion.Text
                     };
                     if (ChkActivo.Checked)
                     {
@@ -244,8 +246,6 @@ namespace Pruebas.Formas
                     TxtCodFraccion.Text = ObjFraccion.Codigo;
                     TxtNombre.Text = ObjFraccion.Name;
                     TxtDescripcion.Text = ObjFraccion.Descripcion;
-                    TxtTiempo.Text = ObjFraccion.Tiempo.ToString();
-                    TxtCosto.Text = ObjFraccion.Costo.ToString();
                     if (ObjFraccion.Activo == true)
                     {
                         ChkActivo.Checked = true;
@@ -264,34 +264,14 @@ namespace Pruebas.Formas
         #endregion
 
         #region Acciones con TextBox
-        private void TxtTiempo_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtBFraccion_TextChanged(object sender, EventArgs e)
         {
-            //Para que solo acepte numeros y no texto
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            //Para que solo se pueda colocar un solo punto y no mas
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+            CargarListaFracciones();
         }
 
-        private void TxtCosto_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtBCodFraccion_TextChanged(object sender, EventArgs e)
         {
-            //Para que solo acepte numeros y no texto
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            //Para que solo se pueda colocar un solo punto y no mas
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+            CargarListaFracciones();
         }
         #endregion
     }

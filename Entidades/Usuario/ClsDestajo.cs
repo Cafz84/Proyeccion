@@ -7,7 +7,7 @@ namespace Entidades.Usuario
     {
         #region Variables Privadas
         private int _uEmpId, _uFraccId, _uCantidadFE, _semana, _cEmpId, _cFraccId, _cSemana;
-        private string _uEstilo, _programa, _uColor, _nombre, _cEstilo, _cPrograma;
+        private string _uEstilo, _programa, _uColor, _nombre, _cEstilo, _cPrograma, _fraccion;
         private float _cantidad, _pago, _uFracCosto, _pagado, _restante;
         private DateTime _fechaCaptura;
 
@@ -39,6 +39,7 @@ namespace Entidades.Usuario
         public int CSemana { get => _cSemana; set => _cSemana = value; }
         public string CEstilo { get => _cEstilo; set => _cEstilo = value; }
         public string CPrograma { get => _cPrograma; set => _cPrograma = value; }
+        public string Fraccion { get => _fraccion; set => _fraccion = value; }
         #endregion
     }
 }

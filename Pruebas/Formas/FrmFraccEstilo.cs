@@ -37,9 +37,14 @@ namespace Pruebas.Formas
             LblIdFraccion.Text = string.Empty;
             LblCodFraccion.Text = string.Empty;
             LblNomFraccion.Text = string.Empty;
+            TxtBEstiloFE.Text = string.Empty;
+            TxtBFraccionFE.Text = string.Empty;
+            TxtBEstilo.Text = string.Empty;
+            TxtBCodEstilo.Text = string.Empty;
+            TxtBCodFraccion.Text = string.Empty;
+            TxtBFraccion.Text = string.Empty;
             TxtCantidad.Text = "1";
 
-            BtnLimpiar.Enabled = false;
             BtnAgregar.Enabled = true;
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
@@ -52,7 +57,6 @@ namespace Pruebas.Formas
             LblNomFraccion.Text = string.Empty;
             TxtCantidad.Text = "1";
 
-            BtnLimpiar.Enabled = false;
             BtnActualizar.Enabled = true;
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
@@ -60,7 +64,11 @@ namespace Pruebas.Formas
 
         private void CargarListaFraccEstilo()
         {
-            ObjFraccEstilo = new ClsFraccEstilo();
+            ObjFraccEstilo = new ClsFraccEstilo()
+            {
+                U_ModDesc = TxtBEstiloFE.Text,
+                U_NameFraccion = TxtBFraccionFE.Text
+            };
             ObjFraccEstiloLn.Index(ref ObjFraccEstilo);
             if (ObjFraccEstilo.MsjError == null)
             {
@@ -73,6 +81,9 @@ namespace Pruebas.Formas
                 DgvFraccEstilo.Columns["U_ModCode"].Visible = false;
                 DgvFraccEstilo.Columns["U_CodigoFraccion"].Visible = false;
                 DgvFraccEstilo.Columns["Cantidad"].Visible = false;
+                DgvFraccEstilo.Columns["Tiempo"].Visible = false;
+                DgvFraccEstilo.Columns["Costo"].Visible = false;
+                DgvFraccEstilo.Columns["CostoMuestra"].Visible = false;
             }
             else
             {
@@ -82,7 +93,11 @@ namespace Pruebas.Formas
 
         private void CargarListaEstilo()
         {
-            ObjTablasSAP = new ClsTablasSAP();
+            ObjTablasSAP = new ClsTablasSAP()
+            {
+                U_ModCode = TxtBCodEstilo.Text,
+                U_ModDesc = TxtBEstilo.Text
+            };
             ObjTablasSAPLn.IndexModel(ref ObjTablasSAP);
             if (ObjTablasSAP.MsjError == null)
             {
@@ -100,19 +115,22 @@ namespace Pruebas.Formas
 
         private void CargarListaFraccion()
         {
-            ObjFraccion = new ClsFraccion();
+            ObjFraccion = new ClsFraccion()
+            {
+                Name = TxtBFraccion.Text,
+                Codigo = TxtBCodFraccion.Text
+            };
+            
             ObjFraccionLn.Index(ref ObjFraccion);
             if (ObjFraccion.MsjError == null)
             {
                 DgvFraccion.DataSource = ObjFraccion.DtResultados;
                 ObjUtilidades.FormatoDgvPEC(ref DgvFraccion);
                 DgvFraccion.Columns["SelF"].Width = 7;
-                DgvFraccion.Columns["Codigo"].Width = 10;
+                DgvFraccion.Columns["Codigo"].Width = 30;
                 DgvFraccion.Columns["FraccionId"].Visible = false;
                 DgvFraccion.Columns["Descripcion"].Visible = false;
                 DgvFraccion.Columns["Activo"].Visible = false;
-                DgvFraccion.Columns["Tiempo"].Visible = false;
-                DgvFraccion.Columns["Costo"].Visible = false;
             }
             else
             {
@@ -155,7 +173,10 @@ namespace Pruebas.Formas
                         U_ModDesc = LblNomEstilo.Text,
                         U_CodigoFraccion = LblCodFraccion.Text,
                         U_NameFraccion = LblNomFraccion.Text,
-                        Cantidad =Convert.ToInt16(TxtCantidad.Text)
+                        Cantidad =Convert.ToInt16(TxtCantidad.Text),
+                        Tiempo = Convert.ToDouble(TxtTiempo.Text),
+                        Costo = Convert.ToDouble(TxtCosto.Text),
+                        CostoMuestra = Convert.ToDouble(TxtCostoMuestra.Text)
                     };
 
                     ObjFraccEstiloLn.Create(ref ObjFraccEstilo);
@@ -195,7 +216,10 @@ namespace Pruebas.Formas
                         U_ModDesc = LblNomEstilo.Text,
                         U_CodigoFraccion = LblCodFraccion.Text,
                         U_NameFraccion = LblNomFraccion.Text,
-                        Cantidad = Convert.ToInt16(TxtCantidad.Text)
+                        Cantidad = Convert.ToInt16(TxtCantidad.Text),
+                        Tiempo = Convert.ToDouble(TxtTiempo.Text),
+                        Costo = Convert.ToDouble(TxtCosto.Text),
+                        CostoMuestra = Convert.ToDouble(TxtCostoMuestra.Text)
                     };
 
                     ObjFraccEstiloLn.Update(ref ObjFraccEstilo);
@@ -269,6 +293,9 @@ namespace Pruebas.Formas
                 LblCodFraccion.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["U_CodigoFraccion"].Value.ToString();
                 LblNomFraccion.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Fraccion"].Value.ToString();
                 TxtCantidad.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString();
+                TxtTiempo.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Teimpo"].Value.ToString();
+                TxtCosto.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Costo"].Value.ToString();
+                TxtCostoMuestra.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["CostoMuestra"].Value.ToString();
 
                 BtnLimpiar.Enabled = true;
                 BtnAgregar.Enabled = false;
@@ -279,10 +306,85 @@ namespace Pruebas.Formas
         #endregion
 
         #region Acciones con TextBox
-        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Para que solo acepte numeros y no texto
             e.Handled = !char.IsDigit(e.KeyChar);
+        }
+
+        private void TxtTiempo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para que solo acepte numeros y no texto
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            //Para que solo se pueda colocar un solo punto y no mas
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtCosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para que solo acepte numeros y no texto
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            //Para que solo se pueda colocar un solo punto y no mas
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtCostoMuestra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para que solo acepte numeros y no texto
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            //Para que solo se pueda colocar un solo punto y no mas
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtBEstiloFE_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaFraccEstilo();
+        }
+
+        private void TxtBFraccionFE_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaFraccEstilo();
+        }
+
+        private void TxtBEstilo_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaEstilo();
+        }
+
+        private void TxtBFraccion_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaFraccion();
+        }
+
+        private void TxtBCodEstilo_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaEstilo();
+        }
+
+        private void TxtBCodFraccion_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaFraccion();
         }
         #endregion
     }

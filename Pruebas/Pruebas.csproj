@@ -80,6 +80,9 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Pruebas_4_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Letter_M_gold_72x72.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -205,6 +208,12 @@
     <Compile Include="Formas\FrmPuesto.Designer.cs">
       <DependentUpon>FrmPuesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formas\FrmRevDestajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\FrmRevDestajo.Designer.cs">
+      <DependentUpon>FrmRevDestajo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formas\FrmRGrupoEmp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmPuesto.resx">
       <DependentUpon>FrmPuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formas\FrmRevDestajo.resx">
+      <DependentUpon>FrmRevDestajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmRGrupoEmp.resx">
       <DependentUpon>FrmRGrupoEmp.cs</DependentUpon>
@@ -359,6 +371,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\partnership_icon_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-document03-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-document03-24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Letter_M_gold_72x72.ico" />
+    <None Include="Resources\xmag_search_find_export_locate_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

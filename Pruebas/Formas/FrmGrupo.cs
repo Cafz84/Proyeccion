@@ -92,7 +92,7 @@ namespace Pruebas.Formas
                     {
                         ObjGrupo = new ClsGrupo()
                         {
-                            GrupoDId = ObjEmpleado.EmpID,
+                            GrupoDId = Convert.ToInt16(ObjEmpleado.EmpID),
                             Grupo = TxtNombre.Text,
                             Descripcion = TxtDescripcion.Text,
                             Activo = true

@@ -32,7 +32,6 @@
             this.TcEmpleados = new System.Windows.Forms.TabControl();
             this.TpIndex = new System.Windows.Forms.TabPage();
             this.DgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpDireccion = new System.Windows.Forms.TabPage();
             this.cbCiudad = new System.Windows.Forms.ComboBox();
             this.CbEstado = new System.Windows.Forms.ComboBox();
@@ -108,6 +107,9 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnActualizar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.TxtBTrabajador = new System.Windows.Forms.TextBox();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TcEmpleados.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).BeginInit();
@@ -117,6 +119,7 @@
             this.TpFinanciera.SuspendLayout();
             this.GbTipoPago.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // TcEmpleados
@@ -127,42 +130,36 @@
             this.TcEmpleados.Controls.Add(this.TpPersonal);
             this.TcEmpleados.Controls.Add(this.TpFinanciera);
             this.TcEmpleados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TcEmpleados.Location = new System.Drawing.Point(12, 247);
+            this.TcEmpleados.Location = new System.Drawing.Point(3, 247);
             this.TcEmpleados.Name = "TcEmpleados";
             this.TcEmpleados.SelectedIndex = 0;
-            this.TcEmpleados.Size = new System.Drawing.Size(1056, 406);
+            this.TcEmpleados.Size = new System.Drawing.Size(1074, 415);
             this.TcEmpleados.TabIndex = 0;
             // 
             // TpIndex
             // 
+            this.TpIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
+            this.TpIndex.Controls.Add(this.pictureBox2);
+            this.TpIndex.Controls.Add(this.TxtBTrabajador);
             this.TpIndex.Controls.Add(this.DgvEmpleados);
             this.TpIndex.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpIndex.Location = new System.Drawing.Point(4, 26);
             this.TpIndex.Name = "TpIndex";
             this.TpIndex.Padding = new System.Windows.Forms.Padding(3);
-            this.TpIndex.Size = new System.Drawing.Size(1048, 376);
+            this.TpIndex.Size = new System.Drawing.Size(1066, 385);
             this.TpIndex.TabIndex = 0;
             this.TpIndex.Text = "Index";
-            this.TpIndex.UseVisualStyleBackColor = true;
             // 
             // DgvEmpleados
             // 
             this.DgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});
-            this.DgvEmpleados.Location = new System.Drawing.Point(0, 0);
+            this.DgvEmpleados.Location = new System.Drawing.Point(0, 36);
             this.DgvEmpleados.Name = "DgvEmpleados";
-            this.DgvEmpleados.Size = new System.Drawing.Size(1048, 376);
+            this.DgvEmpleados.Size = new System.Drawing.Size(1066, 349);
             this.DgvEmpleados.TabIndex = 0;
             this.DgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmpleados_CellContentClick);
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 55;
             // 
             // TpDireccion
             // 
@@ -404,6 +401,7 @@
             this.DtpFechaRC.Name = "DtpFechaRC";
             this.DtpFechaRC.Size = new System.Drawing.Size(89, 23);
             this.DtpFechaRC.TabIndex = 48;
+            this.DtpFechaRC.ValueChanged += new System.EventHandler(this.DtpFechaRC_ValueChanged);
             // 
             // LblFechaRC
             // 
@@ -692,6 +690,7 @@
             this.TxtSueldoLimite.Name = "TxtSueldoLimite";
             this.TxtSueldoLimite.Size = new System.Drawing.Size(136, 31);
             this.TxtSueldoLimite.TabIndex = 31;
+            this.TxtSueldoLimite.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtSueldoLimite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSueldoLimite_KeyPress);
             // 
             // LblSueldoLimite
@@ -714,6 +713,7 @@
             this.TxtSueldoBase.Name = "TxtSueldoBase";
             this.TxtSueldoBase.Size = new System.Drawing.Size(136, 31);
             this.TxtSueldoBase.TabIndex = 29;
+            this.TxtSueldoBase.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtSueldoBase.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSueldoBase_KeyPress);
             // 
             // LblSueldoBase
@@ -736,6 +736,7 @@
             this.TxtSalario.Name = "TxtSalario";
             this.TxtSalario.Size = new System.Drawing.Size(136, 31);
             this.TxtSalario.TabIndex = 27;
+            this.TxtSalario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSalario_KeyPress);
             // 
             // LblSalario
@@ -1067,6 +1068,35 @@
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Pruebas.Properties.Resources.xmag_search_find_export_locate_32x32;
+            this.pictureBox2.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 28);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 135;
+            this.pictureBox2.TabStop = false;
+            // 
+            // TxtBTrabajador
+            // 
+            this.TxtBTrabajador.BackColor = System.Drawing.Color.LightGray;
+            this.TxtBTrabajador.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBTrabajador.Location = new System.Drawing.Point(45, 5);
+            this.TxtBTrabajador.MaxLength = 50;
+            this.TxtBTrabajador.Name = "TxtBTrabajador";
+            this.TxtBTrabajador.Size = new System.Drawing.Size(313, 27);
+            this.TxtBTrabajador.TabIndex = 134;
+            this.TxtBTrabajador.TextChanged += new System.EventHandler(this.TxtBTrabajador_TextChanged);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Edit";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 55;
+            // 
             // FrmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1106,6 +1136,7 @@
             this.Text = "FrmEmpleados";
             this.TcEmpleados.ResumeLayout(false);
             this.TpIndex.ResumeLayout(false);
+            this.TpIndex.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).EndInit();
             this.TpDireccion.ResumeLayout(false);
             this.TpDireccion.PerformLayout();
@@ -1118,6 +1149,7 @@
             this.GbTipoPago.ResumeLayout(false);
             this.GbTipoPago.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1170,7 +1202,6 @@
         private System.Windows.Forms.Label LblNoInt;
         private System.Windows.Forms.ComboBox CbEstado;
         private System.Windows.Forms.ComboBox CbPais;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.ComboBox cbCiudad;
         private System.Windows.Forms.Button BtnLimpiar;
         private System.Windows.Forms.Button BtnAgregar;
@@ -1204,5 +1235,8 @@
         private System.Windows.Forms.Label LblSueldoBase;
         private System.Windows.Forms.TextBox TxtSalario;
         private System.Windows.Forms.Label LblSalario;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox TxtBTrabajador;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
     }
 }

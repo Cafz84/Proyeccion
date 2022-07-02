@@ -8,9 +8,9 @@ namespace Entidades.Usuario
 
         #region Atributos privados
        
-        private int _empID, _type, _manager, _userId, _salesPrson, _status, _termReason, _position, _atcEntry, _vacPreYear, _vacCurYear,
+        private int? _empID, _type, _manager, _userId, _salesPrson, _status, _termReason, _position, _atcEntry, _vacPreYear, _vacCurYear,
             _logInstanc, _sTDCode, _bPLId, _areaId;
-        private short _dept, _branch, _nChildren, _userSing, _userSing2;
+        private short? _dept, _branch, _nChildren, _userSing, _userSing2;
         private string _lastName, _firstName, _middleName, _jobTitle, _workStreet, _workCity, _workCounty, _workBlock, _workZip, _workContr,
             _workState, _officeTel, _officeExt, _mobile, _pager, _homeTel, _fax, _email, _bankCode, _bankBranch, _bankBranNo, _bankAcount,
             _homeStreet, _homeBlock, _homeZip, _homeCity, _homeCounty, _homeCountr, _homeState, _brthCountr, _govID, _citizenshp, _passportNo,
@@ -18,7 +18,7 @@ namespace Entidades.Usuario
             _streetNoH, _costCenter, _companyNum, _munKey, _taxClass, _inTaxLiabi, _emTaxCCode, _relPartner, _exemptUnit, _addiUnit, _taxOName,
             _taxONum, _heaInsName, _heaInsCode, _heaInsType, _sInsurNum, _statusOfP, _statusOfE, _bCodeDateV, _fNameSP, _surnameSP, _persGroup,
             _jTCode, _extEmpNo, _birthPlace, _pymMeth, _exemptCurr, _addiCurr, _fatherName, _cPF, _cRC, _uFCRC, _iDType, _manualNUM, _passIssuer,
-            _qualCode, _bPLink, _u_ARGNS_OperCode, _u_ARGNS_Shift;
+            _qualCode, _bPLink, _u_ARGNS_OperCode, _u_ARGNS_Shift, _nombre;
         private char? _sex, _salaryUnit, _empCostUnt, _martStatus, _dispMidNam, _namePos, _dispComma, debBAOwner, _contResp, _repLegal, _dirfDeclar,
             _active, _pRWebAccss, _prePRWeb, _uSueldoBase, _uSueldoLimite, _tipoPago;
         private DateTime? _startDate, _termDate, _birthDate, _passportEx, _updateDate, _passIssue;
@@ -32,25 +32,25 @@ namespace Entidades.Usuario
 
         #region Atributos publicos
 
-        public int EmpID { get => _empID; set => _empID = value; }
-        public int Type { get => _type; set => _type = value; }
-        public int Manager { get => _manager; set => _manager = value; }
-        public int UserId { get => _userId; set => _userId = value; }
-        public int SalesPrson { get => _salesPrson; set => _salesPrson = value; }
-        public int Status { get => _status; set => _status = value; }
-        public int TermReason { get => _termReason; set => _termReason = value; }
-        public int Position { get => _position; set => _position = value; }
-        public int AtcEntry { get => _atcEntry; set => _atcEntry = value; }
-        public int VacPreYear { get => _vacPreYear; set => _vacPreYear = value; }
-        public int VacCurYear { get => _vacCurYear; set => _vacCurYear = value; }
-        public int LogInstanc { get => _logInstanc; set => _logInstanc = value; }
-        public int STDCode { get => _sTDCode; set => _sTDCode = value; }
-        public int BPLId { get => _bPLId; set => _bPLId = value; }
-        public short Dept { get => _dept; set => _dept = value; }
-        public short Branch { get => _branch; set => _branch = value; }
-        public short NChildren { get => _nChildren; set => _nChildren = value; }
-        public short UserSing { get => _userSing; set => _userSing = value; }
-        public short UserSing2 { get => _userSing2; set => _userSing2 = value; }
+        public int? EmpID { get => _empID; set => _empID = value; }
+        public int? Type { get => _type; set => _type = value; }
+        public int? Manager { get => _manager; set => _manager = value; }
+        public int? UserId { get => _userId; set => _userId = value; }
+        public int? SalesPrson { get => _salesPrson; set => _salesPrson = value; }
+        public int? Status { get => _status; set => _status = value; }
+        public int? TermReason { get => _termReason; set => _termReason = value; }
+        public int? Position { get => _position; set => _position = value; }
+        public int? AtcEntry { get => _atcEntry; set => _atcEntry = value; }
+        public int? VacPreYear { get => _vacPreYear; set => _vacPreYear = value; }
+        public int? VacCurYear { get => _vacCurYear; set => _vacCurYear = value; }
+        public int? LogInstanc { get => _logInstanc; set => _logInstanc = value; }
+        public int? STDCode { get => _sTDCode; set => _sTDCode = value; }
+        public int? BPLId { get => _bPLId; set => _bPLId = value; }
+        public short? Dept { get => _dept; set => _dept = value; }
+        public short? Branch { get => _branch; set => _branch = value; }
+        public short? NChildren { get => _nChildren; set => _nChildren = value; }
+        public short? UserSing { get => _userSing; set => _userSing = value; }
+        public short? UserSing2 { get => _userSing2; set => _userSing2 = value; }
         public string LastName { get => _lastName; set => _lastName = value; }
         public string FirstName { get => _firstName; set => _firstName = value; }
         public string MiddleName { get => _middleName; set => _middleName = value; }
@@ -162,10 +162,11 @@ namespace Entidades.Usuario
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
         public decimal SueldoBase { get => _sueldoBase; set => _sueldoBase = value; }
         public decimal SueldoLimite { get => _sueldoLimite; set => _sueldoLimite = value; }
-        public int AreaId { get => _areaId; set => _areaId = value; }
+        public int? AreaId { get => _areaId; set => _areaId = value; }
         public char? USueldoBase { get => _uSueldoBase; set => _uSueldoBase = value; }
         public char? USueldoLimite { get => _uSueldoLimite; set => _uSueldoLimite = value; }
         public char? TipoPago { get => _tipoPago; set => _tipoPago = value; }
+        public string Nombre { get => _nombre; set => _nombre = value; }
 
         #endregion
     }

@@ -9,6 +9,7 @@ namespace LogicaNegocio.Usuario
     {
         #region Variables privadas
         private ClsDataBase ObjDataBase = null;
+        private bool bIndex;
         #endregion
 
         #region Metodo Index
@@ -22,6 +23,9 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjFraccion.Name);
+            ObjDataBase.DtParametros.Rows.Add(@"@Codigo", "18", ObjFraccion.Codigo);
             Ejecutar(ref ObjFraccion);
         }
         #endregion
@@ -41,9 +45,6 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjFraccion.Name);
             ObjDataBase.DtParametros.Rows.Add(@"@Descripcion", "18", ObjFraccion.Descripcion);
             ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjFraccion.Activo);
-            ObjDataBase.DtParametros.Rows.Add(@"@Tiempo", "10", ObjFraccion.Tiempo);
-            ObjDataBase.DtParametros.Rows.Add(@"@Costo", "6", ObjFraccion.Costo);
-            ObjDataBase.DtParametros.Rows.Add(@"@CostoMuestra", "9", ObjFraccion.CostoMuestra);
 
             Ejecutar(ref ObjFraccion);
         }
@@ -58,6 +59,7 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            bIndex = false;
             ObjDataBase.DtParametros.Rows.Add(@"@FraccionId", "4", ObjFraccion.FraccionId);
             Ejecutar(ref ObjFraccion);
         }
@@ -72,6 +74,20 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            EjecutarReadMuestra(ref ObjFraccion);
+        }
+
+        public void ReadBMuestra(ref ClsFraccion ObjFraccion)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "Fraccion",
+                NombreSP = "[dbo].[SP_Fraccion_ReadBMuestra]",
+                Scalar = false
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@U_ModDesc", "18", ObjFraccion.Name);
             EjecutarReadMuestra(ref ObjFraccion);
         }
 
@@ -90,9 +106,6 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjFraccion.Name);
             ObjDataBase.DtParametros.Rows.Add(@"@Descripcion", "18", ObjFraccion.Descripcion);
             ObjDataBase.DtParametros.Rows.Add(@"@Activo", "1", ObjFraccion.Activo);
-            ObjDataBase.DtParametros.Rows.Add(@"@Tiempo", "10", ObjFraccion.Tiempo);
-            ObjDataBase.DtParametros.Rows.Add(@"@Costo", "6", ObjFraccion.Costo);
-            ObjDataBase.DtParametros.Rows.Add(@"@CostoMuestra", "9", ObjFraccion.CostoMuestra);
             Ejecutar(ref ObjFraccion);
         }
 
@@ -141,7 +154,7 @@ namespace LogicaNegocio.Usuario
                 else
                 {
                     ObjFraccion.DtResultados = ObjDataBase.DsResultados.Tables[0];
-                    if (ObjFraccion.DtResultados.Rows.Count == 1)
+                    if (ObjFraccion.DtResultados.Rows.Count == 1 && bIndex == false)
                     {
                         foreach (DataRow dr in ObjFraccion.DtResultados.Rows)
                         {

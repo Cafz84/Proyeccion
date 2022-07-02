@@ -9,6 +9,7 @@ namespace LogicaNegocio.Usuario
     {
         #region Variables Privadas
         private ClsDataBase ObjDataBase = null;
+        private bool bIndex;
         private string Log;
         #endregion
 
@@ -20,6 +21,37 @@ namespace LogicaNegocio.Usuario
                 NombreDB = "DB_BasePruebas",
                 NombreTabla = "Destajo",
                 NombreSP = "dbo.SP_Destajo_Index",
+                Scalar = false
+            };
+
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@Semana", "4", ObjDestajo.Semana);
+            ObjDataBase.DtParametros.Rows.Add(@"@Nombre", "18", ObjDestajo.Nombre);
+            ObjDataBase.DtParametros.Rows.Add(@"@Fraccion", "18", ObjDestajo.Fraccion);
+            Ejecutar(ref ObjDestajo);
+        }
+
+        public void IndexBNombre(ref ClsDestajo ObjDestajo)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "Destajo",
+                NombreSP = "dbo.SP_Destajo_IndexBNombre",
+                Scalar = false
+            };
+
+            ObjDataBase.DtParametros.Rows.Add(@"@Nombre", "18", ObjDestajo.Nombre);
+            Ejecutar(ref ObjDestajo);
+        }
+
+        public void IndexRD(ref ClsDestajo ObjDestajo)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "Destajo",
+                NombreSP = "dbo.SP_Destajo_IndexRD",
                 Scalar = false
             };
 
@@ -40,6 +72,7 @@ namespace LogicaNegocio.Usuario
 
             ObjDataBase.DtParametros.Rows.Add(@"@Programa", "18", ObjDestajo.Programa);
             ObjDataBase.DtParametros.Rows.Add(@"@UFraccId", "4", ObjDestajo.UFraccId);
+            
             EjecutarPagados(ref ObjDestajo);
         }
 
@@ -64,6 +97,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Pago", "9", ObjDestajo.Pago);
             ObjDataBase.DtParametros.Rows.Add(@"@UFracCosto", "9", ObjDestajo.UFracCosto);
             ObjDataBase.DtParametros.Rows.Add(@"@UCantidadFE", "4", ObjDestajo.UCantidadFE);
+            
             Ejecutar(ref ObjDestajo);
         }
 
@@ -77,6 +111,7 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            bIndex = false;
             ObjDataBase.DtParametros.Rows.Add(@"@UEmpId", "4", ObjDestajo.UEmpId);
             ObjDataBase.DtParametros.Rows.Add(@"@UFraccId", "4", ObjDestajo.UFraccId);
             ObjDataBase.DtParametros.Rows.Add(@"@UEstilo", "18", ObjDestajo.UEstilo);
@@ -147,7 +182,7 @@ namespace LogicaNegocio.Usuario
                 else
                 {
                     ObjDestajo.DtResultados = ObjDataBase.DsResultados.Tables[0];
-                    if (ObjDestajo.DtResultados.Rows.Count == 1)
+                    if (ObjDestajo.DtResultados.Rows.Count == 1 && bIndex == false)
                     {
                         foreach (DataRow dr in ObjDestajo.DtResultados.Rows)
                         {

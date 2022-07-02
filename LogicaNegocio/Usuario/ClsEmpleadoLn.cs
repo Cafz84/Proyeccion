@@ -23,7 +23,8 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
-            Ejecutar(ref ObjEmpleado);
+            ObjDataBase.DtParametros.Rows.Add(@"@Nombre", "18", ObjEmpleado.Nombre);
+            EjecutarActivoVariable(ref ObjEmpleado);
         }
 
         public void IndexActivoVariable(ref ClsEmpleado ObjEmpleado)
@@ -36,6 +37,7 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            ObjDataBase.DtParametros.Rows.Add(@"@Nombre", "18", ObjEmpleado.Nombre);
             EjecutarActivoVariable(ref ObjEmpleado);
         }
 
@@ -52,7 +54,7 @@ namespace LogicaNegocio.Usuario
             EjecutarActivoVariable(ref ObjEmpleado);
         }
 
-        public int EmpId(ref ClsEmpleado ObjEmpleado)
+        public int? EmpId(ref ClsEmpleado ObjEmpleado)
         {
             ObjDataBase = new ClsDataBase()
             {
@@ -70,7 +72,7 @@ namespace LogicaNegocio.Usuario
         #region CRUD Empleado
         public void Create(ref ClsEmpleado ObjEmpleado)
         { 
-            int spEmpIdMax = EmpId(ref ObjEmpleado);
+            int? spEmpIdMax = EmpId(ref ObjEmpleado);
             ObjDataBase = new ClsDataBase()
             {
                 NombreDB = "DB_BasePruebas",
@@ -120,7 +122,7 @@ namespace LogicaNegocio.Usuario
 
         public void CreateGrupo(ref ClsEmpleado ObjEmpleado)
         {
-            int spEmpIdMax = EmpId(ref ObjEmpleado);
+            int? spEmpIdMax = EmpId(ref ObjEmpleado);
             ObjEmpleado.EmpID = spEmpIdMax;
             ObjDataBase = new ClsDataBase()
             {

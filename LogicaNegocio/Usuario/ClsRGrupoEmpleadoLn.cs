@@ -10,6 +10,7 @@ namespace LogicaNegocio.Usuario
         #region Variables Privadas
         private ClsDataBase ObjDataBase = null;
         private string Log;
+        private bool bIndex;
         #endregion
 
         #region Metodos Index
@@ -23,6 +24,8 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@Grupo", "18", ObjRGrupoEmpleado.Grupo);
             Ejecutar(ref ObjRGrupoEmpleado);
         }
         #endregion
@@ -40,6 +43,7 @@ namespace LogicaNegocio.Usuario
 
             ObjDataBase.DtParametros.Rows.Add(@"@U_GrupoId", "4", ObjRGrupoEmpleado.U_GrupoId);
             ObjDataBase.DtParametros.Rows.Add(@"@U_EmpId", "4", ObjRGrupoEmpleado.U_EmpId);
+            ObjDataBase.DtParametros.Rows.Add(@"@Porcentaje", "9", ObjRGrupoEmpleado.Porcentaje);
 
             Ejecutar(ref ObjRGrupoEmpleado);
         }
@@ -54,6 +58,7 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            bIndex = false;
             ObjDataBase.DtParametros.Rows.Add(@"@U_GrupoId", "4", ObjRGrupoEmpleado.U_GrupoId);
             ObjDataBase.DtParametros.Rows.Add(@"@U_EmpId", "4", ObjRGrupoEmpleado.U_EmpId);
 
@@ -74,6 +79,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@U_EmpId", "4", ObjRGrupoEmpleado.U_EmpId);
             ObjDataBase.DtParametros.Rows.Add(@"@C_GrupoId", "4", ObjRGrupoEmpleado.C_GrupoId);
             ObjDataBase.DtParametros.Rows.Add(@"@C_EmpId", "4", ObjRGrupoEmpleado.C_EmpId);
+            ObjDataBase.DtParametros.Rows.Add(@"@Porcentaje", "9", ObjRGrupoEmpleado.Porcentaje);
 
             Ejecutar(ref ObjRGrupoEmpleado);
         }
@@ -109,14 +115,15 @@ namespace LogicaNegocio.Usuario
                 else
                 {
                     ObjRGrupoEmpleado.DtResultados = ObjDataBase.DsResultados.Tables[0];
-                    if (ObjRGrupoEmpleado.DtResultados.Rows.Count == 1)
+                    if (ObjRGrupoEmpleado.DtResultados.Rows.Count == 1 && bIndex == false)
                     {
                         foreach (DataRow dr in ObjRGrupoEmpleado.DtResultados.Rows)
                         {
                             try
                             {
-                                ObjDataBase.DtParametros.Rows.Add(@"@U_GrupoId", "4", ObjRGrupoEmpleado.U_GrupoId);
-                                ObjDataBase.DtParametros.Rows.Add(@"@U_EmpId", "4", ObjRGrupoEmpleado.U_EmpId);
+                                ObjRGrupoEmpleado.U_GrupoId = Convert.ToInt32(dr["U_GrupoId"].ToString());
+                                ObjRGrupoEmpleado.U_EmpId = Convert.ToInt16(dr["U_EmpId"].ToString());
+                                ObjRGrupoEmpleado.Porcentaje = Convert.ToSingle(dr["Porcentaje"].ToString());
                             }
                             catch (Exception ex)
                             {

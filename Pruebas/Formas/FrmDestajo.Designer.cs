@@ -79,7 +79,6 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.TxtBGrupo = new System.Windows.Forms.TextBox();
             this.DgvGrupo = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.BtnRelacion = new System.Windows.Forms.Button();
             this.BtnCrear = new System.Windows.Forms.Button();
             this.LblTFraccion = new System.Windows.Forms.Label();
@@ -95,6 +94,7 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
+            this.SelG = new System.Windows.Forms.DataGridViewImageColumn();
             this.TcDestajo.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -505,7 +505,6 @@
             this.TxtBTrabajador.Name = "TxtBTrabajador";
             this.TxtBTrabajador.Size = new System.Drawing.Size(313, 27);
             this.TxtBTrabajador.TabIndex = 132;
-            this.TxtBTrabajador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtBTrabajador.TextChanged += new System.EventHandler(this.TxtBTrabajador_TextChanged);
             // 
             // TpFraccion
@@ -541,7 +540,6 @@
             this.TxtBFraccion.Name = "TxtBFraccion";
             this.TxtBFraccion.Size = new System.Drawing.Size(313, 27);
             this.TxtBFraccion.TabIndex = 128;
-            this.TxtBFraccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtBFraccion.TextChanged += new System.EventHandler(this.TxtBFraccion_TextChanged);
             // 
             // DgvFraccion
@@ -594,7 +592,6 @@
             this.TxtBMuestra.Name = "TxtBMuestra";
             this.TxtBMuestra.Size = new System.Drawing.Size(313, 27);
             this.TxtBMuestra.TabIndex = 130;
-            this.TxtBMuestra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtBMuestra.TextChanged += new System.EventHandler(this.TxtBMuestra_TextChanged);
             // 
             // DgvMuestra
@@ -650,27 +647,18 @@
             this.TxtBGrupo.Name = "TxtBGrupo";
             this.TxtBGrupo.Size = new System.Drawing.Size(313, 27);
             this.TxtBGrupo.TabIndex = 131;
-            this.TxtBGrupo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtBGrupo.TextChanged += new System.EventHandler(this.TxtBGrupo_TextChanged);
             // 
             // DgvGrupo
             // 
             this.DgvGrupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvGrupo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn1});
+            this.SelG});
             this.DgvGrupo.Location = new System.Drawing.Point(0, 32);
             this.DgvGrupo.Name = "DgvGrupo";
             this.DgvGrupo.Size = new System.Drawing.Size(885, 360);
             this.DgvGrupo.TabIndex = 2;
             this.DgvGrupo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGrupo_CellContentClick);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Sel";
-            this.dataGridViewImageColumn1.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 55;
             // 
             // BtnRelacion
             // 
@@ -856,6 +844,14 @@
             this.BtnCerrar.TabStop = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
+            // SelG
+            // 
+            this.SelG.HeaderText = "Sel";
+            this.SelG.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.SelG.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelG.Name = "SelG";
+            this.SelG.Width = 55;
+            // 
             // FrmDestajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -975,7 +971,6 @@
         private System.Windows.Forms.TabPage TpGrupo;
         private System.Windows.Forms.Button BtnCrear;
         private System.Windows.Forms.DataGridView DgvGrupo;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Button BtnRelacion;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
@@ -993,5 +988,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox TxtBIFraccion;
         private System.Windows.Forms.TextBox TxtBISemana;
+        private System.Windows.Forms.DataGridViewImageColumn SelG;
     }
 }

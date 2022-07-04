@@ -9,6 +9,7 @@ namespace Entidades.Usuario
         private int _ordenFrabricacion, _pedido;
         private char _estatus;
         private double _cantidad;
+        private float _porcentaje;
 
         //Atributos de manejo de la base de datos
         private string _msjError, _valorEscalar;
@@ -33,6 +34,7 @@ namespace Entidades.Usuario
         public string MsjError { get => _msjError; set => _msjError = value; }
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
+        public float Porcentaje { get => _porcentaje; set => _porcentaje = value; }
         #endregion
     }
 }

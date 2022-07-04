@@ -47,6 +47,10 @@ namespace Pruebas.Formas
         {
             LblGrupo.Text = string.Empty;
             LblEmpleado.Text = string.Empty;
+            TxtPorcentaje.Text = string.Empty;
+            TxtBEmpleado.Text = string.Empty;
+            TxtBGrupo.Text = string.Empty;
+            TxtBRGrupo.Text = string.Empty;
             idGrupo = 0;
             idEmp = 0;
             cidEmp = 0;
@@ -59,7 +63,11 @@ namespace Pruebas.Formas
 
         private void CargarListaRGE()
         {
-            ObjRGrupoEmpleado = new ClsRGrupoEmpleado();
+            ObjRGrupoEmpleado = new ClsRGrupoEmpleado()
+            {
+                Grupo = TxtBGrupo.Text
+            };
+
             ObjRGrupoEmpleadoLn.Index(ref ObjRGrupoEmpleado);
             if (ObjRGrupoEmpleado.MsjError == null)
             {
@@ -73,7 +81,11 @@ namespace Pruebas.Formas
 
         private void CargarListaGrupo()
         {
-            ObjGrupo = new ClsGrupo();
+            ObjGrupo = new ClsGrupo()
+            {
+                Grupo = TxtBRGrupo.Text
+            };
+
             ObjGrupoLn.CargarIndexGrupo(ref ObjGrupo);
             if (ObjGrupo.MsjError == null)
             {
@@ -86,7 +98,11 @@ namespace Pruebas.Formas
 
         private void CargarListaEmpleados()
         {
-            ObjEmpleado = new ClsEmpleado();
+            ObjEmpleado = new ClsEmpleado()
+            {
+                Nombre = TxtBEmpleado.Text
+            };
+
             ObjEmpleadoLn.IndexRelacion(ref ObjEmpleado);
             if (ObjEmpleado.MsjError == null)
             {
@@ -125,6 +141,15 @@ namespace Pruebas.Formas
                             U_EmpId = cidEmp
                         };
 
+                        if (TxtPorcentaje.Text == string.Empty)
+                        {
+                            ObjRGrupoEmpleado.Porcentaje = 0;
+                        }
+                        else
+                        {
+                            ObjRGrupoEmpleado.Porcentaje = Convert.ToSingle(TxtPorcentaje.Text);
+                        }
+
                         ObjRGrupoEmpleadoLn.Create(ref ObjRGrupoEmpleado);
                         if (ObjRGrupoEmpleado.MsjError == null)
                         {
@@ -162,6 +187,15 @@ namespace Pruebas.Formas
                     C_GrupoId = cidGrupo,
                     C_EmpId = cidEmp
                 };
+
+                if (TxtPorcentaje.Text == string.Empty)
+                {
+                    ObjRGrupoEmpleado.Porcentaje = 0;
+                }
+                else
+                {
+                    ObjRGrupoEmpleado.Porcentaje = Convert.ToSingle(TxtPorcentaje.Text);
+                }
 
                 ObjRGrupoEmpleadoLn.Update(ref ObjRGrupoEmpleado);
                 if (ObjRGrupoEmpleado.MsjError == null)
@@ -227,6 +261,7 @@ namespace Pruebas.Formas
             {
                 LblGrupo.Text = DgvRelacion.Rows[e.RowIndex].Cells["Grupo"].Value.ToString();
                 LblEmpleado.Text = DgvRelacion.Rows[e.RowIndex].Cells["Empleado"].Value.ToString();
+                TxtPorcentaje.Text = DgvRelacion.Rows[e.RowIndex].Cells["Porcentaje"].Value.ToString();
                 idGrupo = Convert.ToInt16(DgvRelacion.Rows[e.RowIndex].Cells["Gid"].Value.ToString());
                 idEmp = Convert.ToInt16(DgvRelacion.Rows[e.RowIndex].Cells["Eid"].Value.ToString());
 
@@ -255,9 +290,27 @@ namespace Pruebas.Formas
         }
         #endregion
 
+        #region Accion con TextBox
+        private void TxtBGrupo_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaRGE();
+        }
+
+        private void TxtBEmpleado_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaEmpleados();
+        }
+
+        private void TxtBRGrupo_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaGrupo();
+        }
+        #endregion
+
         #region Mover la ventana
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
+
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 

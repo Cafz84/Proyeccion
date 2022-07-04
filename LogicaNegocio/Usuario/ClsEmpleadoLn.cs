@@ -51,6 +51,7 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            ObjDataBase.DtParametros.Rows.Add(@"@Nombre", "18", ObjEmpleado.Nombre);
             EjecutarActivoVariable(ref ObjEmpleado);
         }
 

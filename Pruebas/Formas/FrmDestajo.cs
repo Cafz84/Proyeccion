@@ -142,6 +142,10 @@ namespace Pruebas.Formas
                 DgvMuestra.DataSource = ObjFraccEstilo.DtResultados;
                 ObjUtilidades.FormatoDgvPEC(ref DgvMuestra);
             }
+            else
+            {
+                MessageBox.Show(ObjFraccEstilo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CargarDatosPrograma()
@@ -226,7 +230,11 @@ namespace Pruebas.Formas
         #region Metodos Publicos
         public void CargarListaGrupo()
         {
-            ObjGrupo = new ClsGrupo();
+            ObjGrupo = new ClsGrupo()
+            {
+                Grupo = TxtBGrupo.Text
+            };
+
             ObjGrupoLn.CargarIndexGrupo(ref ObjGrupo);
             if (ObjGrupo.MsjError == null)
             {
@@ -234,6 +242,8 @@ namespace Pruebas.Formas
                 ObjUtilidades.FormatoDgvPEC(ref DgvGrupo);
 
                 DgvGrupo.Columns["Id"].Visible = false;
+                DgvGrupo.Columns["SelG"].Width = 25;
+                DgvGrupo.Columns["Grupo"].Width = 100;
             }
             else
             {
@@ -539,7 +549,11 @@ namespace Pruebas.Formas
 
         private void DgvGrupo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (DgvGrupo.Columns[e.ColumnIndex].Name == "SelG")
+            {
+                LblEmpId.Text = DgvGrupo.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+                LblNombre.Text = DgvGrupo.Rows[e.RowIndex].Cells["Grupo"].Value.ToString();
+            }
         }
         #endregion
 
@@ -604,47 +618,12 @@ namespace Pruebas.Formas
 
         private void TxtBMuestra_TextChanged(object sender, EventArgs e)
         {
-            if (TxtBMuestra.Text != string.Empty)
-            {
-                ObjFraccion = new ClsFraccion()
-                {
-                    Name = TxtBMuestra.Text
-                };
-                ObjFraccionLn.ReadBMuestra(ref ObjFraccion);
-                if (ObjFraccion.MsjError == null)
-                {
-                    DgvMuestra.DataSource = ObjFraccion.DtResultados;
-                    ObjUtilidades.FormatoDgvPEC(ref DgvMuestra);
-                }
-            }
-            else
-            {
-                CargarListaMuestra();
-            }
+            CargarListaMuestra();
         }
 
         private void TxtBGrupo_TextChanged(object sender, EventArgs e)
         {
-            if (TxtBGrupo.Text != string.Empty)
-            {
-                ObjGrupo = new ClsGrupo();
-                ObjGrupoLn.CargarIndexBGrupo(ref ObjGrupo);
-                if (ObjGrupo.MsjError == null)
-                {
-                    DgvGrupo.DataSource = ObjGrupo.DtResultados;
-                    ObjUtilidades.FormatoDgvPEC(ref DgvGrupo);
-
-                    DgvGrupo.Columns["Id"].Visible = false;
-                }
-                else
-                {
-                    MessageBox.Show(ObjGrupo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                CargarListaGrupo();
-            }
+            CargarListaGrupo();
         }
         #endregion
     }

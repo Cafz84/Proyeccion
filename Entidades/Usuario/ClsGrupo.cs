@@ -6,7 +6,7 @@ namespace Entidades.Usuario
     {
         #region Variables Privadas
         private int _grupoDId;
-        private string _grupo, _descripcion;
+        private string _grupo, _descripcion, _empleados;
         private bool _activo;
 
         //Atributos de manejo de la base de datos
@@ -22,6 +22,7 @@ namespace Entidades.Usuario
         public string MsjError { get => _msjError; set => _msjError = value; }
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
+        public string Empleados { get => _empleados; set => _empleados = value; }
         #endregion
     }
 }

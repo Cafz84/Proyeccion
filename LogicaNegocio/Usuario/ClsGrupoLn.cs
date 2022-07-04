@@ -36,19 +36,6 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
-            CargarListaGrupo(ref ObjGrupo);
-        }
-
-        public void CargarIndexBGrupo(ref ClsGrupo ObjGrupo)
-        {
-            ObjDataBase = new ClsDataBase()
-            {
-                NombreDB = "DB_BasePruebas",
-                NombreTabla = "GrupoD",
-                NombreSP = "dbo.SP_CargarBGrupoD",
-                Scalar = false
-            };
-
             ObjDataBase.DtParametros.Rows.Add(@"@Grupo", "18", ObjGrupo.Grupo);
             CargarListaGrupo(ref ObjGrupo);
         }
@@ -196,8 +183,9 @@ namespace LogicaNegocio.Usuario
                         {
                             foreach (DataRow dr in ObjGrupo.DtResultados.Rows)
                             {
-                                ObjGrupo.GrupoDId = Convert.ToByte(dr["GrupoDId"].ToString());
+                                ObjGrupo.GrupoDId = Convert.ToByte(dr["Id"].ToString());
                                 ObjGrupo.Grupo = dr["Grupo"].ToString();
+                                ObjGrupo.Empleados = dr["Empleados"].ToString();
                             }
                         }
                         catch (Exception e)

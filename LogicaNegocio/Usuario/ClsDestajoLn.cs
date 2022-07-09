@@ -51,10 +51,13 @@ namespace LogicaNegocio.Usuario
             {
                 NombreDB = "DB_BasePruebas",
                 NombreTabla = "Destajo",
-                NombreSP = "dbo.SP_Destajo_IndexRD",
+                NombreSP = "dbo.SP_Destajo_IndexRevision",
                 Scalar = false
             };
 
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@Semana", "4", ObjDestajo.Semana);
+            ObjDataBase.DtParametros.Rows.Add(@"@Nombre", "18", ObjDestajo.Nombre);
             Ejecutar(ref ObjDestajo);
         }
         #endregion

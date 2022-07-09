@@ -30,10 +30,13 @@ namespace Pruebas.Formas
             ChkActivo.Checked = false;
             TxtNombre.Text = string.Empty;
             TxtDescripcion.Text = string.Empty;
+            TxtBCodFraccion.Text = string.Empty;
+            TxtBFraccion.Text = string.Empty;
 
             BtnAgregar.Enabled = true;
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
+            TxtCodFraccion.Focus();
         }
 
         private void CargarListaFracciones()
@@ -88,28 +91,42 @@ namespace Pruebas.Formas
                 }
                 else
                 {
-                    DialogResult respuesta = MessageBox.Show("¿En ralidad quiere agregar el registro?", "Mensaje de Sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (respuesta == DialogResult.OK)
+                    ObjFraccion = new ClsFraccion()
                     {
-                        ObjFraccion = new ClsFraccion()
-                        {
-                            Codigo = TxtCodFraccion.Text,
-                            Name = TxtNombre.Text,
-                            Descripcion = TxtDescripcion.Text,
-                            Activo = true
-                        };
+                        Codigo = TxtCodFraccion.Text.ToUpper(),
+                        Name = TxtNombre.Text.ToUpper()
+                    };
+                    ObjFraccionLn.ReadRepetido(ref ObjFraccion);
 
-                        ObjFraccionLn.Create(ref ObjFraccion);
-                        if (ObjFraccion.MsjError == null)
+                    if(ObjFraccion.DtResultados.Rows.Count != 0)
+                    {
+                        MessageBox.Show("No se puede agregar la Fracción ya existe");
+                    }
+                    else
+                    {
+                        DialogResult respuesta = MessageBox.Show("¿En ralidad quiere agregar el registro?", "Mensaje de Sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (respuesta == DialogResult.OK)
                         {
-                            MessageBox.Show("Alta exitosa");
-                            CargarListaFracciones();
+                            ObjFraccion = new ClsFraccion()
+                            {
+                                Codigo = TxtCodFraccion.Text.ToUpper(),
+                                Name = TxtNombre.Text.ToUpper(),
+                                Descripcion = TxtDescripcion.Text,
+                                Activo = true
+                            };
 
-                            Limpiar();
-                        }
-                        else
-                        {
-                            MessageBox.Show(ObjFraccion.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            ObjFraccionLn.Create(ref ObjFraccion);
+                            if (ObjFraccion.MsjError == null)
+                            {
+                                MessageBox.Show("Alta exitosa");
+                                CargarListaFracciones();
+
+                                Limpiar();
+                            }
+                            else
+                            {
+                                MessageBox.Show(ObjFraccion.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
@@ -128,36 +145,50 @@ namespace Pruebas.Formas
             }
             else
             {
-                DialogResult respuesta = MessageBox.Show("¿En ralidad quiere modificar el registro?", "Mensaje de Sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (respuesta == DialogResult.OK)
+                ObjFraccion = new ClsFraccion()
                 {
-                    ObjFraccion = new ClsFraccion()
-                    {
-                        FraccionId = Convert.ToInt16(LblFraccionId.Text),
-                        Codigo = TxtCodFraccion.Text,
-                        Name = TxtNombre.Text,
-                        Descripcion = TxtDescripcion.Text
-                    };
-                    if (ChkActivo.Checked)
-                    {
-                        ObjFraccion.Activo = true;
-                    }
-                    else
-                    {
-                        ObjFraccion.Activo = false;
-                    }
+                    Codigo = TxtCodFraccion.Text.ToUpper(),
+                    Name = TxtNombre.Text.ToUpper()
+                };
+                ObjFraccionLn.ReadRepetido(ref ObjFraccion);
 
-                    ObjFraccionLn.Update(ref ObjFraccion);
-                    if (ObjFraccion.MsjError == null)
+                if (ObjFraccion.DtResultados.Rows.Count != 0)
+                {
+                    MessageBox.Show("No se puede duplicar la Fracción");
+                }
+                else
+                {
+                    DialogResult respuesta = MessageBox.Show("¿En ralidad quiere modificar el registro?", "Mensaje de Sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (respuesta == DialogResult.OK)
                     {
-                        MessageBox.Show("El empleado fue actualizado correctamente");
-                        CargarListaFracciones();
+                        ObjFraccion = new ClsFraccion()
+                        {
+                            FraccionId = Convert.ToInt16(LblFraccionId.Text),
+                            Codigo = TxtCodFraccion.Text.ToUpper(),
+                            Name = TxtNombre.Text.ToUpper(),
+                            Descripcion = TxtDescripcion.Text
+                        };
+                        if (ChkActivo.Checked)
+                        {
+                            ObjFraccion.Activo = true;
+                        }
+                        else
+                        {
+                            ObjFraccion.Activo = false;
+                        }
 
-                        Limpiar();
-                    }
-                    else
-                    {
-                        MessageBox.Show(ObjFraccion.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ObjFraccionLn.Update(ref ObjFraccion);
+                        if (ObjFraccion.MsjError == null)
+                        {
+                            MessageBox.Show("El empleado fue actualizado correctamente");
+                            CargarListaFracciones();
+
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show(ObjFraccion.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }

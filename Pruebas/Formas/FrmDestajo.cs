@@ -13,18 +13,16 @@ namespace Pruebas.Formas
         private ClsEmpleado ObjEmpleado = null;
         private ClsFraccEstilo ObjFraccEstilo = null;
         private ClsTablasSAP ObjTablasSAP = null;
-        private ClsFraccion ObjFraccion = null;
         private ClsGrupo ObjGrupo = null;
         private readonly ClsDestajoLn ObjDestajoLn = new ClsDestajoLn();
         private readonly ClsEmpleadoLn ObjEmpleadoLn = new ClsEmpleadoLn();
         private readonly ClsFraccEstiloLn ObjFraccEstiloLn = new ClsFraccEstiloLn();
         private readonly ClsTablasSAPLn ObjTabasSAPLn = new ClsTablasSAPLn();
-        private readonly ClsFraccionLn ObjFraccionLn = new ClsFraccionLn();
         private readonly ClsUtilidades ObjUtilidades = new ClsUtilidades();
         private readonly ClsGrupoLn ObjGrupoLn = new ClsGrupoLn();
         private readonly FrmDestajo intance;
 
-        private float fracCosto;
+        private float fracCosto, ctda;
         private int uEmpId, uFraccId, uSemana;
         private string uEstilo, uPrograma;
         #endregion
@@ -196,7 +194,7 @@ namespace Pruebas.Formas
             CbSemana.SelectedIndex = -1;
             LblEmpId.Text = string.Empty;
             LblFraccId.Text = string.Empty;
-            LblTrabajador.Text = string.Empty;
+            LblNombre.Text = string.Empty;
             TxtPrograma.Text = string.Empty;
             LblColor.Text = string.Empty;
             LblEstilo.Text = string.Empty;
@@ -213,6 +211,40 @@ namespace Pruebas.Formas
             TxtBINombre.Text = string.Empty;
             TxtBISemana.Text = string.Empty;
             TxtBGrupo.Text = string.Empty;
+            LblCXE.Text = string.Empty;
+
+            fracCosto = 0;
+            uEmpId = 0;
+            uFraccId = 0;
+            uSemana = 0;
+            uEstilo = string.Empty;
+            uPrograma = string.Empty;
+
+            BtnAgregar.Enabled = true;
+            BtnActualizar.Enabled = false;
+            BtnEliminar.Enabled = false;
+        }
+
+        private void LimpiarAgregar()
+        {
+            LblFraccId.Text = string.Empty;
+            TxtPrograma.Text = string.Empty;
+            LblColor.Text = string.Empty;
+            LblEstilo.Text = string.Empty;
+            LblPP.Text = string.Empty;
+            LblPagado.Text = string.Empty;
+            LblRestante.Text = string.Empty;
+            LblFraccion.Text = string.Empty;
+            TxtCantidad.Text = string.Empty;
+            DgvFraccion.DataSource = null;
+            DgvFraccion.Rows.Clear();
+            TxtBFraccion.Text = string.Empty;
+            TxtBFraccion.Enabled = false;
+            TxtBIFraccion.Text = string.Empty;
+            TxtBINombre.Text = string.Empty;
+            TxtBISemana.Text = string.Empty;
+            TxtBGrupo.Text = string.Empty;
+            LblCXE.Text = string.Empty;
 
             fracCosto = 0;
             uEmpId = 0;
@@ -275,34 +307,42 @@ namespace Pruebas.Formas
                         {
                             if (TxtCantidad.Text != string.Empty)
                             {
-                                DialogResult respuesta = MessageBox.Show("¿Quieres agregar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                                if (respuesta == DialogResult.OK)
+                                if (Convert.ToSingle(TxtCantidad.Text) > Convert.ToSingle(LblRestante.Text))
                                 {
-                                    ObjDestajo = new ClsDestajo()
+                                    MessageBox.Show("La cantidad capturada sobrepasa al restante,\nFavor de corregir");
+                                    TxtCantidad.Focus();
+                                }
+                                else
+                                {
+                                    DialogResult respuesta = MessageBox.Show("¿Quieres agregar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                    if (respuesta == DialogResult.OK)
                                     {
-                                        UEmpId = Convert.ToInt16(LblEmpId.Text),
-                                        UFraccId = Convert.ToInt16(LblFraccId.Text),
-                                        UEstilo = LblEstilo.Text,
-                                        Programa = TxtPrograma.Text,
-                                        UColor = LblColor.Text,
-                                        Cantidad = Convert.ToSingle(TxtCantidad.Text),
-                                        FechaCaptura = DateTime.Now,
-                                        Semana = Convert.ToInt16(CbSemana.Text),
-                                        UFracCosto = fracCosto,
-                                        UCantidadFE = Convert.ToInt16(LblCXE.Text),
-                                        Pago = Convert.ToSingle(TxtCantidad.Text) * Convert.ToInt16(LblCXE.Text) * fracCosto
-                                    };
+                                        ObjDestajo = new ClsDestajo()
+                                        {
+                                            UEmpId = Convert.ToInt16(LblEmpId.Text),
+                                            UFraccId = Convert.ToInt16(LblFraccId.Text),
+                                            UEstilo = LblEstilo.Text,
+                                            Programa = TxtPrograma.Text,
+                                            UColor = LblColor.Text,
+                                            Cantidad = Convert.ToSingle(TxtCantidad.Text),
+                                            FechaCaptura = DateTime.Now,
+                                            Semana = Convert.ToInt16(CbSemana.Text),
+                                            UFracCosto = fracCosto,
+                                            UCantidadFE = Convert.ToInt16(LblCXE.Text),
+                                            Pago = Convert.ToSingle(TxtCantidad.Text) * Convert.ToInt16(LblCXE.Text) * fracCosto
+                                        };
 
-                                    ObjDestajoLn.Create(ref ObjDestajo);
-                                    if (ObjDestajo.MsjError == null)
-                                    {
-                                        MessageBox.Show("Alta exitosa");
-                                        CargarListaDestajo();
-                                        Limpiar();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show(ObjDestajo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        ObjDestajoLn.Create(ref ObjDestajo);
+                                        if (ObjDestajo.MsjError == null)
+                                        {
+                                            MessageBox.Show("Alta exitosa");
+                                            CargarListaDestajo();
+                                            LimpiarAgregar();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show(ObjDestajo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
                                     }
                                 }
                             }
@@ -345,39 +385,47 @@ namespace Pruebas.Formas
                 {
                     if (TxtCantidad.Text != string.Empty)
                     {
-                        DialogResult respuesta = MessageBox.Show("¿Quieres editar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                        if (respuesta == DialogResult.OK)
+                        if (ctda-Convert.ToSingle(TxtCantidad.Text)+Convert.ToSingle(LblPagado.Text) > Convert.ToSingle(LblPP.Text))
                         {
-                            ObjDestajo = new ClsDestajo()
+                            MessageBox.Show("No se puede actualizar la cantidad sobrepasa al restante,\nFavor de revisar");
+                            TxtCantidad.Focus();
+                        }
+                        else
+                        {
+                            DialogResult respuesta = MessageBox.Show("¿Quieres editar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (respuesta == DialogResult.OK)
                             {
-                                UEmpId = uEmpId,
-                                UFraccId = uFraccId,
-                                UEstilo = uEstilo,
-                                Programa = uPrograma,
-                                UColor = LblColor.Text,
-                                Cantidad = Convert.ToSingle(TxtCantidad.Text),
-                                FechaCaptura = DateTime.Now,
-                                Semana = uSemana,
-                                UFracCosto = fracCosto,
-                                UCantidadFE = Convert.ToInt16(LblCXE.Text),
-                                Pago = Convert.ToSingle(TxtCantidad.Text) * Convert.ToInt16(LblCXE.Text) * fracCosto,
-                                CEmpId = Convert.ToInt16(LblEmpId.Text),
-                                CFraccId = Convert.ToInt16(LblFraccId.Text),
-                                CEstilo = LblEstilo.Text,
-                                CPrograma = TxtPrograma.Text,
-                                CSemana = Convert.ToInt16(CbSemana.Text)
-                            };
+                                ObjDestajo = new ClsDestajo()
+                                {
+                                    UEmpId = uEmpId,
+                                    UFraccId = uFraccId,
+                                    UEstilo = uEstilo,
+                                    Programa = uPrograma,
+                                    UColor = LblColor.Text,
+                                    Cantidad = Convert.ToSingle(TxtCantidad.Text),
+                                    FechaCaptura = DateTime.Now,
+                                    Semana = uSemana,
+                                    UFracCosto = fracCosto,
+                                    UCantidadFE = Convert.ToInt16(LblCXE.Text),
+                                    Pago = Convert.ToSingle(TxtCantidad.Text) * Convert.ToInt16(LblCXE.Text) * fracCosto,
+                                    CEmpId = Convert.ToInt16(LblEmpId.Text),
+                                    CFraccId = Convert.ToInt16(LblFraccId.Text),
+                                    CEstilo = LblEstilo.Text,
+                                    CPrograma = TxtPrograma.Text,
+                                    CSemana = Convert.ToInt16(CbSemana.Text)
+                                };
 
-                            ObjDestajoLn.Update(ref ObjDestajo);
-                            if (ObjDestajo.MsjError == null)
-                            {
-                                MessageBox.Show("Registro editado");
-                                CargarListaDestajo();
-                                Limpiar();
-                            }
-                            else
-                            {
-                                MessageBox.Show(ObjDestajo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                ObjDestajoLn.Update(ref ObjDestajo);
+                                if (ObjDestajo.MsjError == null)
+                                {
+                                    MessageBox.Show("Registro editado");
+                                    CargarListaDestajo();
+                                    Limpiar();
+                                }
+                                else
+                                {
+                                    MessageBox.Show(ObjDestajo.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                         }
                     }
@@ -487,26 +535,37 @@ namespace Pruebas.Formas
         {
             if (DgvDestajo.Columns[e.ColumnIndex].Name == "Editar")
             {
-                CbSemana.Text = DgvEmpleado.Rows[e.RowIndex].Cells["Semana"].Value.ToString();
-                LblEmpId.Text = DgvEmpleado.Rows[e.RowIndex].Cells["UEmpID"].Value.ToString();
-                LblFraccId.Text = DgvEmpleado.Rows[e.RowIndex].Cells["UFraccId"].Value.ToString();
-                LblCXE.Text = DgvEmpleado.Rows[e.RowIndex].Cells["UCantidadFE"].Value.ToString();
-                LblNombre.Text = DgvEmpleado.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-                TxtPrograma.Text = DgvEmpleado.Rows[e.RowIndex].Cells["Programa"].Value.ToString();
-                CargarDatosPrograma();
-                LblFraccion.Text = DgvEmpleado.Rows[e.RowIndex].Cells["Fraccion"].Value.ToString();
-                RevisarPagados();
-                TxtCantidad.Text = DgvEmpleado.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString();
-                fracCosto = Convert.ToSingle(DgvEmpleado.Rows[e.RowIndex].Cells["UFracCosto"].Value.ToString());
-                LblRestante.Text = Convert.ToString(Convert.ToInt16(LblPP.Text) - Convert.ToSingle(LblPagado.Text));
+                try
+                {
+                    CbSemana.Text = DgvDestajo.Rows[e.RowIndex].Cells["Semana"].Value.ToString();
+                    LblEmpId.Text = DgvDestajo.Rows[e.RowIndex].Cells["UEmpID"].Value.ToString();
+                    LblFraccId.Text = DgvDestajo.Rows[e.RowIndex].Cells["UFraccId"].Value.ToString();
+                    LblCXE.Text = DgvDestajo.Rows[e.RowIndex].Cells["UCantidadFE"].Value.ToString();
+                    LblNombre.Text = DgvDestajo.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                    TxtPrograma.Text = DgvDestajo.Rows[e.RowIndex].Cells["Programa"].Value.ToString();
+                    CargarDatosPrograma();
+                    LblFraccion.Text = DgvDestajo.Rows[e.RowIndex].Cells["Fraccion"].Value.ToString();
+                    RevisarPagados();
+                    TxtCantidad.Text = DgvDestajo.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString();
+                    fracCosto = Convert.ToSingle(DgvDestajo.Rows[e.RowIndex].Cells["UFracCosto"].Value.ToString());
+                    LblRestante.Text = Convert.ToString(Convert.ToSingle(LblPP.Text) - Convert.ToSingle(LblPagado.Text));
 
-                uEmpId = Convert.ToInt16(LblEmpId.Text);
-                uFraccId = Convert.ToInt16(LblFraccId.Text);
-                uEstilo = LblEstilo.Text;
-                uPrograma = TxtPrograma.Text;
-                uSemana = Convert.ToInt16(CbSemana.Text);
+                    uEmpId = Convert.ToInt16(LblEmpId.Text);
+                    uFraccId = Convert.ToInt16(LblFraccId.Text);
+                    uEstilo = LblEstilo.Text;
+                    uPrograma = TxtPrograma.Text;
+                    uSemana = Convert.ToInt16(CbSemana.Text);
+                    ctda = Convert.ToSingle(LblPP.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
 
                 CargarListaFraccEstilo();
+                BtnAgregar.Enabled = false;
+                BtnActualizar.Enabled = true;
+                BtnEliminar.Enabled = true;
             }
         }
 

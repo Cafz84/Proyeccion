@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDestajo));
             this.LblTDestajo = new System.Windows.Forms.Label();
             this.TxtPrograma = new System.Windows.Forms.TextBox();
-            this.LblTrabajador = new System.Windows.Forms.Label();
+            this.LblTTrabajador = new System.Windows.Forms.Label();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.LblSemana = new System.Windows.Forms.Label();
             this.CbSemana = new System.Windows.Forms.ComboBox();
@@ -79,6 +79,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.TxtBGrupo = new System.Windows.Forms.TextBox();
             this.DgvGrupo = new System.Windows.Forms.DataGridView();
+            this.SelG = new System.Windows.Forms.DataGridViewImageColumn();
             this.BtnRelacion = new System.Windows.Forms.Button();
             this.BtnCrear = new System.Windows.Forms.Button();
             this.LblTFraccion = new System.Windows.Forms.Label();
@@ -94,7 +95,6 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
-            this.SelG = new System.Windows.Forms.DataGridViewImageColumn();
             this.TcDestajo.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -137,16 +137,16 @@
             this.TxtPrograma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtPrograma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPrograma_KeyDown);
             // 
-            // LblTrabajador
+            // LblTTrabajador
             // 
-            this.LblTrabajador.AutoSize = true;
-            this.LblTrabajador.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTrabajador.ForeColor = System.Drawing.Color.White;
-            this.LblTrabajador.Location = new System.Drawing.Point(24, 91);
-            this.LblTrabajador.Name = "LblTrabajador";
-            this.LblTrabajador.Size = new System.Drawing.Size(115, 22);
-            this.LblTrabajador.TabIndex = 101;
-            this.LblTrabajador.Text = "Trabajador:";
+            this.LblTTrabajador.AutoSize = true;
+            this.LblTTrabajador.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTTrabajador.ForeColor = System.Drawing.Color.White;
+            this.LblTTrabajador.Location = new System.Drawing.Point(24, 91);
+            this.LblTTrabajador.Name = "LblTTrabajador";
+            this.LblTTrabajador.Size = new System.Drawing.Size(115, 22);
+            this.LblTTrabajador.TabIndex = 101;
+            this.LblTTrabajador.Text = "Trabajador:";
             // 
             // TxtCantidad
             // 
@@ -660,6 +660,14 @@
             this.DgvGrupo.TabIndex = 2;
             this.DgvGrupo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGrupo_CellContentClick);
             // 
+            // SelG
+            // 
+            this.SelG.HeaderText = "Sel";
+            this.SelG.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
+            this.SelG.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.SelG.Name = "SelG";
+            this.SelG.Width = 55;
+            // 
             // BtnRelacion
             // 
             this.BtnRelacion.BackColor = System.Drawing.Color.RoyalBlue;
@@ -844,14 +852,6 @@
             this.BtnCerrar.TabStop = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
-            // SelG
-            // 
-            this.SelG.HeaderText = "Sel";
-            this.SelG.Image = global::Pruebas.Properties.Resources._3592869_compose_create_edit_edit_file_office_pencil_writing_creative_107746;
-            this.SelG.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.SelG.Name = "SelG";
-            this.SelG.Width = 55;
-            // 
             // FrmDestajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -885,7 +885,7 @@
             this.Controls.Add(this.TxtCantidad);
             this.Controls.Add(this.LblSemana);
             this.Controls.Add(this.TxtPrograma);
-            this.Controls.Add(this.LblTrabajador);
+            this.Controls.Add(this.LblTTrabajador);
             this.Controls.Add(this.BtnActualizar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnLimpiar);
@@ -930,7 +930,7 @@
         private System.Windows.Forms.Button BtnLimpiar;
         private System.Windows.Forms.PictureBox BtnCerrar;
         private System.Windows.Forms.TextBox TxtPrograma;
-        private System.Windows.Forms.Label LblTrabajador;
+        private System.Windows.Forms.Label LblTTrabajador;
         private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.Label LblSemana;
         private System.Windows.Forms.ComboBox CbSemana;

@@ -31,9 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRGrupoEmp));
             this.TcRelacion = new System.Windows.Forms.TabControl();
             this.TpIndex = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TxtBGrupo = new System.Windows.Forms.TextBox();
             this.DgvRelacion = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpRelacionar = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.TxtBEmpleado = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.TxtBRGrupo = new System.Windows.Forms.TextBox();
             this.DgvEmpleado = new System.Windows.Forms.DataGridView();
             this.SelE = new System.Windows.Forms.DataGridViewImageColumn();
             this.DgvGrupo = new System.Windows.Forms.DataGridView();
@@ -50,22 +56,16 @@
             this.LblGrupo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtPorcentaje = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TxtBGrupo = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.TxtBRGrupo = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.TxtBEmpleado = new System.Windows.Forms.TextBox();
             this.TcRelacion.SuspendLayout();
             this.TpIndex.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvRelacion)).BeginInit();
             this.TpRelacionar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGrupo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // TcRelacion
@@ -92,6 +92,28 @@
             this.TpIndex.Size = new System.Drawing.Size(786, 288);
             this.TpIndex.TabIndex = 0;
             this.TpIndex.Text = "Index";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Pruebas.Properties.Resources.xmag_search_find_export_locate_32x32;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 131;
+            this.pictureBox1.TabStop = false;
+            // 
+            // TxtBGrupo
+            // 
+            this.TxtBGrupo.BackColor = System.Drawing.Color.LightGray;
+            this.TxtBGrupo.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.TxtBGrupo.Location = new System.Drawing.Point(35, 2);
+            this.TxtBGrupo.MaxLength = 50;
+            this.TxtBGrupo.Name = "TxtBGrupo";
+            this.TxtBGrupo.Size = new System.Drawing.Size(134, 21);
+            this.TxtBGrupo.TabIndex = 132;
+            this.TxtBGrupo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtBGrupo.TextChanged += new System.EventHandler(this.TxtBGrupo_TextChanged);
             // 
             // DgvRelacion
             // 
@@ -128,6 +150,50 @@
             this.TpRelacionar.Size = new System.Drawing.Size(786, 288);
             this.TpRelacionar.TabIndex = 1;
             this.TpRelacionar.Text = "Relacionar";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Pruebas.Properties.Resources.xmag_search_find_export_locate_32x32;
+            this.pictureBox3.Location = new System.Drawing.Point(408, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(23, 20);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 135;
+            this.pictureBox3.TabStop = false;
+            // 
+            // TxtBEmpleado
+            // 
+            this.TxtBEmpleado.BackColor = System.Drawing.Color.LightGray;
+            this.TxtBEmpleado.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.TxtBEmpleado.Location = new System.Drawing.Point(437, 2);
+            this.TxtBEmpleado.MaxLength = 50;
+            this.TxtBEmpleado.Name = "TxtBEmpleado";
+            this.TxtBEmpleado.Size = new System.Drawing.Size(134, 21);
+            this.TxtBEmpleado.TabIndex = 136;
+            this.TxtBEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtBEmpleado.TextChanged += new System.EventHandler(this.TxtBEmpleado_TextChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Pruebas.Properties.Resources.xmag_search_find_export_locate_32x32;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 133;
+            this.pictureBox2.TabStop = false;
+            // 
+            // TxtBRGrupo
+            // 
+            this.TxtBRGrupo.BackColor = System.Drawing.Color.LightGray;
+            this.TxtBRGrupo.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.TxtBRGrupo.Location = new System.Drawing.Point(35, 2);
+            this.TxtBRGrupo.MaxLength = 50;
+            this.TxtBRGrupo.Name = "TxtBRGrupo";
+            this.TxtBRGrupo.Size = new System.Drawing.Size(134, 21);
+            this.TxtBRGrupo.TabIndex = 134;
+            this.TxtBRGrupo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtBRGrupo.TextChanged += new System.EventHandler(this.TxtBRGrupo_TextChanged);
             // 
             // DgvEmpleado
             // 
@@ -321,72 +387,6 @@
             this.TxtPorcentaje.TabIndex = 71;
             this.TxtPorcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Pruebas.Properties.Resources.xmag_search_find_export_locate_32x32;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 131;
-            this.pictureBox1.TabStop = false;
-            // 
-            // TxtBGrupo
-            // 
-            this.TxtBGrupo.BackColor = System.Drawing.Color.LightGray;
-            this.TxtBGrupo.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.TxtBGrupo.Location = new System.Drawing.Point(35, 2);
-            this.TxtBGrupo.MaxLength = 50;
-            this.TxtBGrupo.Name = "TxtBGrupo";
-            this.TxtBGrupo.Size = new System.Drawing.Size(134, 21);
-            this.TxtBGrupo.TabIndex = 132;
-            this.TxtBGrupo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxtBGrupo.TextChanged += new System.EventHandler(this.TxtBGrupo_TextChanged);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Pruebas.Properties.Resources.xmag_search_find_export_locate_32x32;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 133;
-            this.pictureBox2.TabStop = false;
-            // 
-            // TxtBRGrupo
-            // 
-            this.TxtBRGrupo.BackColor = System.Drawing.Color.LightGray;
-            this.TxtBRGrupo.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.TxtBRGrupo.Location = new System.Drawing.Point(35, 2);
-            this.TxtBRGrupo.MaxLength = 50;
-            this.TxtBRGrupo.Name = "TxtBRGrupo";
-            this.TxtBRGrupo.Size = new System.Drawing.Size(134, 21);
-            this.TxtBRGrupo.TabIndex = 134;
-            this.TxtBRGrupo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxtBRGrupo.TextChanged += new System.EventHandler(this.TxtBRGrupo_TextChanged);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Pruebas.Properties.Resources.xmag_search_find_export_locate_32x32;
-            this.pictureBox3.Location = new System.Drawing.Point(408, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(23, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 135;
-            this.pictureBox3.TabStop = false;
-            // 
-            // TxtBEmpleado
-            // 
-            this.TxtBEmpleado.BackColor = System.Drawing.Color.LightGray;
-            this.TxtBEmpleado.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.TxtBEmpleado.Location = new System.Drawing.Point(437, 2);
-            this.TxtBEmpleado.MaxLength = 50;
-            this.TxtBEmpleado.Name = "TxtBEmpleado";
-            this.TxtBEmpleado.Size = new System.Drawing.Size(134, 21);
-            this.TxtBEmpleado.TabIndex = 136;
-            this.TxtBEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxtBEmpleado.TextChanged += new System.EventHandler(this.TxtBEmpleado_TextChanged);
-            // 
             // FrmRGrupoEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,15 +413,15 @@
             this.TcRelacion.ResumeLayout(false);
             this.TpIndex.ResumeLayout(false);
             this.TpIndex.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvRelacion)).EndInit();
             this.TpRelacionar.ResumeLayout(false);
             this.TpRelacionar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGrupo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

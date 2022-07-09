@@ -42,8 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuario\ClsAportEmp.cs" />
+    <Compile Include="Usuario\ClsAportFijo.cs" />
+    <Compile Include="Usuario\ClsDeduccion.cs" />
+    <Compile Include="Usuario\ClsAportacion.cs" />
     <Compile Include="Usuario\ClsArea.cs" />
     <Compile Include="Usuario\ClsCiudad.cs" />
+    <Compile Include="Usuario\ClsDeducEmp.cs" />
+    <Compile Include="Usuario\ClsDeducFijo.cs" />
     <Compile Include="Usuario\ClsDepartamento.cs" />
     <Compile Include="Usuario\ClsDestajo.cs" />
     <Compile Include="Usuario\ClsEmpleado.cs" />

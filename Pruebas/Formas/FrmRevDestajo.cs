@@ -39,12 +39,12 @@ namespace Pruebas.Formas
         #endregion
 
         #region Acciones con TxtBox
-        private void TxtBSemana_TextChanged(object sender, System.EventArgs e)
+        private void TxtBRSemana_TextChanged(object sender, System.EventArgs e)
         {
 
         }
 
-        private void TxtBNombre_TextChanged(object sender, System.EventArgs e)
+        private void TxtBRNombre_TextChanged(object sender, System.EventArgs e)
         {
 
         }

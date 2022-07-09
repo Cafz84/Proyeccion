@@ -31,7 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleados));
             this.TcEmpleados = new System.Windows.Forms.TabControl();
             this.TpIndex = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.TxtBTrabajador = new System.Windows.Forms.TextBox();
             this.DgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpDireccion = new System.Windows.Forms.TabPage();
             this.cbCiudad = new System.Windows.Forms.ComboBox();
             this.CbEstado = new System.Windows.Forms.ComboBox();
@@ -107,11 +110,9 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnActualizar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.TxtBTrabajador = new System.Windows.Forms.TextBox();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TcEmpleados.SuspendLayout();
             this.TpIndex.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).BeginInit();
             this.TpDireccion.SuspendLayout();
             this.TpGestion.SuspendLayout();
@@ -119,7 +120,6 @@
             this.TpFinanciera.SuspendLayout();
             this.GbTipoPago.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // TcEmpleados
@@ -150,6 +150,27 @@
             this.TpIndex.TabIndex = 0;
             this.TpIndex.Text = "Index";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Pruebas.Properties.Resources.xmag_search_find_export_locate_32x32;
+            this.pictureBox2.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 28);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 135;
+            this.pictureBox2.TabStop = false;
+            // 
+            // TxtBTrabajador
+            // 
+            this.TxtBTrabajador.BackColor = System.Drawing.Color.LightGray;
+            this.TxtBTrabajador.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBTrabajador.Location = new System.Drawing.Point(45, 5);
+            this.TxtBTrabajador.MaxLength = 50;
+            this.TxtBTrabajador.Name = "TxtBTrabajador";
+            this.TxtBTrabajador.Size = new System.Drawing.Size(313, 27);
+            this.TxtBTrabajador.TabIndex = 134;
+            this.TxtBTrabajador.TextChanged += new System.EventHandler(this.TxtBTrabajador_TextChanged);
+            // 
             // DgvEmpleados
             // 
             this.DgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -160,6 +181,14 @@
             this.DgvEmpleados.Size = new System.Drawing.Size(1066, 349);
             this.DgvEmpleados.TabIndex = 0;
             this.DgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmpleados_CellContentClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Edit";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 55;
             // 
             // TpDireccion
             // 
@@ -184,7 +213,7 @@
             this.TpDireccion.Location = new System.Drawing.Point(4, 26);
             this.TpDireccion.Name = "TpDireccion";
             this.TpDireccion.Padding = new System.Windows.Forms.Padding(3);
-            this.TpDireccion.Size = new System.Drawing.Size(1048, 376);
+            this.TpDireccion.Size = new System.Drawing.Size(1066, 385);
             this.TpDireccion.TabIndex = 1;
             this.TpDireccion.Text = "Dirección";
             // 
@@ -368,7 +397,7 @@
             this.TpGestion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpGestion.Location = new System.Drawing.Point(4, 26);
             this.TpGestion.Name = "TpGestion";
-            this.TpGestion.Size = new System.Drawing.Size(1048, 376);
+            this.TpGestion.Size = new System.Drawing.Size(1066, 385);
             this.TpGestion.TabIndex = 2;
             this.TpGestion.Text = "Gestión";
             // 
@@ -450,7 +479,7 @@
             this.TpPersonal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TpPersonal.Location = new System.Drawing.Point(4, 26);
             this.TpPersonal.Name = "TpPersonal";
-            this.TpPersonal.Size = new System.Drawing.Size(1048, 376);
+            this.TpPersonal.Size = new System.Drawing.Size(1066, 385);
             this.TpPersonal.TabIndex = 3;
             this.TpPersonal.Text = "Personal";
             // 
@@ -585,7 +614,7 @@
             this.TpFinanciera.Location = new System.Drawing.Point(4, 26);
             this.TpFinanciera.Name = "TpFinanciera";
             this.TpFinanciera.Padding = new System.Windows.Forms.Padding(3);
-            this.TpFinanciera.Size = new System.Drawing.Size(1048, 376);
+            this.TpFinanciera.Size = new System.Drawing.Size(1066, 385);
             this.TpFinanciera.TabIndex = 6;
             this.TpFinanciera.Text = "Financiera";
             // 
@@ -1068,35 +1097,6 @@
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Pruebas.Properties.Resources.xmag_search_find_export_locate_32x32;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 28);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 135;
-            this.pictureBox2.TabStop = false;
-            // 
-            // TxtBTrabajador
-            // 
-            this.TxtBTrabajador.BackColor = System.Drawing.Color.LightGray;
-            this.TxtBTrabajador.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBTrabajador.Location = new System.Drawing.Point(45, 5);
-            this.TxtBTrabajador.MaxLength = 50;
-            this.TxtBTrabajador.Name = "TxtBTrabajador";
-            this.TxtBTrabajador.Size = new System.Drawing.Size(313, 27);
-            this.TxtBTrabajador.TabIndex = 134;
-            this.TxtBTrabajador.TextChanged += new System.EventHandler(this.TxtBTrabajador_TextChanged);
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Edit";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 55;
-            // 
             // FrmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1137,6 +1137,7 @@
             this.TcEmpleados.ResumeLayout(false);
             this.TpIndex.ResumeLayout(false);
             this.TpIndex.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleados)).EndInit();
             this.TpDireccion.ResumeLayout(false);
             this.TpDireccion.PerformLayout();
@@ -1149,7 +1150,6 @@
             this.GbTipoPago.ResumeLayout(false);
             this.GbTipoPago.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

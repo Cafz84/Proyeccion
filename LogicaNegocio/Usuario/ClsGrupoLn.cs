@@ -10,6 +10,7 @@ namespace LogicaNegocio.Usuario
         #region Variables Privadas
         private ClsDataBase ObjDataBase = null;
         private string Log;
+        private bool bIndex;
         #endregion
 
         #region Metodos Index
@@ -23,6 +24,8 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@Grupo", "18", ObjGrupo.Grupo);
             Ejecutar(ref ObjGrupo);
         }
 
@@ -70,6 +73,7 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            bIndex = false;
             ObjDataBase.DtParametros.Rows.Add(@"@GrupoDId", "4", ObjGrupo.GrupoDId);
 
             Ejecutar(ref ObjGrupo);
@@ -139,7 +143,7 @@ namespace LogicaNegocio.Usuario
                 else
                 {
                     ObjGrupo.DtResultados = ObjDataBase.DsResultados.Tables[0];
-                    if (ObjGrupo.DtResultados.Rows.Count == 1)
+                    if (ObjGrupo.DtResultados.Rows.Count == 1 && bIndex == false)
                     {
                         foreach (DataRow dr in ObjGrupo.DtResultados.Rows)
                         {

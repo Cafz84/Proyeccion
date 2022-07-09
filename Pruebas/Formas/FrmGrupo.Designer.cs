@@ -45,8 +45,11 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.TxtBGrupo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGrupo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // ChkActivo
@@ -127,10 +130,10 @@
             this.DgvGrupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvGrupo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});
-            this.DgvGrupo.Location = new System.Drawing.Point(12, 165);
+            this.DgvGrupo.Location = new System.Drawing.Point(2, 182);
             this.DgvGrupo.Name = "DgvGrupo";
             this.DgvGrupo.ReadOnly = true;
-            this.DgvGrupo.Size = new System.Drawing.Size(658, 273);
+            this.DgvGrupo.Size = new System.Drawing.Size(678, 266);
             this.DgvGrupo.TabIndex = 51;
             this.DgvGrupo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGrupo_CellContentClick);
             // 
@@ -216,7 +219,6 @@
             // BtnLimpiar
             // 
             this.BtnLimpiar.BackColor = System.Drawing.Color.BurlyWood;
-            this.BtnLimpiar.Enabled = false;
             this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
@@ -242,12 +244,36 @@
             this.BtnCerrar.TabStop = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Pruebas.Properties.Resources.xmag_search_find_export_locate_32x32;
+            this.pictureBox2.Location = new System.Drawing.Point(9, 159);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 135;
+            this.pictureBox2.TabStop = false;
+            // 
+            // TxtBGrupo
+            // 
+            this.TxtBGrupo.BackColor = System.Drawing.Color.LightGray;
+            this.TxtBGrupo.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.TxtBGrupo.Location = new System.Drawing.Point(38, 158);
+            this.TxtBGrupo.MaxLength = 50;
+            this.TxtBGrupo.Name = "TxtBGrupo";
+            this.TxtBGrupo.Size = new System.Drawing.Size(182, 21);
+            this.TxtBGrupo.TabIndex = 136;
+            this.TxtBGrupo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtBGrupo.TextChanged += new System.EventHandler(this.TxtBGrupo_TextChanged);
+            // 
             // FrmGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(682, 450);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.TxtBGrupo);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnActualizar);
             this.Controls.Add(this.BtnAgregar);
@@ -268,6 +294,7 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmGrupo_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.DgvGrupo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +318,7 @@
         private System.Windows.Forms.PictureBox BtnCerrar;
         private System.Windows.Forms.Label LblTituloGrupo;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox TxtBGrupo;
     }
 }

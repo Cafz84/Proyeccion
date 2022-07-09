@@ -41,7 +41,6 @@ namespace Pruebas.Formas
             TxtDescripcion.Text = string.Empty;
             ChkActivo.Checked = false;
 
-            BtnLimpiar.Enabled = false;
             BtnAgregar.Enabled = true;
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
@@ -49,12 +48,18 @@ namespace Pruebas.Formas
 
         private void CargarListaGrupo()
         {
-            ObjGrupo = new ClsGrupo();
+            ObjGrupo = new ClsGrupo()
+            {
+                Grupo = TxtBGrupo.Text
+            };
+
             ObjGrupoLn.Index(ref ObjGrupo);
             if (ObjGrupo.MsjError == null)
             {
                 DgvGrupo.DataSource = ObjGrupo.DtResultados;
-                ObjUtilidades.FormatoDataGridView(ref DgvGrupo);
+                ObjUtilidades.FormatoDgvPEC(ref DgvGrupo);
+                DgvGrupo.Columns["GrupoDId"].Visible = false;
+                DgvGrupo.Columns["Editar"].Width = 40;
             }
             else
             {
@@ -264,7 +269,6 @@ namespace Pruebas.Formas
                     ChkActivo.Checked = ObjGrupo.Activo;
 
                     BtnActualizar.Enabled = true;
-                    BtnLimpiar.Enabled = true;
                     BtnAgregar.Enabled = false;
                     BtnEliminar.Enabled = true;
                 }
@@ -273,6 +277,13 @@ namespace Pruebas.Formas
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+        #endregion
+
+        #region Acciones con TextBox
+        private void TxtBGrupo_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaGrupo();
         }
         #endregion
 

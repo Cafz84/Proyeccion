@@ -319,11 +319,13 @@
             // 
             this.TxtCostoMuestra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TxtCostoMuestra.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCostoMuestra.Location = new System.Drawing.Point(663, 57);
+            this.TxtCostoMuestra.Location = new System.Drawing.Point(681, 57);
             this.TxtCostoMuestra.MaxLength = 50;
             this.TxtCostoMuestra.Name = "TxtCostoMuestra";
-            this.TxtCostoMuestra.Size = new System.Drawing.Size(136, 31);
+            this.TxtCostoMuestra.Size = new System.Drawing.Size(118, 31);
             this.TxtCostoMuestra.TabIndex = 104;
+            this.TxtCostoMuestra.Text = "0";
+            this.TxtCostoMuestra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtCostoMuestra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCostoMuestra_KeyPress);
             // 
             // LblCostoMuestra
@@ -331,7 +333,7 @@
             this.LblCostoMuestra.AutoSize = true;
             this.LblCostoMuestra.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCostoMuestra.ForeColor = System.Drawing.Color.White;
-            this.LblCostoMuestra.Location = new System.Drawing.Point(557, 61);
+            this.LblCostoMuestra.Location = new System.Drawing.Point(566, 61);
             this.LblCostoMuestra.Name = "LblCostoMuestra";
             this.LblCostoMuestra.Size = new System.Drawing.Size(109, 22);
             this.LblCostoMuestra.TabIndex = 105;
@@ -368,8 +370,10 @@
             this.TxtCosto.Location = new System.Drawing.Point(553, 22);
             this.TxtCosto.MaxLength = 50;
             this.TxtCosto.Name = "TxtCosto";
-            this.TxtCosto.Size = new System.Drawing.Size(136, 31);
+            this.TxtCosto.Size = new System.Drawing.Size(113, 31);
             this.TxtCosto.TabIndex = 102;
+            this.TxtCosto.Text = "0";
+            this.TxtCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCosto_KeyPress);
             // 
             // LblTelMovil
@@ -410,8 +414,10 @@
             this.TxtTiempo.Location = new System.Drawing.Point(359, 22);
             this.TxtTiempo.MaxLength = 50;
             this.TxtTiempo.Name = "TxtTiempo";
-            this.TxtTiempo.Size = new System.Drawing.Size(131, 31);
+            this.TxtTiempo.Size = new System.Drawing.Size(108, 31);
             this.TxtTiempo.TabIndex = 100;
+            this.TxtTiempo.Text = "0";
+            this.TxtTiempo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtTiempo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTiempo_KeyPress);
             // 
             // LblTiempo

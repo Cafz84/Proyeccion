@@ -36,7 +36,11 @@ namespace Pruebas.Formas
         #region Metodos Privados
         private void CargarListaPuesto()
         {
-            ObjPuesto = new ClsPuesto();
+            ObjPuesto = new ClsPuesto()
+            {
+                Puesto = TxtBPuesto.Text
+            };
+
             ObjPuestoLn.Index(ref ObjPuesto);
             if (ObjPuesto.MsjError == null)
             {
@@ -48,60 +52,83 @@ namespace Pruebas.Formas
                 MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        #endregion
 
-        #region Accion con los Botones
-        private void BtnLimpiar_Click(object sender, EventArgs e)
+        private void Limpiar()
         {
             LblPuestoId.Text = string.Empty;
             TxtNombre.Text = string.Empty;
             TxtDescripcion.Text = string.Empty;
             ChkActivo.Checked = false;
+            TxtBPuesto.Text = string.Empty;
+            TxtNombre.Focus();
 
-            BtnLimpiar.Enabled = false;
             BtnAgregar.Enabled = true;
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
+        }
+
+        private bool Repetido()
+        {
+            ObjPuesto = new ClsPuesto()
+            {
+                Puesto = TxtNombre.Text
+            };
+
+            ObjPuestoLn.ReadRepetido(ref ObjPuesto);
+            if (ObjPuesto.DtResultados.Rows.Count == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        #endregion
+
+        #region Accion con los Botones
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             if (LblPuestoId.Text == string.Empty)
             {
-                DialogResult result = MessageBox.Show("¿Realmente quieres dar de alta el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.OK)
+                if (Repetido())
                 {
-                    ObjPuesto = new ClsPuesto()
+                    DialogResult result = MessageBox.Show("¿Quieres dar de alta el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        Puesto = TxtNombre.Text,
-                        Descripcion = TxtDescripcion.Text,
-                        Activo = true
-                    };
+                        ObjPuesto = new ClsPuesto()
+                        {
+                            Puesto = TxtNombre.Text,
+                            Descripcion = TxtDescripcion.Text,
+                            Activo = true
+                        };
 
-                    ObjPuestoLn.Create(ref ObjPuesto);
-                    if (ObjPuesto.MsjError == null)
-                    {
-                        MessageBox.Show("Alta exitosa");
-                        CargarListaPuesto();
-                        LblPuestoId.Text = string.Empty;
-                        TxtNombre.Text = string.Empty;
-                        TxtDescripcion.Text = string.Empty;
-                        ChkActivo.Checked = false;
-
-                        BtnLimpiar.Enabled = false;
-                        BtnAgregar.Enabled = true;
-                        BtnActualizar.Enabled = false;
-                        BtnEliminar.Enabled = false;
+                        ObjPuestoLn.Create(ref ObjPuesto);
+                        if (ObjPuesto.MsjError == null)
+                        {
+                            MessageBox.Show("Alta exitosa");
+                            CargarListaPuesto();
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("El Puesto ya exixte", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("No se puede generar alta si se selecciono para editar favor de limpiar primero");
+                MessageBox.Show("No se puede generar alta si se selecciono para editar.\nFavor de limpiar primero", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -113,32 +140,35 @@ namespace Pruebas.Formas
             }
             else
             {
-                DialogResult result = MessageBox.Show("", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.OK)
+                if (Repetido())
                 {
-                    ObjPuesto = new ClsPuesto()
+                    DialogResult result = MessageBox.Show("¿Quieres actualizar el registro?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        PuestoId = Convert.ToByte(LblPuestoId.Text),
-                        Puesto = TxtNombre.Text,
-                        Descripcion = TxtDescripcion.Text,
-                        Activo = ChkActivo.Checked
-                    };
+                        ObjPuesto = new ClsPuesto()
+                        {
+                            PuestoId = Convert.ToByte(LblPuestoId.Text),
+                            Puesto = TxtNombre.Text,
+                            Descripcion = TxtDescripcion.Text,
+                            Activo = ChkActivo.Checked
+                        };
 
-                    ObjPuestoLn.Update(ref ObjPuesto);
-                    if (ObjPuesto.MsjError == null)
-                    {
-                        MessageBox.Show("La Area fue actualizada correctamente");
-                        CargarListaPuesto();
-
-                        BtnLimpiar.Enabled = true;
-                        BtnAgregar.Enabled = false;
-                        BtnActualizar.Enabled = true;
-                        BtnEliminar.Enabled = true;
+                        ObjPuestoLn.Update(ref ObjPuesto);
+                        if (ObjPuesto.MsjError == null)
+                        {
+                            MessageBox.Show("El Puesto fue actualizado correctamente");
+                            CargarListaPuesto();
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("El Puesto ya exixte", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -166,15 +196,7 @@ namespace Pruebas.Formas
                         {
                             MessageBox.Show("Baja exitosa");
                             CargarListaPuesto();
-                            LblPuestoId.Text = string.Empty;
-                            TxtNombre.Text = string.Empty;
-                            TxtDescripcion.Text = string.Empty;
-                            ChkActivo.Checked = false;
-
-                            BtnLimpiar.Enabled = false;
-                            BtnAgregar.Enabled = true;
-                            BtnActualizar.Enabled = false;
-                            BtnEliminar.Enabled = false;
+                            Limpiar();
                         }
                         else
                         {
@@ -184,31 +206,26 @@ namespace Pruebas.Formas
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("El registro se desactivara primero \n ¿Quieres continuar?", "Mensaje de sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    ObjPuesto = new ClsPuesto()
+                    DialogResult result = MessageBox.Show("El registro se desactivara primero \n ¿Quieres continuar?", "Mensaje de Sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        PuestoId = Convert.ToByte(LblPuestoId.Text),
-                        Activo = false
-                    };
+                        ObjPuesto = new ClsPuesto()
+                        {
+                            PuestoId = Convert.ToByte(LblPuestoId.Text),
+                            Activo = false
+                        };
 
-                    ObjPuestoLn.UpdateActivo(ref ObjPuesto);
-                    if (ObjPuesto.MsjError == null)
-                    {
-                        MessageBox.Show("La Area fue desactivada");
-                        CargarListaPuesto();
-                        LblPuestoId.Text = string.Empty;
-                        TxtNombre.Text = string.Empty;
-                        TxtDescripcion.Text = string.Empty;
-                        ChkActivo.Checked = false;
-
-                        BtnLimpiar.Enabled = false;
-                        BtnAgregar.Enabled = true;
-                        BtnActualizar.Enabled = false;
-                        BtnEliminar.Enabled = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ObjPuestoLn.UpdateActivo(ref ObjPuesto);
+                        if (ObjPuesto.MsjError == null)
+                        {
+                            MessageBox.Show("La Area fue desactivada");
+                            CargarListaPuesto();
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show(ObjPuesto.MsjError, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
@@ -241,7 +258,6 @@ namespace Pruebas.Formas
                     TxtDescripcion.Text = ObjPuesto.Descripcion;
                     ChkActivo.Checked = ObjPuesto.Activo;
 
-                    BtnLimpiar.Enabled = true;
                     BtnAgregar.Enabled = false;
                     BtnActualizar.Enabled = true;
                     BtnEliminar.Enabled = true;
@@ -251,6 +267,13 @@ namespace Pruebas.Formas
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+        #endregion
+
+        #region Accion con TextBox
+        private void TxtBPuesto_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaPuesto();
         }
         #endregion
 

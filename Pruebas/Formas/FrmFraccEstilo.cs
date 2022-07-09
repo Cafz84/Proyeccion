@@ -44,6 +44,10 @@ namespace Pruebas.Formas
             TxtBCodFraccion.Text = string.Empty;
             TxtBFraccion.Text = string.Empty;
             TxtCantidad.Text = "1";
+            TxtCosto.Text = "0";
+            TxtTiempo.Text = "0";
+            TxtCostoMuestra.Text = "0";
+
 
             BtnAgregar.Enabled = true;
             BtnActualizar.Enabled = false;
@@ -56,6 +60,9 @@ namespace Pruebas.Formas
             LblCodFraccion.Text = string.Empty;
             LblNomFraccion.Text = string.Empty;
             TxtCantidad.Text = "1";
+            TxtCosto.Text = "0";
+            TxtTiempo.Text = "0";
+            TxtCostoMuestra.Text = "0";
 
             BtnActualizar.Enabled = true;
             BtnActualizar.Enabled = false;

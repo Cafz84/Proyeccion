@@ -2,7 +2,6 @@
 using Entidades.Usuario;
 using System;
 using System.Data;
-using System.Linq;
 
 namespace LogicaNegocio.Usuario
 {
@@ -11,6 +10,7 @@ namespace LogicaNegocio.Usuario
         #region Variables Privadas
         private ClsDataBase ObjDataBase = null;
         private string Log;
+        private bool bIndex;
         #endregion
 
         #region Metodo Index
@@ -24,6 +24,8 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@Puesto", "18", ObjPuesto.Puesto);
             Ejecutar(ref ObjPuesto);
         }
 
@@ -69,7 +71,24 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            bIndex = false;
             ObjDataBase.DtParametros.Rows.Add(@"@PuestoId", "4", ObjPuesto.PuestoId);
+
+            Ejecutar(ref ObjPuesto);
+        }
+
+        public void ReadRepetido(ref ClsPuesto ObjPuesto)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "DB_BasePruebas",
+                NombreTabla = "Puesto",
+                NombreSP = "dbo.SP_Puesto_ReadRepetido",
+                Scalar = false
+            };
+
+            bIndex = false;
+            ObjDataBase.DtParametros.Rows.Add(@"@Puesto", "18", ObjPuesto.Puesto);
 
             Ejecutar(ref ObjPuesto);
         }
@@ -138,7 +157,7 @@ namespace LogicaNegocio.Usuario
                 else
                 {
                     ObjPuesto.DtResultados = ObjDataBase.DsResultados.Tables[0];
-                    if (ObjPuesto.DtResultados.Rows.Count == 1)
+                    if (ObjPuesto.DtResultados.Rows.Count == 1 && bIndex == false)
                     {
                         foreach (DataRow dr in ObjPuesto.DtResultados.Rows)
                         {

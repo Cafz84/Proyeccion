@@ -64,17 +64,20 @@ namespace LogicaNegocio.Usuario
             Ejecutar(ref ObjFraccion);
         }
 
-        public void ReadMuestra(ref ClsFraccion ObjFraccion)
+        public void ReadRepetido(ref ClsFraccion ObjFraccion)
         {
             ObjDataBase = new ClsDataBase()
             {
                 NombreDB = "DB_BasePruebas",
                 NombreTabla = "Fraccion",
-                NombreSP = "[dbo].[SP_Fraccion_ReadMuestra]",
+                NombreSP = "[dbo].[SP_Fraccion_ReadRepetido]",
                 Scalar = false
             };
 
-            EjecutarReadMuestra(ref ObjFraccion);
+            bIndex=false;
+            ObjDataBase.DtParametros.Rows.Add(@"@Codigo", "18", ObjFraccion.Codigo);
+            ObjDataBase.DtParametros.Rows.Add(@"@Name", "18", ObjFraccion.Name);
+            Ejecutar(ref ObjFraccion);
         }
 
         public void ReadBMuestra(ref ClsFraccion ObjFraccion)
@@ -161,22 +164,8 @@ namespace LogicaNegocio.Usuario
                             ObjFraccion.FraccionId = Convert.ToInt16(dr["FraccionId"].ToString());
                             ObjFraccion.Codigo = dr["Codigo"].ToString();
                             ObjFraccion.Name = dr["Name"].ToString();
+                            ObjFraccion.Descripcion = dr["Descripcion"].ToString();
                             ObjFraccion.Activo = Convert.ToBoolean(dr["Activo"].ToString());
-
-                            if (dr["Tiempo"] == DBNull.Value)
-                                ObjFraccion.Tiempo = 0;
-                            else
-                                ObjFraccion.Tiempo = Convert.ToDouble(dr["Tiempo"].ToString());
-
-                            if (dr["Costo"] == DBNull.Value)
-                                ObjFraccion.Costo = 0;
-                            else
-                                ObjFraccion.Costo = Convert.ToDouble(dr["Costo"].ToString());
-
-                            if (dr["CostoMuestra"] == DBNull.Value)
-                                ObjFraccion.CostoMuestra = 0;
-                            else
-                                ObjFraccion.CostoMuestra = Convert.ToSingle(dr["CostoMuestra"].ToString());
                         }
                     }
                 }

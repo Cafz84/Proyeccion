@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>U:\Programas\Prueba\</PublishUrl>
+    <PublishUrl>Z:\ERP\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -26,7 +26,7 @@
     <ProductName>ERP Calzado Monnaaci</ProductName>
     <PublisherName>Cristian Frausto</PublisherName>
     <SuiteName>Produccion Calzado</SuiteName>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -398,6 +398,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Letter_M_gold_72x72.ico" />
+    <None Include="Resources\editar1.jpg" />
+    <None Include="Resources\checkmark_check_apply_done_accept_32x32.png" />
+    <None Include="Resources\notes-edit-button_32x32.png" />
+    <None Include="Resources\Letter_V_orange_32x32.png" />
+    <None Include="Resources\Letter_F_blue_32x32.png" />
+    <None Include="Resources\plus_insert_add_new_icon_32x32.png" />
     <None Include="Resources\editar.jpg" />
     <None Include="Resources\button_refresh_32x32.png" />
     <None Include="Resources\xmag_search_find_export_locate_32x32.png" />

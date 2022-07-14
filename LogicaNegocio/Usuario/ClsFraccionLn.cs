@@ -17,7 +17,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Fraccion",
                 NombreSP = "[dbo].[SP_Fraccion_Index]",
                 Scalar = false
@@ -35,7 +35,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Fraccion",
                 NombreSP = "[dbo].[SP_Fraccion_Create]",
                 Scalar = true
@@ -53,7 +53,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Fraccion",
                 NombreSP = "[dbo].[SP_Fraccion_Read]",
                 Scalar = false
@@ -68,7 +68,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Fraccion",
                 NombreSP = "[dbo].[SP_Fraccion_ReadRepetido]",
                 Scalar = false
@@ -84,7 +84,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Fraccion",
                 NombreSP = "[dbo].[SP_Fraccion_ReadBMuestra]",
                 Scalar = false
@@ -98,7 +98,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Fraccion",
                 NombreSP = "[dbo].[SP_Fraccion_Update]",
                 Scalar = true
@@ -116,7 +116,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Fraccion",
                 NombreSP = "dbo.SP_Fraccion_UpdateActivo",
                 Scalar = true
@@ -132,7 +132,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Fraccion",
                 NombreSP = "[dbo].[SP_Fraccion_Delete]",
                 Scalar = true

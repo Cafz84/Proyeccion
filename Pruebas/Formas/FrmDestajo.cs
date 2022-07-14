@@ -72,13 +72,17 @@ namespace Pruebas.Formas
             if (ObjDestajo.MsjError == null)
             {
                 DgvDestajo.DataSource = ObjDestajo.DtResultados;
-                ObjUtilidades.FormatoDgvEmpleado(ref DgvDestajo);
+                ObjUtilidades.FormatoDgvPEC(ref DgvDestajo);
                 DgvDestajo.Columns["UEmpId"].Visible = false;
                 DgvDestajo.Columns["UFraccId"].Visible = false;
                 DgvDestajo.Columns["FechaCaptura"].Visible = false;
                 DgvDestajo.Columns["UFracCosto"].Visible = false;
                 DgvDestajo.Columns["UCantidadFE"].Visible = false;
                 DgvDestajo.Columns["Pago"].Visible = false;
+                DgvDestajo.Columns["Editar"].Width = 30;
+                DgvDestajo.Columns["Sem"].Width = 35;
+                DgvDestajo.Columns["Nombre"].Width = 250;
+                DgvDestajo.Columns["Fraccion"].Width = 300;
             }
             else
             {
@@ -537,7 +541,7 @@ namespace Pruebas.Formas
             {
                 try
                 {
-                    CbSemana.Text = DgvDestajo.Rows[e.RowIndex].Cells["Semana"].Value.ToString();
+                    CbSemana.Text = DgvDestajo.Rows[e.RowIndex].Cells["Sem"].Value.ToString();
                     LblEmpId.Text = DgvDestajo.Rows[e.RowIndex].Cells["UEmpID"].Value.ToString();
                     LblFraccId.Text = DgvDestajo.Rows[e.RowIndex].Cells["UFraccId"].Value.ToString();
                     LblCXE.Text = DgvDestajo.Rows[e.RowIndex].Cells["UCantidadFE"].Value.ToString();

@@ -16,6 +16,9 @@ namespace Pruebas.Formas
         private readonly ClsTablasSAPLn ObjTablasSAPLn = new ClsTablasSAPLn();
         private readonly ClsFraccionLn ObjFraccionLn = new ClsFraccionLn();
         private readonly ClsUtilidades ObjUtilidades = new ClsUtilidades();
+
+        private string idEst;
+        private int idFracc;
         #endregion
 
         #region Metodo constructor
@@ -217,6 +220,8 @@ namespace Pruebas.Formas
                 {
                     ObjFraccEstilo = new ClsFraccEstilo()
                     {
+                        IdEstilo = idEst,
+                        IdFraccion = idFracc,
                         U_IdEstilo = LblIdEstilo.Text,
                         U_IdFraccion = Convert.ToInt16(LblIdFraccion.Text),
                         U_ModCode = LblCodEstilo.Text,
@@ -300,9 +305,11 @@ namespace Pruebas.Formas
                 LblCodFraccion.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["U_CodigoFraccion"].Value.ToString();
                 LblNomFraccion.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Fraccion"].Value.ToString();
                 TxtCantidad.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString();
-                TxtTiempo.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Teimpo"].Value.ToString();
+                TxtTiempo.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Tiempo"].Value.ToString();
                 TxtCosto.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["Costo"].Value.ToString();
                 TxtCostoMuestra.Text = DgvFraccEstilo.Rows[e.RowIndex].Cells["CostoMuestra"].Value.ToString();
+                idEst = LblIdEstilo.Text;
+                idFracc = Convert.ToByte(LblIdFraccion.Text);
 
                 BtnLimpiar.Enabled = true;
                 BtnAgregar.Enabled = false;

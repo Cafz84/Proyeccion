@@ -18,9 +18,9 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Usuarios",
-                NombreSP = "[SCH_GENERAL].[SP_Usuarios_Index]",
+                NombreSP = "[dbo].[SP_Usuarios_Index]",
                 Scalar = false
             };
             Ejecutar(ref ObjUsuario);
@@ -34,9 +34,9 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Usuarios",
-                NombreSP = "[SCH_GENERAL].[SP_Usuarios_Create]",
+                NombreSP = "[dbo].[SP_Usuarios_Create]",
                 Scalar = true
             };
 
@@ -53,9 +53,9 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Usuarios",
-                NombreSP = "[SCH_GENERAL].[SP_Usuarios_Read]",
+                NombreSP = "[dbo].[SP_Usuarios_Read]",
                 Scalar = false
             };
 
@@ -67,9 +67,9 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Usuarios",
-                NombreSP = "[SCH_GENERAL].[SP_Usuarios_Update]",
+                NombreSP = "[dbo].[SP_Usuarios_Update]",
                 Scalar = true
             };
 
@@ -87,9 +87,9 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Usuarios",
-                NombreSP = "[SCH_GENERAL].[SP_Usuarios_Delete]",
+                NombreSP = "[dbo].[SP_Usuarios_Delete]",
                 Scalar = true
             };
 

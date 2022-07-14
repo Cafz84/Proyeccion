@@ -56,5 +56,17 @@ namespace AccesoDatos.Properties {
                 return ((string)(this["cadenaConeccion_Pruebas_Lavoraziones"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ec2-52-52-139-21.us-west-1.compute.amazonaws.com,1433;Initial Catalog" +
+            "=ERPLavoraziones_Monnaaci;Persist Security Info=True;User ID=reports;Password=Cl" +
+            "oud@123")]
+        public string cadenaConeccion_ERPLavoraziones_Monnaaci {
+            get {
+                return ((string)(this["cadenaConeccion_ERPLavoraziones_Monnaaci"]));
+            }
+        }
     }
 }

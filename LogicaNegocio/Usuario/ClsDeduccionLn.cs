@@ -18,7 +18,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Deducciones",
                 NombreSP = "dbo.SP_Deducciones_Index",
                 Scalar = false
@@ -35,7 +35,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Deducciones",
                 NombreSP = "dbo.SP_Deducciones_Create",
                 Scalar = false
@@ -52,7 +52,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Deducciones",
                 NombreSP = "dbo.SP_Deducciones_Read",
                 Scalar = false
@@ -67,7 +67,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Deducciones",
                 NombreSP = "dbo.SP_Deducciones_ReadRepetido",
                 Scalar = false
@@ -82,7 +82,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Deducciones",
                 NombreSP = "dbo.SP_Deducciones_Update",
                 Scalar = true
@@ -100,7 +100,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Deducciones",
                 NombreSP = "dbo.SP_Deducciones_UpdateActivo",
                 Scalar = true
@@ -116,7 +116,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Deducciones",
                 NombreSP = "dbo.SP_Deducciones_Delete",
                 Scalar = true

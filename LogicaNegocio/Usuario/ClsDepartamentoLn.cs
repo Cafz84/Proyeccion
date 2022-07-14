@@ -17,7 +17,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Departamento",
                 NombreSP = "dbo.SP_Departamento_Index",
                 Scalar = false
@@ -30,7 +30,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Departamento",
                 NombreSP = "dbo.SP_CargarDepartamento",
                 Scalar = false
@@ -46,7 +46,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Departamento",
                 NombreSP = "dbo.SP_Departamento_Create",
                 Scalar = false
@@ -64,7 +64,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Departamento",
                 NombreSP = "dbo.SP_Departamento_Read",
                 Scalar = false
@@ -79,7 +79,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Departamento",
                 NombreSP = "dbo.SP_Departamento_Update",
                 Scalar = true
@@ -98,7 +98,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Departamento",
                 NombreSP = "dbo.SP_Departamento_UpdateActivo",
                 Scalar = true
@@ -114,7 +114,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Area",
                 NombreSP = "dbo.SP_Departamento_Delete",
                 Scalar = true

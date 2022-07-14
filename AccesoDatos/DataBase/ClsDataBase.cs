@@ -63,6 +63,9 @@ namespace AccesoDatos.DataBase
                 case "Pruebas_Lavoraziones":
                     ObjDataBase.ObjSqlConnection = new SqlConnection(Properties.Settings.Default.cadenaConeccion_Pruebas_Lavoraziones);
                     break;
+                case "ERPLavoraziones_Monnaaci":
+                    ObjDataBase.ObjSqlConnection = new SqlConnection(Properties.Settings.Default.cadenaConeccion_ERPLavoraziones_Monnaaci);
+                    break;
                 default:
                     break;
             }

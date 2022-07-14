@@ -18,7 +18,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Destajo",
                 NombreSP = "dbo.SP_Destajo_Index",
                 Scalar = false
@@ -35,12 +35,13 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Destajo",
                 NombreSP = "dbo.SP_Destajo_IndexBNombre",
                 Scalar = false
             };
 
+            bIndex = true;
             ObjDataBase.DtParametros.Rows.Add(@"@Nombre", "18", ObjDestajo.Nombre);
             Ejecutar(ref ObjDestajo);
         }
@@ -49,7 +50,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Destajo",
                 NombreSP = "dbo.SP_Destajo_IndexRevision",
                 Scalar = false
@@ -60,6 +61,22 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Nombre", "18", ObjDestajo.Nombre);
             Ejecutar(ref ObjDestajo);
         }
+
+        public void IndexRG(ref ClsDestajo ObjDestajo)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "ERPLavoraziones_Monnaaci",
+                NombreTabla = "Destajo",
+                NombreSP = "dbo.SP_Destajo_IndexRevisionGpo",
+                Scalar = false
+            };
+
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@Semana", "4", ObjDestajo.Semana);
+            ObjDataBase.DtParametros.Rows.Add(@"@Grupo", "18", ObjDestajo.Nombre);
+            Ejecutar(ref ObjDestajo);
+        }
         #endregion
 
         #region CRUD Destajo
@@ -67,7 +84,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Destajo",
                 NombreSP = "dbo.SP_DestajoPagados_Read",
                 Scalar = false
@@ -83,7 +100,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Destajo",
                 NombreSP = "dbo.SP_Destajo_Create",
                 Scalar = true
@@ -108,7 +125,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Destajo",
                 NombreSP = "dbo.SP_Destajo_Read",
                 Scalar = false
@@ -127,7 +144,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Destajo",
                 NombreSP = "dbo.SP_Destajo_Update",
                 Scalar = true
@@ -156,7 +173,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Destajo",
                 NombreSP = "dbo.SP_Destajo_Delete",
                 Scalar = true

@@ -16,9 +16,9 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Users",
-                NombreSP = "[SCH_GENERAL].[SP_Users_Index]",
+                NombreSP = "[dbo].[SP_Users_Index]",
                 Scalar = false
             };
             
@@ -31,9 +31,9 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Users",
-                NombreSP = "[SCH_GENERAL].[SP_Users_Create]",
+                NombreSP = "[dbo].[SP_Users_Create]",
                 Scalar = true
             };
 
@@ -51,9 +51,9 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Users",
-                NombreSP = "[SCH_GENERAL].[SP_Users_Read]",
+                NombreSP = "[dbo].[SP_Users_Read]",
                 Scalar = false
             };
 
@@ -65,9 +65,9 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Users",
-                NombreSP = "[SCH_GENERAL].[SP_Users_Read_Login]",
+                NombreSP = "[dbo].[SP_Users_Read_Login]",
                 Scalar = false
             };
 
@@ -80,9 +80,9 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Users",
-                NombreSP = "[SCH_GENERAL].[SP_Users_Update]",
+                NombreSP = "[dbo].[SP_Users_Update]",
                 Scalar = true
             };
 
@@ -100,9 +100,9 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Users",
-                NombreSP = "[SCH_GENERAL].[SP_Users_Delete]",
+                NombreSP = "[dbo].[SP_Users_Delete]",
                 Scalar = true
             };
 

@@ -18,7 +18,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "GrupoD",
                 NombreSP = "dbo.SP_GrupoD_Index",
                 Scalar = false
@@ -33,7 +33,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "GrupoD",
                 NombreSP = "dbo.SP_CargarGrupoD",
                 Scalar = false
@@ -49,7 +49,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "GrupoD",
                 NombreSP = "dbo.SP_GrupoD_Create",
                 Scalar = false
@@ -67,7 +67,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "GrupoD",
                 NombreSP = "dbo.SP_GrupoD_Read",
                 Scalar = false
@@ -83,7 +83,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "GrupoD",
                 NombreSP = "dbo.SP_GrupoD_Update",
                 Scalar = true
@@ -101,7 +101,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "GrupoD",
                 NombreSP = "dbo.SP_GrupoD_UpdateActivo",
                 Scalar = true
@@ -117,7 +117,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "GrupoD",
                 NombreSP = "dbo.SP_GrupoD_Delete",
                 Scalar = true

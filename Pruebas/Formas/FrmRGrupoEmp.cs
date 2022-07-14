@@ -72,10 +72,13 @@ namespace Pruebas.Formas
             if (ObjRGrupoEmpleado.MsjError == null)
             {
                 DgvRelacion.DataSource = ObjRGrupoEmpleado.DtResultados;
-                ObjUtilidades.FormatoDgvEmpleado(ref DgvRelacion);
+                ObjUtilidades.FormatoDgvPEC(ref DgvRelacion);
 
                 DgvRelacion.Columns["Eid"].Visible = false;
                 DgvRelacion.Columns["Gid"].Visible = false;
+                DgvRelacion.Columns["Editar"].Width = 25;
+                DgvRelacion.Columns["Grupo"].Width = 100;
+                DgvRelacion.Columns["Porcentaje"].Width = 75;
             }
         }
 
@@ -93,6 +96,8 @@ namespace Pruebas.Formas
                 ObjUtilidades.FormatoDgvPEC(ref DgvGrupo);
 
                 DgvGrupo.Columns["Id"].Visible = false;
+                DgvGrupo.Columns["SelG"].Width = 25;
+                DgvGrupo.Columns["Grupo"].Width = 75;
             }
         }
 
@@ -110,6 +115,8 @@ namespace Pruebas.Formas
                 ObjUtilidades.FormatoDgvPEC(ref DgvEmpleado);
 
                 DgvEmpleado.Columns["ID"].Visible = false;
+                DgvEmpleado.Columns["SelE"].Width = 25;
+                DgvEmpleado.Columns["Empleado"].Width = 250;
             }
         }
         #endregion
@@ -264,6 +271,8 @@ namespace Pruebas.Formas
                 TxtPorcentaje.Text = DgvRelacion.Rows[e.RowIndex].Cells["Porcentaje"].Value.ToString();
                 idGrupo = Convert.ToInt16(DgvRelacion.Rows[e.RowIndex].Cells["Gid"].Value.ToString());
                 idEmp = Convert.ToInt16(DgvRelacion.Rows[e.RowIndex].Cells["Eid"].Value.ToString());
+                cidGrupo = Convert.ToInt16(DgvRelacion.Rows[e.RowIndex].Cells["Gid"].Value.ToString());
+                cidEmp = Convert.ToInt16(DgvRelacion.Rows[e.RowIndex].Cells["Eid"].Value.ToString());
 
                 BtnAgregar.Enabled = false;
                 BtnActualizar.Enabled = true;

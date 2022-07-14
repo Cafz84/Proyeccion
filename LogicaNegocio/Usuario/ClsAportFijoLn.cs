@@ -18,7 +18,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "AportFija",
                 NombreSP = "dbo.SP_AportFija_Index",
                 Scalar = false
@@ -35,7 +35,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "AportFija",
                 NombreSP = "dbo.SP_AportFija_Create",
                 Scalar = false
@@ -52,7 +52,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "AportFija",
                 NombreSP = "dbo.SP_AportFija_Read",
                 Scalar = false
@@ -68,7 +68,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "AportFija",
                 NombreSP = "dbo.SP_AportFija_Update",
                 Scalar = true
@@ -85,7 +85,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "AportFija",
                 NombreSP = "dbo.SP_AportFija_Delete",
                 Scalar = true

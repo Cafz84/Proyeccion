@@ -18,7 +18,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "FraccxEstilo",
                 NombreSP = "[dbo].[SP_FraccxEstilo_Index]",
                 Scalar = false
@@ -36,7 +36,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "FraccxEstilo",
                 NombreSP = "[dbo].[SP_FraccxEstilo_Create]",
                 Scalar = true
@@ -60,7 +60,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "FraccxEstilo",
                 NombreSP = "[dbo].[SP_FraccxEstilo_Read]",
                 Scalar = false
@@ -76,7 +76,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "FraccxEstilo",
                 NombreSP = "[dbo].[SP_FraccxEstilo_ReadEstilo]",
                 Scalar = false
@@ -93,7 +93,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "FraccxEstilo",
                 NombreSP = "[dbo].[SP_FraccxEstilo_ReadMuestra]",
                 Scalar = false
@@ -108,7 +108,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "FraccxEstilo",
                 NombreSP = "[dbo].[SP_FraccxEstilo_ReadEstiloBNombre]",
                 Scalar = false
@@ -123,7 +123,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "FraccxEstilo",
                 NombreSP = "[dbo].[SP_FraccxEstilo_Update]",
                 Scalar = true
@@ -148,7 +148,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "FraccxEstilo",
                 NombreSP = "[dbo].[SP_FraccxEstilo_Delete]",
                 Scalar = true

@@ -15,7 +15,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Ciudad",
                 NombreSP = "dbo.SP_Ciudad_Index",
                 Scalar = false
@@ -30,7 +30,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Ciudad",
                 NombreSP = "dbo.SP_CargarCiudad",
                 Scalar = false

@@ -17,7 +17,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OCST",
                 NombreSP = "dbo.SP_OCST_Index",
                 Scalar = false
@@ -32,7 +32,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OCST",
                 NombreSP = "dbo.SP_CargarEstado",
                 Scalar = false

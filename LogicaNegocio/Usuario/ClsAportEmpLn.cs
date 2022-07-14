@@ -18,7 +18,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "AportEmp",
                 NombreSP = "dbo.SP_AportEmp_Index",
                 Scalar = false
@@ -36,7 +36,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "AportEmp",
                 NombreSP = "dbo.SP_AportEmp_Create",
                 Scalar = false
@@ -54,7 +54,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "AportEmp",
                 NombreSP = "dbo.SP_AportEmp_Read",
                 Scalar = false
@@ -70,7 +70,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "AportEmp",
                 NombreSP = "dbo.SP_AportEmp_Update",
                 Scalar = true
@@ -88,7 +88,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "AportEmp",
                 NombreSP = "dbo.SP_AportEmp_Delete",
                 Scalar = true

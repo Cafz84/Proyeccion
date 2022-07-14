@@ -59,7 +59,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TxtBINombre = new System.Windows.Forms.TextBox();
             this.DgvDestajo = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpTrabajador = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.DgvEmpleado = new System.Windows.Forms.DataGridView();
@@ -95,6 +94,7 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TcDestajo.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -444,14 +444,6 @@
             this.DgvDestajo.Size = new System.Drawing.Size(1065, 360);
             this.DgvDestajo.TabIndex = 0;
             this.DgvDestajo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDestajo_CellContentClick);
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 55;
             // 
             // TpTrabajador
             // 
@@ -852,6 +844,14 @@
             this.BtnCerrar.TabStop = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Edit";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 55;
+            // 
             // FrmDestajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -954,7 +954,6 @@
         private System.Windows.Forms.TabControl TcDestajo;
         private System.Windows.Forms.TabPage TpIndex;
         private System.Windows.Forms.DataGridView DgvDestajo;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.TabPage TpTrabajador;
         private System.Windows.Forms.TabPage TpFraccion;
         private System.Windows.Forms.TabPage TpMuestra;
@@ -989,5 +988,6 @@
         private System.Windows.Forms.TextBox TxtBIFraccion;
         private System.Windows.Forms.TextBox TxtBISemana;
         private System.Windows.Forms.DataGridViewImageColumn SelG;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
     }
 }

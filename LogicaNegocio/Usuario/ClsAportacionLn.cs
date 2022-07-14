@@ -18,7 +18,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Aportaciones",
                 NombreSP = "dbo.SP_Aportaciones_Index",
                 Scalar = false
@@ -35,7 +35,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Aportaciones",
                 NombreSP = "dbo.SP_Aportaciones_Create",
                 Scalar = false
@@ -52,7 +52,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Aportaciones",
                 NombreSP = "dbo.SP_Aportaciones_Read",
                 Scalar = false
@@ -67,7 +67,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Aportaciones",
                 NombreSP = "dbo.SP_Aportaciones_ReadRepetido",
                 Scalar = false
@@ -82,7 +82,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Aportaciones",
                 NombreSP = "dbo.SP_Aportaciones_Update",
                 Scalar = true
@@ -100,7 +100,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Aportaciones",
                 NombreSP = "dbo.SP_Aportaciones_UpdateActivo",
                 Scalar = true
@@ -116,7 +116,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Aportaciones",
                 NombreSP = "dbo.SP_Aportaciones_Delete",
                 Scalar = true

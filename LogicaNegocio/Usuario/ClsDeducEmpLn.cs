@@ -18,7 +18,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "DeducEmp",
                 NombreSP = "dbo.SP_DeducEmp_Index",
                 Scalar = false
@@ -36,7 +36,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "DeducEmp",
                 NombreSP = "dbo.SP_DeducEmp_Create",
                 Scalar = false
@@ -54,7 +54,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "DeducEmp",
                 NombreSP = "dbo.SP_DeducEmp_Read",
                 Scalar = false
@@ -71,7 +71,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "DeducEmp",
                 NombreSP = "dbo.SP_DeducEmp_Update",
                 Scalar = true
@@ -89,7 +89,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "DeducEmp",
                 NombreSP = "dbo.SP_DeducEmp_Delete",
                 Scalar = true

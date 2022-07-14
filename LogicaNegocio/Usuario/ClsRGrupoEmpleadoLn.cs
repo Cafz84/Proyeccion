@@ -18,7 +18,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "RGrupoEmpleado",
                 NombreSP = "dbo.SP_RGrupoEmpleado_Index",
                 Scalar = false
@@ -35,7 +35,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "RGrupoEmpleado",
                 NombreSP = "dbo.SP_RGrupoEmpleado_Create",
                 Scalar = false
@@ -52,7 +52,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "RGrupoEmpleado",
                 NombreSP = "dbo.SP_RGrupoEmpleado_Read",
                 Scalar = false
@@ -69,7 +69,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "RGrupoEmpleado",
                 NombreSP = "dbo.SP_RGrupoEmpleado_Update",
                 Scalar = true
@@ -88,7 +88,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "ObjRGrupoEmpleado",
                 NombreSP = "dbo.SP_ObjRGrupoEmpleado_Delete",
                 Scalar = true

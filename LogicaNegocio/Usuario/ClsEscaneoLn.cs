@@ -16,7 +16,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Escaneo",
                 NombreSP = "[dbo].[SP_Escaneo_Index]",
                 Scalar = false
@@ -31,7 +31,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Escaneo",
                 NombreSP = "[dbo].[SP_Escaneo_Create]",
                 Scalar = false
@@ -62,7 +62,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Escaneo",
                 NombreSP = "[dbo].[SP_Escaneo_Read]",
                 Scalar = true
@@ -80,7 +80,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Escaneo",
                 NombreSP = "[dbo].[SP_Escaneo_ReadEmbarqueMax]",
                 Scalar = false
@@ -93,7 +93,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Escaneo",
                 NombreSP = "[dbo].[SP_Escaneo_ReadCajaMax]",
                 Scalar = false
@@ -110,7 +110,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Escaneo",
                 NombreSP = "[dbo].[SP_Escaneo_Update]",
                 Scalar = true
@@ -141,7 +141,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "Escaneo",
                 NombreSP = "[dbo].[SP_Escaneo_Delete]",
                 Scalar = true

@@ -17,7 +17,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_Index]",
                 Scalar = false
@@ -31,7 +31,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_IndexActivoVariable]",
                 Scalar = false
@@ -45,13 +45,13 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_IndexRelacion]",
                 Scalar = false
             };
 
-            ObjDataBase.DtParametros.Rows.Add(@"@Nombre", "18", ObjEmpleado.Nombre);
+            ObjDataBase.DtParametros.Rows.Add(@"@Empleado", "18", ObjEmpleado.Nombre);
             EjecutarActivoVariable(ref ObjEmpleado);
         }
 
@@ -59,7 +59,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_EmpID]",
                 Scalar = false
@@ -76,7 +76,7 @@ namespace LogicaNegocio.Usuario
             int? spEmpIdMax = EmpId(ref ObjEmpleado);
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_Create]",
                 Scalar = true
@@ -127,7 +127,7 @@ namespace LogicaNegocio.Usuario
             ObjEmpleado.EmpID = spEmpIdMax;
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_CreateGrupo]",
                 Scalar = true
@@ -144,7 +144,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_Read]",
                 Scalar = false
@@ -158,7 +158,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_Update]",
                 Scalar = true
@@ -206,7 +206,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OHEM",
                 NombreSP = "dbo.SP_OHEM_UpdateActivo",
                 Scalar = true
@@ -222,7 +222,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OHEM",
                 NombreSP = "dbo.SP_OHEM_UpdateGrupo",
                 Scalar = true
@@ -238,7 +238,7 @@ namespace LogicaNegocio.Usuario
         {
             ObjDataBase = new ClsDataBase()
             {
-                NombreDB = "DB_BasePruebas",
+                NombreDB = "ERPLavoraziones_Monnaaci",
                 NombreTabla = "OHEM",
                 NombreSP = "[dbo].[SP_OHEM_Delete]",
                 Scalar = true

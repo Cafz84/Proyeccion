@@ -36,9 +36,11 @@
             this.BtnMaximizar = new System.Windows.Forms.PictureBox();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.BtnLoteo = new System.Windows.Forms.Button();
+            this.BtnCerrarSesion = new System.Windows.Forms.PictureBox();
             this.BtnFraccEstilo = new System.Windows.Forms.Button();
             this.BtnRevDestajo = new System.Windows.Forms.Button();
-            this.BtnNominaDestajo = new System.Windows.Forms.Button();
+            this.BtnCapturaDestajo = new System.Windows.Forms.Button();
             this.BtnFraccion = new System.Windows.Forms.Button();
             this.BtnEmpleados = new System.Windows.Forms.Button();
             this.BtnAvances = new System.Windows.Forms.Button();
@@ -69,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.MenuVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrarSesion)).BeginInit();
             this.SubMenuReporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnInicio)).BeginInit();
             this.SuspendLayout();
@@ -156,9 +159,11 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.MenuVertical.Controls.Add(this.BtnLoteo);
+            this.MenuVertical.Controls.Add(this.BtnCerrarSesion);
             this.MenuVertical.Controls.Add(this.BtnFraccEstilo);
             this.MenuVertical.Controls.Add(this.BtnRevDestajo);
-            this.MenuVertical.Controls.Add(this.BtnNominaDestajo);
+            this.MenuVertical.Controls.Add(this.BtnCapturaDestajo);
             this.MenuVertical.Controls.Add(this.BtnFraccion);
             this.MenuVertical.Controls.Add(this.BtnEmpleados);
             this.MenuVertical.Controls.Add(this.BtnAvances);
@@ -182,9 +187,43 @@
             this.MenuVertical.Size = new System.Drawing.Size(220, 665);
             this.MenuVertical.TabIndex = 1;
             // 
+            // BtnLoteo
+            // 
+            this.BtnLoteo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.BtnLoteo.Enabled = false;
+            this.BtnLoteo.FlatAppearance.BorderSize = 0;
+            this.BtnLoteo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.BtnLoteo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLoteo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLoteo.ForeColor = System.Drawing.Color.White;
+            this.BtnLoteo.Image = global::Pruebas.Properties.Resources.partition_diskpartition_partition_24x24;
+            this.BtnLoteo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BtnLoteo.Location = new System.Drawing.Point(4, 424);
+            this.BtnLoteo.Name = "BtnLoteo";
+            this.BtnLoteo.Size = new System.Drawing.Size(216, 32);
+            this.BtnLoteo.TabIndex = 46;
+            this.BtnLoteo.Text = "Loteo";
+            this.BtnLoteo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnLoteo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnLoteo.UseVisualStyleBackColor = false;
+            this.BtnLoteo.Click += new System.EventHandler(this.BtnLoteo_Click);
+            // 
+            // BtnCerrarSesion
+            // 
+            this.BtnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCerrarSesion.Image = global::Pruebas.Properties.Resources.off_downnearexit_apagado_abajo_128x128;
+            this.BtnCerrarSesion.Location = new System.Drawing.Point(4, 615);
+            this.BtnCerrarSesion.Name = "BtnCerrarSesion";
+            this.BtnCerrarSesion.Size = new System.Drawing.Size(45, 46);
+            this.BtnCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnCerrarSesion.TabIndex = 45;
+            this.BtnCerrarSesion.TabStop = false;
+            this.BtnCerrarSesion.Click += new System.EventHandler(this.BtnCerrarSesion_Click);
+            // 
             // BtnFraccEstilo
             // 
             this.BtnFraccEstilo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.BtnFraccEstilo.Enabled = false;
             this.BtnFraccEstilo.FlatAppearance.BorderSize = 0;
             this.BtnFraccEstilo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
             this.BtnFraccEstilo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -192,7 +231,7 @@
             this.BtnFraccEstilo.ForeColor = System.Drawing.Color.White;
             this.BtnFraccEstilo.Image = ((System.Drawing.Image)(resources.GetObject("BtnFraccEstilo.Image")));
             this.BtnFraccEstilo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFraccEstilo.Location = new System.Drawing.Point(4, 310);
+            this.BtnFraccEstilo.Location = new System.Drawing.Point(4, 196);
             this.BtnFraccEstilo.Name = "BtnFraccEstilo";
             this.BtnFraccEstilo.Size = new System.Drawing.Size(216, 32);
             this.BtnFraccEstilo.TabIndex = 44;
@@ -205,6 +244,7 @@
             // BtnRevDestajo
             // 
             this.BtnRevDestajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.BtnRevDestajo.Enabled = false;
             this.BtnRevDestajo.FlatAppearance.BorderSize = 0;
             this.BtnRevDestajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
             this.BtnRevDestajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -212,7 +252,7 @@
             this.BtnRevDestajo.ForeColor = System.Drawing.Color.White;
             this.BtnRevDestajo.Image = global::Pruebas.Properties.Resources.iconfinder_document03_24x24;
             this.BtnRevDestajo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnRevDestajo.Location = new System.Drawing.Point(4, 348);
+            this.BtnRevDestajo.Location = new System.Drawing.Point(4, 272);
             this.BtnRevDestajo.Name = "BtnRevDestajo";
             this.BtnRevDestajo.Size = new System.Drawing.Size(216, 32);
             this.BtnRevDestajo.TabIndex = 27;
@@ -222,29 +262,31 @@
             this.BtnRevDestajo.UseVisualStyleBackColor = false;
             this.BtnRevDestajo.Click += new System.EventHandler(this.BtnRevDestajo_Click);
             // 
-            // BtnNominaDestajo
+            // BtnCapturaDestajo
             // 
-            this.BtnNominaDestajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
-            this.BtnNominaDestajo.FlatAppearance.BorderSize = 0;
-            this.BtnNominaDestajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.BtnNominaDestajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNominaDestajo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNominaDestajo.ForeColor = System.Drawing.Color.White;
-            this.BtnNominaDestajo.Image = ((System.Drawing.Image)(resources.GetObject("BtnNominaDestajo.Image")));
-            this.BtnNominaDestajo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnNominaDestajo.Location = new System.Drawing.Point(4, 272);
-            this.BtnNominaDestajo.Name = "BtnNominaDestajo";
-            this.BtnNominaDestajo.Size = new System.Drawing.Size(216, 32);
-            this.BtnNominaDestajo.TabIndex = 43;
-            this.BtnNominaDestajo.Text = "Nomina Destajo";
-            this.BtnNominaDestajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNominaDestajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnNominaDestajo.UseVisualStyleBackColor = false;
-            this.BtnNominaDestajo.Click += new System.EventHandler(this.BtnNominaDestajo_Click);
+            this.BtnCapturaDestajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.BtnCapturaDestajo.Enabled = false;
+            this.BtnCapturaDestajo.FlatAppearance.BorderSize = 0;
+            this.BtnCapturaDestajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.BtnCapturaDestajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCapturaDestajo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCapturaDestajo.ForeColor = System.Drawing.Color.White;
+            this.BtnCapturaDestajo.Image = ((System.Drawing.Image)(resources.GetObject("BtnCapturaDestajo.Image")));
+            this.BtnCapturaDestajo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BtnCapturaDestajo.Location = new System.Drawing.Point(4, 234);
+            this.BtnCapturaDestajo.Name = "BtnCapturaDestajo";
+            this.BtnCapturaDestajo.Size = new System.Drawing.Size(216, 32);
+            this.BtnCapturaDestajo.TabIndex = 43;
+            this.BtnCapturaDestajo.Text = "Captura Destajo";
+            this.BtnCapturaDestajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCapturaDestajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCapturaDestajo.UseVisualStyleBackColor = false;
+            this.BtnCapturaDestajo.Click += new System.EventHandler(this.BtnCapturaDestajo_Click);
             // 
             // BtnFraccion
             // 
             this.BtnFraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.BtnFraccion.Enabled = false;
             this.BtnFraccion.FlatAppearance.BorderSize = 0;
             this.BtnFraccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
             this.BtnFraccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -252,7 +294,7 @@
             this.BtnFraccion.ForeColor = System.Drawing.Color.White;
             this.BtnFraccion.Image = ((System.Drawing.Image)(resources.GetObject("BtnFraccion.Image")));
             this.BtnFraccion.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnFraccion.Location = new System.Drawing.Point(4, 234);
+            this.BtnFraccion.Location = new System.Drawing.Point(4, 158);
             this.BtnFraccion.Name = "BtnFraccion";
             this.BtnFraccion.Size = new System.Drawing.Size(216, 32);
             this.BtnFraccion.TabIndex = 42;
@@ -265,6 +307,7 @@
             // BtnEmpleados
             // 
             this.BtnEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.BtnEmpleados.Enabled = false;
             this.BtnEmpleados.FlatAppearance.BorderSize = 0;
             this.BtnEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
             this.BtnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -272,7 +315,7 @@
             this.BtnEmpleados.ForeColor = System.Drawing.Color.White;
             this.BtnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("BtnEmpleados.Image")));
             this.BtnEmpleados.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnEmpleados.Location = new System.Drawing.Point(4, 196);
+            this.BtnEmpleados.Location = new System.Drawing.Point(4, 120);
             this.BtnEmpleados.Name = "BtnEmpleados";
             this.BtnEmpleados.Size = new System.Drawing.Size(216, 32);
             this.BtnEmpleados.TabIndex = 41;
@@ -293,7 +336,7 @@
             this.BtnAvances.ForeColor = System.Drawing.Color.White;
             this.BtnAvances.Image = ((System.Drawing.Image)(resources.GetObject("BtnAvances.Image")));
             this.BtnAvances.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnAvances.Location = new System.Drawing.Point(4, 158);
+            this.BtnAvances.Location = new System.Drawing.Point(4, 386);
             this.BtnAvances.Name = "BtnAvances";
             this.BtnAvances.Size = new System.Drawing.Size(216, 32);
             this.BtnAvances.TabIndex = 40;
@@ -301,6 +344,7 @@
             this.BtnAvances.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAvances.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnAvances.UseVisualStyleBackColor = false;
+            this.BtnAvances.Click += new System.EventHandler(this.BtnAvances_Click);
             // 
             // BtnEscaneo
             // 
@@ -313,7 +357,7 @@
             this.BtnEscaneo.ForeColor = System.Drawing.Color.White;
             this.BtnEscaneo.Image = ((System.Drawing.Image)(resources.GetObject("BtnEscaneo.Image")));
             this.BtnEscaneo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnEscaneo.Location = new System.Drawing.Point(4, 120);
+            this.BtnEscaneo.Location = new System.Drawing.Point(4, 348);
             this.BtnEscaneo.Name = "BtnEscaneo";
             this.BtnEscaneo.Size = new System.Drawing.Size(216, 32);
             this.BtnEscaneo.TabIndex = 39;
@@ -376,7 +420,7 @@
             this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(4, 68);
+            this.button12.Location = new System.Drawing.Point(3, 68);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(177, 28);
             this.button12.TabIndex = 25;
@@ -557,6 +601,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.MenuVertical.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCerrarSesion)).EndInit();
             this.SubMenuReporte.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BtnInicio)).EndInit();
             this.ResumeLayout(false);
@@ -593,11 +638,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnUsuarios;
         private System.Windows.Forms.Button BtnRevDestajo;
-        private System.Windows.Forms.Button BtnNominaDestajo;
+        private System.Windows.Forms.Button BtnCapturaDestajo;
         private System.Windows.Forms.Button BtnFraccion;
         private System.Windows.Forms.Button BtnEmpleados;
         private System.Windows.Forms.Button BtnAvances;
         private System.Windows.Forms.Button BtnEscaneo;
         private System.Windows.Forms.Button BtnFraccEstilo;
+        private System.Windows.Forms.PictureBox BtnCerrarSesion;
+        private System.Windows.Forms.Button BtnLoteo;
     }
 }

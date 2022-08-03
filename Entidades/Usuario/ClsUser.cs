@@ -6,7 +6,8 @@ namespace Entidades.Usuario
     {
         #region Atributos privados
         private byte _userId;
-        private string _loginName, _password, _firstName, _lastName, _position, _email;
+        private int _idMax;
+        private string _loginName, _password, _firstName, _lastName, _position, _email, _nombre;
 
         //Atributos de manejo de la base de datos
         private string _msjError, _valorEscalar;
@@ -24,6 +25,8 @@ namespace Entidades.Usuario
         public string MsjError { get => _msjError; set => _msjError = value; }
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
+        public string Nombre { get => _nombre; set => _nombre = value; }
+        public int IdMax { get => _idMax; set => _idMax = value; }
         #endregion
     }
 }

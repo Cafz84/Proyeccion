@@ -58,7 +58,9 @@
     <Compile Include="Usuario\ClsFraccEstiloLn.cs" />
     <Compile Include="Usuario\ClsFraccionLn.cs" />
     <Compile Include="Usuario\ClsGrupoLn.cs" />
+    <Compile Include="Usuario\ClsLoteoLn.cs" />
     <Compile Include="Usuario\ClsPaisLn.cs" />
+    <Compile Include="Usuario\ClsPermisosUsersLn.cs" />
     <Compile Include="Usuario\ClsPuestoLn.cs" />
     <Compile Include="Usuario\ClsReadDatosEscaneoLn.cs" />
     <Compile Include="Usuario\ClsRGrupoEmpleadoLn.cs" />

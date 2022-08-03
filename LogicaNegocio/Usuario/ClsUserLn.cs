@@ -9,6 +9,7 @@ namespace LogicaNegocio.Usuario
     {
         #region Variables privadas
         private ClsDataBase ObjDataBase = null;
+        private bool bIndex;
         #endregion
 
         #region Metodo Index
@@ -21,7 +22,9 @@ namespace LogicaNegocio.Usuario
                 NombreSP = "[dbo].[SP_Users_Index]",
                 Scalar = false
             };
-            
+
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@Nombre", "18", ObjUser.Nombre);
             Ejecutar(ref ObjUser);
         }
         #endregion
@@ -57,6 +60,7 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            bIndex = false;
             ObjDataBase.DtParametros.Rows.Add(@"@UserId", "4", ObjUser.UserId);
             Ejecutar(ref ObjUser);
         }
@@ -71,11 +75,25 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
+            bIndex = false;
             ObjDataBase.DtParametros.Rows.Add(@"@LoginName", "18", ObjUser.LoginName);
             ObjDataBase.DtParametros.Rows.Add(@"@Password", "18", ObjUser.Password);
             Ejecutar(ref ObjUser);
         }
-        
+
+        public void ReadMaxId(ref ClsUser ObjUser)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "ERPLavoraziones_Monnaaci",
+                NombreTabla = "Users",
+                NombreSP = "[dbo].[SP_Users_ReadMax]",
+                Scalar = false
+            };
+
+            EjecutarMaxId(ref ObjUser);
+        }
+
         public void Update(ref ClsUser ObjUser)
         {
             ObjDataBase = new ClsDataBase()
@@ -125,7 +143,7 @@ namespace LogicaNegocio.Usuario
                 else
                 {
                     ObjUser.DtResultados = ObjDataBase.DsResultados.Tables[0];
-                    if (ObjUser.DtResultados.Rows.Count == 1)
+                    if (ObjUser.DtResultados.Rows.Count == 1 && bIndex == false)
                     {
                         foreach (DataRow dr in ObjUser.DtResultados.Rows)
                         {
@@ -136,6 +154,34 @@ namespace LogicaNegocio.Usuario
                             ObjUser.LastName = dr["LastName"].ToString();
                             ObjUser.Position = dr["Position"].ToString();
                             ObjUser.Email = dr["Email"].ToString();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                ObjUser.MsjError = ObjDataBase.MensajeErrorDB;
+            }
+        }
+
+        private void EjecutarMaxId(ref ClsUser ObjUser)
+        {
+            ObjDataBase.CRUD(ref ObjDataBase);
+
+            if (ObjDataBase.MensajeErrorDB == null)
+            {
+                if (ObjDataBase.Scalar)
+                {
+                    ObjUser.ValorEscalar = ObjDataBase.ValorScalar;
+                }
+                else
+                {
+                    ObjUser.DtResultados = ObjDataBase.DsResultados.Tables[0];
+                    if (ObjUser.DtResultados.Rows.Count == 1)
+                    {
+                        foreach (DataRow dr in ObjUser.DtResultados.Rows)
+                        {
+                            ObjUser.IdMax = Convert.ToByte(dr["IdMax"].ToString());
                         }
                     }
                 }

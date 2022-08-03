@@ -668,6 +668,15 @@ namespace Pruebas.Formas
             CargarListaDestajo();
         }
 
+        private void TxtPrograma_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para que solo acepte numeros y no texto
+            if (!char.IsNumber(e.KeyChar) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void TxtBISemana_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Para que solo acepte numeros y no texto

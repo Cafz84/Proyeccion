@@ -93,6 +93,26 @@ namespace Pruebas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap computer_pc_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("computer_pc_64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap create_list_button_icon_icons_com_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("create-list-button_icon-icons.com_64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editar {
             get {
                 object obj = ResourceManager.GetObject("editar", resourceCulture);
@@ -116,6 +136,16 @@ namespace Pruebas.Properties {
         internal static System.Drawing.Bitmap Group_icon_icons32x32 {
             get {
                 object obj = ResourceManager.GetObject("Group_icon-icons32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gui_eraser_icon_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("gui_eraser_icon_64x64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +193,49 @@ namespace Pruebas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap map_search_find_maps_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("map_search_find_maps_64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap notes_edit_button_32x32 {
             get {
                 object obj = ResourceManager.GetObject("notes-edit-button_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap off_downnearexit_apagado_abajo_128x128 {
+            get {
+                object obj = ResourceManager.GetObject("off_downnearexit_apagado_abajo_128x128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap partition_diskpartition_partition_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("partition_diskpartition_partition_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap partition_diskpartition_partition_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("partition_diskpartition_partition_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +256,26 @@ namespace Pruebas.Properties {
         internal static System.Drawing.Bitmap plus_insert_add_new_icon_32x32 {
             get {
                 object obj = ResourceManager.GetObject("plus_insert_add_new_icon_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap preview_icon_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("preview_icon_64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap savedisk_floppydisk_guardar_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("savedisk_floppydisk_guardar_64x64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

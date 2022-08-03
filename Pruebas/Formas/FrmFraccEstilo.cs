@@ -255,14 +255,15 @@ namespace Pruebas.Formas
             {
                 ObjFraccEstilo = new ClsFraccEstilo()
                 {
-                    U_IdEstilo = LblCodEstilo.Text,
-                    U_IdFraccion = Convert.ToInt32(LblCodEstilo.Text),
+                    U_IdEstilo = LblIdEstilo.Text,
+                    U_IdFraccion = Convert.ToByte(LblIdFraccion.Text),
                 };
 
                 ObjFraccEstiloLn.Delete(ref ObjFraccEstilo);
                 if (ObjFraccEstilo.MsjError == null)
                 {
                     MessageBox.Show("Registro eliminado");
+                    CargarListaFraccEstilo();
                     Limpiar();
                 }
                 else

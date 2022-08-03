@@ -26,7 +26,7 @@
     <ProductName>ERP Calzado Monnaaci</ProductName>
     <PublisherName>Cristian Frausto</PublisherName>
     <SuiteName>Produccion Calzado</SuiteName>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>21</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -202,6 +202,12 @@
     <Compile Include="Formas\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formas\FrmLoteo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\FrmLoteo.Designer.cs">
+      <DependentUpon>FrmLoteo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formas\FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formas\FrmLoteo.resx">
+      <DependentUpon>FrmLoteo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
@@ -398,6 +407,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Letter_M_gold_72x72.ico" />
+    <None Include="Resources\gui_eraser_icon_64x64.png" />
+    <None Include="Resources\map_search_find_maps_64x64.png" />
+    <None Include="Resources\computer_pc_64x64.png" />
+    <None Include="Resources\savedisk_floppydisk_guardar_64x64.png" />
+    <None Include="Resources\create-list-button_icon-icons.com_64x64.png" />
+    <None Include="Resources\preview_icon_64x64.png" />
+    <None Include="Resources\partition_diskpartition_partition_24x24.png" />
+    <None Include="Resources\partition_diskpartition_partition_32x32.png" />
+    <None Include="Resources\off_downnearexit_apagado_abajo_128x128.png" />
     <None Include="Resources\editar1.jpg" />
     <None Include="Resources\checkmark_check_apply_done_accept_32x32.png" />
     <None Include="Resources\notes-edit-button_32x32.png" />

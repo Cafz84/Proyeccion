@@ -67,6 +67,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             // 
             // LblLine1
             // 
@@ -126,6 +127,7 @@
             this.label2.Size = new System.Drawing.Size(107, 36);
             this.label2.TabIndex = 6;
             this.label2.Text = "LOGIN";
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
             // 
             // linkLabel1
             // 

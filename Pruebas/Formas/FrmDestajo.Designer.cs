@@ -59,6 +59,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TxtBINombre = new System.Windows.Forms.TextBox();
             this.DgvDestajo = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpTrabajador = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.DgvEmpleado = new System.Windows.Forms.DataGridView();
@@ -94,7 +95,6 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TcDestajo.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -136,6 +136,7 @@
             this.TxtPrograma.TabIndex = 3;
             this.TxtPrograma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtPrograma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPrograma_KeyDown);
+            this.TxtPrograma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrograma_KeyPress);
             // 
             // LblTTrabajador
             // 
@@ -444,6 +445,14 @@
             this.DgvDestajo.Size = new System.Drawing.Size(1065, 360);
             this.DgvDestajo.TabIndex = 0;
             this.DgvDestajo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDestajo_CellContentClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Edit";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 55;
             // 
             // TpTrabajador
             // 
@@ -843,14 +852,6 @@
             this.BtnCerrar.TabIndex = 89;
             this.BtnCerrar.TabStop = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Edit";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 55;
             // 
             // FrmDestajo
             // 

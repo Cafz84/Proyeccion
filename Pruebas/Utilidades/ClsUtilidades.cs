@@ -46,5 +46,19 @@ namespace Pruebas.Utilidades
             Dgv.AllowUserToDeleteRows = false;
             Dgv.ReadOnly = true;
         }
+
+        public void FormatoDgvTallas(ref DataGridView Dgv)
+        {
+            DataGridViewCellStyle estilo = Dgv.ColumnHeadersDefaultCellStyle;
+            estilo.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            estilo.Font = new Font(Dgv.Font, FontStyle.Bold);
+            Dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            Dgv.RowHeadersWidth = 20;
+
+            Dgv.AllowUserToAddRows = false;
+            Dgv.AllowUserToDeleteRows = false;
+            Dgv.ReadOnly = true;
+        }
     }
 }

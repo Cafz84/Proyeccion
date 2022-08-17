@@ -33,6 +33,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@PRevDestajo", "1", ObjPermisosUsers.PRevDestajo);
             ObjDataBase.DtParametros.Rows.Add(@"@PAvances", "1", ObjPermisosUsers.PAvances);
             ObjDataBase.DtParametros.Rows.Add(@"@PLoteo", "1", ObjPermisosUsers.PLoteo);
+            ObjDataBase.DtParametros.Rows.Add(@"@PUAvances", "1", ObjPermisosUsers.PUAvances);
 
             Ejecutar(ref ObjPermisosUsers);
         }
@@ -72,6 +73,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@PRevDestajo", "1", ObjPermisosUsers.PRevDestajo);
             ObjDataBase.DtParametros.Rows.Add(@"@PAvances", "1", ObjPermisosUsers.PAvances);
             ObjDataBase.DtParametros.Rows.Add(@"@PLoteo", "1", ObjPermisosUsers.PLoteo);
+            ObjDataBase.DtParametros.Rows.Add(@"@PUAvances", "1", ObjPermisosUsers.PUAvances);
             Ejecutar(ref ObjPermisosUsers);
         }
 

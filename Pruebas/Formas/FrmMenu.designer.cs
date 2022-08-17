@@ -65,6 +65,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnInicio = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.BtnUsuAvances = new System.Windows.Forms.Button();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
@@ -159,6 +160,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.MenuVertical.Controls.Add(this.BtnUsuAvances);
             this.MenuVertical.Controls.Add(this.BtnLoteo);
             this.MenuVertical.Controls.Add(this.BtnCerrarSesion);
             this.MenuVertical.Controls.Add(this.BtnFraccEstilo);
@@ -198,7 +200,7 @@
             this.BtnLoteo.ForeColor = System.Drawing.Color.White;
             this.BtnLoteo.Image = global::Pruebas.Properties.Resources.partition_diskpartition_partition_24x24;
             this.BtnLoteo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnLoteo.Location = new System.Drawing.Point(4, 424);
+            this.BtnLoteo.Location = new System.Drawing.Point(4, 410);
             this.BtnLoteo.Name = "BtnLoteo";
             this.BtnLoteo.Size = new System.Drawing.Size(216, 32);
             this.BtnLoteo.TabIndex = 46;
@@ -231,7 +233,7 @@
             this.BtnFraccEstilo.ForeColor = System.Drawing.Color.White;
             this.BtnFraccEstilo.Image = ((System.Drawing.Image)(resources.GetObject("BtnFraccEstilo.Image")));
             this.BtnFraccEstilo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFraccEstilo.Location = new System.Drawing.Point(4, 196);
+            this.BtnFraccEstilo.Location = new System.Drawing.Point(4, 182);
             this.BtnFraccEstilo.Name = "BtnFraccEstilo";
             this.BtnFraccEstilo.Size = new System.Drawing.Size(216, 32);
             this.BtnFraccEstilo.TabIndex = 44;
@@ -252,7 +254,7 @@
             this.BtnRevDestajo.ForeColor = System.Drawing.Color.White;
             this.BtnRevDestajo.Image = global::Pruebas.Properties.Resources.iconfinder_document03_24x24;
             this.BtnRevDestajo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnRevDestajo.Location = new System.Drawing.Point(4, 272);
+            this.BtnRevDestajo.Location = new System.Drawing.Point(4, 258);
             this.BtnRevDestajo.Name = "BtnRevDestajo";
             this.BtnRevDestajo.Size = new System.Drawing.Size(216, 32);
             this.BtnRevDestajo.TabIndex = 27;
@@ -273,7 +275,7 @@
             this.BtnCapturaDestajo.ForeColor = System.Drawing.Color.White;
             this.BtnCapturaDestajo.Image = ((System.Drawing.Image)(resources.GetObject("BtnCapturaDestajo.Image")));
             this.BtnCapturaDestajo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnCapturaDestajo.Location = new System.Drawing.Point(4, 234);
+            this.BtnCapturaDestajo.Location = new System.Drawing.Point(4, 220);
             this.BtnCapturaDestajo.Name = "BtnCapturaDestajo";
             this.BtnCapturaDestajo.Size = new System.Drawing.Size(216, 32);
             this.BtnCapturaDestajo.TabIndex = 43;
@@ -294,7 +296,7 @@
             this.BtnFraccion.ForeColor = System.Drawing.Color.White;
             this.BtnFraccion.Image = ((System.Drawing.Image)(resources.GetObject("BtnFraccion.Image")));
             this.BtnFraccion.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnFraccion.Location = new System.Drawing.Point(4, 158);
+            this.BtnFraccion.Location = new System.Drawing.Point(4, 144);
             this.BtnFraccion.Name = "BtnFraccion";
             this.BtnFraccion.Size = new System.Drawing.Size(216, 32);
             this.BtnFraccion.TabIndex = 42;
@@ -315,7 +317,7 @@
             this.BtnEmpleados.ForeColor = System.Drawing.Color.White;
             this.BtnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("BtnEmpleados.Image")));
             this.BtnEmpleados.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnEmpleados.Location = new System.Drawing.Point(4, 120);
+            this.BtnEmpleados.Location = new System.Drawing.Point(4, 106);
             this.BtnEmpleados.Name = "BtnEmpleados";
             this.BtnEmpleados.Size = new System.Drawing.Size(216, 32);
             this.BtnEmpleados.TabIndex = 41;
@@ -336,7 +338,7 @@
             this.BtnAvances.ForeColor = System.Drawing.Color.White;
             this.BtnAvances.Image = ((System.Drawing.Image)(resources.GetObject("BtnAvances.Image")));
             this.BtnAvances.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnAvances.Location = new System.Drawing.Point(4, 386);
+            this.BtnAvances.Location = new System.Drawing.Point(4, 372);
             this.BtnAvances.Name = "BtnAvances";
             this.BtnAvances.Size = new System.Drawing.Size(216, 32);
             this.BtnAvances.TabIndex = 40;
@@ -357,7 +359,7 @@
             this.BtnEscaneo.ForeColor = System.Drawing.Color.White;
             this.BtnEscaneo.Image = ((System.Drawing.Image)(resources.GetObject("BtnEscaneo.Image")));
             this.BtnEscaneo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnEscaneo.Location = new System.Drawing.Point(4, 348);
+            this.BtnEscaneo.Location = new System.Drawing.Point(4, 296);
             this.BtnEscaneo.Name = "BtnEscaneo";
             this.BtnEscaneo.Size = new System.Drawing.Size(216, 32);
             this.BtnEscaneo.TabIndex = 39;
@@ -378,7 +380,7 @@
             this.BtnUsuarios.ForeColor = System.Drawing.Color.White;
             this.BtnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("BtnUsuarios.Image")));
             this.BtnUsuarios.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnUsuarios.Location = new System.Drawing.Point(4, 82);
+            this.BtnUsuarios.Location = new System.Drawing.Point(4, 68);
             this.BtnUsuarios.Name = "BtnUsuarios";
             this.BtnUsuarios.Size = new System.Drawing.Size(216, 32);
             this.BtnUsuarios.TabIndex = 38;
@@ -391,7 +393,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel10.Location = new System.Drawing.Point(0, 424);
+            this.panel10.Location = new System.Drawing.Point(0, 409);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(5, 32);
             this.panel10.TabIndex = 20;
@@ -404,7 +406,7 @@
             this.SubMenuReporte.Controls.Add(this.panel12);
             this.SubMenuReporte.Controls.Add(this.button11);
             this.SubMenuReporte.Controls.Add(this.panel11);
-            this.SubMenuReporte.Location = new System.Drawing.Point(39, 462);
+            this.SubMenuReporte.Location = new System.Drawing.Point(39, 448);
             this.SubMenuReporte.Name = "SubMenuReporte";
             this.SubMenuReporte.Size = new System.Drawing.Size(181, 99);
             this.SubMenuReporte.TabIndex = 27;
@@ -491,7 +493,7 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel9.Location = new System.Drawing.Point(0, 386);
+            this.panel9.Location = new System.Drawing.Point(0, 371);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(5, 32);
             this.panel9.TabIndex = 18;
@@ -499,7 +501,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel8.Location = new System.Drawing.Point(0, 348);
+            this.panel8.Location = new System.Drawing.Point(0, 333);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(5, 32);
             this.panel8.TabIndex = 16;
@@ -507,7 +509,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel7.Location = new System.Drawing.Point(0, 310);
+            this.panel7.Location = new System.Drawing.Point(0, 295);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(5, 32);
             this.panel7.TabIndex = 14;
@@ -515,7 +517,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel6.Location = new System.Drawing.Point(0, 272);
+            this.panel6.Location = new System.Drawing.Point(0, 257);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(5, 32);
             this.panel6.TabIndex = 12;
@@ -523,7 +525,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel5.Location = new System.Drawing.Point(0, 234);
+            this.panel5.Location = new System.Drawing.Point(0, 219);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 32);
             this.panel5.TabIndex = 10;
@@ -531,7 +533,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel4.Location = new System.Drawing.Point(0, 196);
+            this.panel4.Location = new System.Drawing.Point(0, 181);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 32);
             this.panel4.TabIndex = 8;
@@ -539,7 +541,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel3.Location = new System.Drawing.Point(0, 158);
+            this.panel3.Location = new System.Drawing.Point(0, 143);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 32);
             this.panel3.TabIndex = 6;
@@ -547,7 +549,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel2.Location = new System.Drawing.Point(0, 120);
+            this.panel2.Location = new System.Drawing.Point(0, 105);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 32);
             this.panel2.TabIndex = 4;
@@ -555,7 +557,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel1.Location = new System.Drawing.Point(0, 82);
+            this.panel1.Location = new System.Drawing.Point(0, 67);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(5, 32);
             this.panel1.TabIndex = 2;
@@ -579,6 +581,26 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1080, 665);
             this.panelContenedor.TabIndex = 2;
+            // 
+            // BtnUsuAvances
+            // 
+            this.BtnUsuAvances.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.BtnUsuAvances.Enabled = false;
+            this.BtnUsuAvances.FlatAppearance.BorderSize = 0;
+            this.BtnUsuAvances.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.BtnUsuAvances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUsuAvances.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUsuAvances.ForeColor = System.Drawing.Color.White;
+            this.BtnUsuAvances.Image = global::Pruebas.Properties.Resources.admin_person_user_man_24x24;
+            this.BtnUsuAvances.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BtnUsuAvances.Location = new System.Drawing.Point(4, 333);
+            this.BtnUsuAvances.Name = "BtnUsuAvances";
+            this.BtnUsuAvances.Size = new System.Drawing.Size(216, 32);
+            this.BtnUsuAvances.TabIndex = 47;
+            this.BtnUsuAvances.Text = "Usuario Avances";
+            this.BtnUsuAvances.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnUsuAvances.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnUsuAvances.UseVisualStyleBackColor = false;
             // 
             // FrmMenu
             // 
@@ -646,5 +668,6 @@
         private System.Windows.Forms.Button BtnFraccEstilo;
         private System.Windows.Forms.PictureBox BtnCerrarSesion;
         private System.Windows.Forms.Button BtnLoteo;
+        private System.Windows.Forms.Button BtnUsuAvances;
     }
 }

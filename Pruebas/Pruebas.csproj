@@ -26,7 +26,7 @@
     <ProductName>ERP Calzado Monnaaci</ProductName>
     <PublisherName>Cristian Frausto</PublisherName>
     <SuiteName>Produccion Calzado</SuiteName>
-    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationRevision>22</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -84,6 +84,15 @@
     <ApplicationIcon>Letter_M_gold_72x72.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.3\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -256,6 +265,12 @@
     <Compile Include="Formas\FrmUsuario.Designer.cs">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formas\FrmUsuAvances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\FrmUsuAvances.Designer.cs">
+      <DependentUpon>FrmUsuAvances.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\ClsUtilidades.cs" />
@@ -327,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formas\FrmUsuAvances.resx">
+      <DependentUpon>FrmUsuAvances.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -407,6 +425,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Letter_M_gold_72x72.ico" />
+    <None Include="Resources\pdf_filetypes_64x64.png" />
+    <None Include="Resources\admin_person_user_man_24x24.png" />
+    <None Include="Resources\Save_64x64.png" />
     <None Include="Resources\gui_eraser_icon_64x64.png" />
     <None Include="Resources\map_search_find_maps_64x64.png" />
     <None Include="Resources\computer_pc_64x64.png" />

@@ -6,7 +6,7 @@ namespace Entidades.Usuario
     {
         #region Variables Privadas
         private int _u_UserId;
-        private bool _pUsuario, _pEscaneo, _pEmpleados, _pFracciones, _pCapturaDestajo, _pFraccEstilo, _pRevDestajo, _pAvances, _pLoteo;
+        private bool _pUsuario, _pEscaneo, _pEmpleados, _pFracciones, _pCapturaDestajo, _pFraccEstilo, _pRevDestajo, _pAvances, _pLoteo, _pUAvances;
 
         //Atributos de manejo de la base de datos
         private string _msjError, _valorEscalar;
@@ -27,6 +27,7 @@ namespace Entidades.Usuario
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
         public bool PLoteo { get => _pLoteo; set => _pLoteo = value; }
+        public bool PUAvances { get => _pUAvances; set => _pUAvances = value; }
         #endregion
     }
 }

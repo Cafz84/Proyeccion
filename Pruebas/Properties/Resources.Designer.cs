@@ -73,6 +73,16 @@ namespace Pruebas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap admin_person_user_man_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("admin_person_user_man_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_refresh_32x32 {
             get {
                 object obj = ResourceManager.GetObject("button_refresh_32x32", resourceCulture);
@@ -253,6 +263,16 @@ namespace Pruebas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pdf_filetypes_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("pdf_filetypes_64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plus_insert_add_new_icon_32x32 {
             get {
                 object obj = ResourceManager.GetObject("plus_insert_add_new_icon_32x32", resourceCulture);
@@ -266,6 +286,16 @@ namespace Pruebas.Properties {
         internal static System.Drawing.Bitmap preview_icon_64x64 {
             get {
                 object obj = ResourceManager.GetObject("preview_icon_64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("Save_64x64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

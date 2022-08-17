@@ -56,6 +56,8 @@
             this.DgvUsers = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.TpPermisos = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ChkLoteo = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ChkUsuarios = new System.Windows.Forms.CheckBox();
             this.GbIngenieria = new System.Windows.Forms.GroupBox();
@@ -69,20 +71,19 @@
             this.ChkEscaneo = new System.Windows.Forms.CheckBox();
             this.GbProduccion = new System.Windows.Forms.GroupBox();
             this.ChkAvances = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ChkLoteo = new System.Windows.Forms.CheckBox();
+            this.ChkUAvances = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.TcDestajo.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsers)).BeginInit();
             this.TpPermisos.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.GbIngenieria.SuspendLayout();
             this.GbRH.SuspendLayout();
             this.GbEmbarque.SuspendLayout();
             this.GbProduccion.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // LblTituloUsuario
@@ -398,6 +399,30 @@
             this.TpPermisos.TabIndex = 1;
             this.TpPermisos.Text = "Permisos";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ChkLoteo);
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.groupBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.groupBox2.Location = new System.Drawing.Point(8, 186);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(125, 53);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Planeación";
+            // 
+            // ChkLoteo
+            // 
+            this.ChkLoteo.AutoSize = true;
+            this.ChkLoteo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkLoteo.ForeColor = System.Drawing.Color.White;
+            this.ChkLoteo.Location = new System.Drawing.Point(17, 22);
+            this.ChkLoteo.Name = "ChkLoteo";
+            this.ChkLoteo.Size = new System.Drawing.Size(64, 21);
+            this.ChkLoteo.TabIndex = 5;
+            this.ChkLoteo.Text = "Loteo";
+            this.ChkLoteo.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.ChkUsuarios);
@@ -430,7 +455,7 @@
             this.GbIngenieria.Controls.Add(this.ChkFracciones);
             this.GbIngenieria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.GbIngenieria.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.GbIngenieria.Location = new System.Drawing.Point(8, 245);
+            this.GbIngenieria.Location = new System.Drawing.Point(152, 9);
             this.GbIngenieria.Name = "GbIngenieria";
             this.GbIngenieria.Size = new System.Drawing.Size(156, 132);
             this.GbIngenieria.TabIndex = 9;
@@ -490,7 +515,7 @@
             this.GbRH.Controls.Add(this.ChkEmpleados);
             this.GbRH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.GbRH.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.GbRH.Location = new System.Drawing.Point(8, 186);
+            this.GbRH.Location = new System.Drawing.Point(8, 127);
             this.GbRH.Name = "GbRH";
             this.GbRH.Size = new System.Drawing.Size(125, 53);
             this.GbRH.TabIndex = 8;
@@ -514,7 +539,7 @@
             this.GbEmbarque.Controls.Add(this.ChkEscaneo);
             this.GbEmbarque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.GbEmbarque.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.GbEmbarque.Location = new System.Drawing.Point(8, 127);
+            this.GbEmbarque.Location = new System.Drawing.Point(8, 68);
             this.GbEmbarque.Name = "GbEmbarque";
             this.GbEmbarque.Size = new System.Drawing.Size(125, 53);
             this.GbEmbarque.TabIndex = 7;
@@ -535,12 +560,13 @@
             // 
             // GbProduccion
             // 
+            this.GbProduccion.Controls.Add(this.ChkUAvances);
             this.GbProduccion.Controls.Add(this.ChkAvances);
             this.GbProduccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.GbProduccion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.GbProduccion.Location = new System.Drawing.Point(8, 68);
+            this.GbProduccion.Location = new System.Drawing.Point(152, 154);
             this.GbProduccion.Name = "GbProduccion";
-            this.GbProduccion.Size = new System.Drawing.Size(125, 53);
+            this.GbProduccion.Size = new System.Drawing.Size(157, 85);
             this.GbProduccion.TabIndex = 6;
             this.GbProduccion.TabStop = false;
             this.GbProduccion.Text = "Producción";
@@ -557,29 +583,17 @@
             this.ChkAvances.Text = "Avances";
             this.ChkAvances.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // ChkUAvances
             // 
-            this.groupBox2.Controls.Add(this.ChkLoteo);
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.groupBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.groupBox2.Location = new System.Drawing.Point(139, 9);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(99, 53);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Planeación";
-            // 
-            // ChkLoteo
-            // 
-            this.ChkLoteo.AutoSize = true;
-            this.ChkLoteo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkLoteo.ForeColor = System.Drawing.Color.White;
-            this.ChkLoteo.Location = new System.Drawing.Point(17, 22);
-            this.ChkLoteo.Name = "ChkLoteo";
-            this.ChkLoteo.Size = new System.Drawing.Size(64, 21);
-            this.ChkLoteo.TabIndex = 5;
-            this.ChkLoteo.Text = "Loteo";
-            this.ChkLoteo.UseVisualStyleBackColor = true;
+            this.ChkUAvances.AutoSize = true;
+            this.ChkUAvances.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkUAvances.ForeColor = System.Drawing.Color.White;
+            this.ChkUAvances.Location = new System.Drawing.Point(17, 49);
+            this.ChkUAvances.Name = "ChkUAvances";
+            this.ChkUAvances.Size = new System.Drawing.Size(132, 21);
+            this.ChkUAvances.TabIndex = 6;
+            this.ChkUAvances.Text = "Usuario Avances";
+            this.ChkUAvances.UseVisualStyleBackColor = true;
             // 
             // FrmUsers
             // 
@@ -618,6 +632,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsers)).EndInit();
             this.TpPermisos.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.GbIngenieria.ResumeLayout(false);
@@ -628,8 +644,6 @@
             this.GbEmbarque.PerformLayout();
             this.GbProduccion.ResumeLayout(false);
             this.GbProduccion.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -679,5 +693,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox ChkLoteo;
+        private System.Windows.Forms.CheckBox ChkUAvances;
     }
 }

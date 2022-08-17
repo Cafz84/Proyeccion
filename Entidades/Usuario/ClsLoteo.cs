@@ -11,7 +11,7 @@ namespace Entidades.Usuario
         private DateTime _fLote, _fEmbarque;
         private int _programa, _cantPrograma, _cantLote, _tLotes, _nLote, _t5, _t55, _t6, _t65, _t7, _t75, _t8, _t85, _t9, _t95, _t10, _t105;
         private int _t11, _t115, _t12, _t13, _t14, _t15, _t16, _t17, _t28, _t30, _t32, _t34, _t36, _t38, _t40, _t42, _t44, _t46, _tL, _tM, _tS;
-        private int _tX, _tXL, tXS;
+        private int _tX, _tXL, _tXS, _cantxLote;
 
         //Atributos de manejo de la base de datos
         private string _msjError, _valorEscalar;
@@ -69,10 +69,11 @@ namespace Entidades.Usuario
         public int TS { get => _tS; set => _tS = value; }
         public int TX { get => _tX; set => _tX = value; }
         public int TXL { get => _tXL; set => _tXL = value; }
-        public int TXS { get => tXS; set => tXS = value; }
+        public int TXS { get => _tXS; set => _tXS = value; }
         public string MsjError { get => _msjError; set => _msjError = value; }
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }
         public DataTable DtResultados { get => _dtResultados; set => _dtResultados = value; }
+        public int CantxLote { get => _cantxLote; set => _cantxLote = value; }
         #endregion
     }
 }

@@ -49,6 +49,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Programa", "4", ObjLoteo.Programa);
             ObjDataBase.DtParametros.Rows.Add(@"@CantPrograma", "4", ObjLoteo.CantPrograma);
             ObjDataBase.DtParametros.Rows.Add(@"@CantLote", "4", ObjLoteo.CantLote);
+            ObjDataBase.DtParametros.Rows.Add(@"@CantxLote", "4", ObjLoteo.CantxLote);
             ObjDataBase.DtParametros.Rows.Add(@"@TLotes", "4", ObjLoteo.TLotes);
             ObjDataBase.DtParametros.Rows.Add(@"@NLote", "4", ObjLoteo.NLote);
             ObjDataBase.DtParametros.Rows.Add(@"@TipoLote", "15", ObjLoteo.TipoLote);
@@ -110,6 +111,21 @@ namespace LogicaNegocio.Usuario
 
             bIndex = false;
             ObjDataBase.DtParametros.Rows.Add(@"@CodLote", "18", ObjLoteo.CodLote);
+            Ejecutar(ref ObjLoteo);
+        }
+
+        public void ProgramaRead(ref ClsLoteo ObjLoteo)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "ERPLavoraziones_Monnaaci",
+                NombreTabla = "Loteo",
+                NombreSP = "dbo.SP_Loteo_ProgramaRead",
+                Scalar = false
+            };
+
+            bIndex = false;
+            ObjDataBase.DtParametros.Rows.Add(@"@Programa", "4", ObjLoteo.Programa);
             Ejecutar(ref ObjLoteo);
         }
 

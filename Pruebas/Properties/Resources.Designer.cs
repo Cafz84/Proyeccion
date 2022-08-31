@@ -143,6 +143,26 @@ namespace Pruebas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Error_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("Error_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exchange_arrows_icon_icons_com_128x128 {
+            get {
+                object obj = ResourceManager.GetObject("exchange-arrows_icon-icons.com_128x128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Group_icon_icons32x32 {
             get {
                 object obj = ResourceManager.GetObject("Group_icon-icons32x32", resourceCulture);

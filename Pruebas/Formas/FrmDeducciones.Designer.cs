@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDeducciones));
             this.TxtBDeduccion = new System.Windows.Forms.TextBox();
             this.ChkActivo = new System.Windows.Forms.CheckBox();
@@ -45,8 +46,8 @@
             this.BtnActualizar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDeduccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
@@ -56,7 +57,7 @@
             // 
             this.TxtBDeduccion.BackColor = System.Drawing.Color.LightGray;
             this.TxtBDeduccion.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.TxtBDeduccion.Location = new System.Drawing.Point(73, 159);
+            this.TxtBDeduccion.Location = new System.Drawing.Point(33, 159);
             this.TxtBDeduccion.MaxLength = 50;
             this.TxtBDeduccion.Name = "TxtBDeduccion";
             this.TxtBDeduccion.Size = new System.Drawing.Size(134, 21);
@@ -139,12 +140,25 @@
             // 
             // DgvDeduccion
             // 
+            this.DgvDeduccion.AllowUserToAddRows = false;
+            this.DgvDeduccion.AllowUserToDeleteRows = false;
+            this.DgvDeduccion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvDeduccion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvDeduccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvDeduccion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});
+            this.DgvDeduccion.EnableHeadersVisualStyles = false;
             this.DgvDeduccion.Location = new System.Drawing.Point(2, 181);
             this.DgvDeduccion.Name = "DgvDeduccion";
             this.DgvDeduccion.ReadOnly = true;
+            this.DgvDeduccion.RowHeadersVisible = false;
             this.DgvDeduccion.Size = new System.Drawing.Size(678, 267);
             this.DgvDeduccion.TabIndex = 139;
             this.DgvDeduccion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDeduccion_CellContentClick);
@@ -172,7 +186,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Pruebas.Properties.Resources.xmag_search_find_export_locate_32x32;
-            this.pictureBox1.Location = new System.Drawing.Point(44, 160);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 160);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(23, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -245,15 +259,6 @@
             this.BtnLimpiar.UseVisualStyleBackColor = false;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 55;
-            // 
             // BtnCerrar
             // 
             this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -265,6 +270,14 @@
             this.BtnCerrar.TabIndex = 138;
             this.BtnCerrar.TabStop = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Edit";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // FrmDeducciones
             // 
@@ -316,9 +329,9 @@
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.DataGridView DgvDeduccion;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.PictureBox BtnCerrar;
         private System.Windows.Forms.Label LblTituloDeduccion;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
     }
 }

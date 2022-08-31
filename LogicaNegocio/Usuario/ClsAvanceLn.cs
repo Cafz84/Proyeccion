@@ -30,7 +30,7 @@ namespace LogicaNegocio.Usuario
         }
         #endregion
 
-        #region CRUD Aportaciones
+        #region CRUD Avance
         public void Create(ref ClsAvance ObjAvance)
         {
             ObjDataBase = new ClsDataBase()
@@ -41,10 +41,10 @@ namespace LogicaNegocio.Usuario
                 Scalar = false
             };
 
-            ObjDataBase.DtParametros.Rows.Add(@"@Aportacion", "9", ObjAvance.Id);
-            ObjDataBase.DtParametros.Rows.Add(@"@Descripcion", "15", ObjAvance.Area);
-            ObjDataBase.DtParametros.Rows.Add(@"@Activo", "18", ObjAvance.Avance);
-            ObjDataBase.DtParametros.Rows.Add(@"@Activo", "18", ObjAvance.Descripcion);
+            ObjDataBase.DtParametros.Rows.Add(@"@Id", "9", ObjAvance.Id);
+            ObjDataBase.DtParametros.Rows.Add(@"@Area", "15", ObjAvance.Area);
+            ObjDataBase.DtParametros.Rows.Add(@"@Avance", "18", ObjAvance.Avance);
+            ObjDataBase.DtParametros.Rows.Add(@"@Descripcion", "18", ObjAvance.Descripcion);
 
             Ejecutar(ref ObjAvance);
         }
@@ -60,8 +60,8 @@ namespace LogicaNegocio.Usuario
             };
 
             bIndex = false;
-            ObjDataBase.DtParametros.Rows.Add(@"@Aportacion", "9", ObjAvance.Id);
-            ObjDataBase.DtParametros.Rows.Add(@"@Descripcion", "15", ObjAvance.Area);
+            ObjDataBase.DtParametros.Rows.Add(@"@Id", "9", ObjAvance.Id);
+            ObjDataBase.DtParametros.Rows.Add(@"@Area", "15", ObjAvance.Area);
             Ejecutar(ref ObjAvance);
         }
 
@@ -75,10 +75,10 @@ namespace LogicaNegocio.Usuario
                 Scalar = true
             };
 
-            ObjDataBase.DtParametros.Rows.Add(@"@Aportacion", "9", ObjAvance.Id);
-            ObjDataBase.DtParametros.Rows.Add(@"@Descripcion", "15", ObjAvance.Area);
-            ObjDataBase.DtParametros.Rows.Add(@"@Activo", "18", ObjAvance.Avance);
-            ObjDataBase.DtParametros.Rows.Add(@"@Activo", "18", ObjAvance.Descripcion);
+            ObjDataBase.DtParametros.Rows.Add(@"@Id", "9", ObjAvance.Id);
+            ObjDataBase.DtParametros.Rows.Add(@"@Area", "15", ObjAvance.Area);
+            ObjDataBase.DtParametros.Rows.Add(@"@Avance", "18", ObjAvance.Avance);
+            ObjDataBase.DtParametros.Rows.Add(@"@Descripcion", "18", ObjAvance.Descripcion);
 
             Ejecutar(ref ObjAvance);
         }
@@ -93,8 +93,8 @@ namespace LogicaNegocio.Usuario
                 Scalar = true
             };
 
-            ObjDataBase.DtParametros.Rows.Add(@"@Aportacion", "9", ObjAvance.Id);
-            ObjDataBase.DtParametros.Rows.Add(@"@Descripcion", "15", ObjAvance.Area);
+            ObjDataBase.DtParametros.Rows.Add(@"@Id", "9", ObjAvance.Id);
+            ObjDataBase.DtParametros.Rows.Add(@"@Area", "15", ObjAvance.Area);
 
             Ejecutar(ref ObjAvance);
         }

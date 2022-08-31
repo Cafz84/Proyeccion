@@ -163,7 +163,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@UCantidadFE", "4", ObjDestajo.UCantidadFE);
             ObjDataBase.DtParametros.Rows.Add(@"@CEmpId", "4", ObjDestajo.CEmpId);
             ObjDataBase.DtParametros.Rows.Add(@"@CFraccId", "4", ObjDestajo.CFraccId);
-            ObjDataBase.DtParametros.Rows.Add(@"@CEstilo", "18", ObjDestajo.CEmpId);
+            ObjDataBase.DtParametros.Rows.Add(@"@CEstilo", "18", ObjDestajo.CEstilo);
             ObjDataBase.DtParametros.Rows.Add(@"@CPrograma", "18", ObjDestajo.CPrograma);
             ObjDataBase.DtParametros.Rows.Add(@"@CSemana", "3", ObjDestajo.CSemana);
             Ejecutar(ref ObjDestajo);

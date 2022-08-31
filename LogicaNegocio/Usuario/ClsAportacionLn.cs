@@ -28,6 +28,21 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Aportacion", "18", ObjAportacion.Aportacion);
             Ejecutar(ref ObjAportacion);
         }
+
+        public void IndexRA(ref ClsAportacion ObjAportacion)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "ERPLavoraziones_Monnaaci",
+                NombreTabla = "Aportaciones",
+                NombreSP = "dbo.SP_Aportaciones_IndexRD",
+                Scalar = false
+            };
+
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@Aportacion", "18", ObjAportacion.Aportacion);
+            Ejecutar(ref ObjAportacion);
+        }
         #endregion
 
         #region CRUD Aportaciones

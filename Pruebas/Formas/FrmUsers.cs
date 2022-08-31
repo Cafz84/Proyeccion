@@ -89,7 +89,7 @@ namespace Proyeccion.Principal
                 {
                     FirstName = TxtNombre.Text,
                     LastName = TxtApellido.Text,
-                    Position = TxtPuesto.Text,
+                    Position = TxtPuesto.Text.ToUpper(),
                     LoginName = TxtUsuario.Text,
                     Password = TxtContrasena.Text,
                     Email = TxtEmail.Text
@@ -158,7 +158,7 @@ namespace Proyeccion.Principal
                     LastName = TxtApellido.Text,
                     LoginName = TxtUsuario.Text,
                     Password = TxtContrasena.Text,
-                    Position = TxtPuesto.Text,
+                    Position = TxtPuesto.Text.ToUpper(),
                     Email = TxtEmail.Text
                 };
 

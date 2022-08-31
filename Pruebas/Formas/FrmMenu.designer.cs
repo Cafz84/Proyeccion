@@ -36,6 +36,7 @@
             this.BtnMaximizar = new System.Windows.Forms.PictureBox();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.BtnUsuAvances = new System.Windows.Forms.Button();
             this.BtnLoteo = new System.Windows.Forms.Button();
             this.BtnCerrarSesion = new System.Windows.Forms.PictureBox();
             this.BtnFraccEstilo = new System.Windows.Forms.Button();
@@ -65,7 +66,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnInicio = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.BtnUsuAvances = new System.Windows.Forms.Button();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
@@ -188,6 +188,27 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(220, 665);
             this.MenuVertical.TabIndex = 1;
+            // 
+            // BtnUsuAvances
+            // 
+            this.BtnUsuAvances.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.BtnUsuAvances.Enabled = false;
+            this.BtnUsuAvances.FlatAppearance.BorderSize = 0;
+            this.BtnUsuAvances.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.BtnUsuAvances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUsuAvances.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUsuAvances.ForeColor = System.Drawing.Color.White;
+            this.BtnUsuAvances.Image = global::Pruebas.Properties.Resources.admin_person_user_man_24x24;
+            this.BtnUsuAvances.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BtnUsuAvances.Location = new System.Drawing.Point(4, 333);
+            this.BtnUsuAvances.Name = "BtnUsuAvances";
+            this.BtnUsuAvances.Size = new System.Drawing.Size(216, 32);
+            this.BtnUsuAvances.TabIndex = 47;
+            this.BtnUsuAvances.Text = "Asignación Avance";
+            this.BtnUsuAvances.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnUsuAvances.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnUsuAvances.UseVisualStyleBackColor = false;
+            this.BtnUsuAvances.Click += new System.EventHandler(this.BtnUsuAvances_Click);
             // 
             // BtnLoteo
             // 
@@ -581,26 +602,6 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1080, 665);
             this.panelContenedor.TabIndex = 2;
-            // 
-            // BtnUsuAvances
-            // 
-            this.BtnUsuAvances.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
-            this.BtnUsuAvances.Enabled = false;
-            this.BtnUsuAvances.FlatAppearance.BorderSize = 0;
-            this.BtnUsuAvances.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.BtnUsuAvances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUsuAvances.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUsuAvances.ForeColor = System.Drawing.Color.White;
-            this.BtnUsuAvances.Image = global::Pruebas.Properties.Resources.admin_person_user_man_24x24;
-            this.BtnUsuAvances.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnUsuAvances.Location = new System.Drawing.Point(4, 333);
-            this.BtnUsuAvances.Name = "BtnUsuAvances";
-            this.BtnUsuAvances.Size = new System.Drawing.Size(216, 32);
-            this.BtnUsuAvances.TabIndex = 47;
-            this.BtnUsuAvances.Text = "Usuario Avances";
-            this.BtnUsuAvances.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnUsuAvances.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnUsuAvances.UseVisualStyleBackColor = false;
             // 
             // FrmMenu
             // 

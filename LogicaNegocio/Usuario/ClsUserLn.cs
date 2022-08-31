@@ -18,13 +18,28 @@ namespace LogicaNegocio.Usuario
             ObjDataBase = new ClsDataBase()
             {
                 NombreDB = "ERPLavoraziones_Monnaaci",
-                NombreTabla = "Users",
+                NombreTabla = "TBL_Users",
                 NombreSP = "[dbo].[SP_Users_Index]",
                 Scalar = false
             };
 
             bIndex = true;
             ObjDataBase.DtParametros.Rows.Add(@"@Nombre", "18", ObjUser.Nombre);
+            Ejecutar(ref ObjUser);
+        }
+
+        public void UsersAvanceIndex(ref ClsUser ObjUser)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "ERPLavoraziones_Monnaaci",
+                NombreTabla = "TBL_Users",
+                NombreSP = "[dbo].[SP_UsersAvance_Index]",
+                Scalar = false
+            };
+
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@Usuario", "18", ObjUser.LoginName);
             Ejecutar(ref ObjUser);
         }
         #endregion
@@ -35,7 +50,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase = new ClsDataBase()
             {
                 NombreDB = "ERPLavoraziones_Monnaaci",
-                NombreTabla = "Users",
+                NombreTabla = "TBL_Users",
                 NombreSP = "[dbo].[SP_Users_Create]",
                 Scalar = true
             };
@@ -55,7 +70,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase = new ClsDataBase()
             {
                 NombreDB = "ERPLavoraziones_Monnaaci",
-                NombreTabla = "Users",
+                NombreTabla = "TBL_Users",
                 NombreSP = "[dbo].[SP_Users_Read]",
                 Scalar = false
             };
@@ -70,7 +85,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase = new ClsDataBase()
             {
                 NombreDB = "ERPLavoraziones_Monnaaci",
-                NombreTabla = "Users",
+                NombreTabla = "TBL_Users",
                 NombreSP = "[dbo].[SP_Users_Read_Login]",
                 Scalar = false
             };
@@ -86,7 +101,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase = new ClsDataBase()
             {
                 NombreDB = "ERPLavoraziones_Monnaaci",
-                NombreTabla = "Users",
+                NombreTabla = "TBL_Users",
                 NombreSP = "[dbo].[SP_Users_ReadMax]",
                 Scalar = false
             };
@@ -99,7 +114,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase = new ClsDataBase()
             {
                 NombreDB = "ERPLavoraziones_Monnaaci",
-                NombreTabla = "Users",
+                NombreTabla = "TBL_Users",
                 NombreSP = "[dbo].[SP_Users_Update]",
                 Scalar = true
             };
@@ -119,7 +134,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase = new ClsDataBase()
             {
                 NombreDB = "ERPLavoraziones_Monnaaci",
-                NombreTabla = "Users",
+                NombreTabla = "TBL_Users",
                 NombreSP = "[dbo].[SP_Users_Delete]",
                 Scalar = true
             };

@@ -1,6 +1,5 @@
 ﻿using Entidades.Usuario;
 using LogicaNegocio.Usuario;
-using Pruebas.Utilidades;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -12,9 +11,8 @@ namespace Pruebas.Formas
         #region Variables Privadas
         private ClsAportacion ObjAportacion = null;
         private readonly ClsAportacionLn ObjAportacionLn = new ClsAportacionLn();
-        private readonly ClsUtilidades ObjUtilidades = new ClsUtilidades();
 
-        private FrmRevDestajo FrmRevDestajoHandler;
+        private readonly FrmRevDestajo FrmRevDestajoHandler;
         #endregion
 
         #region Metodos Constructores
@@ -43,7 +41,6 @@ namespace Pruebas.Formas
             if (ObjAportacion.MsjError == null)
             {
                 DgvAportacion.DataSource = ObjAportacion.DtResultados;
-                ObjUtilidades.FormatoDgvPEC(ref DgvAportacion);
                 DgvAportacion.Columns["IdAportacion"].Visible = false;
             }
             else 
@@ -89,7 +86,7 @@ namespace Pruebas.Formas
         private void BtnCerrar_Click(object sender, System.EventArgs e)
         {
             this.Close();
-            //FrmRevDestajoHandler.CargarListaAportaciones();
+            FrmRevDestajoHandler.CargarListaAportacion();
         }
 
         private void BtnLimpiar_Click(object sender, System.EventArgs e)

@@ -26,7 +26,7 @@
     <ProductName>ERP Calzado Monnaaci</ProductName>
     <PublisherName>Cristian Frausto</PublisherName>
     <SuiteName>Produccion Calzado</SuiteName>
-    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationRevision>23</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -138,6 +138,12 @@
     </Compile>
     <Compile Include="Formas\FrmArea.Designer.cs">
       <DependentUpon>FrmArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\FrmAvances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\FrmAvances.Designer.cs">
+      <DependentUpon>FrmAvances.cs</DependentUpon>
     </Compile>
     <Compile Include="Formas\FrmCiudad.cs">
       <SubType>Form</SubType>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmArea.resx">
       <DependentUpon>FrmArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formas\FrmAvances.resx">
+      <DependentUpon>FrmAvances.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmCiudad.resx">
       <DependentUpon>FrmCiudad.cs</DependentUpon>
@@ -425,6 +434,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Letter_M_gold_72x72.ico" />
+    <None Include="Resources\Error_24x24.png" />
+    <None Include="Resources\exchange-arrows_icon-icons.com_128x128.png" />
     <None Include="Resources\pdf_filetypes_64x64.png" />
     <None Include="Resources\admin_person_user_man_24x24.png" />
     <None Include="Resources\Save_64x64.png" />

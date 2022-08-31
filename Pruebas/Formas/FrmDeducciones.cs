@@ -1,6 +1,5 @@
 ﻿using Entidades.Usuario;
 using LogicaNegocio.Usuario;
-using Pruebas.Utilidades;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -12,7 +11,6 @@ namespace Pruebas.Formas
         #region Variables Privadas
         private ClsDeduccion ObjDeduccion = null;
         private readonly ClsDeduccionLn ObjDeduccionLn = new ClsDeduccionLn();
-        private readonly ClsUtilidades ObjUtilidades = new ClsUtilidades();
 
         private FrmRevDestajo FrmRevDestajoHandler;
         #endregion
@@ -43,7 +41,6 @@ namespace Pruebas.Formas
             if (ObjDeduccion.MsjError == null)
             {
                 DgvDeduccion.DataSource = ObjDeduccion.DtResultados;
-                ObjUtilidades.FormatoDgvPEC(ref DgvDeduccion);
                 DgvDeduccion.Columns["IdDeduccion"].Visible = false;
             }
             else
@@ -89,7 +86,7 @@ namespace Pruebas.Formas
         private void BtnCerrar_Click(object sender, System.EventArgs e)
         {
             this.Close();
-            //FrmRevDestajoHandler.CargarListaDeducciones();
+            FrmRevDestajoHandler.CargarListaDeduccion();
         }
 
         private void BtnLimpiar_Click(object sender, System.EventArgs e)

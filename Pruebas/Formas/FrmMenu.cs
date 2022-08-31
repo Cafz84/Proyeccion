@@ -115,9 +115,14 @@ namespace Proyeccion.Principal
             AbrirFrmHijo(new FrmRevDestajo());
         }
 
+        private void BtnUsuAvances_Click(object sender, EventArgs e)
+        {
+            AbrirFrmHijo(new FrmUsuAvances());
+        }
+
         private void BtnAvances_Click(object sender, EventArgs e)
         {
-            
+            AbrirFrmHijo(new FrmAvances(userId));
         }
 
         private void BtnLoteo_Click(object sender, EventArgs e)
@@ -172,6 +177,7 @@ namespace Proyeccion.Principal
                 BtnUsuarios.Enabled = ObjPermisosUsers.PUsuario;
                 BtnRevDestajo.Enabled = ObjPermisosUsers.PRevDestajo;
                 BtnLoteo.Enabled = ObjPermisosUsers.PLoteo;
+                BtnUsuAvances.Enabled = ObjPermisosUsers.PUAvances;
             }
         }
         #endregion
@@ -188,6 +194,7 @@ namespace Proyeccion.Principal
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
 
         #endregion
 

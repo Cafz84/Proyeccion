@@ -133,6 +133,7 @@
             this.DgvGrupo.Location = new System.Drawing.Point(2, 182);
             this.DgvGrupo.Name = "DgvGrupo";
             this.DgvGrupo.ReadOnly = true;
+            this.DgvGrupo.RowHeadersVisible = false;
             this.DgvGrupo.Size = new System.Drawing.Size(678, 266);
             this.DgvGrupo.TabIndex = 51;
             this.DgvGrupo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGrupo_CellContentClick);

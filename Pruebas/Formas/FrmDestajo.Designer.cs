@@ -251,8 +251,9 @@
             this.LblEstilo.ForeColor = System.Drawing.Color.Black;
             this.LblEstilo.Location = new System.Drawing.Point(301, 121);
             this.LblEstilo.Name = "LblEstilo";
-            this.LblEstilo.Size = new System.Drawing.Size(0, 22);
+            this.LblEstilo.Size = new System.Drawing.Size(52, 22);
             this.LblEstilo.TabIndex = 112;
+            this.LblEstilo.Text = "Estilo";
             // 
             // LblTEstilo
             // 
@@ -442,6 +443,7 @@
             this.Editar});
             this.DgvDestajo.Location = new System.Drawing.Point(0, 32);
             this.DgvDestajo.Name = "DgvDestajo";
+            this.DgvDestajo.RowHeadersVisible = false;
             this.DgvDestajo.Size = new System.Drawing.Size(1065, 360);
             this.DgvDestajo.TabIndex = 0;
             this.DgvDestajo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDestajo_CellContentClick);
@@ -485,6 +487,7 @@
             this.SelT});
             this.DgvEmpleado.Location = new System.Drawing.Point(0, 32);
             this.DgvEmpleado.Name = "DgvEmpleado";
+            this.DgvEmpleado.RowHeadersVisible = false;
             this.DgvEmpleado.Size = new System.Drawing.Size(1065, 360);
             this.DgvEmpleado.TabIndex = 1;
             this.DgvEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmpleado_CellContentClick);
@@ -550,6 +553,7 @@
             this.SelF});
             this.DgvFraccion.Location = new System.Drawing.Point(0, 32);
             this.DgvFraccion.Name = "DgvFraccion";
+            this.DgvFraccion.RowHeadersVisible = false;
             this.DgvFraccion.Size = new System.Drawing.Size(1065, 360);
             this.DgvFraccion.TabIndex = 2;
             this.DgvFraccion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvFraccion_CellContentClick);
@@ -602,6 +606,7 @@
             this.SelM});
             this.DgvMuestra.Location = new System.Drawing.Point(0, 32);
             this.DgvMuestra.Name = "DgvMuestra";
+            this.DgvMuestra.RowHeadersVisible = false;
             this.DgvMuestra.Size = new System.Drawing.Size(1065, 360);
             this.DgvMuestra.TabIndex = 3;
             this.DgvMuestra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMuestra_CellContentClick);
@@ -657,6 +662,7 @@
             this.SelG});
             this.DgvGrupo.Location = new System.Drawing.Point(0, 32);
             this.DgvGrupo.Name = "DgvGrupo";
+            this.DgvGrupo.RowHeadersVisible = false;
             this.DgvGrupo.Size = new System.Drawing.Size(885, 360);
             this.DgvGrupo.TabIndex = 2;
             this.DgvGrupo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGrupo_CellContentClick);

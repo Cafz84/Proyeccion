@@ -45,6 +45,7 @@
     <Compile Include="Usuario\ClsAportEmpLn.cs" />
     <Compile Include="Usuario\ClsAportFijoLn.cs" />
     <Compile Include="Usuario\ClsAvanceLn.cs" />
+    <Compile Include="Usuario\ClsAvancesLn.cs" />
     <Compile Include="Usuario\ClsDeduccionLn.cs" />
     <Compile Include="Usuario\ClsAportacionLn.cs" />
     <Compile Include="Usuario\ClsAreaLn.cs" />

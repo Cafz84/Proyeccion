@@ -35,6 +35,7 @@ namespace Pruebas.Formas
             CargarListaEmpleado();
             CargarListaMuestra();
             CargarListaGrupo();
+            Limpiar();
             intance = this;
             fracCosto = 0;
             uEmpId = 0;
@@ -542,7 +543,7 @@ namespace Pruebas.Formas
                 try
                 {
                     CbSemana.Text = DgvDestajo.Rows[e.RowIndex].Cells["Sem"].Value.ToString();
-                    LblEmpId.Text = DgvDestajo.Rows[e.RowIndex].Cells["UEmpID"].Value.ToString();
+                    LblEmpId.Text = DgvDestajo.Rows[e.RowIndex].Cells["UEmpId"].Value.ToString();
                     LblFraccId.Text = DgvDestajo.Rows[e.RowIndex].Cells["UFraccId"].Value.ToString();
                     LblCXE.Text = DgvDestajo.Rows[e.RowIndex].Cells["UCantidadFE"].Value.ToString();
                     LblNombre.Text = DgvDestajo.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();

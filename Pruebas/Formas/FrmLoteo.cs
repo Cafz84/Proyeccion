@@ -53,6 +53,8 @@ namespace Pruebas.Formas
             DtpFechaEmbarque.CustomFormat = " ";
 
             BtnGuardar.Enabled = false;
+            TxtPrograma.Enabled = true;
+            TxtCtdLote.Enabled = true;
         }
 
         private void Limpiar2()

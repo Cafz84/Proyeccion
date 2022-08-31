@@ -28,6 +28,21 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@Deduccion", "18", ObjDeduccion.Deduccion);
             Ejecutar(ref ObjDeduccion);
         }
+
+        public void IndexRD(ref ClsDeduccion ObjDeduccion)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "ERPLavoraziones_Monnaaci",
+                NombreTabla = "Deducciones",
+                NombreSP = "dbo.SP_Deducciones_IndexRD",
+                Scalar = false
+            };
+
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@Deduccion", "18", ObjDeduccion.Deduccion);
+            Ejecutar(ref ObjDeduccion);
+        }
         #endregion
 
         #region CRUD Aportaciones

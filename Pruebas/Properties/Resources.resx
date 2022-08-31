@@ -118,17 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="partnership_icon_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\partnership_icon_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="partition_diskpartition_partition_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\partition_diskpartition_partition_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="map_search_find_maps_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map_search_find_maps_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="checkmark_check_apply_done_accept_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkmark_check_apply_done_accept_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editar1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="notes-edit-button_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notes-edit-button_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="xmag_search_find_export_locate_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xmag_search_find_export_locate_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="preview_icon_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\preview_icon_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pdf_filetypes_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pdf_filetypes_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button_refresh_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_refresh_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,64 +142,64 @@
   <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconfinder-document03-24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder-document03-24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="partnership_icon_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\partnership_icon_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="partition_diskpartition_partition_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\partition_diskpartition_partition_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="notes-edit-button_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notes-edit-button_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gui_eraser_icon_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gui_eraser_icon_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="savedisk_floppydisk_guardar_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\savedisk_floppydisk_guardar_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="partition_diskpartition_partition_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\partition_diskpartition_partition_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder-document03-32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder-document03-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="plus_insert_add_new_icon_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plus_insert_add_new_icon_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="editar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Letter_V_orange_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Letter_V_orange_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="computer_pc_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\computer_pc_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="savedisk_floppydisk_guardar_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\savedisk_floppydisk_guardar_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Save_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="map_search_find_maps_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\map_search_find_maps_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconfinder-document03-24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder-document03-24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Group_icon-icons32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Group_icon-icons32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="create-list-button_icon-icons.com_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\create-list-button_icon-icons.com_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="3592869-compose-create-edit-edit-file-office-pencil-writing-creative_107746" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3592869-compose-create-edit-edit-file-office-pencil-writing-creative_107746.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="off_downnearexit_apagado_abajo_128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\off_downnearexit_apagado_abajo_128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gui_eraser_icon_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui_eraser_icon_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exchange-arrows_icon-icons.com_128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exchange-arrows_icon-icons.com_128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="computer_pc_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\computer_pc_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus_insert_add_new_icon_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus_insert_add_new_icon_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xmag_search_find_export_locate_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xmag_search_find_export_locate_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="admin_person_user_man_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admin_person_user_man_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Letter_F_blue_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Letter_F_blue_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pdf_filetypes_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pdf_filetypes_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="preview_icon_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preview_icon_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="admin_person_user_man_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\admin_person_user_man_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="3592869-compose-create-edit-edit-file-office-pencil-writing-creative_107746" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3592869-compose-create-edit-edit-file-office-pencil-writing-creative_107746.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder-document03-32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder-document03-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="create-list-button_icon-icons.com_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\create-list-button_icon-icons.com_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Error_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

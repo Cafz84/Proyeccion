@@ -120,6 +120,7 @@ namespace LogicaNegocio.Usuario
                             ObjPermisosUsers.PRevDestajo = Convert.ToBoolean(dr["PRevDestajo"].ToString());
                             ObjPermisosUsers.PAvances = Convert.ToBoolean(dr["PAvances"].ToString());
                             ObjPermisosUsers.PLoteo = Convert.ToBoolean(dr["PLoteo"].ToString());
+                            ObjPermisosUsers.PUAvances = Convert.ToBoolean(dr["PUAvances"].ToString());
                         }
                     }
                 }

@@ -30,7 +30,7 @@ namespace LogicaNegocio.Usuario
         }
         #endregion
 
-        #region CRUD Aportaciones
+        #region CRUD RUsuarioAvance
         public void Create(ref ClsRUsuarioAvance ObjRUsuarioAvance)
         {
             ObjDataBase = new ClsDataBase()
@@ -60,6 +60,22 @@ namespace LogicaNegocio.Usuario
 
             bIndex = false;
             ObjDataBase.DtParametros.Rows.Add(@"@UserId", "4", ObjRUsuarioAvance.UserId);
+            ObjDataBase.DtParametros.Rows.Add(@"@Area", "15", ObjRUsuarioAvance.Area);
+            ObjDataBase.DtParametros.Rows.Add(@"@AvanceId", "9", ObjRUsuarioAvance.AvanceId);
+            Ejecutar(ref ObjRUsuarioAvance);
+        }
+
+        public void ReadVal(ref ClsRUsuarioAvance ObjRUsuarioAvance)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "ERPLavoraziones_Monnaaci",
+                NombreTabla = "RUsuarioAvance",
+                NombreSP = "dbo.SP_RUsuarioAvance_ReadVal",
+                Scalar = false
+            };
+
+            bIndex = true;
             ObjDataBase.DtParametros.Rows.Add(@"@Area", "15", ObjRUsuarioAvance.Area);
             ObjDataBase.DtParametros.Rows.Add(@"@AvanceId", "9", ObjRUsuarioAvance.AvanceId);
             Ejecutar(ref ObjRUsuarioAvance);
@@ -123,9 +139,9 @@ namespace LogicaNegocio.Usuario
                         {
                             try
                             {
-                                ObjRUsuarioAvance.UserId = Convert.ToInt16(dr["PuestoId"].ToString());
-                                ObjRUsuarioAvance.Area = Convert.ToChar(dr["Puesto"].ToString());
-                                ObjRUsuarioAvance.AvanceId = Convert.ToSingle(dr["Descripcion"].ToString());
+                                ObjRUsuarioAvance.UserId = Convert.ToInt16(dr["UserId"].ToString());
+                                ObjRUsuarioAvance.Area = Convert.ToChar(dr["Area"].ToString());
+                                ObjRUsuarioAvance.AvanceId = Convert.ToSingle(dr["AvanceId"].ToString());
                             }
                             catch (Exception ex)
                             {

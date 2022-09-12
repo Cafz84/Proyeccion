@@ -47,7 +47,7 @@ namespace LogicaNegocio.Usuario
 
             ObjDataBase.DtParametros.Rows.Add(@"@UCodigo", "18", ObjAvances.UCodigo);
             ObjDataBase.DtParametros.Rows.Add(@"@UUserId", "4", ObjAvances.UUserId);
-            ObjDataBase.DtParametros.Rows.Add(@"@UAvanceId", "4", ObjAvances.UAvanceId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UAvanceId", "9", ObjAvances.UAvanceId);
             ObjDataBase.DtParametros.Rows.Add(@"@FAvance", "14", ObjAvances.FAvance);
             ObjDataBase.DtParametros.Rows.Add(@"@Tiempo", "18", ObjAvances.Tiempo);
 
@@ -67,7 +67,38 @@ namespace LogicaNegocio.Usuario
             bIndex = false;
             ObjDataBase.DtParametros.Rows.Add(@"@UCodigo", "18", ObjAvances.UCodigo);
             ObjDataBase.DtParametros.Rows.Add(@"@UUserId", "4", ObjAvances.UUserId);
-            ObjDataBase.DtParametros.Rows.Add(@"@UAvanceId", "4", ObjAvances.UAvanceId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UAvanceId", "9", ObjAvances.UAvanceId);
+            Ejecutar(ref ObjAvances);
+        }
+
+        public void ReadUserCod(ref ClsAvances ObjAvances)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "ERPLavoraziones_Monnaaci",
+                NombreTabla = "Avances",
+                NombreSP = "dbo.SP_Avances_ReadUserCod",
+                Scalar = false
+            };
+
+            bIndex = false;
+            ObjDataBase.DtParametros.Rows.Add(@"@UCodigo", "18", ObjAvances.UCodigo);
+            ObjDataBase.DtParametros.Rows.Add(@"@UUserId", "4", ObjAvances.UUserId);
+            Ejecutar(ref ObjAvances);
+        }
+
+        public void ReadSeguir(ref ClsAvances ObjAvances)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "ERPLavoraziones_Monnaaci",
+                NombreTabla = "Avances",
+                NombreSP = "dbo.SP_Avances_ReadSeguir",
+                Scalar = false
+            };
+
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@UCodigo", "18", ObjAvances.UCodigo);
             Ejecutar(ref ObjAvances);
         }
 
@@ -83,7 +114,7 @@ namespace LogicaNegocio.Usuario
 
             ObjDataBase.DtParametros.Rows.Add(@"@UCodigo", "18", ObjAvances.UCodigo);
             ObjDataBase.DtParametros.Rows.Add(@"@UUserId", "4", ObjAvances.UUserId);
-            ObjDataBase.DtParametros.Rows.Add(@"@UAvanceId", "4", ObjAvances.UAvanceId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UAvanceId", "9", ObjAvances.UAvanceId);
             ObjDataBase.DtParametros.Rows.Add(@"@FAvance", "14", ObjAvances.FAvance);
             ObjDataBase.DtParametros.Rows.Add(@"@Tiempo", "18", ObjAvances.Tiempo);
 
@@ -102,7 +133,7 @@ namespace LogicaNegocio.Usuario
 
             ObjDataBase.DtParametros.Rows.Add(@"@UCodigo", "18", ObjAvances.UCodigo);
             ObjDataBase.DtParametros.Rows.Add(@"@UUserId", "4", ObjAvances.UUserId);
-            ObjDataBase.DtParametros.Rows.Add(@"@UAvanceId", "4", ObjAvances.UAvanceId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UAvanceId", "9", ObjAvances.UAvanceId);
 
             Ejecutar(ref ObjAvances);
         }
@@ -130,7 +161,7 @@ namespace LogicaNegocio.Usuario
                             {
                                 ObjAvances.UCodigo = dr["UCodigo"].ToString();
                                 ObjAvances.UUserId = Convert.ToInt16(dr["UUserId"].ToString());
-                                ObjAvances.UAvanceId = Convert.ToInt16(dr["FAvance"].ToString());
+                                ObjAvances.UAvanceId = Convert.ToSingle(dr["FAvance"].ToString());
                                 ObjAvances.FAvance = Convert.ToDateTime(dr["Activo"].ToString());
                                 ObjAvances.Tiempo = dr["Tiempo"].ToString();
                             }

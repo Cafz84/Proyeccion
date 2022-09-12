@@ -8,7 +8,8 @@ namespace Entidades.Usuario
         #region Variables Privadas
         private string _uCodigo, _tiempo, _usuario, _estilo, _color;
         private char? _area;
-        private int _uUserId, _uAvanceId;
+        private int _uUserId;
+        private float _uAvanceId;
         private DateTime _fAvance;
 
         //Atributos de manejo de la base de datos
@@ -24,7 +25,7 @@ namespace Entidades.Usuario
         public string Color { get => _color; set => _color = value; }
         public char? Area { get => _area; set => _area = value; }
         public int UUserId { get => _uUserId; set => _uUserId = value; }
-        public int UAvanceId { get => _uAvanceId; set => _uAvanceId = value; }
+        public float UAvanceId { get => _uAvanceId; set => _uAvanceId = value; }
         public DateTime FAvance { get => _fAvance; set => _fAvance = value; }
         public string MsjError { get => _msjError; set => _msjError = value; }
         public string ValorEscalar { get => _valorEscalar; set => _valorEscalar = value; }

@@ -13,7 +13,7 @@ namespace LogicaNegocio.Usuario
         private bool bIndex;
         #endregion
 
-        #region Metodo Index
+        #region Metodos Index
         public void Index(ref ClsRUsuarioAvance ObjRUsuarioAvance)
         {
             ObjDataBase = new ClsDataBase()
@@ -26,6 +26,21 @@ namespace LogicaNegocio.Usuario
 
             bIndex = true;
             ObjDataBase.DtParametros.Rows.Add(@"@Usuario", "18", ObjRUsuarioAvance.Usuario);
+            Ejecutar(ref ObjRUsuarioAvance);
+        }
+
+        public void IndexId(ref ClsRUsuarioAvance ObjRUsuarioAvance)
+        {
+            ObjDataBase = new ClsDataBase()
+            {
+                NombreDB = "ERPLavoraziones_Monnaaci",
+                NombreTabla = "RUsuarioAvance",
+                NombreSP = "dbo.SP_RUsuarioAvance_IndexId",
+                Scalar = false
+            };
+
+            bIndex = true;
+            ObjDataBase.DtParametros.Rows.Add(@"@Usuario", "4", ObjRUsuarioAvance.UserId);
             Ejecutar(ref ObjRUsuarioAvance);
         }
         #endregion

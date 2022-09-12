@@ -11,9 +11,11 @@ namespace Pruebas.Formas
         private ClsAvance ObjAvance = null;
         private ClsLoteo ObjLoteo = null;
         private ClsAvances ObjAvances = null;
+        private ClsRUsuarioAvance ObjRUsuarioAvance = null;
         readonly private ClsAvanceLn ObjAvanceLn = new ClsAvanceLn();
         readonly private ClsLoteoLn ObjLoteoLn = new ClsLoteoLn();
         readonly private ClsAvancesLn ObjAvancesLn = new ClsAvancesLn();
+        readonly private ClsRUsuarioAvanceLn ObjRUsuarioAvanceLn = new ClsRUsuarioAvanceLn();
 
         private int userId;
         #endregion
@@ -36,8 +38,26 @@ namespace Pruebas.Formas
         private void Limpiar()
         {
             TxtCodigo.Clear();
+            TxtCodigo.Focus();
             LblCorrecto.Visible = false;
             LblIncorrecto.Visible = false;
+        }
+
+        private void LimpiarCorrecto()
+        {
+            LblCorrecto.Visible = true;
+            LblIncorrecto.Visible = false;
+            TxtCodigo.Clear();
+            TxtCodigo.Focus();
+            CargarDatos();
+        }
+
+        private void LimpiarIncorrecto()
+        {
+            TxtCodigo.Clear();
+            TxtCodigo.Focus();
+            LblIncorrecto.Visible = true;
+            LblCorrecto.Visible = false;
         }
 
         private void CargarDatos()
@@ -64,6 +84,27 @@ namespace Pruebas.Formas
                 DgvAvances.DataSource = ObjAvances.DtResultados;
             }
         }
+
+        private void CrearAvance(string cod, int userId, float avanceId, DateTime time)
+        {
+            ObjAvances = new ClsAvances()
+            {
+                UCodigo = cod,
+                UUserId = userId,
+                UAvanceId = avanceId,
+                FAvance = DateTime.Now,
+                Tiempo = (DateTime.Now - time).ToString(@"dd\d\ hh\h\ mm\m\ ")
+            };
+            ObjAvancesLn.Create(ref ObjAvances);
+            if (ObjAvances.MsjError == null)
+            {
+                LimpiarCorrecto();
+            }
+            else
+            {
+                MessageBox.Show(ObjAvances.MsjError, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         #endregion
 
         #region Acción con Botones
@@ -83,7 +124,125 @@ namespace Pruebas.Formas
         {
             if (e.KeyCode == Keys.Enter)
             {
+                float ultimoAvance = 0f, siguienteAvance = 0f;
+                int cantAvances = 0, cont = 0;
+                string avance = string.Empty;
 
+                //Lectura de información de el lote escaneado
+                ObjLoteo = new ClsLoteo()
+                {
+                    CodLote = TxtCodigo.Text
+                };
+                ObjLoteoLn.Read(ref ObjLoteo);
+
+                //Lectura de la lista de Avances que se pueden generar con el lote escaneado
+                ObjAvance = new ClsAvance()
+                {
+                    Area = ObjLoteo.Area[0]
+                };
+                ObjAvanceLn.IndexArea(ref ObjAvance);
+
+                //Lectura de la lista de avances que puede dar el usuario que escanea
+                ObjRUsuarioAvance = new ClsRUsuarioAvance()
+                {
+                    UserId = userId
+                };
+                ObjRUsuarioAvanceLn.IndexId(ref ObjRUsuarioAvance);
+
+                //Lectura en la base para saber si esta el avance generado en sistema
+                ObjAvances = new ClsAvances()
+                {
+                    UCodigo = TxtCodigo.Text
+                };
+                ObjAvancesLn.ReadSeguir(ref ObjAvances);
+                
+                if (ObjAvances.MsjError == null)
+                {
+                    //Si el avance no se encuentra en sistema
+                    if (ObjAvances.DtResultados.Rows.Count == 0)
+                    {
+                        //Validar que sea un usuario permitido para dar el primer avance
+                        if (ObjAvance.DtResultados.Rows[0]["Id"] == ObjRUsuarioAvance.DtResultados.Rows[0]["AvanceId"])
+                        {
+                            CrearAvance(TxtCodigo.Text, userId, Convert.ToSingle(ObjAvance.DtResultados.Rows[0]["Id"].ToString()), 
+                                Convert.ToDateTime(ObjLoteo.FLote.ToString()));
+                            LimpiarCorrecto();
+                        }
+                        else
+                        {
+                            LblIncorrecto.Text = "No eres la persona correcta para dar el primer avance";
+                            LimpiarIncorrecto();
+                        }
+                    }
+                    //Si el avance se encuentra en sistema
+                    else
+                    {
+                        //Se obtiene la cantidad de avances que puede dar el usuario
+                        cantAvances = ObjRUsuarioAvance.DtResultados.Rows.Count;
+
+                        //Obtener el ultimo avance para verificar si el que se esta dando es el que sigue
+                        ultimoAvance = Convert.ToSingle(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["UAvanceId"].ToString());
+
+                        //Lectura de cuantos avances a generado el usuario por codigo
+                        ObjAvances = new ClsAvances()
+                        {
+                            UUserId = userId,
+                            UCodigo = TxtCodigo.Text
+                        };
+                        ObjAvancesLn.ReadUserCod(ref ObjAvances);
+
+                        //Obtener cuantos avances a realizado el usuario por codigo
+                        cont = ObjAvances.DtResultados.Rows.Count;
+
+                        //Validar que el avance no se este generando de forma repetida
+                        if (cantAvances == cont)
+                        {
+                            LblIncorrecto.Text = "No se puede repetir un avance. Favor de revisar";
+                            LimpiarIncorrecto();
+                        }
+
+                        //Validar si ya se dio el ultimo avance y se quiere volver a generar nuevamente para negarlo
+                        else if (ultimoAvance == Convert.ToSingle(ObjAvance.DtResultados.Rows[ObjAvance.DtResultados.Rows.Count - 1]["Id"].ToString()))
+                        {
+                            LblIncorrecto.Text = "Ya se generaron todos los avances";
+                            LimpiarIncorrecto();
+                        }
+
+                        else
+                        {
+                            //Obtener cual es el avance que sigue
+                            for (int i = 0; i < ObjAvance.DtResultados.Rows.Count - 1; i++)
+                            {
+                                if (ultimoAvance == Convert.ToSingle(ObjAvance.DtResultados.Rows[i]["Id"].ToString()))
+                                {
+                                    siguienteAvance = Convert.ToSingle(ObjAvance.DtResultados.Rows[i + 1]["Id"].ToString());
+                                    avance = ObjAvance.DtResultados.Rows[i + 1]["Avance"].ToString();
+                                    break;
+                                }
+                            }
+
+                            //Validar si es la persona indicada para dar el avance correspondiente
+                            for (int j = 0; j < ObjAvance.DtResultados.Rows.Count - 1; j++)
+                            {
+                                if (siguienteAvance == Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()))
+                                {
+                                    CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                        Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                    LimpiarCorrecto();
+                                }
+                                else
+                                {
+                                    LblIncorrecto.Text = "Falta dar el avance de" + avance;
+                                    LimpiarIncorrecto();
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(ObjAvances.MsjError, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         #endregion

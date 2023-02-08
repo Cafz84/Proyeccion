@@ -83,7 +83,7 @@ namespace Pruebas.Formas
             if (ObjFraccEstilo.MsjError == null)
             {
                 DgvFraccEstilo.DataSource = ObjFraccEstilo.DtResultados;
-                ObjUtilidades.FormatoDgvPEC(ref DgvFraccEstilo);
+                //ObjUtilidades.FormatoDgvPEC(ref DgvFraccEstilo);
                 DgvFraccEstilo.Columns["EditFE"].Width = 20;
                 DgvFraccEstilo.Columns["Estilo"].Width = 30;
                 DgvFraccEstilo.Columns["U_IdEstilo"].Visible = false;
@@ -92,7 +92,7 @@ namespace Pruebas.Formas
                 DgvFraccEstilo.Columns["U_CodigoFraccion"].Visible = false;
                 DgvFraccEstilo.Columns["Cantidad"].Visible = false;
                 DgvFraccEstilo.Columns["Tiempo"].Visible = false;
-                DgvFraccEstilo.Columns["Costo"].Visible = false;
+                //DgvFraccEstilo.Columns["Costo"].Visible = false;
                 DgvFraccEstilo.Columns["CostoMuestra"].Visible = false;
             }
             else

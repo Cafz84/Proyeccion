@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFraccEstilo));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LblTituloFraccEstilo = new System.Windows.Forms.Label();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnActualizar = new System.Windows.Forms.Button();
@@ -38,7 +40,6 @@
             this.DgvEstilo = new System.Windows.Forms.DataGridView();
             this.SelE = new System.Windows.Forms.DataGridViewImageColumn();
             this.DgvFraccEstilo = new System.Windows.Forms.DataGridView();
-            this.EditFE = new System.Windows.Forms.DataGridViewImageColumn();
             this.LblIdE = new System.Windows.Forms.Label();
             this.LblNomE = new System.Windows.Forms.Label();
             this.LblCodE = new System.Windows.Forms.Label();
@@ -72,6 +73,7 @@
             this.TxtBFraccion = new System.Windows.Forms.TextBox();
             this.TxtBCodEstilo = new System.Windows.Forms.TextBox();
             this.TxtBCodFraccion = new System.Windows.Forms.TextBox();
+            this.EditFE = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEstilo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFraccEstilo)).BeginInit();
@@ -179,6 +181,7 @@
             this.SelE});
             this.DgvEstilo.Location = new System.Drawing.Point(340, 283);
             this.DgvEstilo.Name = "DgvEstilo";
+            this.DgvEstilo.RowHeadersVisible = false;
             this.DgvEstilo.Size = new System.Drawing.Size(364, 377);
             this.DgvEstilo.TabIndex = 89;
             this.DgvEstilo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEstilo_CellContentClick);
@@ -193,22 +196,29 @@
             // 
             // DgvFraccEstilo
             // 
+            this.DgvFraccEstilo.AllowUserToAddRows = false;
+            this.DgvFraccEstilo.AllowUserToDeleteRows = false;
+            this.DgvFraccEstilo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvFraccEstilo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvFraccEstilo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvFraccEstilo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EditFE});
+            this.DgvFraccEstilo.EnableHeadersVisualStyles = false;
             this.DgvFraccEstilo.Location = new System.Drawing.Point(5, 283);
             this.DgvFraccEstilo.Name = "DgvFraccEstilo";
+            this.DgvFraccEstilo.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgvFraccEstilo.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.DgvFraccEstilo.Size = new System.Drawing.Size(329, 377);
             this.DgvFraccEstilo.TabIndex = 91;
             this.DgvFraccEstilo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvFraccEstilo_CellContentClick);
-            // 
-            // EditFE
-            // 
-            this.EditFE.HeaderText = "Editar";
-            this.EditFE.Image = ((System.Drawing.Image)(resources.GetObject("EditFE.Image")));
-            this.EditFE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.EditFE.Name = "EditFE";
-            this.EditFE.Width = 40;
             // 
             // LblIdE
             // 
@@ -481,6 +491,7 @@
             this.SelF});
             this.DgvFraccion.Location = new System.Drawing.Point(710, 283);
             this.DgvFraccion.Name = "DgvFraccion";
+            this.DgvFraccion.RowHeadersVisible = false;
             this.DgvFraccion.Size = new System.Drawing.Size(364, 376);
             this.DgvFraccion.TabIndex = 97;
             this.DgvFraccion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvFraccion_CellContentClick);
@@ -589,6 +600,13 @@
             this.TxtBCodFraccion.TabIndex = 146;
             this.TxtBCodFraccion.TextChanged += new System.EventHandler(this.TxtBCodFraccion_TextChanged);
             // 
+            // EditFE
+            // 
+            this.EditFE.HeaderText = "Edit";
+            this.EditFE.Image = ((System.Drawing.Image)(resources.GetObject("EditFE.Image")));
+            this.EditFE.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EditFE.Name = "EditFE";
+            // 
             // FrmFraccEstilo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,7 +679,6 @@
         private System.Windows.Forms.DataGridViewImageColumn SelE;
         private System.Windows.Forms.DataGridView DgvFraccion;
         private System.Windows.Forms.DataGridViewImageColumn SelF;
-        private System.Windows.Forms.DataGridViewImageColumn EditFE;
         private System.Windows.Forms.Label LblCantidad;
         private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.TextBox TxtTiempo;
@@ -679,5 +696,6 @@
         private System.Windows.Forms.TextBox TxtBFraccion;
         private System.Windows.Forms.TextBox TxtBCodEstilo;
         private System.Windows.Forms.TextBox TxtBCodFraccion;
+        private System.Windows.Forms.DataGridViewImageColumn EditFE;
     }
 }

@@ -606,7 +606,7 @@ namespace Pruebas.Formas
                             FEmbarque = DtpFechaEmbarque.Value,
                             Info = TxtObs.Text
                         };
-                        if (DgvCorridaCalzado != null)
+                        if (DgvCorridaCalzado.DataSource != null)
                         {
                             ObjLoteo.Area = "Calzado";
                         }
@@ -943,7 +943,9 @@ namespace Pruebas.Formas
             {
                 MessageBox.Show("Error al guardar\n"+ex.ToString(), "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
+
         #endregion
 
         #region Acción con DataGridView

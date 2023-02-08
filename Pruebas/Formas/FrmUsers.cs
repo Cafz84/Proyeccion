@@ -48,6 +48,7 @@ namespace Proyeccion.Principal
 
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
+            BtnAgregar.Enabled = true;
         }
 
         private void CargarListaUsers()

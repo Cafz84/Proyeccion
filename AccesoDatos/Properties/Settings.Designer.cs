@@ -12,7 +12,7 @@ namespace AccesoDatos.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.2.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -36,9 +36,8 @@ namespace AccesoDatos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ec2-52-52-139-21.us-west-1.compute.amazonaws.com,1433;Initial Catalog" +
-            "=Lavoraziones_Monnaaci_P;Persist Security Info=True;User ID=reports;Password=Clo" +
-            "ud@123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=EVSQL.EVAWS.Local;Initial Catalog=Lavoraziones_Monnaaci_P;Persist Sec" +
+            "urity Info=True;User ID=Reporting;Password=Rep0rt1$")]
         public string cadenaConeccion_Lavoraciones_Monnaaci_p {
             get {
                 return ((string)(this["cadenaConeccion_Lavoraciones_Monnaaci_p"]));
@@ -60,9 +59,8 @@ namespace AccesoDatos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ec2-52-52-139-21.us-west-1.compute.amazonaws.com,1433;Initial Catalog" +
-            "=ERPLavoraziones_Monnaaci;Persist Security Info=True;User ID=reports;Password=Cl" +
-            "oud@123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=EVSQL.EVAWS.Local;Initial Catalog=ERPLavoraziones_Monnaaci;Persist Se" +
+            "curity Info=True;User ID=Reporting;Password=Rep0rt1$")]
         public string cadenaConeccion_ERPLavoraziones_Monnaaci {
             get {
                 return ((string)(this["cadenaConeccion_ERPLavoraziones_Monnaaci"]));

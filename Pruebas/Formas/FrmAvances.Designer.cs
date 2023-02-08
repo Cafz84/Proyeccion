@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAvances));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LblTituloAvances = new System.Windows.Forms.Label();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.DgvAvances = new System.Windows.Forms.DataGridView();
@@ -78,14 +78,14 @@
             this.DgvAvances.AllowUserToDeleteRows = false;
             this.DgvAvances.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvAvances.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvAvances.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvAvances.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvAvances.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvAvances.EnableHeadersVisualStyles = false;
             this.DgvAvances.Location = new System.Drawing.Point(1, 169);
@@ -142,7 +142,7 @@
             this.LblCorrecto.Name = "LblCorrecto";
             this.LblCorrecto.Size = new System.Drawing.Size(565, 77);
             this.LblCorrecto.TabIndex = 65;
-            this.LblCorrecto.Text = "!Avance Exitoso¡";
+            this.LblCorrecto.Text = "¡Avance Exitoso!";
             this.LblCorrecto.Visible = false;
             // 
             // LblIncorrecto
@@ -151,7 +151,7 @@
             this.LblIncorrecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LblIncorrecto.Font = new System.Drawing.Font("Tahoma", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblIncorrecto.ForeColor = System.Drawing.Color.DarkRed;
-            this.LblIncorrecto.Location = new System.Drawing.Point(325, 69);
+            this.LblIncorrecto.Location = new System.Drawing.Point(267, 71);
             this.LblIncorrecto.Name = "LblIncorrecto";
             this.LblIncorrecto.Size = new System.Drawing.Size(500, 39);
             this.LblIncorrecto.TabIndex = 66;

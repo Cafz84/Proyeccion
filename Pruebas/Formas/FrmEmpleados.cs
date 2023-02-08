@@ -134,6 +134,9 @@ namespace Proyeccion.Principal
             CbUSueldoBase.Text = string.Empty;
             CbUSueldoLimite.Text = string.Empty;
 
+            //TcEmpleados control general
+            TcEmpleados.SelectedIndex = 0;
+
             //Activacion de botones
             BtnAgregar.Enabled = true;
             BtnEliminar.Enabled = false;

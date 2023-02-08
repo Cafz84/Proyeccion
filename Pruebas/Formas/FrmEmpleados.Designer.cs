@@ -178,6 +178,7 @@
             this.Editar});
             this.DgvEmpleados.Location = new System.Drawing.Point(0, 36);
             this.DgvEmpleados.Name = "DgvEmpleados";
+            this.DgvEmpleados.RowHeadersVisible = false;
             this.DgvEmpleados.Size = new System.Drawing.Size(1066, 349);
             this.DgvEmpleados.TabIndex = 0;
             this.DgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmpleados_CellContentClick);

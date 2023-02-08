@@ -26,6 +26,7 @@ namespace LogicaNegocio.Usuario
 
             bIndex = true;
             ObjDataBase.DtParametros.Rows.Add(@"@Usuario", "18", ObjRUsuarioAvance.Usuario);
+            ObjDataBase.DtParametros.Rows.Add(@"@Area", "15", ObjRUsuarioAvance.Area);
             Ejecutar(ref ObjRUsuarioAvance);
         }
 
@@ -40,7 +41,8 @@ namespace LogicaNegocio.Usuario
             };
 
             bIndex = true;
-            ObjDataBase.DtParametros.Rows.Add(@"@Usuario", "4", ObjRUsuarioAvance.UserId);
+            ObjDataBase.DtParametros.Rows.Add(@"@UserId", "4", ObjRUsuarioAvance.UserId);
+            ObjDataBase.DtParametros.Rows.Add(@"@Area", "15", ObjRUsuarioAvance.Area);
             Ejecutar(ref ObjRUsuarioAvance);
         }
         #endregion

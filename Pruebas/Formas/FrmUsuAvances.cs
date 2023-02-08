@@ -63,7 +63,8 @@ namespace Pruebas.Formas
         {
             ObjRUsuarioAvance = new ClsRUsuarioAvance()
             {
-                Usuario = TxtBIUsuario.Text
+                Usuario = TxtBIUsuario.Text,
+                Area = null
             };
 
             ObjRUsuarioAvanceLn.Index(ref ObjRUsuarioAvance);
@@ -139,11 +140,11 @@ namespace Pruebas.Formas
         {
             if (LblUsuario.Text == string.Empty)
             {
-                MessageBox.Show("Se requere seleccionar un usuario", "Mensaje de sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se requiere seleccionar un usuario", "Mensaje de sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (LblArea.Text == string.Empty)
             {
-                MessageBox.Show("Se requere seleccionar un avance", "Mensaje de sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se requeire seleccionar un avance", "Mensaje de sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -387,6 +388,11 @@ namespace Pruebas.Formas
                 cambioArea = Convert.ToChar(DgvRAvance.Rows[e.RowIndex].Cells["Area"].Value.ToString());
                 cambioIdAvance = Convert.ToSingle(DgvRAvance.Rows[e.RowIndex].Cells["Id"].Value.ToString());
             }
+        }
+
+        private void FrmUsuAvances_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void DgvAvance_CellContentClick(object sender, DataGridViewCellEventArgs e)

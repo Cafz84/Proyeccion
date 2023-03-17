@@ -242,6 +242,12 @@
     <Compile Include="Formas\FrmPuesto.Designer.cs">
       <DependentUpon>FrmPuesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formas\FrmReportsAvances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formas\FrmReportsAvances.Designer.cs">
+      <DependentUpon>FrmReportsAvances.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formas\FrmRevDestajo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmPuesto.resx">
       <DependentUpon>FrmPuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formas\FrmReportsAvances.resx">
+      <DependentUpon>FrmReportsAvances.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formas\FrmRevDestajo.resx">
       <DependentUpon>FrmRevDestajo.cs</DependentUpon>
@@ -435,6 +444,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Letter_M_gold_72x72.ico" />
+    <None Include="Resources\analytics.png" />
     <None Include="Resources\Error_24x24.png" />
     <None Include="Resources\exchange-arrows_icon-icons.com_128x128.png" />
     <None Include="Resources\pdf_filetypes_64x64.png" />

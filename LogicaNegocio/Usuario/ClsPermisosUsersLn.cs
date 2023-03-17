@@ -34,6 +34,7 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@PAvances", "1", ObjPermisosUsers.PAvances);
             ObjDataBase.DtParametros.Rows.Add(@"@PLoteo", "1", ObjPermisosUsers.PLoteo);
             ObjDataBase.DtParametros.Rows.Add(@"@PUAvances", "1", ObjPermisosUsers.PUAvances);
+            ObjDataBase.DtParametros.Rows.Add(@"@PRepAvances", "1", ObjPermisosUsers.PRepAvances);
 
             Ejecutar(ref ObjPermisosUsers);
         }
@@ -74,6 +75,8 @@ namespace LogicaNegocio.Usuario
             ObjDataBase.DtParametros.Rows.Add(@"@PAvances", "1", ObjPermisosUsers.PAvances);
             ObjDataBase.DtParametros.Rows.Add(@"@PLoteo", "1", ObjPermisosUsers.PLoteo);
             ObjDataBase.DtParametros.Rows.Add(@"@PUAvances", "1", ObjPermisosUsers.PUAvances);
+            ObjDataBase.DtParametros.Rows.Add(@"@PRepAvances", "1", ObjPermisosUsers.PRepAvances);
+
             Ejecutar(ref ObjPermisosUsers);
         }
 
@@ -121,6 +124,7 @@ namespace LogicaNegocio.Usuario
                             ObjPermisosUsers.PAvances = Convert.ToBoolean(dr["PAvances"].ToString());
                             ObjPermisosUsers.PLoteo = Convert.ToBoolean(dr["PLoteo"].ToString());
                             ObjPermisosUsers.PUAvances = Convert.ToBoolean(dr["PUAvances"].ToString());
+                            ObjPermisosUsers.PRepAvances = Convert.ToBoolean(dr["PRepAvances"].ToString());
                         }
                     }
                 }

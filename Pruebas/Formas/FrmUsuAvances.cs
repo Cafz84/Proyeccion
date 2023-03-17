@@ -74,6 +74,7 @@ namespace Pruebas.Formas
                 DgvUserAvance.Columns["AvanceId"].Visible = false;
                 DgvUserAvance.Columns["UserId"].Visible = false;
                 DgvUserAvance.Columns["Editar"].Width = 35;
+                DgvUserAvance.Columns["Area"].Width = 40;
             }
         }
 
@@ -100,12 +101,19 @@ namespace Pruebas.Formas
                 Avance = TxtBRAvance.Text
             };
 
+            if (TxtBRArea.Text == string.Empty)
+                ObjAvance.Area = null;
+            else
+                ObjAvance.Area = Convert.ToChar(TxtBRArea.Text.ToUpper());
+
             ObjAvanceLn.Index(ref ObjAvance);
             if (ObjAvance.MsjError == null)
             {
                 DgvRAvance.DataSource = ObjAvance.DtResultados;
                 DgvRAvance.Columns["Descripcion"].Visible = false;
-                DgvRAvance.Columns["RSelAvance"].Width = 30;
+                DgvRAvance.Columns["Id"].Visible = false;
+                DgvRAvance.Columns["RSelAvance"].Width = 35;
+                DgvRAvance.Columns["Area"].Width = 40;
             }
         }
 
@@ -116,11 +124,18 @@ namespace Pruebas.Formas
                 Avance = TxtBAvance.Text
             };
 
+            if (TxtBArea.Text == String.Empty)
+                ObjAvance.Area = null;
+            else
+                ObjAvance.Area = Convert.ToChar(TxtBArea.Text.ToUpper());
+
             ObjAvanceLn.Index(ref ObjAvance);
             if (ObjAvance.MsjError == null)
             {
                 DgvAvance.DataSource = ObjAvance.DtResultados;
                 DgvAvance.Columns["AEdit"].Width = 35;
+                DgvAvance.Columns["Id"].Width = 35;
+                DgvAvance.Columns["Area"].Width = 40;
             }
         }
         #endregion
@@ -270,6 +285,7 @@ namespace Pruebas.Formas
                         LimpiarAvance();
                         TxtId.Focus();
                         CargarAvance();
+                        CargarRAvance();
                     }
                     else
                     {
@@ -299,6 +315,7 @@ namespace Pruebas.Formas
                     LimpiarAvance();
                     TxtId.Focus();
                     CargarAvance();
+                    CargarRAvance();
                 }
                 else
                 {
@@ -323,6 +340,9 @@ namespace Pruebas.Formas
                 {
                     MessageBox.Show("Eliminación exitosa", "Mensaje de sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarAvance();
+                    TxtId.Focus();
+                    CargarAvance();
+                    CargarRAvance();
                 }
                 else
                 {
@@ -390,11 +410,6 @@ namespace Pruebas.Formas
             }
         }
 
-        private void FrmUsuAvances_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void DgvAvance_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (DgvAvance.Columns[e.ColumnIndex].Name == "AEdit")
@@ -446,6 +461,7 @@ namespace Pruebas.Formas
                 }
             }
         }
+
         #endregion
 
         #region Acciones con TextBox
@@ -462,6 +478,38 @@ namespace Pruebas.Formas
             {
                 e.Handled = true;
             }
+        }
+        #endregion
+
+        #region Acciones con TextBox
+        private void TxtBRArea_TextChanged(object sender, EventArgs e)
+        {
+            CargarRAvance();
+        }
+
+        private void TxtBRAvance_TextChanged(object sender, EventArgs e)
+        {
+            CargarRAvance();
+        }
+
+        private void TxtBIUsuario_TextChanged(object sender, EventArgs e)
+        {
+            CargarIndex();
+        }
+
+        private void TxtBRUsuario_TextChanged(object sender, EventArgs e)
+        {
+            CargarUsuario();
+        }
+
+        private void TxtBArea_TextChanged(object sender, EventArgs e)
+        {
+            CargarAvance();
+        }
+
+        private void TxtBAvance_TextChanged(object sender, EventArgs e)
+        {
+            CargarAvance();
         }
         #endregion
 

@@ -73,6 +73,7 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
+            this.ChkRepAvances = new System.Windows.Forms.CheckBox();
             this.TcDestajo.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -484,13 +485,14 @@
             // 
             // GbProduccion
             // 
+            this.GbProduccion.Controls.Add(this.ChkRepAvances);
             this.GbProduccion.Controls.Add(this.ChkUAvances);
             this.GbProduccion.Controls.Add(this.ChkAvances);
             this.GbProduccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.GbProduccion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.GbProduccion.Location = new System.Drawing.Point(152, 154);
             this.GbProduccion.Name = "GbProduccion";
-            this.GbProduccion.Size = new System.Drawing.Size(171, 85);
+            this.GbProduccion.Size = new System.Drawing.Size(171, 109);
             this.GbProduccion.TabIndex = 6;
             this.GbProduccion.TabStop = false;
             this.GbProduccion.Text = "Producción";
@@ -605,6 +607,18 @@
             this.BtnCerrar.TabStop = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
+            // ChkRepAvances
+            // 
+            this.ChkRepAvances.AutoSize = true;
+            this.ChkRepAvances.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkRepAvances.ForeColor = System.Drawing.Color.White;
+            this.ChkRepAvances.Location = new System.Drawing.Point(17, 76);
+            this.ChkRepAvances.Name = "ChkRepAvances";
+            this.ChkRepAvances.Size = new System.Drawing.Size(142, 21);
+            this.ChkRepAvances.TabIndex = 7;
+            this.ChkRepAvances.Text = "Reportes Avances";
+            this.ChkRepAvances.UseVisualStyleBackColor = true;
+            // 
             // FrmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -705,5 +719,6 @@
         private System.Windows.Forms.CheckBox ChkLoteo;
         private System.Windows.Forms.CheckBox ChkUAvances;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.CheckBox ChkRepAvances;
     }
 }

@@ -18,6 +18,7 @@ namespace Pruebas.Formas
         readonly private ClsRUsuarioAvanceLn ObjRUsuarioAvanceLn = new ClsRUsuarioAvanceLn();
 
         private int userId;
+        private float maqE, maqS;
         #endregion
 
         #region Metodos Constructores
@@ -158,7 +159,7 @@ namespace Pruebas.Formas
                 ObjAvancesLn.ReadSeguir(ref ObjAvances);
 
                 //Validar que el usuario este permitido para dar avances en sistema
-                if (ObjRUsuarioAvance.DtResultados != null)
+                if (ObjRUsuarioAvance.DtResultados != null && ObjRUsuarioAvance.DtResultados.Rows.Count != 0)
                 {
                     if (ObjAvances.MsjError == null)
                     {
@@ -169,8 +170,7 @@ namespace Pruebas.Formas
                             if (Convert.ToSingle(ObjAvance.DtResultados.Rows[0]["Id"].ToString()) == Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[0]["AvanceId"].ToString()))
                             {
                                 CrearAvance(TxtCodigo.Text, userId, Convert.ToSingle(ObjAvance.DtResultados.Rows[0]["Id"].ToString()),
-                                    Convert.ToDateTime(ObjLoteo.FLote.ToString()));
-                                LimpiarCorrecto();
+                                    Convert.ToDateTime(ObjLoteo.FLote.ToString()));LimpiarCorrecto();
                             }
                             else
                             {
@@ -178,6 +178,7 @@ namespace Pruebas.Formas
                                 LimpiarIncorrecto();
                             }
                         }
+                        
                         //Si el lote ya tiene avances en sistema
                         else
                         {
@@ -212,6 +213,329 @@ namespace Pruebas.Formas
                                 LimpiarIncorrecto();
                             }
 
+                            #region Validación de Avances en Marroquineria
+                            //Validar la primera bifurcación en Marroquineria para saber cual es el avance que debe de seguir
+                            else if (ultimoAvance == 30 && ObjAvance.Area == 'M')
+                            {
+                                //Lectura en la base para saber si esta el avance generado en sistema ya que se pierde esta tabla al generar otro objeto de la misma
+                                //para obtener los avances por usuario
+                                ObjAvances = new ClsAvances()
+                                {
+                                    UCodigo = TxtCodigo.Text
+                                };
+                                ObjAvancesLn.ReadSeguir(ref ObjAvances);
+
+                                //Obtener cual es el avance que sigue
+                                for (int i = 0; i < ObjAvance.DtResultados.Rows.Count - 1; i++)
+                                {
+                                    if (ultimoAvance == Convert.ToSingle(ObjAvance.DtResultados.Rows[i]["Id"].ToString()))
+                                    {
+                                        for (int j = 0; j < ObjRUsuarioAvance.DtResultados.Rows.Count - 1; j++)
+                                        {
+                                            //Se valida si el avance siguiente sera el de Corte y que sea la persona indicada para generarlo
+                                            if (Convert.ToSingle(ObjAvance.DtResultados.Rows[i + 1]["Id"].ToString()) == Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()))
+                                            {
+                                                siguienteAvance = Convert.ToSingle(ObjAvance.DtResultados.Rows[i + 1]["Id"].ToString());
+
+                                                //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                                CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                                    Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                                LimpiarCorrecto();
+
+                                                break;
+                                            }
+                                            //Se valida si el avance siguiente sera el de Corte Zund y que sea la persona indicada para generarlo
+                                            else if (Convert.ToSingle(ObjAvance.DtResultados.Rows[i + 2]["Id"].ToString()) == Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()))
+                                            {
+                                                siguienteAvance = Convert.ToSingle(ObjAvance.DtResultados.Rows[i + 2]["Id"].ToString());
+
+                                                //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                                CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                                    Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                                LimpiarCorrecto();
+
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                                LimpiarIncorrecto();
+                                            }
+                                        }
+                                        break;
+                                    }
+                                }
+                            }
+
+                            //Validar que sea correcto el siguiente avance despues de Corte de Marroquineria
+                            else if (ultimoAvance == 40 && ObjAvance.Area == 'M')
+                            {
+                                //Lectura en la base para saber si esta el avance generado en sistema ya que se pierde esta tabla al generar otro objeto de la misma
+                                //para obtener los avances por usuario
+                                ObjAvances = new ClsAvances()
+                                {
+                                    UCodigo = TxtCodigo.Text
+                                };
+                                ObjAvancesLn.ReadSeguir(ref ObjAvances);
+
+                                for (int j = 0; j < ObjRUsuarioAvance.DtResultados.Rows.Count - 1; j++)
+                                {
+                                    //Se valida si el avance siguiente sera el de Salida Maquila y que sea la persona indicada para generarlo
+                                    if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 60)
+                                    {
+                                        siguienteAvance = 60;
+
+                                        //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                        CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                            Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                        LimpiarCorrecto();
+
+                                        break;
+                                    }
+                                    //Se valida si el avance siguiente sera el de Coordinado y que sea la persona indicada para generarlo
+                                    else if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 70)
+                                    {
+                                        siguienteAvance = 70;
+
+                                        //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                        CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                            Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                        LimpiarCorrecto();
+
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                        LimpiarIncorrecto();
+                                    }
+                                }
+                            }
+
+                            //Validar que sea correcto el siguiente avance despues de Corte Zund de Marroquineria
+                            else if (ultimoAvance == 50 && ObjAvance.Area == 'M')
+                            {
+                                //Lectura en la base para saber si esta el avance generado en sistema ya que se pierde esta tabla al generar otro objeto de la misma
+                                //para obtener los avances por usuario
+                                ObjAvances = new ClsAvances()
+                                {
+                                    UCodigo = TxtCodigo.Text
+                                };
+                                ObjAvancesLn.ReadSeguir(ref ObjAvances);
+
+                                for (int j = 0; j < ObjRUsuarioAvance.DtResultados.Rows.Count - 1; j++)
+                                {
+                                    //Se valida si el avance siguiente sera el de Salida Maquila y que sea la persona indicada para generarlo
+                                    if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 60)
+                                    {
+                                        siguienteAvance = 60;
+
+                                        //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                        CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                            Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                        LimpiarCorrecto();
+
+                                        break;
+                                    }
+                                    //Se valida si el avance siguiente sera el de Coordinado y que sea la persona indicada para generarlo
+                                    else if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 70)
+                                    {
+                                        siguienteAvance = 70;
+
+                                        //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                        CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                            Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                        LimpiarCorrecto();
+
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                        LimpiarIncorrecto();
+                                    }
+                                }
+                            }
+
+                            //Validar que sea correcto el siguiente avance despues de Salida Maquila de Marroquineria
+                            else if (ultimoAvance == 60 && ObjAvance.Area == 'M')
+                            {
+                                //Lectura en la base para saber si esta el avance generado en sistema ya que se pierde esta tabla al generar otro objeto de la misma
+                                //para obtener los avances por usuario
+                                ObjAvances = new ClsAvances()
+                                {
+                                    UCodigo = TxtCodigo.Text
+                                };
+                                ObjAvancesLn.ReadSeguir(ref ObjAvances);
+
+                                for (int j = 0; j < ObjRUsuarioAvance.DtResultados.Rows.Count - 1; j++)
+                                {
+                                    //Se valida si el avance siguiente sera el de Salida Maquila y que sea la persona indicada para generarlo
+                                    if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 90)
+                                    {
+                                        siguienteAvance = 90;
+
+                                        //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                        CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                            Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                        LimpiarCorrecto();
+
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                        LimpiarIncorrecto();
+                                    }
+                                }
+                            }
+
+                            //Validar que sea correcto el siguiente avance despues de Pespunte de Marroquineria
+                            else if (ultimoAvance == 80 && ObjAvance.Area == 'M')
+                            {
+                                //Lectura en la base para saber si esta el avance generado en sistema ya que se pierde esta tabla al generar otro objeto de la misma
+                                //para obtener los avances por usuario
+                                ObjAvances = new ClsAvances()
+                                {
+                                    UCodigo = TxtCodigo.Text
+                                };
+                                ObjAvancesLn.ReadSeguir(ref ObjAvances);
+
+                                for (int j = 0; j < ObjRUsuarioAvance.DtResultados.Rows.Count - 1; j++)
+                                {
+                                    //Se valida si el avance siguiente sera el de Salida Maquila y que sea la persona indicada para generarlo
+                                    if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 100)
+                                    {
+                                        siguienteAvance = 100;
+
+                                        //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                        CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                            Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                        LimpiarCorrecto();
+
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                        LimpiarIncorrecto();
+                                    }
+                                }
+                            }
+                            #endregion
+
+                            #region Validación de Avances en Calzado
+                            //Validar que sea correcto el siguiente avance despues de Corte de Calzado
+                            else if (ultimoAvance == 40 && ObjAvance.Area == 'C')
+                            {
+                                //Lectura en la base para saber si esta el avance generado en sistema ya que se pierde esta tabla al generar otro objeto de la misma
+                                //para obtener los avances por usuario
+                                ObjAvances = new ClsAvances()
+                                {
+                                    UCodigo = TxtCodigo.Text
+                                };
+                                ObjAvancesLn.ReadSeguir(ref ObjAvances);
+
+                                for (int j = 0; j < ObjRUsuarioAvance.DtResultados.Rows.Count - 1; j++)
+                                {
+                                    //Se valida si el avance siguiente sera el de Salida Maquila y que sea la persona indicada para generarlo
+                                    if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 50)
+                                    {
+                                        siguienteAvance = 50;
+
+                                        //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                        CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                            Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                        LimpiarCorrecto();
+
+                                        break;
+                                    }
+                                    //Se valida si el avance siguiente sera el de Coordinado y que sea la persona indicada para generarlo
+                                    else if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 60)
+                                    {
+                                        siguienteAvance = 60;
+
+                                        //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                        CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                            Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                        LimpiarCorrecto();
+
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                        LimpiarIncorrecto();
+                                    }
+                                }
+                            }
+
+                            //Validar que sea correcto el siguiente avance despues de Salida Maquila de Calzado
+                            else if (ultimoAvance == 50 && ObjAvance.Area == 'C')
+                            {
+                                //Lectura en la base para saber si esta el avance generado en sistema ya que se pierde esta tabla al generar otro objeto de la misma
+                                //para obtener los avances por usuario
+                                ObjAvances = new ClsAvances()
+                                {
+                                    UCodigo = TxtCodigo.Text
+                                };
+                                ObjAvancesLn.ReadSeguir(ref ObjAvances);
+
+                                for (int j = 0; j < ObjRUsuarioAvance.DtResultados.Rows.Count - 1; j++)
+                                {
+                                    //Se valida si el avance siguiente sera el de Entrada Maquila y que sea la persona indicada para generarlo
+                                    if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 100)
+                                    {
+                                        siguienteAvance = 100;
+
+                                        //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                        CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                            Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                        LimpiarCorrecto();
+
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                        LimpiarIncorrecto();
+                                    }
+                                }
+                            }
+
+                            //Validar que sea correcto el siguiente avance despues de Montado de Calzado
+                            else if (ultimoAvance == 90 && ObjAvance.Area == 'C')
+                            {
+                                //Lectura en la base para saber si esta el avance generado en sistema ya que se pierde esta tabla al generar otro objeto de la misma
+                                //para obtener los avances por usuario
+                                ObjAvances = new ClsAvances()
+                                {
+                                    UCodigo = TxtCodigo.Text
+                                };
+                                ObjAvancesLn.ReadSeguir(ref ObjAvances);
+
+                                for (int j = 0; j < ObjRUsuarioAvance.DtResultados.Rows.Count - 1; j++)
+                                {
+                                    //Se valida si el avance siguiente sera el de Adorno y que sea la persona indicada para generarlo
+                                    if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 110)
+                                    {
+                                        siguienteAvance = 110;
+
+                                        //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                        CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                            Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                        LimpiarCorrecto();
+
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                        LimpiarIncorrecto();
+                                    }
+                                }
+                            }
+                            #endregion
                             else
                             {
                                 //Obtener cual es el avance que sigue

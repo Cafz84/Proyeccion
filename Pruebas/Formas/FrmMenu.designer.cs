@@ -36,10 +36,12 @@
             this.BtnMaximizar = new System.Windows.Forms.PictureBox();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.BtnRepAvances = new System.Windows.Forms.Button();
             this.BtnUsuAvances = new System.Windows.Forms.Button();
             this.BtnLoteo = new System.Windows.Forms.Button();
             this.BtnCerrarSesion = new System.Windows.Forms.PictureBox();
             this.BtnFraccEstilo = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.BtnRevDestajo = new System.Windows.Forms.Button();
             this.BtnCapturaDestajo = new System.Windows.Forms.Button();
             this.BtnFraccion = new System.Windows.Forms.Button();
@@ -53,8 +55,6 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -160,10 +160,12 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.MenuVertical.Controls.Add(this.BtnRepAvances);
             this.MenuVertical.Controls.Add(this.BtnUsuAvances);
             this.MenuVertical.Controls.Add(this.BtnLoteo);
             this.MenuVertical.Controls.Add(this.BtnCerrarSesion);
             this.MenuVertical.Controls.Add(this.BtnFraccEstilo);
+            this.MenuVertical.Controls.Add(this.panel11);
             this.MenuVertical.Controls.Add(this.BtnRevDestajo);
             this.MenuVertical.Controls.Add(this.BtnCapturaDestajo);
             this.MenuVertical.Controls.Add(this.BtnFraccion);
@@ -188,6 +190,24 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(220, 665);
             this.MenuVertical.TabIndex = 1;
+            // 
+            // BtnRepAvances
+            // 
+            this.BtnRepAvances.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.BtnRepAvances.FlatAppearance.BorderSize = 0;
+            this.BtnRepAvances.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.BtnRepAvances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRepAvances.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRepAvances.ForeColor = System.Drawing.Color.White;
+            this.BtnRepAvances.Image = global::Pruebas.Properties.Resources.analytics;
+            this.BtnRepAvances.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnRepAvances.Location = new System.Drawing.Point(4, 447);
+            this.BtnRepAvances.Name = "BtnRepAvances";
+            this.BtnRepAvances.Size = new System.Drawing.Size(216, 32);
+            this.BtnRepAvances.TabIndex = 21;
+            this.BtnRepAvances.Text = "Reportes Avances";
+            this.BtnRepAvances.UseVisualStyleBackColor = false;
+            this.BtnRepAvances.Click += new System.EventHandler(this.BtnRepAvances_Click);
             // 
             // BtnUsuAvances
             // 
@@ -263,6 +283,14 @@
             this.BtnFraccEstilo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnFraccEstilo.UseVisualStyleBackColor = false;
             this.BtnFraccEstilo.Click += new System.EventHandler(this.BtnFraccEstilo_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.panel11.Location = new System.Drawing.Point(0, 447);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(10, 32);
+            this.panel11.TabIndex = 22;
             // 
             // BtnRevDestajo
             // 
@@ -425,9 +453,7 @@
             this.SubMenuReporte.Controls.Add(this.panel13);
             this.SubMenuReporte.Controls.Add(this.button10);
             this.SubMenuReporte.Controls.Add(this.panel12);
-            this.SubMenuReporte.Controls.Add(this.button11);
-            this.SubMenuReporte.Controls.Add(this.panel11);
-            this.SubMenuReporte.Location = new System.Drawing.Point(39, 448);
+            this.SubMenuReporte.Location = new System.Drawing.Point(33, 500);
             this.SubMenuReporte.Name = "SubMenuReporte";
             this.SubMenuReporte.Size = new System.Drawing.Size(181, 99);
             this.SubMenuReporte.TabIndex = 27;
@@ -469,7 +495,7 @@
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(3, 34);
+            this.button10.Location = new System.Drawing.Point(4, 34);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(177, 28);
             this.button10.TabIndex = 23;
@@ -484,32 +510,6 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(10, 28);
             this.panel12.TabIndex = 24;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(3, 0);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(177, 28);
-            this.button11.TabIndex = 21;
-            this.button11.Text = "Proyeccion";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel11.Location = new System.Drawing.Point(-1, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(10, 28);
-            this.panel11.TabIndex = 22;
             // 
             // panel9
             // 
@@ -643,7 +643,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox BtnInicio;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button BtnRepAvances;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel8;

@@ -50,9 +50,9 @@ namespace Proyeccion.Principal
             BtnMaximizar.Visible = true;
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void BtnRepAvances_Click(object sender, EventArgs e)
         {
-            SubMenuReporte.Visible = false;
+            AbrirFrmHijo(new FrmReportesAvances());
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -194,10 +194,6 @@ namespace Proyeccion.Principal
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-
         #endregion
-
-        
     }
 }

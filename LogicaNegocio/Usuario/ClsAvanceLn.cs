@@ -26,6 +26,7 @@ namespace LogicaNegocio.Usuario
 
             bIndex = true;
             ObjDataBase.DtParametros.Rows.Add(@"@Avance", "18", ObjAvance.Avance);
+            ObjDataBase.DtParametros.Rows.Add(@"@Area", "15", ObjAvance.Area);
             Ejecutar(ref ObjAvance);
         }
 

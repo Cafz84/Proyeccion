@@ -45,6 +45,7 @@ namespace Proyeccion.Principal
             ChkUsuarios.Checked = false;
             ChkLoteo.Checked = false;
             ChkUAvances.Checked = false;
+            ChkRepAvances.Checked = false;
 
             BtnActualizar.Enabled = false;
             BtnEliminar.Enabled = false;
@@ -115,7 +116,8 @@ namespace Proyeccion.Principal
                             PRevDestajo = ChkRevDestajo.Checked,
                             PUsuario = ChkUsuarios.Checked,
                             PLoteo = ChkLoteo.Checked,
-                            PUAvances = ChkUAvances.Checked
+                            PUAvances = ChkUAvances.Checked,
+                            PRepAvances = ChkRepAvances.Checked
                         };
 
                         ObjPermisosUsersLn.Create(ref ObjPermisosUsers);
@@ -279,6 +281,7 @@ namespace Proyeccion.Principal
                     ChkRevDestajo.Checked = ObjPermisosUsers.PRevDestajo;
                     ChkUsuarios.Checked = ObjPermisosUsers.PUsuario;
                     ChkLoteo.Checked = ObjPermisosUsers.PLoteo;
+                    ChkRepAvances.Checked = ObjPermisosUsers.PRepAvances;
 
                     BtnActualizar.Enabled = true;
                     BtnEliminar.Enabled = true;

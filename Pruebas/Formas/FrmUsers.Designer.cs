@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsers));
             this.LblTituloUsuario = new System.Windows.Forms.Label();
             this.LblId = new System.Windows.Forms.Label();
@@ -65,6 +66,7 @@
             this.GbEmbarque = new System.Windows.Forms.GroupBox();
             this.ChkEscaneo = new System.Windows.Forms.CheckBox();
             this.GbProduccion = new System.Windows.Forms.GroupBox();
+            this.ChkRepAvances = new System.Windows.Forms.CheckBox();
             this.ChkUAvances = new System.Windows.Forms.CheckBox();
             this.ChkAvances = new System.Windows.Forms.CheckBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -73,7 +75,6 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
-            this.ChkRepAvances = new System.Windows.Forms.CheckBox();
             this.TcDestajo.SuspendLayout();
             this.TpIndex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -288,9 +289,18 @@
             // 
             // DgvUsers
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});
+            this.DgvUsers.EnableHeadersVisualStyles = false;
             this.DgvUsers.Location = new System.Drawing.Point(0, 32);
             this.DgvUsers.Name = "DgvUsers";
             this.DgvUsers.RowHeadersVisible = false;
@@ -497,6 +507,18 @@
             this.GbProduccion.TabStop = false;
             this.GbProduccion.Text = "Producción";
             // 
+            // ChkRepAvances
+            // 
+            this.ChkRepAvances.AutoSize = true;
+            this.ChkRepAvances.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkRepAvances.ForeColor = System.Drawing.Color.White;
+            this.ChkRepAvances.Location = new System.Drawing.Point(17, 76);
+            this.ChkRepAvances.Name = "ChkRepAvances";
+            this.ChkRepAvances.Size = new System.Drawing.Size(142, 21);
+            this.ChkRepAvances.TabIndex = 7;
+            this.ChkRepAvances.Text = "Reportes Avances";
+            this.ChkRepAvances.UseVisualStyleBackColor = true;
+            // 
             // ChkUAvances
             // 
             this.ChkUAvances.AutoSize = true;
@@ -606,18 +628,6 @@
             this.BtnCerrar.TabIndex = 19;
             this.BtnCerrar.TabStop = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
-            // 
-            // ChkRepAvances
-            // 
-            this.ChkRepAvances.AutoSize = true;
-            this.ChkRepAvances.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkRepAvances.ForeColor = System.Drawing.Color.White;
-            this.ChkRepAvances.Location = new System.Drawing.Point(17, 76);
-            this.ChkRepAvances.Name = "ChkRepAvances";
-            this.ChkRepAvances.Size = new System.Drawing.Size(142, 21);
-            this.ChkRepAvances.TabIndex = 7;
-            this.ChkRepAvances.Text = "Reportes Avances";
-            this.ChkRepAvances.UseVisualStyleBackColor = true;
             // 
             // FrmUsers
             // 

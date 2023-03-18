@@ -178,6 +178,7 @@ namespace Proyeccion.Principal
                 BtnRevDestajo.Enabled = ObjPermisosUsers.PRevDestajo;
                 BtnLoteo.Enabled = ObjPermisosUsers.PLoteo;
                 BtnUsuAvances.Enabled = ObjPermisosUsers.PUAvances;
+                BtnRepAvances.Enabled = ObjPermisosUsers.PRepAvances;
             }
         }
         #endregion

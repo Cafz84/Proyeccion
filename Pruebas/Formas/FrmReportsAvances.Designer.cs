@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReportesAvances));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LblTituloRepAvances = new System.Windows.Forms.Label();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.TcDestajo = new System.Windows.Forms.TabControl();
@@ -116,9 +117,18 @@
             // 
             // DgvUsers
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});
+            this.DgvUsers.EnableHeadersVisualStyles = false;
             this.DgvUsers.Location = new System.Drawing.Point(0, 32);
             this.DgvUsers.Name = "DgvUsers";
             this.DgvUsers.RowHeadersVisible = false;
@@ -147,12 +157,12 @@
             // 
             // TpFecha
             // 
+            this.TpFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
             this.TpFecha.Location = new System.Drawing.Point(4, 26);
             this.TpFecha.Name = "TpFecha";
             this.TpFecha.Size = new System.Drawing.Size(1066, 566);
             this.TpFecha.TabIndex = 2;
             this.TpFecha.Text = "Fecha";
-            this.TpFecha.UseVisualStyleBackColor = true;
             // 
             // FrmReportesAvances
             // 

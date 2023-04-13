@@ -50,11 +50,6 @@
             this.BtnEscaneo = new System.Windows.Forms.Button();
             this.BtnUsuarios = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.SubMenuReporte = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -65,6 +60,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnInicio = new System.Windows.Forms.PictureBox();
+            this.SubMenuReporte = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnRestaurar)).BeginInit();
@@ -73,8 +73,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrarSesion)).BeginInit();
-            this.SubMenuReporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnInicio)).BeginInit();
+            this.SubMenuReporte.SuspendLayout();
             this.SuspendLayout();
             // 
             // BarraTitulo
@@ -174,7 +174,6 @@
             this.MenuVertical.Controls.Add(this.BtnEscaneo);
             this.MenuVertical.Controls.Add(this.BtnUsuarios);
             this.MenuVertical.Controls.Add(this.panel10);
-            this.MenuVertical.Controls.Add(this.SubMenuReporte);
             this.MenuVertical.Controls.Add(this.panel9);
             this.MenuVertical.Controls.Add(this.panel8);
             this.MenuVertical.Controls.Add(this.panel7);
@@ -185,6 +184,7 @@
             this.MenuVertical.Controls.Add(this.panel2);
             this.MenuVertical.Controls.Add(this.panel1);
             this.MenuVertical.Controls.Add(this.BtnInicio);
+            this.MenuVertical.Controls.Add(this.SubMenuReporte);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 35);
             this.MenuVertical.Name = "MenuVertical";
@@ -442,79 +442,15 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel10.Location = new System.Drawing.Point(0, 409);
+            this.panel10.Location = new System.Drawing.Point(0, 410);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(5, 32);
             this.panel10.TabIndex = 20;
             // 
-            // SubMenuReporte
-            // 
-            this.SubMenuReporte.Controls.Add(this.button12);
-            this.SubMenuReporte.Controls.Add(this.panel13);
-            this.SubMenuReporte.Controls.Add(this.button10);
-            this.SubMenuReporte.Controls.Add(this.panel12);
-            this.SubMenuReporte.Location = new System.Drawing.Point(33, 500);
-            this.SubMenuReporte.Name = "SubMenuReporte";
-            this.SubMenuReporte.Size = new System.Drawing.Size(181, 99);
-            this.SubMenuReporte.TabIndex = 27;
-            this.SubMenuReporte.Visible = false;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(3, 68);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(177, 28);
-            this.button12.TabIndex = 25;
-            this.button12.Text = "Proyeccion";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel13.Location = new System.Drawing.Point(0, 68);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(10, 28);
-            this.panel13.TabIndex = 26;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(4, 34);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(177, 28);
-            this.button10.TabIndex = 23;
-            this.button10.Text = "Proyeccion";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel12.Location = new System.Drawing.Point(-1, 34);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(10, 28);
-            this.panel12.TabIndex = 24;
-            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel9.Location = new System.Drawing.Point(0, 371);
+            this.panel9.Location = new System.Drawing.Point(0, 372);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(5, 32);
             this.panel9.TabIndex = 18;
@@ -530,7 +466,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel7.Location = new System.Drawing.Point(0, 295);
+            this.panel7.Location = new System.Drawing.Point(0, 296);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(5, 32);
             this.panel7.TabIndex = 14;
@@ -538,7 +474,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel6.Location = new System.Drawing.Point(0, 257);
+            this.panel6.Location = new System.Drawing.Point(0, 258);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(5, 32);
             this.panel6.TabIndex = 12;
@@ -546,7 +482,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel5.Location = new System.Drawing.Point(0, 219);
+            this.panel5.Location = new System.Drawing.Point(0, 220);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 32);
             this.panel5.TabIndex = 10;
@@ -554,7 +490,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel4.Location = new System.Drawing.Point(0, 181);
+            this.panel4.Location = new System.Drawing.Point(0, 182);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 32);
             this.panel4.TabIndex = 8;
@@ -562,7 +498,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel3.Location = new System.Drawing.Point(0, 143);
+            this.panel3.Location = new System.Drawing.Point(0, 144);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 32);
             this.panel3.TabIndex = 6;
@@ -570,7 +506,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
-            this.panel2.Location = new System.Drawing.Point(0, 105);
+            this.panel2.Location = new System.Drawing.Point(0, 106);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 32);
             this.panel2.TabIndex = 4;
@@ -593,6 +529,70 @@
             this.BtnInicio.TabIndex = 0;
             this.BtnInicio.TabStop = false;
             this.BtnInicio.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // SubMenuReporte
+            // 
+            this.SubMenuReporte.Controls.Add(this.button10);
+            this.SubMenuReporte.Controls.Add(this.button12);
+            this.SubMenuReporte.Controls.Add(this.panel13);
+            this.SubMenuReporte.Controls.Add(this.panel12);
+            this.SubMenuReporte.Location = new System.Drawing.Point(33, 485);
+            this.SubMenuReporte.Name = "SubMenuReporte";
+            this.SubMenuReporte.Size = new System.Drawing.Size(181, 75);
+            this.SubMenuReporte.TabIndex = 27;
+            this.SubMenuReporte.Visible = false;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(4, 1);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(176, 28);
+            this.button10.TabIndex = 23;
+            this.button10.Text = "Proyeccion";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(43)))));
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.Location = new System.Drawing.Point(4, 38);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(176, 28);
+            this.button12.TabIndex = 25;
+            this.button12.Text = "Proyeccion";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.panel13.Location = new System.Drawing.Point(0, 37);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(5, 30);
+            this.panel13.TabIndex = 26;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(89)))), ((int)(((byte)(65)))));
+            this.panel12.Location = new System.Drawing.Point(0, 1);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(5, 28);
+            this.panel12.TabIndex = 24;
             // 
             // panelContenedor
             // 
@@ -625,8 +625,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.MenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrarSesion)).EndInit();
-            this.SubMenuReporte.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BtnInicio)).EndInit();
+            this.SubMenuReporte.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

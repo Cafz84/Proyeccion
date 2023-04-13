@@ -39,6 +39,11 @@ namespace Pruebas.Formas
         private void Limpiar()
         {
             TxtCodigo.Clear();
+            TxtBUsuario.Clear();
+            TxtBEstilo.Clear();
+            TxtBColor.Clear();
+            TxtBCodigo.Clear();
+            TxtBArea.Clear();
             TxtCodigo.Focus();
             LblCorrecto.Visible = false;
             LblIncorrecto.Visible = false;
@@ -83,7 +88,17 @@ namespace Pruebas.Formas
             if (ObjAvances.MsjError == null)
             {
                 DgvAvances.DataSource = ObjAvances.DtResultados;
+                DgvAvances.Columns["Codigo"].Width = 76;
+                DgvAvances.Columns["Estilo"].Width = 127;
+                DgvAvances.Columns["Color"].Width = 157;
+                DgvAvances.Columns["Usuario"].Width = 85;
+                DgvAvances.Columns["Avance"].Width = 110;
+                DgvAvances.Columns["FEmbarque"].Width = 140;
+                DgvAvances.Columns["FAvance"].Width = 140;
+                DgvAvances.Columns["Area"].Width = 40;
             }
+
+            TxtCodigo.Focus();
         }
 
         private void CrearAvance(string cod, int userId, float avanceId, DateTime time)
@@ -104,6 +119,31 @@ namespace Pruebas.Formas
             else
             {
                 MessageBox.Show(ObjAvances.MsjError, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BuscarInfo(string codigo, string usuario, string estilo, string color, string area)
+        {
+            ObjAvances = new ClsAvances()
+            {
+                UCodigo = codigo,
+                Usuario = usuario,
+                Estilo = estilo,
+                Color = color
+            };
+            if (area == string.Empty)
+            {
+                ObjAvances.Area = null;
+            }
+            else 
+            { 
+                ObjAvances.Area = Convert.ToChar(area);
+            }
+
+            ObjAvancesLn.Index(ref ObjAvances);
+            if (ObjAvances.MsjError == null)
+            {
+                DgvAvances.DataSource = ObjAvances.DtResultados;
             }
         }
         #endregion
@@ -128,6 +168,13 @@ namespace Pruebas.Formas
                 float ultimoAvance = 0f, siguienteAvance = 0f;
                 int cantAvances = 0, cont = 0;
                 string avance = string.Empty;
+
+                //Limpiar datos de los textbox en caso de que tengan aplicada alguna busqueda
+                TxtBArea.Clear();
+                TxtBCodigo.Clear();
+                TxtBColor.Clear();
+                TxtBEstilo.Clear();
+                TxtBUsuario.Clear();
 
                 //Lectura de información de el lote escaneado
                 ObjLoteo = new ClsLoteo()
@@ -170,7 +217,8 @@ namespace Pruebas.Formas
                             if (Convert.ToSingle(ObjAvance.DtResultados.Rows[0]["Id"].ToString()) == Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[0]["AvanceId"].ToString()))
                             {
                                 CrearAvance(TxtCodigo.Text, userId, Convert.ToSingle(ObjAvance.DtResultados.Rows[0]["Id"].ToString()),
-                                    Convert.ToDateTime(ObjLoteo.FLote.ToString()));LimpiarCorrecto();
+                                    Convert.ToDateTime(ObjLoteo.FLote.ToString()));
+                                LimpiarCorrecto();
                             }
                             else
                             {
@@ -215,6 +263,7 @@ namespace Pruebas.Formas
 
                             #region Validación de Avances en Marroquineria
                             //Validar la primera bifurcación en Marroquineria para saber cual es el avance que debe de seguir
+                            /*
                             else if (ultimoAvance == 30 && ObjAvance.Area == 'M')
                             {
                                 //Lectura en la base para saber si esta el avance generado en sistema ya que se pierde esta tabla al generar otro objeto de la misma
@@ -266,6 +315,7 @@ namespace Pruebas.Formas
                                     }
                                 }
                             }
+                            */
 
                             //Validar que sea correcto el siguiente avance despues de Corte de Marroquineria
                             else if (ultimoAvance == 40 && ObjAvance.Area == 'M')
@@ -281,7 +331,19 @@ namespace Pruebas.Formas
                                 for (int j = 0; j < ObjRUsuarioAvance.DtResultados.Rows.Count - 1; j++)
                                 {
                                     //Se valida si el avance siguiente sera el de Salida Maquila y que sea la persona indicada para generarlo
-                                    if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 60)
+                                    if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 50)
+                                    {
+                                        siguienteAvance = 50;
+
+                                        //Se crea el avance ya confirmando que es la persona indicada para generar el avance
+                                        CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
+                                            Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
+                                        LimpiarCorrecto();
+
+                                        break;
+                                    }
+                                    //Se valida si el avance siguiente sera el de Coordinado y que sea la persona indicada para generarlo
+                                    else if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 60)
                                     {
                                         siguienteAvance = 60;
 
@@ -292,26 +354,18 @@ namespace Pruebas.Formas
 
                                         break;
                                     }
-                                    //Se valida si el avance siguiente sera el de Coordinado y que sea la persona indicada para generarlo
-                                    else if (Convert.ToSingle(ObjRUsuarioAvance.DtResultados.Rows[j]["AvanceId"].ToString()) == 70)
-                                    {
-                                        siguienteAvance = 70;
-
-                                        //Se crea el avance ya confirmando que es la persona indicada para generar el avance
-                                        CrearAvance(TxtCodigo.Text, userId, siguienteAvance,
-                                            Convert.ToDateTime(ObjAvances.DtResultados.Rows[ObjAvances.DtResultados.Rows.Count - 1]["FAvance"].ToString()));
-                                        LimpiarCorrecto();
-
-                                        break;
-                                    }
                                     else
                                     {
-                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
-                                        LimpiarIncorrecto();
+                                        if (ObjRUsuarioAvance.DtResultados.Rows.Count - 1 == j)
+                                        {
+                                            LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                            LimpiarIncorrecto();
+                                        }
                                     }
                                 }
                             }
 
+                            /*
                             //Validar que sea correcto el siguiente avance despues de Corte Zund de Marroquineria
                             else if (ultimoAvance == 50 && ObjAvance.Area == 'M')
                             {
@@ -356,9 +410,10 @@ namespace Pruebas.Formas
                                     }
                                 }
                             }
+                            */
 
                             //Validar que sea correcto el siguiente avance despues de Salida Maquila de Marroquineria
-                            else if (ultimoAvance == 60 && ObjAvance.Area == 'M')
+                            else if (ultimoAvance == 50 && ObjAvance.Area == 'M')
                             {
                                 //Lectura en la base para saber si esta el avance generado en sistema ya que se pierde esta tabla al generar otro objeto de la misma
                                 //para obtener los avances por usuario
@@ -384,13 +439,16 @@ namespace Pruebas.Formas
                                     }
                                     else
                                     {
-                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
-                                        LimpiarIncorrecto();
+                                        if (ObjRUsuarioAvance.DtResultados.Rows.Count - 1 == j)
+                                        {
+                                            LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                            LimpiarIncorrecto();
+                                        }
                                     }
                                 }
                             }
 
-                            //Validar que sea correcto el siguiente avance despues de Pespunte de Marroquineria
+                            //Validar que sea correcto el siguiente avance despues de Pespunte Final de Marroquineria
                             else if (ultimoAvance == 80 && ObjAvance.Area == 'M')
                             {
                                 //Lectura en la base para saber si esta el avance generado en sistema ya que se pierde esta tabla al generar otro objeto de la misma
@@ -417,8 +475,11 @@ namespace Pruebas.Formas
                                     }
                                     else
                                     {
-                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
-                                        LimpiarIncorrecto();
+                                        if (ObjRUsuarioAvance.DtResultados.Rows.Count - 1 == j)
+                                        {
+                                            LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                            LimpiarIncorrecto();
+                                        }
                                     }
                                 }
                             }
@@ -464,8 +525,11 @@ namespace Pruebas.Formas
                                     }
                                     else
                                     {
-                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
-                                        LimpiarIncorrecto();
+                                        if (ObjRUsuarioAvance.DtResultados.Rows.Count - 1 == j)
+                                        {
+                                            LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                            LimpiarIncorrecto();
+                                        }
                                     }
                                 }
                             }
@@ -497,8 +561,11 @@ namespace Pruebas.Formas
                                     }
                                     else
                                     {
-                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
-                                        LimpiarIncorrecto();
+                                        if (ObjRUsuarioAvance.DtResultados.Rows.Count - 1 == j)
+                                        {
+                                            LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                            LimpiarIncorrecto();
+                                        }
                                     }
                                 }
                             }
@@ -530,12 +597,16 @@ namespace Pruebas.Formas
                                     }
                                     else
                                     {
-                                        LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
-                                        LimpiarIncorrecto();
+                                        if (ObjRUsuarioAvance.DtResultados.Rows.Count - 1 == j)
+                                        {
+                                            LblIncorrecto.Text = "No eres la persona indicada para dar el avance";
+                                            LimpiarIncorrecto();
+                                        }
                                     }
                                 }
                             }
                             #endregion
+                            
                             else
                             {
                                 //Obtener cual es el avance que sigue
@@ -588,6 +659,31 @@ namespace Pruebas.Formas
                     LimpiarIncorrecto();
                 }
             }
+        }
+
+        private void TxtBUsuario_TextChanged(object sender, EventArgs e)
+        {
+            BuscarInfo(TxtBCodigo.Text, TxtBUsuario.Text, TxtBEstilo.Text, TxtBColor.Text, TxtBArea.Text);
+        }
+
+        private void TxtBEstilo_TextChanged(object sender, EventArgs e)
+        {
+            BuscarInfo(TxtBCodigo.Text, TxtBUsuario.Text, TxtBEstilo.Text, TxtBColor.Text, TxtBArea.Text);
+        }
+
+        private void TxtBColor_TextChanged(object sender, EventArgs e)
+        {
+            BuscarInfo(TxtBCodigo.Text, TxtBUsuario.Text, TxtBEstilo.Text, TxtBColor.Text, TxtBArea.Text);
+        }
+
+        private void TxtBArea_TextChanged(object sender, EventArgs e)
+        {
+            BuscarInfo(TxtBCodigo.Text, TxtBUsuario.Text, TxtBEstilo.Text, TxtBColor.Text, TxtBArea.Text);
+        }
+
+        private void TxtBCodigo_TextChanged(object sender, EventArgs e)
+        {
+            BuscarInfo(TxtBCodigo.Text, TxtBUsuario.Text, TxtBEstilo.Text, TxtBColor.Text, TxtBArea.Text);
         }
         #endregion
     }

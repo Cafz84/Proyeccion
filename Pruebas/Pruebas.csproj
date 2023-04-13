@@ -27,7 +27,7 @@
     <PublisherName>Cristian Frausto</PublisherName>
     <SuiteName>Produccion Calzado</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationRevision>28</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

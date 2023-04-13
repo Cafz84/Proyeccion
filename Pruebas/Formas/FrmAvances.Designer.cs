@@ -76,11 +76,10 @@
             // 
             this.DgvAvances.AllowUserToAddRows = false;
             this.DgvAvances.AllowUserToDeleteRows = false;
-            this.DgvAvances.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvAvances.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(137)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -90,7 +89,9 @@
             this.DgvAvances.EnableHeadersVisualStyles = false;
             this.DgvAvances.Location = new System.Drawing.Point(1, 169);
             this.DgvAvances.Name = "DgvAvances";
+            this.DgvAvances.ReadOnly = true;
             this.DgvAvances.RowHeadersVisible = false;
+            this.DgvAvances.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvAvances.Size = new System.Drawing.Size(1078, 494);
             this.DgvAvances.TabIndex = 22;
             // 
@@ -162,21 +163,23 @@
             // 
             this.TxtBEstilo.BackColor = System.Drawing.Color.LightGray;
             this.TxtBEstilo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBEstilo.Location = new System.Drawing.Point(203, 143);
+            this.TxtBEstilo.Location = new System.Drawing.Point(81, 143);
             this.TxtBEstilo.MaxLength = 50;
             this.TxtBEstilo.Name = "TxtBEstilo";
-            this.TxtBEstilo.Size = new System.Drawing.Size(121, 23);
+            this.TxtBEstilo.Size = new System.Drawing.Size(123, 23);
             this.TxtBEstilo.TabIndex = 143;
+            this.TxtBEstilo.TextChanged += new System.EventHandler(this.TxtBEstilo_TextChanged);
             // 
             // TxtBUsuario
             // 
             this.TxtBUsuario.BackColor = System.Drawing.Color.LightGray;
             this.TxtBUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBUsuario.Location = new System.Drawing.Point(81, 143);
+            this.TxtBUsuario.Location = new System.Drawing.Point(365, 143);
             this.TxtBUsuario.MaxLength = 50;
             this.TxtBUsuario.Name = "TxtBUsuario";
-            this.TxtBUsuario.Size = new System.Drawing.Size(118, 23);
+            this.TxtBUsuario.Size = new System.Drawing.Size(82, 23);
             this.TxtBUsuario.TabIndex = 142;
+            this.TxtBUsuario.TextChanged += new System.EventHandler(this.TxtBUsuario_TextChanged);
             // 
             // pictureBox2
             // 
@@ -197,16 +200,18 @@
             this.TxtBCodigo.Name = "TxtBCodigo";
             this.TxtBCodigo.Size = new System.Drawing.Size(49, 23);
             this.TxtBCodigo.TabIndex = 140;
+            this.TxtBCodigo.TextChanged += new System.EventHandler(this.TxtBCodigo_TextChanged);
             // 
             // TxtBColor
             // 
             this.TxtBColor.BackColor = System.Drawing.Color.LightGray;
             this.TxtBColor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBColor.Location = new System.Drawing.Point(328, 143);
+            this.TxtBColor.Location = new System.Drawing.Point(208, 143);
             this.TxtBColor.MaxLength = 50;
             this.TxtBColor.Name = "TxtBColor";
-            this.TxtBColor.Size = new System.Drawing.Size(118, 23);
+            this.TxtBColor.Size = new System.Drawing.Size(153, 23);
             this.TxtBColor.TabIndex = 144;
+            this.TxtBColor.TextChanged += new System.EventHandler(this.TxtBColor_TextChanged);
             // 
             // TxtBArea
             // 
@@ -217,6 +222,7 @@
             this.TxtBArea.Name = "TxtBArea";
             this.TxtBArea.Size = new System.Drawing.Size(30, 23);
             this.TxtBArea.TabIndex = 145;
+            this.TxtBArea.TextChanged += new System.EventHandler(this.TxtBArea_TextChanged);
             // 
             // FrmAvances
             // 
